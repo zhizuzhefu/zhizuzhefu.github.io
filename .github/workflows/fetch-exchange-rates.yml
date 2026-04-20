@@ -1,4 +1,4 @@
-name: Fetch Exchange Rates
+name: exchange-rates-fetch-update
 
 on:
   schedule:
@@ -19,17 +19,31 @@ jobs:
         run: mkdir -p api/openexchangerates
 
       - name: Fetch latest exchange rates
+        continue-on-error: true
         run: |
           curl --request GET \
             --url "https://openexchangerates.org/api/latest.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
             --header 'accept: application/json' \
             --fail \
-            -o api/openexchangerates/latest.json
+            -o api/openexchangerates/latest.json.tmp \
+          && mv api/openexchangerates/latest.json.tmp api/openexchangerates/latest.json \
+          || rm -f api/openexchangerates/latest.json.tmp
+
+      - name: Fetch currencies
+        continue-on-error: true
+        run: |
+          curl --request GET \
+            --url "https://openexchangerates.org/api/currencies.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
+            --header 'accept: application/json' \
+            --fail \
+            -o api/openexchangerates/currencies.json.tmp \
+          && mv api/openexchangerates/currencies.json.tmp api/openexchangerates/currencies.json \
+          || rm -f api/openexchangerates/currencies.json.tmp
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add api/openexchangerates/latest.json
+          git add api/openexchangerates/latest.json api/openexchangerates/currencies.json
           git diff --cached --quiet || git commit -m "Update exchange rates $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
