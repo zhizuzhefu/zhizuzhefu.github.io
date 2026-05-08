@@ -1,0 +1,302 @@
+:root {
+  --bg: #0a0a0a;
+  --panel: #151515;
+  --panel-soft: #1c1c1c;
+  --text: #f5f5f5;
+  --muted: rgba(255, 255, 255, 0.68);
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #5eead4;
+  --primary-soft: rgba(94, 234, 212, 0.12);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --radius: 20px;
+  --max-width: 1120px;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: rgba(10, 10, 10, 0.82);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  font-family: var(--mono);
+}
+
+.brand::before {
+  content: "$ ";
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy,
+.hero-side,
+.section,
+.faq-item,
+.footer {
+  padding: 28px;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: var(--mono);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(34px, 5vw, 56px);
+}
+
+h2 {
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+h3 {
+  font-size: 18px;
+}
+
+p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.feature-list,
+.simple-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.feature-list li,
+.simple-list li {
+  margin-bottom: 10px;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  border: 1px solid rgba(94, 234, 212, 0.18);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.lang-block {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.lang-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.page-title {
+  margin-bottom: 28px;
+  padding: 40px 32px;
+  border-top: 2px solid var(--primary);
+  background: linear-gradient(180deg, var(--primary-soft) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.page-title h1 {
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  margin-bottom: 0;
+}
+
+.page-title .eyebrow {
+  margin-bottom: 16px;
+}
+
+.section-stack {
+  display: grid;
+  gap: 20px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.footer {
+  margin-top: 32px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.footer small {
+  display: block;
+  margin-top: 10px;
+}
+
+.contact-box {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+}
+
+.meta-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.code-block {
+  margin: 14px 0 4px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #050505;
+  border: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #e8e8e8;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.code-block .prompt {
+  color: var(--primary);
+  user-select: none;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .section-grid,
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

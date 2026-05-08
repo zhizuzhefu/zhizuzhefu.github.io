@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shellcove - 支持 / Support</title>
+  <meta name="description" content="Shellcove 支持页 / Support">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">shellcove</a>
+      <div class="nav-links">
+        <a href="./index.html">Home / 首页</a>
+        <a href="./privacy.html">Privacy / 隐私政策</a>
+        <a class="active" href="./support.html">Support / 支持</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">Support / 支持</div>
+      <h1>Shellcove 支持中心</h1>
+      <p>在这里查找常见问题的解答，或直接联系我们获取帮助。 / Find answers to common questions or reach out for help.</p>
+    </section>
+
+    <section class="card section">
+      <h2>FAQ / 常见问题</h2>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>怎么开始用？需要服务器吗？ / How do I start? Do I need a server?</h3>
+          <p>不需要任何 Shellcove 服务器。在你自己的 Mac 或 Linux 开发机上跑 <code>shellcoved init</code> 然后 <code>shellcoved pair</code>，终端会显示二维码 + 6 位配对码，App 扫码即可。 / You don't need any Shellcove server. On your own Mac or Linux box run <code>shellcoved init</code> then <code>shellcoved pair</code>; the terminal prints a QR code and a 6-digit pairing code. Scan it from the app.</p>
+        </article>
+        <article class="faq-item">
+          <h3>支持哪些 AI 编码代理？ / Which AI coding agents are supported?</h3>
+          <p>Claude Code 已完整接入，Codex CLI、Cursor Agent、Gemini CLI、Augment 当前为占位适配器（与守护进程一同发布，待各自 CLI 稳定后填充）。你也可以在守护进程侧用 Swift 写自己的 AgentAdapter。 / Claude Code is fully integrated. Codex CLI, Cursor Agent, Gemini CLI, and Augment ship as stub adapters today. You can also write your own AgentAdapter in Swift on the daemon side.</p>
+        </article>
+        <article class="faq-item">
+          <h3>iPhone 和电脑必须在同一 Wi-Fi 吗？ / Do my iPhone and computer have to be on the same Wi-Fi?</h3>
+          <p>不需要。任何手机能直接到达 daemon 的网络都可以：同一 Wi-Fi、Tailscale、ZeroTier、Cloudflare Tunnel、frp、自托管 VPN…我们不提供中继，所以你需要自己保证网络可达性。 / Nope. Any network where the phone can reach the daemon directly works: local Wi-Fi, Tailscale, ZeroTier, Cloudflare Tunnel, frp, self-hosted VPN, etc. We do not provide a relay — you bring the connectivity.</p>
+        </article>
+        <article class="faq-item">
+          <h3>权限请求通知没收到怎么办？ / I'm not getting permission-request notifications, what now?</h3>
+          <p>请检查 iOS 设置 → 通知 → Shellcove，确认允许通知；并在 App 内确认连接状态为已连接（断线时通知不会送达）。重启一次 daemon 也可以解决偶发的 deduplication 缓存问题。 / Check iOS Settings → Notifications → Shellcove and make sure notifications are allowed. Confirm the in-app connection status is connected (notifications won't fire while offline). Restarting the daemon clears any stuck deduplication state.</p>
+        </article>
+        <article class="faq-item">
+          <h3>断线后会自动恢复吗？ / Does it auto-reconnect after a disconnect?</h3>
+          <p>会。Shellcove 实现了指数退避的自动重连和 SSH 心跳样式的 keepalive。临时网络抖动会自动恢复，长时间断线会进入冷启动重连流程。 / Yes. Shellcove uses exponential back-off auto-reconnect and SSH-keepalive style heartbeats. Brief flaps recover automatically; longer outages trigger a cold reconnect path.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Legacy SSH Mode 是什么？ / What is Legacy SSH Mode?</h3>
+          <p>用于管理没装 shellcoved 守护进程的传统 SSH 主机（如线上服务器）。在 设置 → Advanced 打开后会出现 v1 的 SSH/tmux Sessions 标签和主机管理界面。默认关闭，关闭时不会动你的 SSH 主机和 Keychain 数据。 / It lets you manage classic SSH boxes that don't have shellcoved (e.g. production servers). Turn it on in Settings → Advanced to surface the v1 SSH/tmux Sessions tab. Off by default; toggling off preserves your existing hosts and Keychain entries.</p>
+        </article>
+        <article class="faq-item">
+          <h3>我的代码安全吗？ / Is my code safe?</h3>
+          <p>是的。所有 prompt、shell 输出、文件内容、diff 都直接在你的 iPhone 与你机器上的 daemon 之间走 AES-256-GCM 加密通道。我们没有服务器、没有日志，物理上看不到任何内容。详见 <a href="./privacy.html">隐私政策</a>。 / Yes. Every prompt, shell output, file body, and diff travels over an AES-256-GCM encrypted channel directly between your iPhone and the daemon on your machine. We run no server and keep no logs — we physically cannot see any of it. See <a href="./privacy.html">Privacy Policy</a> for details.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Shellcove 是开源的吗？ / Is Shellcove open source?</h3>
+          <p>shellcoved 守护进程及配对协议是开源的，源码托管在 GitHub。iOS App 是闭源应用通过 App Store 分发。 / The shellcoved daemon and the pairing protocol are open source on GitHub. The iOS app is a closed-source App Store release.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-grid">
+      <section class="card section">
+        <div class="lang-tag">简体中文</div>
+        <h2>联系支持</h2>
+        <p>无论你遇到的是配对、连接、agent 适配、终端渲染还是其他问题，都欢迎通过邮件联系，我们会尽快回复。</p>
+        <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+        <div class="contact-box">
+          <strong>为了更快定位问题，建议在邮件中附带以下信息</strong>
+          <ul class="simple-list">
+            <li>设备型号（如 iPhone 16 Pro、iPad Air 等）</li>
+            <li>iOS / iPadOS 版本号</li>
+            <li>Shellcove App 版本号（设置 → 关于）</li>
+            <li>shellcoved 守护进程版本号（<code>shellcoved --version</code>）</li>
+            <li>守护进程运行平台（macOS / Linux 发行版）</li>
+            <li>问题的详细描述及复现步骤</li>
+            <li>相关截图与日志（如有，敏感信息请打码）</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card section">
+        <div class="lang-tag">English</div>
+        <h2>Contact Support</h2>
+        <p>Whether you're hitting a pairing snag, connection issue, agent adapter quirk, terminal rendering bug, or anything else, drop us an email and we'll get back to you as soon as possible.</p>
+        <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+        <div class="contact-box">
+          <strong>To help us resolve your issue faster, please include</strong>
+          <ul class="simple-list">
+            <li>Device model (e.g., iPhone 16 Pro, iPad Air)</li>
+            <li>iOS / iPadOS version</li>
+            <li>Shellcove app version (Settings → About)</li>
+            <li>shellcoved daemon version (<code>shellcoved --version</code>)</li>
+            <li>Daemon host platform (macOS / Linux distro)</li>
+            <li>A detailed description and steps to reproduce</li>
+            <li>Screenshots and logs if available (please redact anything sensitive)</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <footer class="card footer">
+      <p><a href="./index.html">Home</a> | <a href="./privacy.html">Privacy Policy</a></p>
+      <small>&copy; 2026 Shellcove</small>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AudioTools - Feedback / 意见反馈</title>
+  <meta name="description" content="AudioTools 意见反馈 - 您的每一条建议都是我们前进的动力。Feedback - Your voice helps us build a better app.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">AudioTools</a>
+      <div class="nav-links">
+        <a href="./index.html">Home / 首页</a>
+        <a href="./privacy.html">Privacy / 隐私政策</a>
+        <a href="./support.html">Support / 支持</a>
+        <a class="active" href="./feedback.html">Feedback / 反馈</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <!-- Form -->
+    <div id="feedbackForm">
+      <section class="card page-title">
+        <div class="eyebrow">Feedback / 意见反馈</div>
+        <h1>意见反馈</h1>
+        <p>您的每一条建议都是我们前进的动力 / Your voice helps us build a better app</p>
+      </section>
+
+      <div class="card" style="padding: 28px;">
+        <form class="feedback-form" onsubmit="return handleSubmit(event)">
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackType">反馈类型 / What's this about?</label>
+            <select class="form-select" id="feedbackType" required>
+              <option value="" disabled selected>请选择类型... / Choose a category...</option>
+              <option value="bug">遇到问题 / I found a bug</option>
+              <option value="feature">功能建议 / I have a feature idea</option>
+              <option value="ux">体验优化 / Usability improvement</option>
+              <option value="other">其他 / Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackContent">详细描述 / Tell us more</label>
+            <textarea
+              class="form-textarea"
+              id="feedbackContent"
+              placeholder="请尽量详细地描述您遇到的问题或想法，这能帮助我们更好地理解和改进。&#10;The more detail you share, the better we can help — feel free to describe what happened, what you expected, or what you'd like to see."
+              required
+              maxlength="2000"
+              oninput="updateCharCount()"
+            ></textarea>
+            <div class="char-count" id="charCount">0 / 2000</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactInfo">联系方式 / How can we reach you? <span class="optional">(选填 / optional)</span></label>
+            <input
+              class="form-input"
+              id="contactInfo"
+              type="text"
+              placeholder="您的邮箱、微信号 / Your email or WeChat ID..."
+              maxlength="100"
+            >
+            <p class="form-hint">留下联系方式，方便我们跟进处理结果或了解更多细节。We may follow up if we need more details.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="deviceInfo">您的设备 / Your device <span class="optional">(选填 / optional)</span></label>
+            <input
+              class="form-input"
+              id="deviceInfo"
+              type="text"
+              placeholder="例如 iPhone 16 / iPad Air / iOS 18..."
+              maxlength="100"
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="appVersion">App 版本 / App version <span class="optional">(选填 / optional)</span></label>
+            <input
+              class="form-input"
+              id="appVersion"
+              type="text"
+              placeholder="例如 2.4.0"
+              maxlength="20"
+            >
+          </div>
+
+          <button class="submit-btn" type="submit" id="submitBtn">提交反馈 / Send Feedback</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success -->
+    <div id="feedbackSuccess" class="feedback-result">
+      <div class="card" style="padding: 48px 28px;">
+        <div class="result-icon">&#10003;</div>
+        <div class="result-title">感谢您的宝贵反馈！</div>
+        <p class="result-desc">Thank you so much! Your feedback means a lot to us and will help make AudioTools even better.</p>
+        <button class="reset-btn" onclick="resetForm()">继续反馈 / Share More Feedback</button>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <div id="feedbackError" class="feedback-result">
+      <div class="card" style="padding: 48px 28px;">
+        <div class="result-icon">!</div>
+        <div class="result-title">提交遇到了问题</div>
+        <p class="result-desc" id="errorMsg">别担心，请稍后再试一次。您也可以直接发邮件给我们：zhizuzhefu@foxmail.com</p>
+        <button class="reset-btn" onclick="resetForm()">再试一次 / Try Again</button>
+      </div>
+    </div>
+
+    <footer class="card footer" style="margin-top: 40px;">
+      <p>更愿意写邮件？随时联系我们 / Prefer email? Reach us anytime</p>
+      <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Read URL params — app can pass version like ?v=2.4.0&device=iPhone16
+    (function prefillFromURL() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('v')) {
+        document.getElementById('appVersion').value = params.get('v');
+      }
+      if (params.get('device')) {
+        document.getElementById('deviceInfo').value = params.get('device');
+      }
+    })();
+
+    function updateCharCount() {
+      var textarea = document.getElementById('feedbackContent');
+      var counter = document.getElementById('charCount');
+      var len = textarea.value.length;
+      counter.textContent = len + ' / 2000';
+      counter.className = len > 1800 ? 'char-count warn' : 'char-count';
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = '正在提交... / Sending...';
+
+      var data = {
+        type: document.getElementById('feedbackType').value,
+        content: document.getElementById('feedbackContent').value.trim(),
+        contact: document.getElementById('contactInfo').value.trim(),
+        device: document.getElementById('deviceInfo').value.trim(),
+        appVersion: document.getElementById('appVersion').value.trim(),
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+      };
+
+      // ---------------------------------------------------------------
+      // TODO: Replace with your actual backend endpoint.
+      //
+      // Option A — Your own API:
+      //   fetch('https://your-api.com/feedback', {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify(data)
+      //   })
+      //
+      // Option B — Email service (e.g. Formspree):
+      //   fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify(data)
+      //   })
+      //
+      // Option C — mailto fallback (current implementation):
+      // ---------------------------------------------------------------
+
+      // Current: mailto fallback — opens user's email client with prefilled content
+      var subject = encodeURIComponent('[AudioTools] ' + data.type + ' - User Feedback');
+      var body = encodeURIComponent(
+        '--- Feedback / 反馈详情 ---\n\n' +
+        'Category / 类型: ' + data.type + '\n\n' +
+        'Description / 描述:\n' + data.content + '\n\n' +
+        '--- User Info / 用户信息 ---\n\n' +
+        'Contact / 联系方式: ' + (data.contact || 'Not provided / 未填写') + '\n' +
+        'Device / 设备: ' + (data.device || 'Not provided / 未填写') + '\n' +
+        'App Version / 版本: ' + (data.appVersion || 'Not provided / 未填写') + '\n' +
+        'Submitted / 提交时间: ' + data.timestamp
+      );
+
+      window.location.href = 'mailto:zhizuzhefu@foxmail.com?subject=' + subject + '&body=' + body;
+
+      // Show success after a short delay (mailto doesn't return status)
+      setTimeout(function() {
+        showResult('feedbackSuccess');
+      }, 500);
+
+      return false;
+    }
+
+    function showResult(id) {
+      document.getElementById('feedbackForm').style.display = 'none';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+      document.getElementById(id).className = 'feedback-result visible';
+    }
+
+    function resetForm() {
+      document.getElementById('feedbackForm').style.display = 'block';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+
+      document.getElementById('feedbackType').selectedIndex = 0;
+      document.getElementById('feedbackContent').value = '';
+      document.getElementById('contactInfo').value = '';
+      document.getElementById('charCount').textContent = '0 / 2000';
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.textContent = '提交反馈 / Send Feedback';
+    }
+  </script>
+</body>
+</html>
