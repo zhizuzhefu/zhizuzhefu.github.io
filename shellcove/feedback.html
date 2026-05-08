@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shellcove - 意见反馈 / Feedback</title>
+  <meta name="description" content="Shellcove 意见反馈 / Feedback - Tell us what is working, broken, or missing.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">shellcove</a>
+      <div class="nav-links">
+        <a href="./index.html">Home / 首页</a>
+        <a href="./privacy.html">Privacy / 隐私政策</a>
+        <a href="./support.html">Support / 支持</a>
+        <a class="active" href="./feedback.html">Feedback / 反馈</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div id="feedbackForm">
+      <section class="card page-title">
+        <div class="eyebrow">Feedback / 意见反馈</div>
+        <h1>Shellcove 意见反馈</h1>
+        <p>告诉我们哪里好用、哪里卡住、还缺什么。 / Tell us what is working, broken, or missing.</p>
+      </section>
+
+      <section class="card feedback-card">
+        <form class="feedback-form" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="feedbackType">反馈类型 / What's this about?</label>
+            <select class="form-select" id="feedbackType" required>
+              <option value="" disabled selected>请选择类型... / Choose a category...</option>
+              <option value="bug">遇到问题 / I found a bug</option>
+              <option value="feature">功能建议 / I have a feature idea</option>
+              <option value="connection">连接或配对 / Connection or pairing</option>
+              <option value="agent">Agent 适配 / Agent integration</option>
+              <option value="other">其他 / Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackContent">详细描述 / Tell us more</label>
+            <textarea
+              class="form-textarea"
+              id="feedbackContent"
+              placeholder="请尽量描述你遇到的问题、复现步骤、期望结果，或你希望 Shellcove 支持的新能力。&#10;Share what happened, what you expected, and any context that can help us understand the issue."
+              required
+              maxlength="2000"
+              oninput="updateCharCount()"
+            ></textarea>
+            <div class="char-count" id="charCount">0 / 2000</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactInfo">联系方式 / How can we reach you? <span class="optional">(选填 / optional)</span></label>
+            <input
+              class="form-input"
+              id="contactInfo"
+              type="text"
+              placeholder="您的邮箱、GitHub 或其他联系方式 / Email, GitHub, or another contact..."
+              maxlength="100"
+            >
+            <p class="form-hint">留下联系方式，方便我们跟进处理结果或了解更多细节。 / We may follow up if we need more details.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="deviceInfo">iOS 设备 / iOS device <span class="optional">(选填 / optional)</span></label>
+              <input
+                class="form-input"
+                id="deviceInfo"
+                type="text"
+                placeholder="例如 iPhone 16 Pro / iPad Air..."
+                maxlength="100"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="hostInfo">Daemon 主机 / Daemon host <span class="optional">(选填 / optional)</span></label>
+              <input
+                class="form-input"
+                id="hostInfo"
+                type="text"
+                placeholder="例如 macOS 15 / Ubuntu 24.04..."
+                maxlength="100"
+              >
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="appVersion">App 版本 / App version <span class="optional">(选填 / optional)</span></label>
+              <input
+                class="form-input"
+                id="appVersion"
+                type="text"
+                placeholder="例如 1.0"
+                maxlength="20"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="daemonVersion">shellcoved 版本 / Daemon version <span class="optional">(选填 / optional)</span></label>
+              <input
+                class="form-input"
+                id="daemonVersion"
+                type="text"
+                placeholder="例如 0.1.0"
+                maxlength="40"
+              >
+            </div>
+          </div>
+
+          <button class="submit-btn" type="submit" id="submitBtn">提交反馈 / Send Feedback</button>
+        </form>
+      </section>
+    </div>
+
+    <div id="feedbackSuccess" class="feedback-result">
+      <section class="card result-card">
+        <div class="result-icon">&#10003;</div>
+        <div class="result-title">感谢您的宝贵反馈！</div>
+        <p class="result-desc">Thank you so much! Your feedback helps make Shellcove better for developers who want local, private agent control.</p>
+        <button class="reset-btn" onclick="resetForm()">继续反馈 / Share More Feedback</button>
+      </section>
+    </div>
+
+    <div id="feedbackError" class="feedback-result">
+      <section class="card result-card">
+        <div class="result-icon">!</div>
+        <div class="result-title">提交遇到了问题</div>
+        <p class="result-desc" id="errorMsg">别担心，请稍后再试一次。您也可以直接发邮件给我们：zhizuzhefu@foxmail.com</p>
+        <button class="reset-btn" onclick="resetForm()">再试一次 / Try Again</button>
+      </section>
+    </div>
+
+    <footer class="card footer">
+      <p>更愿意写邮件？随时联系我们 / Prefer email? Reach us anytime</p>
+      <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+      <small>&copy; 2026 Shellcove</small>
+    </footer>
+  </main>
+
+  <script>
+    // App or daemon can pass context like ?v=1.0&device=iPhone16&host=macOS&daemon=0.1.0
+    (function prefillFromURL() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('v')) {
+        document.getElementById('appVersion').value = params.get('v');
+      }
+      if (params.get('device')) {
+        document.getElementById('deviceInfo').value = params.get('device');
+      }
+      if (params.get('host')) {
+        document.getElementById('hostInfo').value = params.get('host');
+      }
+      if (params.get('daemon')) {
+        document.getElementById('daemonVersion').value = params.get('daemon');
+      }
+    })();
+
+    function updateCharCount() {
+      var textarea = document.getElementById('feedbackContent');
+      var counter = document.getElementById('charCount');
+      var len = textarea.value.length;
+      counter.textContent = len + ' / 2000';
+      counter.className = len > 1800 ? 'char-count warn' : 'char-count';
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = '正在提交... / Sending...';
+
+      var data = {
+        type: document.getElementById('feedbackType').value,
+        content: document.getElementById('feedbackContent').value.trim(),
+        contact: document.getElementById('contactInfo').value.trim(),
+        device: document.getElementById('deviceInfo').value.trim(),
+        host: document.getElementById('hostInfo').value.trim(),
+        appVersion: document.getElementById('appVersion').value.trim(),
+        daemonVersion: document.getElementById('daemonVersion').value.trim(),
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+      };
+
+      var subject = encodeURIComponent('[Shellcove] ' + data.type + ' - User Feedback');
+      var body = encodeURIComponent(
+        '--- Feedback / 反馈详情 ---\n\n' +
+        'Category / 类型: ' + data.type + '\n\n' +
+        'Description / 描述:\n' + data.content + '\n\n' +
+        '--- User Info / 用户信息 ---\n\n' +
+        'Contact / 联系方式: ' + (data.contact || 'Not provided / 未填写') + '\n' +
+        'iOS Device / iOS 设备: ' + (data.device || 'Not provided / 未填写') + '\n' +
+        'Daemon Host / Daemon 主机: ' + (data.host || 'Not provided / 未填写') + '\n' +
+        'App Version / App 版本: ' + (data.appVersion || 'Not provided / 未填写') + '\n' +
+        'Daemon Version / shellcoved 版本: ' + (data.daemonVersion || 'Not provided / 未填写') + '\n' +
+        'Submitted / 提交时间: ' + data.timestamp
+      );
+
+      window.location.href = 'mailto:zhizuzhefu@foxmail.com?subject=' + subject + '&body=' + body;
+
+      setTimeout(function() {
+        showResult('feedbackSuccess');
+      }, 500);
+
+      return false;
+    }
+
+    function showResult(id) {
+      document.getElementById('feedbackForm').style.display = 'none';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+      document.getElementById(id).className = 'feedback-result visible';
+    }
+
+    function resetForm() {
+      document.getElementById('feedbackForm').style.display = 'block';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+
+      document.getElementById('feedbackType').selectedIndex = 0;
+      document.getElementById('feedbackContent').value = '';
+      document.getElementById('contactInfo').value = '';
+      document.getElementById('deviceInfo').value = '';
+      document.getElementById('hostInfo').value = '';
+      document.getElementById('appVersion').value = '';
+      document.getElementById('daemonVersion').value = '';
+      document.getElementById('charCount').textContent = '0 / 2000';
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.textContent = '提交反馈 / Send Feedback';
+    }
+  </script>
+</body>
+</html>
