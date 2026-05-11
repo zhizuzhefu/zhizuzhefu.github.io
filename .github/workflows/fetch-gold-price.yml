@@ -18,21 +18,29 @@ jobs:
       - name: Create directory
         run: mkdir -p api/alphavantage
 
-      - name: Fetch gold spot price
+      - name: Fetch gold data
         continue-on-error: true
         run: |
           curl --request GET \
             --url "https://www.alphavantage.co/query?function=GOLD_SILVER_SPOT&symbol=GOLD&apikey=${{ secrets.ALPHAVANTAGE_API_KEY }}" \
             --header 'accept: application/json' \
             --fail \
-            -o api/alphavantage/gold.json.tmp \
-          && mv api/alphavantage/gold.json.tmp api/alphavantage/gold.json \
-          || rm -f api/alphavantage/gold.json.tmp
+            -o api/alphavantage/gold-spot.json.tmp \
+          && mv api/alphavantage/gold-spot.json.tmp api/alphavantage/gold-spot.json \
+          || rm -f api/alphavantage/gold-spot.json.tmp
+
+          curl --request GET \
+            --url "https://www.alphavantage.co/query?function=GOLD_SILVER_HISTORY&symbol=GOLD&interval=daily&apikey=${{ secrets.ALPHAVANTAGE_API_KEY }}" \
+            --header 'accept: application/json' \
+            --fail \
+            -o api/alphavantage/gold-history.json.tmp \
+          && mv api/alphavantage/gold-history.json.tmp api/alphavantage/gold-history.json \
+          || rm -f api/alphavantage/gold-history.json.tmp
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add api/alphavantage/gold.json
-          git diff --cached --quiet || git commit -m "Update gold price $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git add -A api/alphavantage
+          git diff --cached --quiet || git commit -m "Update gold data $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
