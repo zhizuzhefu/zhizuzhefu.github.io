@@ -26,9 +26,11 @@ jobs:
             local url="$2"
             local output="$3"
             local validator="$4"
+            local transformer="${5:-.}"
             local tmp="${output}.tmp"
+            local filtered="${tmp}.filtered"
 
-            rm -f "$tmp"
+            rm -f "$tmp" "$filtered"
 
             if ! curl --request GET \
               --url "$url" \
@@ -59,14 +61,22 @@ jobs:
               return 0
             fi
 
-            mv "$tmp" "$output"
+            if ! jq "$transformer" "$tmp" > "$filtered"; then
+              echo "::warning::Failed to transform ${label}; keeping existing ${output}"
+              rm -f "$tmp" "$filtered"
+              return 0
+            fi
+
+            mv "$filtered" "$output"
+            rm -f "$tmp"
           }
 
           fetch_open_exchange_rates \
             "latest exchange rates" \
             "https://openexchangerates.org/api/latest.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
             "api/openexchangerates/latest.json" \
-            'type == "object" and (.timestamp | type == "number") and (.base | type == "string") and (.rates | type == "object")'
+            'type == "object" and (.timestamp | type == "number") and (.base | type == "string") and (.rates | type == "object")' \
+            'del(.disclaimer, .license)'
 
           sleep 2
 
