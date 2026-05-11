@@ -18,27 +18,63 @@ jobs:
       - name: Create directory
         run: mkdir -p api/openexchangerates
 
-      - name: Fetch latest exchange rates
+      - name: Fetch exchange rates data
         continue-on-error: true
         run: |
-          curl --request GET \
-            --url "https://openexchangerates.org/api/latest.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
-            --header 'accept: application/json' \
-            --fail \
-            -o api/openexchangerates/latest.json.tmp \
-          && mv api/openexchangerates/latest.json.tmp api/openexchangerates/latest.json \
-          || rm -f api/openexchangerates/latest.json.tmp
+          fetch_open_exchange_rates() {
+            local label="$1"
+            local url="$2"
+            local output="$3"
+            local validator="$4"
+            local tmp="${output}.tmp"
 
-      - name: Fetch currencies
-        continue-on-error: true
-        run: |
-          curl --request GET \
-            --url "https://openexchangerates.org/api/currencies.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
-            --header 'accept: application/json' \
-            --fail \
-            -o api/openexchangerates/currencies.json.tmp \
-          && mv api/openexchangerates/currencies.json.tmp api/openexchangerates/currencies.json \
-          || rm -f api/openexchangerates/currencies.json.tmp
+            rm -f "$tmp"
+
+            if ! curl --request GET \
+              --url "$url" \
+              --header 'accept: application/json' \
+              --fail \
+              -o "$tmp"; then
+              echo "::warning::Failed to fetch ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if ! jq empty "$tmp" >/dev/null 2>&1; then
+              echo "::warning::Invalid JSON returned for ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if jq -e 'type == "object" and ((.error? == true) or has("status") or has("message") or has("description"))' "$tmp" >/dev/null; then
+              echo "::warning::Open Exchange Rates returned an error payload for ${label}; keeping existing ${output}"
+              jq -r '.description // .message // .status // "unknown error"' "$tmp"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if ! jq -e "$validator" "$tmp" >/dev/null; then
+              echo "::warning::Unexpected JSON shape for ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            mv "$tmp" "$output"
+          }
+
+          fetch_open_exchange_rates \
+            "latest exchange rates" \
+            "https://openexchangerates.org/api/latest.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
+            "api/openexchangerates/latest.json" \
+            'type == "object" and (.timestamp | type == "number") and (.base | type == "string") and (.rates | type == "object")'
+
+          sleep 2
+
+          fetch_open_exchange_rates \
+            "currencies" \
+            "https://openexchangerates.org/api/currencies.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
+            "api/openexchangerates/currencies.json" \
+            'type == "object" and length > 0 and all(.[]; type == "string")'
 
       - name: Commit and push
         run: |

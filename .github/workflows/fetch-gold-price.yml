@@ -21,21 +21,51 @@ jobs:
       - name: Fetch gold data
         continue-on-error: true
         run: |
-          curl --request GET \
-            --url "https://www.alphavantage.co/query?function=GOLD_SILVER_SPOT&symbol=GOLD&apikey=${{ secrets.ALPHAVANTAGE_API_KEY }}" \
-            --header 'accept: application/json' \
-            --fail \
-            -o api/alphavantage/gold-spot.json.tmp \
-          && mv api/alphavantage/gold-spot.json.tmp api/alphavantage/gold-spot.json \
-          || rm -f api/alphavantage/gold-spot.json.tmp
+          fetch_alpha_vantage() {
+            local label="$1"
+            local url="$2"
+            local output="$3"
+            local tmp="${output}.tmp"
 
-          curl --request GET \
-            --url "https://www.alphavantage.co/query?function=GOLD_SILVER_HISTORY&symbol=GOLD&interval=daily&apikey=${{ secrets.ALPHAVANTAGE_API_KEY }}" \
-            --header 'accept: application/json' \
-            --fail \
-            -o api/alphavantage/gold-history.json.tmp \
-          && mv api/alphavantage/gold-history.json.tmp api/alphavantage/gold-history.json \
-          || rm -f api/alphavantage/gold-history.json.tmp
+            rm -f "$tmp"
+
+            if ! curl --request GET \
+              --url "$url" \
+              --header 'accept: application/json' \
+              --fail \
+              -o "$tmp"; then
+              echo "::warning::Failed to fetch ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if ! jq empty "$tmp" >/dev/null 2>&1; then
+              echo "::warning::Invalid JSON returned for ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if jq -e 'type == "object" and (has("Information") or has("Note") or has("Error Message"))' "$tmp" >/dev/null; then
+              echo "::warning::Alpha Vantage returned a throttling/error payload for ${label}; keeping existing ${output}"
+              jq -r '.Information // .Note // ."Error Message"' "$tmp"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            mv "$tmp" "$output"
+          }
+
+          fetch_alpha_vantage \
+            "gold spot" \
+            "https://www.alphavantage.co/query?function=GOLD_SILVER_SPOT&symbol=GOLD&apikey=${{ secrets.ALPHAVANTAGE_API_KEY }}" \
+            "api/alphavantage/gold-spot.json"
+
+          sleep 2
+
+          fetch_alpha_vantage \
+            "gold history" \
+            "https://www.alphavantage.co/query?function=GOLD_SILVER_HISTORY&symbol=GOLD&interval=daily&apikey=${{ secrets.ALPHAVANTAGE_API_KEY }}" \
+            "api/alphavantage/gold-history.json"
 
       - name: Commit and push
         run: |
