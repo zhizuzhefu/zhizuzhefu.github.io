@@ -1,0 +1,95 @@
+name: exchange-rates-fetch-update
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every day at 00:00 UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch-rates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Create directory
+        run: mkdir -p api/openexchangerates
+
+      - name: Fetch exchange rates data
+        continue-on-error: true
+        run: |
+          fetch_open_exchange_rates() {
+            local label="$1"
+            local url="$2"
+            local output="$3"
+            local validator="$4"
+            local transformer="${5:-.}"
+            local tmp="${output}.tmp"
+            local filtered="${tmp}.filtered"
+
+            rm -f "$tmp" "$filtered"
+
+            if ! curl --request GET \
+              --url "$url" \
+              --header 'accept: application/json' \
+              --fail \
+              -o "$tmp"; then
+              echo "::warning::Failed to fetch ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if ! jq empty "$tmp" >/dev/null 2>&1; then
+              echo "::warning::Invalid JSON returned for ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if jq -e 'type == "object" and ((.error? == true) or has("status") or has("message") or has("description"))' "$tmp" >/dev/null; then
+              echo "::warning::Open Exchange Rates returned an error payload for ${label}; keeping existing ${output}"
+              jq -r '.description // .message // .status // "unknown error"' "$tmp"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if ! jq -e "$validator" "$tmp" >/dev/null; then
+              echo "::warning::Unexpected JSON shape for ${label}; keeping existing ${output}"
+              rm -f "$tmp"
+              return 0
+            fi
+
+            if ! jq "$transformer" "$tmp" > "$filtered"; then
+              echo "::warning::Failed to transform ${label}; keeping existing ${output}"
+              rm -f "$tmp" "$filtered"
+              return 0
+            fi
+
+            mv "$filtered" "$output"
+            rm -f "$tmp"
+          }
+
+          fetch_open_exchange_rates \
+            "latest exchange rates" \
+            "https://openexchangerates.org/api/latest.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
+            "api/openexchangerates/latest.json" \
+            'type == "object" and (.timestamp | type == "number") and (.base | type == "string") and (.rates | type == "object")' \
+            'del(.disclaimer, .license)'
+
+          sleep 2
+
+          fetch_open_exchange_rates \
+            "currencies" \
+            "https://openexchangerates.org/api/currencies.json?app_id=${{ secrets.OPENEXCHANGERATES_APP_ID }}" \
+            "api/openexchangerates/currencies.json" \
+            'type == "object" and length > 0 and all(.[]; type == "string")'
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add api/openexchangerates/latest.json api/openexchangerates/currencies.json
+          git diff --cached --quiet || git commit -m "Update exchange rates $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

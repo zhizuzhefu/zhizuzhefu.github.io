@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>反馈 · 宽心 HeartEase</title>
+  <meta name="description" content="宽心 HeartEase 意见反馈。慢慢说，没关系。Tell us how it felt — we read every line.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html"><span class="brand-mark"></span>宽心 HeartEase</a>
+      <div class="nav-links">
+        <a href="./index.html">Home / 首页</a>
+        <a href="./privacy.html">Privacy / 隐私政策</a>
+        <a href="./support.html">Support / 支持</a>
+        <a class="active" href="./feedback.html">Feedback / 反馈</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <div id="feedbackForm">
+      <section class="card page-title">
+        <div class="eyebrow">Feedback / 意见反馈</div>
+        <h1>慢慢说，没关系</h1>
+        <p>你愿意写的每一条，我们都会认真读 / Every line you share lands with us.</p>
+      </section>
+
+      <div class="card" style="padding: 28px;">
+        <form class="feedback-form" onsubmit="return handleSubmit(event)">
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackType">反馈类型 / What's this about?</label>
+            <select class="form-select" id="feedbackType" required>
+              <option value="" disabled selected>请选择类型... / Choose a category...</option>
+              <option value="quote">文案建议 / About a specific line</option>
+              <option value="bug">遇到问题 / I found a bug</option>
+              <option value="feature">功能建议 / I have a feature idea</option>
+              <option value="ux">体验优化 / Usability improvement</option>
+              <option value="other">其他 / Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackContent">详细描述 / Tell us more</label>
+            <textarea
+              class="form-textarea"
+              id="feedbackContent"
+              placeholder="可以说说你看到这条话的感受，或者你希望宽心未来怎么陪你。&#10;Tell us how a line landed, or how you'd like HeartEase to keep you company next."
+              required
+              maxlength="2000"
+              oninput="updateCharCount()"
+            ></textarea>
+            <div class="char-count" id="charCount">0 / 2000</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactInfo">联系方式 / How can we reach you? <span class="optional">(选填 / optional)</span></label>
+            <input
+              class="form-input"
+              id="contactInfo"
+              type="text"
+              placeholder="您的邮箱、微信号 / Your email or WeChat ID..."
+              maxlength="100"
+            >
+            <p class="form-hint">留下联系方式，方便我们跟进。不留也完全没关系。<br>Leave it blank if you'd rather not — that's okay too.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="deviceInfo">您的设备 / Your device <span class="optional">(选填 / optional)</span></label>
+            <input
+              class="form-input"
+              id="deviceInfo"
+              type="text"
+              placeholder="例如 iPhone 17 / iPad Air / iOS 18..."
+              maxlength="100"
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="appVersion">App 版本 / App version <span class="optional">(选填 / optional)</span></label>
+            <input
+              class="form-input"
+              id="appVersion"
+              type="text"
+              placeholder="例如 1.0"
+              maxlength="20"
+            >
+          </div>
+
+          <button class="submit-btn" type="submit" id="submitBtn">提交反馈 / Send Feedback</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="feedbackSuccess" class="feedback-result">
+      <div class="card" style="padding: 48px 28px;">
+        <div class="result-icon">✓</div>
+        <div class="result-title">谢谢你愿意告诉我们</div>
+        <p class="result-desc">Thank you for taking the time to tell us. Your words will help us make 宽心 a little gentler.</p>
+        <button class="reset-btn" onclick="resetForm()">再说一条 / Share another</button>
+      </div>
+    </div>
+
+    <div id="feedbackError" class="feedback-result">
+      <div class="card" style="padding: 48px 28px;">
+        <div class="result-icon">!</div>
+        <div class="result-title">提交遇到了问题</div>
+        <p class="result-desc" id="errorMsg">别担心，请稍后再试一次。也可以直接写邮件给我们：zhizuzhefu@foxmail.com</p>
+        <button class="reset-btn" onclick="resetForm()">再试一次 / Try Again</button>
+      </div>
+    </div>
+
+    <footer class="card footer" style="margin-top: 40px;">
+      <p>更愿意写邮件？随时联系我们 / Prefer email? Reach us anytime</p>
+      <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+    </footer>
+  </main>
+
+  <script>
+    (function prefillFromURL() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('v')) {
+        document.getElementById('appVersion').value = params.get('v');
+      }
+      if (params.get('device')) {
+        document.getElementById('deviceInfo').value = params.get('device');
+      }
+    })();
+
+    function updateCharCount() {
+      var textarea = document.getElementById('feedbackContent');
+      var counter = document.getElementById('charCount');
+      var len = textarea.value.length;
+      counter.textContent = len + ' / 2000';
+      counter.className = len > 1800 ? 'char-count warn' : 'char-count';
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = '正在提交... / Sending...';
+
+      var data = {
+        type: document.getElementById('feedbackType').value,
+        content: document.getElementById('feedbackContent').value.trim(),
+        contact: document.getElementById('contactInfo').value.trim(),
+        device: document.getElementById('deviceInfo').value.trim(),
+        appVersion: document.getElementById('appVersion').value.trim(),
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+      };
+
+      var subject = encodeURIComponent('[宽心 HeartEase] ' + data.type + ' - User Feedback');
+      var body = encodeURIComponent(
+        '--- Feedback / 反馈详情 ---\n\n' +
+        'Category / 类型: ' + data.type + '\n\n' +
+        'Description / 描述:\n' + data.content + '\n\n' +
+        '--- User Info / 用户信息 ---\n\n' +
+        'Contact / 联系方式: ' + (data.contact || 'Not provided / 未填写') + '\n' +
+        'Device / 设备: ' + (data.device || 'Not provided / 未填写') + '\n' +
+        'App Version / 版本: ' + (data.appVersion || 'Not provided / 未填写') + '\n' +
+        'Submitted / 提交时间: ' + data.timestamp
+      );
+
+      window.location.href = 'mailto:zhizuzhefu@foxmail.com?subject=' + subject + '&body=' + body;
+
+      setTimeout(function() {
+        showResult('feedbackSuccess');
+      }, 500);
+
+      return false;
+    }
+
+    function showResult(id) {
+      document.getElementById('feedbackForm').style.display = 'none';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+      document.getElementById(id).className = 'feedback-result visible';
+    }
+
+    function resetForm() {
+      document.getElementById('feedbackForm').style.display = 'block';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+
+      document.getElementById('feedbackType').selectedIndex = 0;
+      document.getElementById('feedbackContent').value = '';
+      document.getElementById('contactInfo').value = '';
+      document.getElementById('charCount').textContent = '0 / 2000';
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.textContent = '提交反馈 / Send Feedback';
+    }
+  </script>
+</body>
+</html>
