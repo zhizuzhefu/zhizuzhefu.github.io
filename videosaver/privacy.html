@@ -38,17 +38,19 @@
         <ul class="feature-list">
           <li>你主动粘贴或分享给 App 的 URL、文本、图片或视频。</li>
           <li>保存素材所需的文件名、来源域名、时长、大小、标签、裁切比例和缩略图。</li>
+          <li>当你主动打开平台浏览器会话时，App 可能读取并保存匹配该平台域名的 Cookie，用于后续解析你提交的公开链接。</li>
+          <li>当你在 App 内浏览器中选择扫描可见素材时，App 会在本机检查当前网页 DOM、meta 和浏览器资源记录里已经暴露的 http/https 图片或视频候选。</li>
           <li>你主动通过邮件或反馈页面提交的内容。</li>
         </ul>
 
         <h3>网络访问</h3>
-        <p>当你提交链接时，影存会访问该公开链接以解析可保存资源；也可能访问公开 JSON 配置文件以更新平台解析规则。影存不会读取其他 App 的私有数据，不会帮助绕过登录权限、DRM、付费墙、私密内容或平台限制。</p>
+        <p>当你提交链接时，影存会访问该公开链接以解析可保存资源；也可能访问公开 JSON 配置文件以更新平台解析规则。若平台要求浏览器会话，只有在你主动打开 App 内 WKWebView 并完成平台自己的登录或验证后，App 才会读取本机 Cookie。App 内浏览器的可见素材扫描只在你的设备上运行，用于列出当前网页已经暴露给本机浏览器的 http/https 候选。影存不会读取其他 App 的私有数据，不会帮助绕过登录权限、DRM、付费墙、加密流、私密内容或平台限制。</p>
 
         <h3>本地存储</h3>
-        <p>素材文件、标签、编辑元数据和下载记录默认保存在你的设备本地。卸载 App 或清理 App 数据可能会删除这些本地文件。</p>
+        <p>素材文件、标签、编辑元数据和下载记录默认保存在你的设备本地。平台浏览器会话 Cookie 也只保存在 App 沙盒中，直到 Cookie 过期、平台使其失效，或你在设置中清除。网页可见素材候选不会上传到影存服务器。卸载 App 或清理 App 数据可能会删除这些本地文件。</p>
 
         <h3>数据共享</h3>
-        <p>我们不会出售、出租或共享你的个人素材。除非你主动导出、分享或提交反馈，影存不会向第三方发送你的素材内容。</p>
+        <p>我们不会出售、出租或共享你的个人素材。除非你主动导出、分享或提交反馈，影存不会向第三方发送你的素材内容；平台 Cookie 不会被上传、同步、出售、分析、展示或写入公开解析配置。</p>
 
         <h3>联系我们</h3>
         <p>隐私相关问题请通过 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a> 联系我们。</p>
@@ -63,17 +65,19 @@
         <ul class="feature-list">
           <li>URLs, text, images, or videos you paste or share into the app.</li>
           <li>Metadata needed to save and organize assets, such as filename, source domain, duration, size, tags, crop-ratio notes, and thumbnails.</li>
+          <li>When you intentionally open a platform browser session, the app may read and save cookies matching that platform domain for later parsing of links you submit.</li>
+          <li>When you choose to scan visible media in the in-app browser, the app locally checks current-page DOM, metadata, and browser resource records for http/https image or video candidates already exposed to that page.</li>
           <li>Feedback you intentionally send by email or through the feedback page.</li>
         </ul>
 
         <h3>Network access</h3>
-        <p>When you submit a link, YingCun may access that public link to resolve saveable resources. It may also fetch public JSON config to update platform parsing rules. YingCun does not read private data from other apps and does not bypass login walls, DRM, paywalls, private content, or platform restrictions.</p>
+        <p>When you submit a link, YingCun may access that public link to resolve saveable resources. It may also fetch public JSON config to update platform parsing rules. If a platform requires a browser session, cookies are read only after you intentionally open the in-app WKWebView and complete the platform's own login or challenge. Visible-media scanning in the in-app browser runs only on your device and lists http/https candidates already exposed to the local browser page. YingCun does not read private data from other apps and does not bypass login walls, DRM, paywalls, encrypted streams, private content, or platform restrictions.</p>
 
         <h3>Local storage</h3>
-        <p>Asset files, tags, edit metadata, and download records are stored locally on your device by default. Removing the app or clearing app data may delete these local files.</p>
+        <p>Asset files, tags, edit metadata, and download records are stored locally on your device by default. Platform browser-session cookies are also stored only in the app sandbox until they expire, the platform invalidates them, or you clear them in Settings. Visible-media candidates from web pages are not uploaded to YingCun servers. Removing the app or clearing app data may delete these local files.</p>
 
         <h3>Sharing</h3>
-        <p>We do not sell, rent, or share your personal assets. YingCun does not send your saved media to third parties unless you explicitly export, share, or submit feedback.</p>
+        <p>We do not sell, rent, or share your personal assets. YingCun does not send your saved media to third parties unless you explicitly export, share, or submit feedback. Platform cookies are not uploaded, synced, sold, analyzed, displayed, or written into public resolver config.</p>
 
         <h3>Contact</h3>
         <p>For privacy questions, contact <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>.</p>

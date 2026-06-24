@@ -40,6 +40,8 @@
               <li>素材保存在哪里？默认保存在你的设备本地素材库中。</li>
               <li>如何整理素材？使用标签、搜索、无标签筛选、文件名编辑、裁切比例记录和视频封面提取。</li>
               <li>解析规则为什么会更新？公开平台的 JSON 结构可能变化，影存会通过公开配置更新规则，但解析和下载仍在 App 内本机执行。</li>
+              <li>为什么要打开本机浏览器会话？部分公开平台需要你在平台自己的网页里完成登录或验证。影存只保存匹配平台域名的本机 Cookie，直到过期或你在设置中清除；Cookie 不上传，也不启用服务端下载。</li>
+              <li>可见素材扫描是什么？在你主动打开的浏览器会话里，影存可以列出当前网页已经暴露给本机浏览器的 http/https 图片、视频或 HLS 候选；你选择后仍需确认使用权。blob/data URL、DRM、加密流、私密或付费内容不支持。</li>
             </ul>
           </div>
           <div class="lang-block">
@@ -50,6 +52,8 @@
               <li>Where are assets stored? Assets are stored in your on-device library by default.</li>
               <li>How do I organize assets? Use tags, search, untagged filters, filename edits, crop-ratio notes, and video cover extraction.</li>
               <li>Why do resolver rules update? Public platform JSON shapes can change. YingCun updates public rule config while parsing and download remain local in the app.</li>
+              <li>Why open a local browser session? Some public platforms require you to complete their own login or challenge in a web page. YingCun saves only matching platform cookies locally until expiry or clearing in Settings. Cookies are not uploaded and do not enable server-side downloading.</li>
+              <li>What is visible-media scanning? In a browser session you intentionally open, YingCun can list http/https image, video, or HLS candidates already exposed to the local browser page. You still choose candidates and confirm rights. Blob/data URLs, DRM, encrypted streams, private or paid content are not supported.</li>
             </ul>
           </div>
         </div>
