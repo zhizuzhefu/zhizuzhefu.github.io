@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 1,
+  "rulesConfigEndpoint": "https://apps.zhizuzhefu.com/api/videosaver/extractor-config.json",
+  "providers": [
+    {
+      "id": "direct",
+      "displayName": "直链",
+      "hosts": [],
+      "headers": {},
+      "requiresFreshCookies": false,
+      "workflow": {
+        "version": 1,
+        "steps": [
+          {
+            "id": "classify-direct-url",
+            "action": "classifyDirectMediaURL",
+            "extract": {
+              "source": "inputURL",
+              "idPatterns": [
+                "\\.(mp4|mov|m4v|m3u8)(\\?|$)",
+                "\\.(jpg|jpeg|png|webp|heic|heif|avif)(\\?|$)",
+                "[?&]format=(jpg|jpeg|png|webp|avif)",
+                "imageView2/format/(jpg|jpeg|png|webp|avif)"
+              ]
+            },
+            "uses": ["inputURL"],
+            "outputs": ["mediaKind", "delivery", "suggestedFilename"],
+            "onFailure": "restricted"
+          },
+          {
+            "id": "download-direct-resource",
+            "action": "downloadResource",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{inputURL}}",
+              "headers": {},
+              "timeoutSeconds": 60
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "restrictedIf": ["textualContentType", "htmlOrJSONChallengeBody"]
+            },
+            "uses": ["inputURL", "mediaKind", "delivery"],
+            "outputs": ["localFile"],
+            "onFailure": "restricted"
+          }
+        ]
+      },
+      "notes": "Direct public image/video URLs are downloaded locally."
+    },
+    {
+      "id": "douyin",
+      "displayName": "抖音",
+      "hosts": ["douyin.com", "v.douyin.com", "iesdouyin.com"],
+      "headers": {
+        "Referer": "https://www.douyin.com/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+      },
+      "requiresFreshCookies": true,
+      "workflow": {
+        "version": 1,
+        "steps": [
+          {
+            "id": "extract-aweme-id",
+            "action": "extractIdentifier",
+            "extract": {
+              "source": "inputURL",
+              "idPatterns": [
+                "/video/(\\d+)",
+                "/note/(\\d+)",
+                "/share/video/(\\d+)",
+                "/share/note/(\\d+)",
+                "[?&]aweme_id=(\\d+)",
+                "[?&]modal_id=(\\d+)"
+              ]
+            },
+            "uses": ["inputURL"],
+            "outputs": ["awemeID", "canonicalURL"],
+            "onFailure": "unsupported"
+          },
+          {
+            "id": "open-public-page",
+            "action": "requestPublicPage",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{canonicalURL}}",
+              "headers": {
+                "Referer": "https://www.douyin.com/",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "cookiePolicy": "storeSetCookieAs=publicSessionCookies; doNotPersistSecrets",
+              "timeoutSeconds": 20
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["text/html"],
+              "restrictedIf": ["loginPage", "captchaPage", "riskControlPage"]
+            },
+            "uses": ["canonicalURL"],
+            "outputs": ["publicSessionCookies"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "request-aweme-detail",
+            "action": "requestJSON",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{api.detailEndpoint}}",
+              "headers": {
+                "Accept": "application/json,text/plain,*/*",
+                "Referer": "https://www.douyin.com/",
+                "User-Agent": "{{headers.User-Agent}}",
+                "Cookie": "{{publicSessionCookies}}"
+              },
+              "query": {
+                "aweme_id": "{{awemeID}}",
+                "aid": "{{api.detailQueryItems.aid}}",
+                "channel": "{{api.detailQueryItems.channel}}",
+                "device_platform": "{{api.detailQueryItems.device_platform}}",
+                "browser_name": "{{api.detailQueryItems.browser_name}}",
+                "browser_platform": "{{api.detailQueryItems.browser_platform}}",
+                "browser_language": "{{api.detailQueryItems.browser_language}}",
+                "cookie_enabled": "{{api.detailQueryItems.cookie_enabled}}"
+              },
+              "cookiePolicy": "sendRuntimePublicCookiesOnly; doNotPersistSecrets",
+              "timeoutSeconds": 25
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["application/json", "text/plain"],
+              "restrictedIf": ["emptyAwemeDetail", "loginRequired", "riskControl", "htmlChallengeBody"]
+            },
+            "uses": ["awemeID", "publicSessionCookies"],
+            "outputs": ["detailJSON"],
+            "onFailure": "restricted"
+          },
+          {
+            "id": "parse-media-resources",
+            "action": "applyJSONRules",
+            "extract": {
+              "source": "detailJSON",
+              "jsonRulesRef": "api.jsonRules"
+            },
+            "uses": ["detailJSON", "api.jsonRules"],
+            "outputs": ["resources", "fallbackURLs", "metadata"],
+            "onFailure": "restricted"
+          },
+          {
+            "id": "download-resources",
+            "action": "downloadResources",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{resource.url}}",
+              "headers": {
+                "Referer": "https://www.douyin.com/",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "timeoutSeconds": 60
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "restrictedIf": ["textualContentType", "htmlOrJSONChallengeBody"],
+              "emptyBody": "retryFallbackThenFail"
+            },
+            "uses": ["resources", "fallbackURLs", "headers"],
+            "outputs": ["localFiles"],
+            "onFailure": "restricted"
+          }
+        ]
+      },
+      "api": {
+        "detailEndpoint": "https://www.douyin.com/aweme/v1/web/aweme/detail/",
+        "detailQueryItems": {
+          "aid": "6383",
+          "channel": "channel_pc_web",
+          "device_platform": "webapp",
+          "browser_name": "Safari",
+          "browser_platform": "MacIntel",
+          "browser_language": "zh-CN",
+          "cookie_enabled": "true"
+        }
+      },
+      "notes": "Uses the public aweme detail endpoint. Fresh cookies/signature policy and JSON extraction rules can be updated in Application Support/extractor-config.json or by API-delivered config."
+    },
+    {
+      "id": "xiaohongshu",
+      "displayName": "小红书",
+      "hosts": ["xiaohongshu.com", "xhslink.com", "rednote.com"],
+      "headers": {
+        "Referer": "https://www.xiaohongshu.com/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+      },
+      "requiresFreshCookies": false,
+      "workflow": {
+        "version": 1,
+        "steps": [
+          {
+            "id": "normalize-note-url",
+            "action": "normalizeAndFollowRedirect",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{inputURL}}",
+              "headers": {
+                "Referer": "https://www.xiaohongshu.com/",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "timeoutSeconds": 20
+            },
+            "extract": {
+              "source": "finalURL",
+              "idPatterns": [
+                "/explore/([A-Za-z0-9]+)",
+                "/search_result/([A-Za-z0-9]+)",
+                "/note/([A-Za-z0-9]+)",
+                "/notes/([A-Za-z0-9]+)",
+                "[?&](?:note_id|item_id|source_note_id)=([A-Za-z0-9]+)"
+              ]
+            },
+            "uses": ["inputURL"],
+            "outputs": ["noteID", "xsecSource", "xsecToken", "canonicalURL"],
+            "onFailure": "unsupported"
+          },
+          {
+            "id": "request-public-page",
+            "action": "requestPublicPage",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{canonicalURL}}",
+              "headers": {
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Referer": "https://www.xiaohongshu.com/",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "cookiePolicy": "useRuntimePublicCookiesOnly; doNotPersistSecrets",
+              "timeoutSeconds": 25
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["text/html"],
+              "restrictedIf": ["loginPage", "ipRiskActivation", "securityUnavailable"]
+            },
+            "uses": ["canonicalURL"],
+            "outputs": ["initialStateHTML"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "parse-initial-state",
+            "action": "parseInitialState",
+            "extract": {
+              "source": "initialStateHTML",
+              "scriptURLPatterns": ["window.__INITIAL_STATE__"],
+              "jsonRulesRef": "api.jsonRules"
+            },
+            "uses": ["initialStateHTML", "api.jsonRules"],
+            "outputs": ["resources", "fallbackURLs", "metadata"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "request-feed-fallback",
+            "action": "requestJSON",
+            "request": {
+              "method": "POST",
+              "urlTemplate": "{{api.xhsFeedEndpoint}}",
+              "headers": {
+                "Accept": "application/json,text/plain,*/*",
+                "Content-Type": "application/json",
+                "Origin": "https://www.xiaohongshu.com",
+                "Referer": "{{canonicalURL}}",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "bodyTemplate": "{\"source_note_id\":\"{{noteID}}\",\"xsec_source\":\"{{xsecSource}}\",\"xsec_token\":\"{{xsecToken}}\",\"image_scenes\":[\"CRD_PRV_WEBP\"]}",
+              "cookiePolicy": "sendRuntimePublicCookiesOnly; doNotPersistSecrets",
+              "timeoutSeconds": 25
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["application/json", "text/plain"],
+              "restrictedIf": ["errorCode300012", "errorCode300031", "emptyNoteCard", "loginRequired", "htmlChallengeBody"]
+            },
+            "uses": ["noteID", "xsecSource", "xsecToken"],
+            "outputs": ["feedJSON"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "request-h5-note-fallback",
+            "action": "requestJSON",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{api.xhsNoteInfoEndpoint}}",
+              "headers": {
+                "Accept": "application/json,text/plain,*/*",
+                "Referer": "{{canonicalURL}}",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "query": {
+                "note_id": "{{noteID}}",
+                "xsec_source": "{{xsecSource}}",
+                "xsec_token": "{{xsecToken}}"
+              },
+              "cookiePolicy": "sendRuntimePublicCookiesOnly; doNotPersistSecrets",
+              "timeoutSeconds": 25
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["application/json", "text/plain"],
+              "restrictedIf": ["errorCode300012", "errorCode300031", "emptyNoteInfo", "loginRequired", "htmlChallengeBody"]
+            },
+            "uses": ["noteID", "xsecSource", "xsecToken"],
+            "outputs": ["noteInfoJSON"],
+            "onFailure": "restricted"
+          },
+          {
+            "id": "parse-fallback-json",
+            "action": "applyJSONRules",
+            "extract": {
+              "source": "feedJSON,noteInfoJSON",
+              "jsonRulesRef": "api.jsonRules"
+            },
+            "uses": ["feedJSON", "noteInfoJSON", "api.jsonRules"],
+            "outputs": ["resources", "fallbackURLs", "metadata"],
+            "onFailure": "restricted"
+          },
+          {
+            "id": "download-resources",
+            "action": "downloadResources",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{resource.url}}",
+              "headers": {
+                "Referer": "{{canonicalURL}}",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "timeoutSeconds": 60
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "restrictedIf": ["textualContentType", "htmlOrJSONChallengeBody"],
+              "emptyBody": "retryFallbackThenFail"
+            },
+            "uses": ["resources", "fallbackURLs", "headers"],
+            "outputs": ["localFiles"],
+            "onFailure": "restricted"
+          }
+        ]
+      },
+      "api": {
+        "xhsFeedEndpoint": "https://edith.xiaohongshu.com/api/sns/web/v1/feed",
+        "xhsNoteInfoEndpoint": "https://edith.xiaohongshu.com/api/sns/h5/v1/note_info"
+      },
+      "notes": "Parses window.__INITIAL_STATE__ and feed/h5-style note JSON for direct/HLS video, images, and live-photo pairs; restricted login/IP-risk responses stay blocked."
+    },
+    {
+      "id": "xcom",
+      "displayName": "X.com",
+      "hosts": ["x.com", "m.x.com", "mobile.x.com", "twitter.com", "m.twitter.com", "mobile.twitter.com", "t.co"],
+      "headers": {
+        "Referer": "https://x.com/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+      },
+      "requiresFreshCookies": false,
+      "workflow": {
+        "version": 1,
+        "steps": [
+          {
+            "id": "normalize-status-url",
+            "action": "normalizeAndFollowRedirect",
+            "request": {
+              "method": "HEAD_THEN_GET",
+              "urlTemplate": "{{inputURL}}",
+              "headers": {
+                "Referer": "https://x.com/",
+                "User-Agent": "curl"
+              },
+              "timeoutSeconds": 20
+            },
+            "extract": {
+              "source": "finalURL",
+              "idPatterns": [
+                "/status/(\\d+)",
+                "/statuses/(\\d+)",
+                "/i/videos/tweet/(\\d+)",
+                "/i/videos/(\\d+)",
+                "/i/cards/tfw/v1/(\\d+)"
+              ]
+            },
+            "uses": ["inputURL"],
+            "outputs": ["tweetID", "canonicalURL"],
+            "onFailure": "unsupported"
+          },
+          {
+            "id": "discover-platform-token",
+            "action": "discoverPublicToken",
+            "request": {
+              "method": "GET",
+              "url": "https://x.com/",
+              "headers": {
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Referer": "https://x.com/",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "timeoutSeconds": 20
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["text/html", "application/javascript"],
+              "restrictedIf": ["loginRequired", "rateLimited", "htmlChallengeBody"]
+            },
+            "extract": {
+              "source": "homeHTML,linkedScripts",
+              "scriptURLPatterns": ["<script[^>]+src=[\"']([^\"']+\\.js[^\"']*)[\"']"],
+              "tokenPatterns": [
+                "Bearer\\s+([A-Za-z0-9%._=-]{30,})",
+                "\"authorization\"\\s*:\\s*\"Bearer\\s+([^\"]{30,})\"",
+                "bearerToken[\"']?\\s*[:=]\\s*[\"']([^\"']{30,})[\"']",
+                "(AAAA[A-Za-z0-9%._=-]{30,})"
+              ]
+            },
+            "uses": ["headers"],
+            "outputs": ["platformToken"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "activate-guest-token",
+            "action": "requestJSON",
+            "request": {
+              "method": "POST",
+              "urlTemplate": "{{api.guestTokenEndpoint}}",
+              "headers": {
+                "Accept": "application/json,text/plain,*/*",
+                "Authorization": "Bearer {{platformToken}}",
+                "Origin": "https://x.com",
+                "Referer": "https://x.com/",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "timeoutSeconds": 25
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["application/json", "text/plain"],
+              "restrictedIf": ["missingGuestToken", "loginRequired", "rateLimited", "htmlChallengeBody"]
+            },
+            "uses": ["platformToken"],
+            "outputs": ["guestToken"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "request-graphql-tweet",
+            "action": "requestJSON",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{api.graphQLEndpoint}}",
+              "headers": {
+                "Accept": "application/json,text/plain,*/*",
+                "Authorization": "Bearer {{platformToken}}",
+                "Referer": "{{canonicalURL}}",
+                "User-Agent": "{{headers.User-Agent}}",
+                "x-guest-token": "{{guestToken}}",
+                "x-twitter-active-user": "yes",
+                "x-twitter-client-language": "en"
+              },
+              "query": {
+                "variables": "{\"tweetId\":\"{{tweetID}}\",\"withCommunity\":{{api.graphQLVariables.withCommunity}},\"includePromotedContent\":{{api.graphQLVariables.includePromotedContent}},\"withVoice\":{{api.graphQLVariables.withVoice}}}",
+                "features": "{{api.graphQLFeatures}}",
+                "fieldToggles": "{{api.graphQLFieldToggles}}"
+              },
+              "timeoutSeconds": 25
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["application/json", "text/plain"],
+              "restrictedIf": ["tweetUnavailable", "loginRequired", "rateLimited", "missingMedia", "htmlChallengeBody"]
+            },
+            "uses": ["tweetID", "platformToken", "guestToken"],
+            "outputs": ["tweetJSON"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "request-syndication-fallback",
+            "action": "requestJSON",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{api.syndicationEndpoint}}",
+              "headers": {
+                "User-Agent": "{{api.syndicationHeaders.User-Agent}}"
+              },
+              "query": {
+                "id": "{{tweetID}}",
+                "lang": "en",
+                "token": "{{syndicationToken(tweetID)}}"
+              },
+              "timeoutSeconds": 25
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "contentTypes": ["application/json", "text/plain"],
+              "restrictedIf": ["tweetUnavailable", "loginRequired", "rateLimited", "missingMedia", "htmlChallengeBody"]
+            },
+            "uses": ["tweetID"],
+            "outputs": ["syndicationJSON"],
+            "onFailure": "restricted"
+          },
+          {
+            "id": "parse-tweet-media",
+            "action": "applyJSONRules",
+            "extract": {
+              "source": "tweetJSON,syndicationJSON",
+              "jsonRulesRef": "api.jsonRules"
+            },
+            "uses": ["tweetJSON", "syndicationJSON", "api.jsonRules"],
+            "outputs": ["resources", "fallbackURLs", "metadata"],
+            "onFailure": "restricted"
+          },
+          {
+            "id": "download-resources",
+            "action": "downloadResources",
+            "request": {
+              "method": "GET",
+              "urlTemplate": "{{resource.url}}",
+              "headers": {
+                "Referer": "{{canonicalURL}}",
+                "User-Agent": "{{headers.User-Agent}}"
+              },
+              "timeoutSeconds": 60
+            },
+            "response": {
+              "successStatusCodes": [200],
+              "restrictedIf": ["textualContentType", "htmlOrJSONChallengeBody"],
+              "emptyBody": "retryFallbackThenFail"
+            },
+            "uses": ["resources", "fallbackURLs", "headers"],
+            "outputs": ["localFiles"],
+            "onFailure": "restricted"
+          }
+        ]
+      },
+      "api": {
+        "guestTokenEndpoint": "https://api.x.com/1.1/guest/activate.json",
+        "graphQLEndpoint": "https://x.com/i/api/graphql/2ICDjqPd81tulZcYrtpTuQ/TweetResultByRestId",
+        "syndicationEndpoint": "https://cdn.syndication.twimg.com/tweet-result",
+        "graphQLVariables": {
+          "withCommunity": false,
+          "includePromotedContent": false,
+          "withVoice": false
+        },
+        "graphQLFeatures": {
+          "creator_subscriptions_tweet_preview_api_enabled": true,
+          "tweetypie_unmention_optimization_enabled": true,
+          "responsive_web_edit_tweet_api_enabled": true,
+          "graphql_is_translatable_rweb_tweet_is_translatable_enabled": true,
+          "view_counts_everywhere_api_enabled": true,
+          "longform_notetweets_consumption_enabled": true,
+          "responsive_web_twitter_article_tweet_consumption_enabled": false,
+          "tweet_awards_web_tipping_enabled": false,
+          "freedom_of_speech_not_reach_fetch_enabled": true,
+          "standardized_nudges_misinfo": true,
+          "tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled": true,
+          "longform_notetweets_rich_text_read_enabled": true,
+          "longform_notetweets_inline_media_enabled": true,
+          "responsive_web_graphql_exclude_directive_enabled": true,
+          "verified_phone_label_enabled": false,
+          "responsive_web_media_download_video_enabled": false,
+          "responsive_web_graphql_skip_user_profile_image_extensions_enabled": false,
+          "responsive_web_graphql_timeline_navigation_enabled": true,
+          "responsive_web_enhance_cards_enabled": false
+        },
+        "graphQLFieldToggles": {
+          "withArticleRichContentState": false
+        },
+        "syndicationHeaders": {
+          "User-Agent": "Googlebot"
+        }
+      },
+      "notes": "Uses public guest-token GraphQL extraction with syndication fallback for public tweets, preferring MP4 variants and keeping HLS fallback resources. Login/cookies may be needed for sensitive, private, or rate-limited media."
+    }
+  ]
+}
