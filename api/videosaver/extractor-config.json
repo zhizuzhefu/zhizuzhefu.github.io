@@ -51,12 +51,18 @@
     {
       "id": "douyin",
       "displayName": "抖音",
-      "hosts": ["douyin.com", "v.douyin.com", "iesdouyin.com"],
+      "hosts": ["douyin.com", "v.douyin.com", "iesdouyin.com", "www.douyin.com"],
       "headers": {
         "Referer": "https://www.douyin.com/",
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
       },
       "requiresFreshCookies": true,
+      "browserSession": {
+        "startURL": "https://www.douyin.com/",
+        "cookieHost": "www.douyin.com",
+        "allowsVisibleMediaFallback": false,
+        "notes": "Browser session only captures cookies for the local Douyin extractor; it must not resolve downloads from visible browser media."
+      },
       "workflow": {
         "version": 1,
         "steps": [
@@ -86,7 +92,8 @@
               "urlTemplate": "{{canonicalURL}}",
               "headers": {
                 "Referer": "https://www.douyin.com/",
-                "User-Agent": "{{headers.User-Agent}}"
+                "User-Agent": "{{headers.User-Agent}}",
+                "Cookie": "{{headers.Cookie}}"
               },
               "cookiePolicy": "storeSetCookieAs=publicSessionCookies; doNotPersistSecrets",
               "timeoutSeconds": 20
@@ -117,10 +124,30 @@
                 "aid": "{{api.detailQueryItems.aid}}",
                 "channel": "{{api.detailQueryItems.channel}}",
                 "device_platform": "{{api.detailQueryItems.device_platform}}",
+                "pc_client_type": "{{api.detailQueryItems.pc_client_type}}",
+                "pc_libra_divert": "{{api.detailQueryItems.pc_libra_divert}}",
+                "update_version_code": "{{api.detailQueryItems.update_version_code}}",
+                "support_h265": "{{api.detailQueryItems.support_h265}}",
+                "support_dash": "{{api.detailQueryItems.support_dash}}",
+                "version_code": "{{api.detailQueryItems.version_code}}",
+                "version_name": "{{api.detailQueryItems.version_name}}",
                 "browser_name": "{{api.detailQueryItems.browser_name}}",
                 "browser_platform": "{{api.detailQueryItems.browser_platform}}",
                 "browser_language": "{{api.detailQueryItems.browser_language}}",
-                "cookie_enabled": "{{api.detailQueryItems.cookie_enabled}}"
+                "browser_version": "{{api.detailQueryItems.browser_version}}",
+                "browser_online": "{{api.detailQueryItems.browser_online}}",
+                "engine_name": "{{api.detailQueryItems.engine_name}}",
+                "engine_version": "{{api.detailQueryItems.engine_version}}",
+                "os_name": "{{api.detailQueryItems.os_name}}",
+                "os_version": "{{api.detailQueryItems.os_version}}",
+                "cpu_core_num": "{{api.detailQueryItems.cpu_core_num}}",
+                "device_memory": "{{api.detailQueryItems.device_memory}}",
+                "platform": "{{api.detailQueryItems.platform}}",
+                "downlink": "{{api.detailQueryItems.downlink}}",
+                "effective_type": "{{api.detailQueryItems.effective_type}}",
+                "round_trip_time": "{{api.detailQueryItems.round_trip_time}}",
+                "cookie_enabled": "{{api.detailQueryItems.cookie_enabled}}",
+                "msToken": "{{msToken}}"
               },
               "cookiePolicy": "sendRuntimePublicCookiesOnly; doNotPersistSecrets",
               "timeoutSeconds": 25
@@ -130,7 +157,7 @@
               "contentTypes": ["application/json", "text/plain"],
               "restrictedIf": ["emptyAwemeDetail", "loginRequired", "riskControl", "htmlChallengeBody"]
             },
-            "uses": ["awemeID", "publicSessionCookies"],
+            "uses": ["awemeID", "publicSessionCookies", "msToken"],
             "outputs": ["detailJSON"],
             "onFailure": "restricted"
           },
@@ -174,13 +201,32 @@
           "aid": "6383",
           "channel": "channel_pc_web",
           "device_platform": "webapp",
-          "browser_name": "Safari",
-          "browser_platform": "MacIntel",
+          "pc_client_type": "1",
+          "pc_libra_divert": "Windows",
+          "update_version_code": "170400",
+          "support_h265": "1",
+          "support_dash": "1",
+          "version_code": "290100",
+          "version_name": "29.1.0",
+          "browser_name": "Chrome",
+          "browser_platform": "Win32",
           "browser_language": "zh-CN",
+          "browser_version": "139.0.0.0",
+          "browser_online": "true",
+          "engine_name": "Blink",
+          "engine_version": "139.0.0.0",
+          "os_name": "Windows",
+          "os_version": "10",
+          "cpu_core_num": "16",
+          "device_memory": "8",
+          "platform": "PC",
+          "downlink": "10",
+          "effective_type": "4g",
+          "round_trip_time": "200",
           "cookie_enabled": "true"
         }
       },
-      "notes": "Uses the public aweme detail endpoint. Fresh cookies/signature policy and JSON extraction rules can be updated in Application Support/extractor-config.json or by API-delivered config."
+      "notes": "Uses the public aweme detail endpoint with fresh cookies, msToken, Web query parameters, and local retry policy. Signature/request policy and JSON extraction rules can be updated in Application Support/extractor-config.json or by API-delivered config."
     },
     {
       "id": "xiaohongshu",
@@ -191,6 +237,11 @@
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
       },
       "requiresFreshCookies": false,
+      "browserSession": {
+        "startURL": "https://www.xiaohongshu.com/",
+        "cookieHost": "www.xiaohongshu.com",
+        "allowsVisibleMediaFallback": true
+      },
       "workflow": {
         "version": 1,
         "steps": [
@@ -213,6 +264,7 @@
                 "/search_result/([A-Za-z0-9]+)",
                 "/note/([A-Za-z0-9]+)",
                 "/notes/([A-Za-z0-9]+)",
+                "/discovery/item/([A-Za-z0-9]+)",
                 "[?&](?:note_id|item_id|source_note_id)=([A-Za-z0-9]+)"
               ]
             },
@@ -253,6 +305,18 @@
             },
             "uses": ["initialStateHTML", "api.jsonRules"],
             "outputs": ["resources", "fallbackURLs", "metadata"],
+            "onFailure": "continue"
+          },
+          {
+            "id": "parse-open-graph-video",
+            "action": "parseOpenGraphVideo",
+            "extract": {
+              "source": "initialStateHTML",
+              "metaProperties": ["og:video:secure_url", "og:video:url", "og:video", "og:videotime", "og:title", "og:description"],
+              "requireURLContainsAny": ["xhscdn", "sns-video", ".mp4", ".m3u8"]
+            },
+            "uses": ["initialStateHTML", "canonicalURL"],
+            "outputs": ["resources", "metadata"],
             "onFailure": "continue"
           },
           {
@@ -347,7 +411,7 @@
         "xhsFeedEndpoint": "https://edith.xiaohongshu.com/api/sns/web/v1/feed",
         "xhsNoteInfoEndpoint": "https://edith.xiaohongshu.com/api/sns/h5/v1/note_info"
       },
-      "notes": "Parses window.__INITIAL_STATE__ and feed/h5-style note JSON for direct/HLS video, images, and live-photo pairs; restricted login/IP-risk responses stay blocked."
+      "notes": "Parses window.__INITIAL_STATE__, public Open Graph video metadata, and feed/h5-style note JSON for direct/HLS video, images, and live-photo pairs; restricted login/IP-risk responses stay blocked."
     },
     {
       "id": "xcom",
@@ -358,6 +422,11 @@
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
       },
       "requiresFreshCookies": false,
+      "browserSession": {
+        "startURL": "https://x.com/",
+        "cookieHost": "x.com",
+        "allowsVisibleMediaFallback": true
+      },
       "workflow": {
         "version": 1,
         "steps": [
