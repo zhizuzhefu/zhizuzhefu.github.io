@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shellcove · 在 iPhone / iPad 上看见并操控你的 Mac</title>
-  <meta name="description" content="Shellcove 把 iPhone 或 iPad 变成 Mac 的实时遥控器：实时投屏 + 触屏移动光标、按住说话听写、键盘、剪贴板同步。本地 Wi-Fi / Tailscale / VPN，TLS 加密，无云端、无账号。">
+  <title>Shellcove · iPhone / iPad 上的 Mac 远程桌面与输入入口</title>
+  <meta name="description" content="Shellcove 把 iPhone 或 iPad 变成本地 Mac 遥控器：远程桌面、窗口文本、系统键盘/输入法文本输入、键盘鼠标、剪贴板同步。本地 Wi-Fi / Tailscale / VPN，TLS 加密，无云端、无账号。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -24,16 +24,17 @@
   <main class="page">
     <section class="hero">
       <div class="card hero-copy">
-        <div class="eyebrow">shellcove · AI chat remote for Mac</div>
+        <div class="eyebrow">shellcove · local Mac remote for AI coding</div>
         <h1>看见 Mac，一只手操控</h1>
-        <p>Shellcove 把 iPhone 或 iPad 变成 Mac 的实时遥控器。把 Mac 桌面以视频流投到手机：点一下移动光标、捏合放大、长按拖拽、按住说话听写、敲快捷键、双向同步剪贴板。同一 Wi-Fi、Tailscale 或任意两端互通的 VPN 都能跑，端到端 TLS 加密，没有云端，没有账号。</p>
+        <p>Shellcove 把 iPhone 或 iPad 变成 Mac 的本地遥控器。把 Mac 桌面以视频流投到手机，直接触控移动光标、捏合放大、滚动和拖拽；用系统键盘、iOS 听写或第三方输入法写好文本后发送到 Mac；再配合完整键盘、鼠标按钮、窗口文本和剪贴板同步。适合远程看终端、推进 AI coding agent、演示和长任务。同一 Wi-Fi、Tailscale 或任意两端互通的 VPN 都能跑，TLS 加密，没有云端，没有账号。</p>
         <div class="pill-row">
-          <span class="pill">实时投屏 · 触屏操控</span>
-          <span class="pill">按住说话语音输入</span>
-          <span class="pill">6 个固定键 + 32 个组合键</span>
+          <span class="pill">远程桌面 · 触屏操控</span>
+          <span class="pill">窗口文本实时阅读</span>
+          <span class="pill">系统键盘 / 输入法</span>
+          <span class="pill">完整键盘 + 鼠标按钮</span>
           <span class="pill">剪贴板双向同步</span>
           <span class="pill">本地 + Tailscale / VPN</span>
-          <span class="pill">TLS + 证书钉扎</span>
+          <span class="pill">TLS + 证书钉扎 + 客户端认证</span>
           <span class="pill">iPhone + iPad</span>
           <span class="pill">无账号 / 无云端</span>
         </div>
@@ -48,7 +49,7 @@
       <div class="card hero-side">
         <div class="lang-tag">English</div>
         <h2>Your Mac, live in your hand</h2>
-        <p>Shellcove turns your iPhone or iPad into a live remote for your Mac. Stream the desktop as video and drive it by touch — move the cursor, pinch to zoom, long-press to drag, hold to talk, hit keys, sync the clipboard. Works over Wi-Fi, Tailscale, or any VPN that exposes both ends. End-to-end TLS, no accounts, no cloud, no telemetry.</p>
+        <p>Shellcove turns your iPhone or iPad into a local Mac remote. Stream the desktop as video and drive it by touch: move the cursor, pinch to zoom, scroll, and drag. Compose text with the iOS keyboard, iOS Dictation, or any third-party input method, then send it to the focused Mac window. Add a full keyboard, mouse buttons, live Window Text, and clipboard sync for terminal work, AI coding agents, demos, and long-running tasks. Works over Wi-Fi, Tailscale, or any VPN that exposes both ends. TLS, no accounts, no cloud, no telemetry.</p>
         <div class="contact-box">
           <strong>Contact / 联系</strong>
           <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
@@ -64,40 +65,42 @@
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
               <li>把 Mac 桌面以硬件视频流投到手机（ScreenCaptureKit 采集 + VideoToolbox 编码，iOS 硬件解码，低 CPU / 低功耗）—— 不是逐帧截图</li>
-              <li>视频本身就是操控面：点按或拖动移动 Mac 光标、捏合放大（1×–4×）精确定位、双指滚动、长按拖拽选择文本 / 移动窗口</li>
+              <li>视频本身就是操控面：点按或拖动移动 Mac 光标、捏合放大精确定位、双指滚动、长按拖拽选择文本 / 移动窗口</li>
               <li>内置键盘按钮提供鼠标点击（单击 / 右键 / 双击 / 长按）和全部按键；多显示器可任选一块投屏</li>
-              <li>低带宽模式：弱 Wi-Fi 或蜂窝网络下自动切到轻量画质，画面照样能起得来、能恢复</li>
+              <li>远程桌面优先走 UDP/DTLS 媒体通道，不可用时回落到 TCP；弱网时优先保留清晰度，降低帧率和码率来恢复画面</li>
             </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
               <li>Streams the Mac desktop as a hardware video feed (ScreenCaptureKit capture + VideoToolbox encode → hardware decode on iOS, low CPU/power) — not frame-by-frame screenshots</li>
-              <li>The video <em>is</em> the control surface: tap or drag to move the Mac cursor, pinch to zoom (1×–4×) for precision, two-finger scroll, long-press to drag (select text, move windows)</li>
+              <li>The video <em>is</em> the control surface: tap or drag to move the Mac cursor, pinch to zoom for precision, two-finger scroll, long-press to drag (select text, move windows)</li>
               <li>A built-in keyboard button adds mouse clicks (Click / Right / Double / Long-press) and every key; pick any monitor to mirror on a multi-display Mac</li>
-              <li>Low-bandwidth mode drops to a lighter capture on weak Wi-Fi or cellular so the picture still starts and recovers</li>
+              <li>Remote Desktop prefers a UDP/DTLS media channel and falls back to TCP when needed; on weak links it preserves clarity first, then lowers frame rate and bitrate so the picture recovers</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <div class="eyebrow">Voice / 语音</div>
+        <div class="eyebrow">Text input / 输入到 Mac</div>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
-              <li>按住麦克风说话 → 松开发送；按住状态下手指上滑超过麦克风再松开 = 取消（跟微信语音操作一致）</li>
-              <li>语音用苹果 Speech 框架在本机识别，按字符逐个键入到 Mac 当前焦点窗口</li>
-              <li>所有 app 都能用，包括 Ghostty、iTerm 等现代终端 —— 给 AI 编程 agent（Claude Code / Codex / Gemini CLI / aider / Cursor）念提示、发指令格外顺手</li>
+              <li>底部「输入到 Mac」打开全屏输入工作区，自动聚焦系统键盘；在远程桌面或窗口文本全屏里也能打开输入层，不压缩正在看的内容</li>
+              <li>用户可以用普通键盘、iOS 听写、微信输入法或任意第三方输入法组合文本；Shellcove 接收最终文本并逐字符键入 Mac 当前焦点窗口</li>
+              <li>Shellcove 不请求麦克风或 Speech Recognition 权限。iOS 听写属于系统键盘能力，识别过程由系统输入法完成</li>
+              <li>所有 app 都能用，包括 Ghostty、iTerm 等现代终端 —— 给 AI 编程 agent（Claude Code / Codex / Gemini CLI / aider / Cursor）发 prompt、确认长任务格外顺手</li>
             </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
-              <li>Hold the mic to talk → release to send; slide finger UP past the mic and release to cancel (same gesture as WeChat voice)</li>
-              <li>On-device Apple Speech transcription, typed character by character into the focused Mac window</li>
-              <li>Works in every app — including modern terminals like Ghostty / iTerm. Tailor-made for sending prompts to AI coding agents (Claude Code, Codex, Gemini CLI, aider, Cursor) without leaving your couch</li>
+              <li>The bottom "Input to Mac" bar opens a full-screen input workspace and focuses the system keyboard. Inside Remote Desktop or Window Text, the input overlay opens without squeezing the content you are watching</li>
+              <li>Compose with the regular keyboard, iOS Dictation, WeChat Keyboard, or any third-party input method. Shellcove receives the final text and types it character by character into the focused Mac window</li>
+              <li>Shellcove does not request Microphone or Speech Recognition permission. iOS Dictation is a system keyboard feature handled before text reaches Shellcove</li>
+              <li>Works in every app, including modern terminals like Ghostty and iTerm. It is built for sending prompts and confirmations to AI coding agents such as Claude Code, Codex, Gemini CLI, aider, and Cursor</li>
             </ul>
           </div>
         </div>
@@ -109,17 +112,17 @@
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
-              <li>主页常驻 6 个常用键 —— Esc / Tab / Delete / Space / ⌃Tab（切到下一个标签）/ Enter，按单拇指自然位摆放</li>
-              <li>「更多按键」面板收纳 32 个组合键：编辑（⌘C/V/X/Z/⇧Z/S/A/F）、光标（方向键 + Home/End/PgUp/PgDn）、终端（⌃C/D/L/R/W/U/A/E）、功能键（F1–F12）</li>
-              <li>主页顶部常显当前 Mac 窗口（App 图标 + 标题），随时确认按键发往哪里；点一下打开窗口选择器即可切换</li>
+              <li>首页快捷区覆盖远程桌面常用动作：App 切换、窗口切换、Tab 切换、窗口位置调整，以及 Esc / Enter / Delete / Tab / Space / Ctrl-C 等终端常用键</li>
+              <li>「键盘与鼠标」面板提供鼠标点击（左键 / 右键 / 双击 / 长按）、剪贴板发送、窗口快捷键、修饰键，以及终端 / 编程 / 导航分组的完整虚拟键盘</li>
+              <li>当前 Mac 窗口（App 图标 + 标题）常驻显示，随时确认按键和文本发往哪里；点一下打开窗口选择器即可切换</li>
             </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
-              <li>Six always-visible keys on the home — Esc / Tab / Delete / Space / ⌃Tab (next tab) / Enter, laid out for one-thumb reach</li>
-              <li>"More keys" sheet groups 32 extra combos: Edit (⌘C/V/X/Z/⇧Z/S/A/F), Cursor (arrows + Home/End/PgUp/PgDn), Terminal (⌃C/D/L/R/W/U/A/E), Function (F1–F12)</li>
-              <li>A strip at the top always shows the frontmost Mac window (app icon + title) so you know where your keys land; tap it to open the window picker and switch</li>
+              <li>The Home shortcut area covers Remote Desktop basics: App Switch, Window Switch, Tab Switch, window layout, plus terminal-friendly keys such as Esc / Enter / Delete / Tab / Space / Ctrl-C</li>
+              <li>"Keyboard & mouse" adds mouse clicks (left / right / double / long), clipboard send, window shortcuts, sticky modifiers, and full virtual-keyboard pages for terminal, programming, and navigation keys</li>
+              <li>The current Mac window (app icon + title) stays visible so you know where keys and text will land; tap it to open the window picker and switch</li>
             </ul>
           </div>
         </div>
@@ -132,16 +135,16 @@
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
               <li>剪贴板双向同步：Mac 剪贴板一变就自动镜像到已配对设备（写入 iOS 端时静默，无粘贴横幅）；点一下把设备剪贴板发回 Mac</li>
-              <li>「窗口文本」工具：打开 Mac 当前焦点窗口文字的实时等宽视图（比如终端缓冲区），内容一变就刷新，宽行横滑，不走视频管线</li>
-              <li>文本通过 Accessibility 读取真实字符（无 OCR），保留终端原始换行，自动缩放字号让最宽一行刚好放下</li>
+              <li>「窗口文本」工具：打开 Mac 当前焦点窗口文字的实时等宽视图（比如终端缓冲区），内容变化即刷新，宽行可横滑，不走视频管线</li>
+              <li>文本通过 Accessibility 读取真实字符（无 OCR），保留终端原始换行，适合阅读 AI agent 输出、日志和长命令结果</li>
             </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
               <li>Bidirectional clipboard sync: the Mac's clipboard mirrors to paired devices the moment it changes (set silently on iOS, no paste banner); send your device's clipboard back to the Mac with one tap</li>
-              <li>"Window text" tool: a live, monospaced view of the focused Mac window's text (e.g. a terminal buffer) that refreshes as it changes — wide lines scroll, no video pipeline</li>
-              <li>Text is read as real characters via Accessibility (no OCR), keeps the terminal's own line breaks, and auto-scales the font so the widest line fits</li>
+              <li>"Window Text" opens a live, monospaced view of the focused Mac window's text, such as a terminal buffer. It refreshes as content changes, supports wide-line scrolling, and does not use the video pipeline</li>
+              <li>Text is read as real characters via Accessibility, not OCR. It keeps terminal line breaks and is ideal for AI-agent output, logs, and long command results</li>
             </ul>
           </div>
         </div>
@@ -153,17 +156,17 @@
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
-              <li>Mac 把所有可达 IPv4 地址全部塞进配对二维码 —— 局域网、Tailscale（100.64.0.0/10）、其它 VPN 一并保留</li>
-              <li>iOS 每次连接自动选最快的地址（每个地址旁边显示实时延迟）；离开局域网时也能在设置里手动切到 Tailscale</li>
-              <li>每个 attempt 有 3 秒超时 —— 黑洞路由不会卡住 sweep，VPN fallback 大约 1 秒内生效</li>
+              <li>Mac 把可达的局域网 / Tailscale / VPN 地址写入配对二维码，iOS 以 endpoint 为单位保存，不会把 relay 主机和 Mac 本地端口混用</li>
+              <li>iOS 自动尝试可达 endpoint，也能在设置里手动添加中转机 host:port；每行显示的是 TCP 可达性/连接耗时，不是 ICMP ping</li>
+              <li>直接连接支持 UDP/DTLS 远程桌面媒体通道；手动 relay endpoint 当前使用 TCP 视频回退路径，控制与输入仍然保持 TLS 加密</li>
             </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
-              <li>Mac advertises every reachable IPv4 in the pairing QR — LAN, Tailscale (100.64.0.0/10), any other VPN, all kept</li>
-              <li>iOS auto-picks the fastest each connection (with live latency shown beside each); switch to Tailscale manually in Settings when you're off the LAN</li>
-              <li>Per-attempt 3-second cap — black-hole routes don't stall the sweep, VPN fallback lands in about a second</li>
+              <li>Mac writes reachable LAN / Tailscale / VPN addresses into the pairing QR. iOS stores endpoints as units, so a relay host is never accidentally combined with the Mac's local port</li>
+              <li>iOS tries reachable endpoints automatically and lets you add a manual relay host:port in Settings. Each row shows TCP reachability/connect time, not ICMP ping</li>
+              <li>Direct connections can use the UDP/DTLS media channel for Remote Desktop. Manual relay endpoints currently use the TCP video fallback while control and input remain protected by TLS</li>
             </ul>
           </div>
         </div>
@@ -179,7 +182,7 @@
               <li>TLS + 证书钉扎。Mac 首次启动生成自签证书，设备在配对时把指纹固定下来，只有你配对过的那台 Mac 能完成握手</li>
               <li>双向认证。配对二维码还带一枚每台 Mac 独有的 256 位密钥，设备每次连接都要出示；验证通过前 Mac 丢弃它的一切消息 —— 局域网里别的设备摸到端口也注入不了按键</li>
               <li>无账号，无服务器，无统计，无第三方 SDK，无后端</li>
-              <li>语音识别走苹果系统的 Speech 框架，纯本机完成，音频不会上传</li>
+              <li>文本由系统键盘或你选择的输入法生成；Shellcove 只接收最终文本，不请求麦克风或语音识别权限</li>
             </ul>
           </div>
           <div class="lang-block">
@@ -189,7 +192,7 @@
               <li>TLS with certificate pinning. Mac generates a self-signed cert at first launch; your device pins its fingerprint at pairing. Only your paired Mac can complete the TLS handshake.</li>
               <li>Client authentication. The pairing QR also carries a 256-bit per-install secret the device presents on every connect; until it validates, the Mac drops all of that client's messages — so no other device that reaches the port can inject input.</li>
               <li>No accounts, no servers, no telemetry, no third-party SDKs, no backend.</li>
-              <li>Speech transcription runs on-device via Apple's Speech framework — audio is never uploaded.</li>
+              <li>Text is composed by the system keyboard or input method you choose. Shellcove receives only the final text and does not request Microphone or Speech Recognition permission.</li>
             </ul>
           </div>
         </div>
@@ -203,7 +206,7 @@
             <ol class="feature-list">
               <li>在 Mac 上打开 Shellcove，主窗口会显示配对二维码</li>
               <li>iPhone 或 iPad 上点击「扫描二维码」</li>
-              <li>之后主页很干净：连接状态、「桌面」与「文本」两个工具、当前 Mac 窗口、6 个固定键、底部按住说话的麦克风。鼠标和完整键盘都在实时投屏里按需打开。</li>
+              <li>之后主页很干净：连接状态、「远程桌面」与「窗口文本」两个工具、当前 Mac 窗口、快捷按键、底部「输入到 Mac」。鼠标和完整键盘都在远程桌面里按需打开。</li>
             </ol>
           </div>
           <div class="lang-block">
@@ -211,7 +214,7 @@
             <ol class="feature-list">
               <li>Open Shellcove on your Mac — the main window shows a pairing QR</li>
               <li>On your iPhone or iPad, tap "Scan QR"</li>
-              <li>The home is intentionally clean: connection status, a Live Screen and a Window Text tool, the current Mac window, six fixed keys, and a press-and-hold mic. Mouse and the full keyboard open on demand inside the live screen.</li>
+              <li>The home is intentionally clean: connection status, Remote Desktop and Window Text tools, the current Mac window, shortcut keys, and the bottom Input to Mac bar. Mouse controls and the full keyboard open on demand inside Remote Desktop.</li>
             </ol>
           </div>
         </div>

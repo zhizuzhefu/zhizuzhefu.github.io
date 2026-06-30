@@ -38,7 +38,8 @@
               <option value="bug">遇到问题 / I found a bug</option>
               <option value="feature">功能建议 / I have a feature idea</option>
               <option value="connection">连接或配对 / Connection or pairing</option>
-              <option value="agent">Agent 适配 / Agent integration</option>
+              <option value="remote_desktop">远程桌面或窗口文本 / Remote Desktop or Window Text</option>
+              <option value="input">输入或键盘鼠标 / Input, keyboard, or mouse</option>
               <option value="other">其他 / Something else</option>
             </select>
           </div>
@@ -81,12 +82,12 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="hostInfo">Daemon 主机 / Daemon host <span class="optional">(选填 / optional)</span></label>
+              <label class="form-label" for="hostInfo">Mac 主机 / Mac host <span class="optional">(选填 / optional)</span></label>
               <input
                 class="form-input"
                 id="hostInfo"
                 type="text"
-                placeholder="例如 macOS 15 / Ubuntu 24.04..."
+                placeholder="例如 macOS 15 / MacBook Air M4..."
                 maxlength="100"
               >
             </div>
@@ -105,12 +106,12 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="daemonVersion">shellcoved 版本 / Daemon version <span class="optional">(选填 / optional)</span></label>
+              <label class="form-label" for="macVersion">Mac 客户端版本 / Mac app version <span class="optional">(选填 / optional)</span></label>
               <input
                 class="form-input"
-                id="daemonVersion"
+                id="macVersion"
                 type="text"
-                placeholder="例如 0.1.0"
+                placeholder="例如 1.2.6"
                 maxlength="40"
               >
             </div>
@@ -147,7 +148,7 @@
   </main>
 
   <script>
-    // App or daemon can pass context like ?v=1.0&device=iPhone16&host=macOS&daemon=0.1.0
+    // App or Mac client can pass context like ?v=1.2.6&device=iPhone16&host=macOS&mac=1.2.6
     (function prefillFromURL() {
       var params = new URLSearchParams(window.location.search);
       if (params.get('v')) {
@@ -160,7 +161,10 @@
         document.getElementById('hostInfo').value = params.get('host');
       }
       if (params.get('daemon')) {
-        document.getElementById('daemonVersion').value = params.get('daemon');
+        document.getElementById('macVersion').value = params.get('daemon');
+      }
+      if (params.get('mac')) {
+        document.getElementById('macVersion').value = params.get('mac');
       }
     })();
 
@@ -186,7 +190,7 @@
         device: document.getElementById('deviceInfo').value.trim(),
         host: document.getElementById('hostInfo').value.trim(),
         appVersion: document.getElementById('appVersion').value.trim(),
-        daemonVersion: document.getElementById('daemonVersion').value.trim(),
+        macVersion: document.getElementById('macVersion').value.trim(),
         timestamp: new Date().toISOString(),
         userAgent: navigator.userAgent
       };
@@ -199,9 +203,9 @@
         '--- User Info / 用户信息 ---\n\n' +
         'Contact / 联系方式: ' + (data.contact || 'Not provided / 未填写') + '\n' +
         'iOS Device / iOS 设备: ' + (data.device || 'Not provided / 未填写') + '\n' +
-        'Daemon Host / Daemon 主机: ' + (data.host || 'Not provided / 未填写') + '\n' +
+        'Mac Host / Mac 主机: ' + (data.host || 'Not provided / 未填写') + '\n' +
         'App Version / App 版本: ' + (data.appVersion || 'Not provided / 未填写') + '\n' +
-        'Daemon Version / shellcoved 版本: ' + (data.daemonVersion || 'Not provided / 未填写') + '\n' +
+        'Mac App Version / Mac 客户端版本: ' + (data.macVersion || 'Not provided / 未填写') + '\n' +
         'Submitted / 提交时间: ' + data.timestamp
       );
 
@@ -232,7 +236,7 @@
       document.getElementById('deviceInfo').value = '';
       document.getElementById('hostInfo').value = '';
       document.getElementById('appVersion').value = '';
-      document.getElementById('daemonVersion').value = '';
+      document.getElementById('macVersion').value = '';
       document.getElementById('charCount').textContent = '0 / 2000';
 
       var btn = document.getElementById('submitBtn');

@@ -25,7 +25,7 @@
     <section class="card page-title">
       <div class="eyebrow">Privacy Policy / 隐私政策</div>
       <h1>Shellcove Privacy Policy</h1>
-      <p>生效日期 / Effective date: 2026-05-26</p>
+      <p>生效日期 / Effective date: 2026-06-30</p>
     </section>
 
     <section class="section-stack">
@@ -34,11 +34,11 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>Shellcove 完全在你自己的设备上运行——iPhone 和你配对的那台 Mac。数据只在两者之间通过你本地的 Wi-Fi 网络传输，全程 TLS 加密。我们没有云端服务器、没有账号系统、不收集统计数据。除非你主动通过邮件联系我们，否则我们看不到任何关于你使用 Shellcove 的信息。</p>
+            <p>Shellcove 完全在你自己的设备上运行——iPhone / iPad 和你配对的那台 Mac。数据只在两者之间通过你的本地网络、Tailscale 或其它两端互通的 VPN 传输，全程 TLS 加密。我们没有云端服务器、没有账号系统、不收集统计数据。除非你主动通过邮件联系我们，否则我们看不到任何关于你使用 Shellcove 的信息。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>Shellcove runs entirely on your own devices — your iPhone and the paired Mac. Data only flows between the two over your local Wi-Fi network, end-to-end encrypted with TLS. We have no cloud server, no account system, and collect no analytics. Unless you proactively contact us by email, we have no visibility into your use of Shellcove.</p>
+            <p>Shellcove runs entirely on your own devices — your iPhone / iPad and the paired Mac. Data only flows between them over your local network, Tailscale, or another VPN where both ends can reach each other, encrypted with TLS. We have no cloud server, no account system, and collect no analytics. Unless you proactively contact us by email, we have no visibility into your use of Shellcove.</p>
           </div>
         </div>
       </section>
@@ -62,13 +62,13 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>所有 Shellcove 收发的内容（你按下的键、说出的话、Mac 屏幕的实时投屏画面、剪贴板）都只在你的 iPhone / iPad 和配对 Mac 之间传输，通过你本地的 Wi-Fi 网络，使用自签 TLS 证书 + 证书钉扎加密。这些内容不会经过任何外部服务器或云端服务，也不会写入到任何第三方存储。</p>
-            <p>语音听写使用苹果系统提供的 Speech 框架，并强制启用了 on-device 模式（<code>requiresOnDeviceRecognition = true</code>），意味着音频从不离开你的 iPhone。识别完成后只把文本发给配对的 Mac。</p>
+            <p>所有 Shellcove 收发的内容（你按下的键、文本输入、鼠标事件、Mac 屏幕的实时投屏画面、窗口文本、剪贴板）都只在你的 iPhone / iPad 和配对 Mac 之间传输，使用自签 TLS 证书 + 证书钉扎 + 客户端认证保护。这些内容不会经过任何外部服务器或云端服务，也不会写入到任何第三方存储。</p>
+            <p>文本输入由系统键盘或你选择的输入法生成。你可以使用 iOS 听写或第三方输入法，但 Shellcove 只接收输入框里的最终文本并发送给配对 Mac；Shellcove App 本身不请求麦克风权限，也不请求 Speech Recognition 权限。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>Everything Shellcove sends or receives — keystrokes you tap, words you dictate, the live mirror of the Mac screen, the clipboard — moves only between your iPhone / iPad and the paired Mac, over your local Wi-Fi network, encrypted with a self-signed TLS certificate and certificate pinning. None of it ever passes through any external server or cloud service, and nothing is written to any third-party storage.</p>
-            <p>Voice dictation uses Apple's Speech framework with on-device recognition forced on (<code>requiresOnDeviceRecognition = true</code>), meaning audio never leaves your iPhone. Only the resulting transcribed text is forwarded to the paired Mac.</p>
+            <p>Everything Shellcove sends or receives — keystrokes, text input, mouse events, the live mirror of the Mac screen, Window Text, and the clipboard — moves only between your iPhone / iPad and the paired Mac, protected by a self-signed TLS certificate, certificate pinning, and client authentication. None of it ever passes through any external server or cloud service, and nothing is written to any third-party storage.</p>
+            <p>Text input is produced by the system keyboard or the input method you choose. You may use iOS Dictation or a third-party keyboard, but Shellcove receives only the final text in its input field and forwards that text to the paired Mac. The Shellcove app itself does not request Microphone or Speech Recognition permission.</p>
           </div>
         </div>
       </section>
@@ -80,19 +80,17 @@
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
               <li><strong>相机</strong>：仅用于扫描 Mac 上显示的配对二维码。除了扫描那一刻，相机不会启动。</li>
-              <li><strong>麦克风 + 语音识别</strong>：仅在你长按麦克风按钮时启动。语音在本机识别，文本发给 Mac，音频不上传。</li>
               <li><strong>本地网络</strong>：用于与配对的 Mac 建立 TLS 连接。这是 Shellcove 的核心功能必须的权限。</li>
             </ul>
-            <p>Shellcove 不请求位置、通讯录、相册、健康、运动、蓝牙、Face ID 或任何其他敏感权限。</p>
+            <p>Mac 端需要你手动授予「辅助功能」（注入键盘、鼠标、文本）和「屏幕录制」（远程桌面捕获）。Shellcove iOS App 不请求麦克风、语音识别、位置、通讯录、相册、健康、运动、蓝牙、Face ID 或任何其他敏感权限。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
               <li><strong>Camera</strong>: only used to scan the pairing QR code shown on your Mac. Outside that moment, the camera is not active.</li>
-              <li><strong>Microphone + Speech Recognition</strong>: only active while you hold the mic button. Speech is transcribed on-device, the resulting text is sent to the Mac, audio is not uploaded.</li>
               <li><strong>Local Network</strong>: required to establish the TLS connection to the paired Mac. Core functionality depends on this.</li>
             </ul>
-            <p>Shellcove does not request location, contacts, photos, health, motion, Bluetooth, Face ID, or any other sensitive data.</p>
+            <p>On Mac, you manually grant Accessibility (to inject keyboard, mouse, and text input) and Screen Recording (to capture Remote Desktop). The Shellcove iOS app does not request Microphone, Speech Recognition, location, contacts, photos, health, motion, Bluetooth, Face ID, or any other sensitive data.</p>
           </div>
         </div>
       </section>
@@ -102,13 +100,13 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>Shellcove 在 iPhone 上只保存一项数据：你配对过的 Mac 的连接信息（设备名、IP 地址、端口和证书指纹），写在系统标准的 <code>UserDefaults</code> 里。在 iOS 设置里点击"Forget Device"会立即删除这条记录。</p>
-            <p>Mac 端在 <code>~/Library/Application Support/Shellcove/</code> 目录下保存自签 TLS 证书（PEM 格式的公钥和私钥）。删除该目录或在 Mac 端重置即可让所有 iPhone 重新配对。</p>
+            <p>Shellcove 在 iPhone / iPad 上只保存配对 Mac 的连接信息：设备名、endpoint 地址和端口、证书指纹、协议版本以及配对 token，写在系统标准的 <code>UserDefaults</code> 里。在 iOS 设置里点击"Forget Device"会立即删除这条记录。</p>
+            <p>Mac 端在 <code>~/Library/Application Support/Shellcove/</code> 目录下保存自签 TLS 证书（PEM 格式的公钥和私钥）、监听端口记录，并在系统偏好存储每台 Mac 独有的客户端认证 token。删除该目录或在 Mac 端重置即可让所有 iPhone / iPad 重新配对。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>On the iPhone, Shellcove stores a single piece of data: the connection info for your paired Mac (device name, IP, port, certificate fingerprint), written to the standard system <code>UserDefaults</code>. Tapping "Forget Device" in iOS Settings immediately removes this record.</p>
-            <p>On the Mac, the self-signed TLS certificate (PEM-formatted public and private keys) lives in <code>~/Library/Application Support/Shellcove/</code>. Deleting that directory or resetting from within the Mac app forces every paired iPhone to re-pair.</p>
+            <p>On iPhone / iPad, Shellcove stores only the paired Mac connection record: device name, endpoint host/port values, certificate fingerprint, protocol version, and pairing token, written to the standard system <code>UserDefaults</code>. Tapping "Forget Device" in iOS Settings immediately removes this record.</p>
+            <p>On the Mac, the self-signed TLS certificate (PEM-formatted public and private keys), listener port record, and per-install client-auth token live in local application support / preferences storage. Deleting or resetting those local records forces every iPhone / iPad to re-pair.</p>
           </div>
         </div>
       </section>
