@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>反馈 · 走起 ZouQi</title>
-  <meta name="description" content="走起 ZouQi 意见反馈：纠正某个地点、推荐新去处、报告问题或提建议。We read every line.">
+  <meta name="description" content="走起 ZouQi 意见反馈：报告攻略或地点错误、补充内容、报告 App 问题或提出建议。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
       <div class="nav-links">
         <a href="./index.html">Home / 首页</a>
         <a href="./privacy.html">Privacy / 隐私政策</a>
+        <a href="./terms.html">Terms / 用户协议</a>
         <a href="./support.html">Support / 支持</a>
         <a class="active" href="./feedback.html">Feedback / 反馈</a>
       </div>
@@ -25,8 +26,8 @@
     <div id="feedbackForm">
       <section class="card page-title">
         <div class="eyebrow">Feedback / 意见反馈</div>
-        <h1>哪里不对，告诉我们</h1>
-        <p>纠正一个地点、推荐一处私藏，或提个建议——每条我们都会读 / We read every line.</p>
+        <h1>哪里需要改进，告诉我们</h1>
+        <p>报告攻略或地点错误、补充内容，或告诉我们 App 的问题 / Report a guide, add context, or tell us what the app can improve.</p>
       </section>
 
       <div class="card" style="padding: 28px;">
@@ -36,8 +37,10 @@
             <label class="form-label" for="feedbackType">反馈类型 / What's this about?</label>
             <select class="form-select" id="feedbackType" required>
               <option value="" disabled selected>请选择类型... / Choose a category...</option>
-              <option value="spot-fix">纠正地点 / 坐标 — Fix a spot or its location</option>
-              <option value="new-spot">推荐新去处 / 路线 — Suggest a place or route</option>
+              <option value="guide-fix">攻略过时 / 有误 — Outdated or incorrect guide</option>
+              <option value="poi-fix">地点 / 地址 / 坐标有误 — Place, address, or pin issue</option>
+              <option value="guide-addition">补充攻略或地点 — Add guide or place context</option>
+              <option value="content-report">举报不当内容 — Report objectionable content</option>
               <option value="bug">遇到问题 / I found a bug</option>
               <option value="feature">功能建议 / I have a feature idea</option>
               <option value="ux">体验优化 / Usability improvement</option>
@@ -50,7 +53,7 @@
             <textarea
               class="form-textarea"
               id="feedbackContent"
-              placeholder="如果是某个地点，写上它的名字和大概位置最好；推荐新去处，说一句为什么值得就行。&#10;For a spot, its name and rough location help most; for a new place, one line on why it's worth it is enough."
+              placeholder="请写上攻略或地点名称、哪里不对，以及你看到问题的大致时间。&#10;Please include the guide or place name, what is wrong, and roughly when you noticed it."
               required
               maxlength="2000"
               oninput="updateCharCount()"
@@ -67,7 +70,7 @@
               placeholder="您的邮箱、微信号 / Your email or WeChat ID..."
               maxlength="100"
             >
-            <p class="form-hint">留下联系方式，方便我们跟进。不留也完全没关系。<br>Leave it blank if you'd rather not — that's okay too.</p>
+            <p class="form-hint">留下联系方式仅用于跟进这次反馈；不留也可以。请勿填写密码或敏感信息。<br>Contact details are used only to follow up on this feedback. Leave this blank if you prefer, and never include passwords or sensitive information.</p>
           </div>
 
           <div class="form-group">
@@ -93,6 +96,7 @@
           </div>
 
           <button class="submit-btn" type="submit" id="submitBtn">提交反馈 / Send Feedback</button>
+          <p class="form-hint">此表单不会把内容提交到网站服务器。点击后会在你的默认邮件 App 中生成草稿，只有你确认发送后我们才会收到。详见<a href="./privacy.html">隐私政策</a>。<br>This form does not submit to a website server. It opens a draft in your default mail app, and we receive it only if you choose to send. See the <a href="./privacy.html">Privacy Policy</a>.</p>
         </form>
       </div>
     </div>
@@ -100,9 +104,9 @@
     <div id="feedbackSuccess" class="feedback-result">
       <div class="card" style="padding: 48px 28px;">
         <div class="result-icon">✓</div>
-        <div class="result-title">谢谢你的私藏与纠正</div>
-        <p class="result-desc">Thanks for taking the time. Your tip helps make ZouQi's routes a little more right.</p>
-        <button class="reset-btn" onclick="resetForm()">再说一条 / Share another</button>
+        <div class="result-title">邮件草稿已打开</div>
+        <p class="result-desc">请在邮件 App 中检查并点击发送。Your email draft is open — review it and tap Send in your mail app.</p>
+        <button class="reset-btn" onclick="resetForm()">再写一条 / Write another</button>
       </div>
     </div>
 
@@ -118,6 +122,7 @@
     <footer class="card footer" style="margin-top: 40px;">
       <p>更愿意写邮件？随时联系我们 / Prefer email? Reach us anytime</p>
       <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+      <p><a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./support.html">Support</a></p>
     </footer>
   </main>
 
@@ -153,8 +158,7 @@
         contact: document.getElementById('contactInfo').value.trim(),
         device: document.getElementById('deviceInfo').value.trim(),
         appVersion: document.getElementById('appVersion').value.trim(),
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent
+        timestamp: new Date().toISOString()
       };
 
       var subject = encodeURIComponent('[走起 ZouQi] ' + data.type + ' - User Feedback');

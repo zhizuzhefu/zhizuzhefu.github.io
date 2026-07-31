@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>走起 ZouQi · Privacy Policy / 隐私政策</title>
-  <meta name="description" content="走起 ZouQi 隐私政策 / Privacy Policy">
+  <meta name="description" content="走起 ZouQi 隐私政策：说明攻略浏览、收藏、反馈照片、地图接力和数据删除方式。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
       <div class="nav-links">
         <a href="./index.html">Home / 首页</a>
         <a class="active" href="./privacy.html">Privacy / 隐私政策</a>
+        <a href="./terms.html">Terms / 用户协议</a>
         <a href="./support.html">Support / 支持</a>
         <a href="./feedback.html">Feedback / 反馈</a>
       </div>
@@ -24,7 +25,7 @@
     <section class="card page-title">
       <div class="eyebrow">Privacy Policy / 隐私政策</div>
       <h1>走起 ZouQi 隐私政策</h1>
-      <p>生效日期 / Effective date: 2026-06-03</p>
+      <p>生效日期 / Effective date: 2026-07-31</p>
     </section>
 
     <section class="section-stack">
@@ -33,144 +34,158 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>走起 ZouQi 没有账号系统、不含任何第三方分析或广告 SDK、不做用户追踪。它只与「我们自己的」服务器通信，且仅限两件事：(1) 拉取只读的地点/路线内容（不发送你的任何信息）；(2) 当你主动「推荐一个玩法」时，提交你填写的地点信息。你的设备定位只在本机用于「离你最近」排序和地图显示，绝不上传。除此之外我们不收集任何可识别你身份的信息。</p>
+            <p>走起无需注册或登录，不含广告、第三方分析 SDK，也不进行跨 App 追踪。App 通过开发者自有服务读取城市、天气上下文、攻略、地点和图片。只有当你主动提交攻略反馈时，才会发送你选择提供的反馈内容；这些内容不绑定账号，仅用于改进攻略。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>ZouQi has no account system, no third-party analytics or advertising SDKs, and does no user tracking. It talks only to <em>our own</em> server, and only for two things: (1) fetching read-only place/route content (sending none of your information); (2) submitting a spot when you choose to "suggest a spot." Your device location is used on-device only — for "closest to you" sorting and the map — and is never uploaded. Beyond that we collect nothing that identifies you.</p>
+            <p>ZouQi requires no registration or sign-in, contains no advertising or third-party analytics SDKs, and does not track users across apps. The app reads cities, weather context, guides, places, and media from the developer-owned service. Only when you explicitly submit guide feedback does it send the content you choose to provide; this content is not linked to an account and is used only to improve guides.</p>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Data Collection / 数据收集</h2>
+        <h2>Data we process / 我们处理的数据</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>走起不要求注册或登录，不收集你的姓名、邮箱、电话或任何账号身份信息。app 的全部核心浏览功能在断网时也能用（回退到内置内容）。唯二会离开设备的数据是：拉取内容的网络请求，以及你主动提交的投稿（见下）。与任何网络请求一样，我们的 CDN（Cloudflare）会看到你的 IP；我们仅将其哈希后短期用于防滥用频控，不用它识别你或做画像。</p>
+            <ul class="feature-list">
+              <li><strong>内容读取：</strong>你选择的城市以及读取攻略、地点、图片和天气上下文所需的请求。请求不包含账号身份、设备定位、收藏或语言偏好。</li>
+              <li><strong>可选攻略反馈：</strong>攻略标识、有用 / 需要改进、选填原因、最多 300 字的选填备注，以及你明确选择的一张照片。</li>
+              <li><strong>网站邮件反馈：</strong>本站反馈表单只在你的设备上生成邮件草稿，不直接提交到网站服务器。只有你在邮件 App 中确认发送后，我们才会收到你填写的内容，以及你自愿提供的联系方式、设备和 App 版本信息。</li>
+              <li><strong>随机幂等标识：</strong>App 为每篇已反馈攻略生成一个随机标识并随反馈发送，用于把重复反馈更新为同一条记录。它不是广告标识，不用于识别真实身份或追踪。</li>
+              <li><strong>必要网络信息：</strong>与任何互联网服务一样，托管与安全基础设施可能在传输和防滥用过程中处理 IP 地址、请求时间等网络信息。走起不会把这些信息写入反馈记录，也不用于画像、广告或追踪。</li>
+            </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>ZouQi requires no registration or sign-in and collects no name, email, phone, or account identity. All core browsing works offline (falling back to built-in content). The only data that leaves your device is the content-fetch request and any spot you choose to submit (below). As with any network request, our CDN (Cloudflare) sees your IP; we only hash it for short-term abuse rate-limiting, never to identify or profile you.</p>
+            <ul class="feature-list">
+              <li><strong>Content requests:</strong> the selected city and requests needed to retrieve guides, places, media, and weather context. Requests contain no account identity, device location, favorites, or language preference.</li>
+              <li><strong>Optional guide feedback:</strong> the guide identifier, helpful / needs work choice, optional reason, an optional note of up to 300 characters, and one photo you explicitly select.</li>
+              <li><strong>Website email feedback:</strong> the website form creates an email draft locally on your device and does not submit directly to a website server. We receive the content, and any contact, device, or app-version details you voluntarily include, only after you choose Send in your mail app.</li>
+              <li><strong>Random idempotency identifier:</strong> the app generates a random value for each guide you review and sends it with feedback so repeat submissions update the same record. It is not an advertising identifier and is not used to identify or track you.</li>
+              <li><strong>Necessary network data:</strong> as with any internet service, hosting and security infrastructure may process an IP address, request time, and similar network information for transmission and abuse prevention. ZouQi does not add this information to feedback records or use it for profiling, advertising, or tracking.</li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Location / 位置信息</h2>
+        <h2>Photos and feedback / 照片与攻略反馈</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>走起请求「使用 App 期间」的定位权限，仅用于两件事：(1) 在地图上显示你的位置；(2) 把「离你最近」的好去处排在前面。位置数据只在你的设备上处理，<strong>不会上传到任何服务器，也不会与任何第三方共享</strong>。你可以拒绝授权，应用其余功能不受影响（只是不再按距离排序）。</p>
+            <p>走起不请求相机或完整照片图库权限。只有你在反馈表单中主动点击添加照片、通过 Apple 系统照片选择器选中一项并提交后，App 才会上传这一张照片。已完成登记但没有被反馈引用的上传会由服务端定期清理。</p>
+            <p>反馈进入仅运营人员可见的私有处理队列，不会自动显示给其他用户。运营人员可以据此纠错；任何后来公开的攻略都需要另行审核、编辑并发布。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>ZouQi requests "While Using the App" location access for two purposes only: (1) showing your position on the map; (2) sorting nearby spots by distance. Location data is processed only on your device and is <strong>never uploaded to any server or shared with any third party</strong>. You may decline — the rest of the app keeps working (it just stops sorting by distance).</p>
+            <p>ZouQi does not request camera or full photo-library access. An image is uploaded only after you tap to add one in the feedback form, select a single item with Apple's system Photos picker, and submit. Uploads that were registered successfully but never referenced by feedback are periodically removed by the service.</p>
+            <p>Feedback enters a private queue visible only to operators and is never shown automatically to other users. Operators may use it to correct a guide; anything later made public must be separately reviewed, edited, and published.</p>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Opening Map Apps / 唤起地图 App</h2>
+        <h2>Local storage / 本地存储</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>当你点击「导航」时，走起会把你选择的目的地名称与坐标交给你选定的地图 App（Apple 地图、高德地图或百度地图）来规划路线。这一步会离开走起、进入对应地图 App，之后的数据处理适用该地图 App 自己的隐私政策。走起本身不向这些服务发送除「你正要导航的目的地」之外的任何信息，也不会发送你的身份。</p>
+            <p>走起在设备的 UserDefaults 中保存收藏的攻略、所选城市、语言偏好、已提交反馈的选中状态和随机幂等标识。这些本地数据不通过走起同步到云端；删除 App 会清除这些本地数据。攻略被撤下后，对应收藏会自动清理。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>When you tap "Navigate," ZouQi passes the chosen destination's name and coordinates to the maps app you select (Apple Maps, Amap, or Baidu Maps) to plan the route. This leaves ZouQi and enters that maps app, whose own privacy policy then governs the handling of data. ZouQi sends nothing beyond the destination you are navigating to, and does not send your identity.</p>
+            <p>ZouQi stores favorites, selected city, language preference, submitted-feedback state, and random idempotency identifiers in UserDefaults on the device. ZouQi does not sync this local data to the cloud; deleting the app removes it. Favorites for withdrawn guides are also cleaned up automatically.</p>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Content Updates / 内容更新</h2>
+        <h2>No location collection / 不收集设备定位</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>为了让地点、路线和攻略不发版也能更新，走起会定期向我们自己的只读内容接口请求最新数据。这个请求<strong>不携带你的任何信息</strong>（除上面提到的、任何联网都会有的 IP）。拉取失败时回退到上次缓存或 app 内置数据，因此断网/接口不可用也能正常浏览。</p>
+            <p>走起不请求设备定位权限，也不会读取或上传你的精确或粗略位置。推荐中使用的天气信息属于你在 App 内所选城市的公共天气上下文，不是设备位置。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>So places, routes and guides can update without an app release, ZouQi periodically requests the latest data from our own read-only content endpoint. This request <strong>carries none of your information</strong> (beyond the IP inherent to any network call, as noted above). If it fails, the app falls back to the last cache or the built-in content, so browsing keeps working offline.</p>
+            <p>ZouQi does not request location permission and does not read or upload your precise or coarse device location. Weather used for recommendations is public context for the city selected in the app, not device location.</p>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Spot Submissions / 推荐投稿</h2>
+        <h2>Maps, sharing, and service providers / 地图、分享与服务提供商</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>只有当你主动使用「推荐一个玩法」并点击提交时，走起才会把你填写的内容发送到我们的服务器：地点名称、你在地图上选取的坐标、一句话理由，以及 app 版本号。投稿是<strong>匿名</strong>的——不绑定账号、不含你的身份。提交的内容进入人工审核队列，通过后才可能出现在 app 里。这些内容仅用于审核与丰富地点库。</p>
+            <ul class="feature-list">
+              <li>点击导航后，走起把所选地点名称和坐标交给你选择的 Apple 地图、高德地图或百度地图；之后适用对应地图 App 的隐私政策。</li>
+              <li>使用系统分享时，公开攻略链接只会交给你在 iOS 分享面板中选择的服务。</li>
+              <li>开发者自有 API、数据库和图片存储运行在 <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> 基础设施上；公开产品网页托管在 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a>。这些服务商为托管、安全和传输处理必要数据。</li>
+              <li>我们要求代表我们处理数据的服务商遵守适用的数据保护义务，仅为提供约定服务处理数据，并提供不低于本政策所述的保护。</li>
+              <li>我们不出售个人数据，不向广告网络或数据经纪商提供数据。</li>
+            </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>Only when you actively use "Suggest a spot" and tap submit does ZouQi send what you entered to our server: the spot name, the coordinate you picked on the map, your one-line reason, and the app version. Submissions are <strong>anonymous</strong> — no account, no identity attached. They enter a manual review queue and may appear in the app only after approval. This content is used solely to review and enrich the place library.</p>
+            <ul class="feature-list">
+              <li>When you navigate, ZouQi hands the chosen place name and coordinates to Apple Maps, Amap, or Baidu Maps selected by you; that maps app's privacy policy then applies.</li>
+              <li>When you use the system share sheet, the public guide link goes only to the service you choose in iOS.</li>
+              <li>The developer-owned API, database, and media storage run on <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> infrastructure; the public product pages are hosted on <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a>. These providers process necessary data for hosting, security, and transmission.</li>
+              <li>We require service providers processing data on our behalf to follow applicable data-protection obligations, process data only for the agreed service, and provide protection no less protective than described in this policy.</li>
+              <li>We do not sell personal data or provide it to advertising networks or data brokers.</li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Local Storage / 本地存储</h2>
+        <h2>Retention, deletion, and choices / 保留、删除与选择</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>走起只在本机的系统 <code>UserDefaults</code> 里保存少量你的偏好：收藏的去处 / 攻略、语言设置。这些数据只存在你的设备上，删除应用即一并清除。你在「推荐一个玩法」里于地图上选取的位置，仅用于本次填写，不会被传输到任何服务器。</p>
+            <p>App 内可选反馈、网站邮件反馈和所附照片仅在处理纠错、提供支持、维护攻略质量和防止重复提交所需期间保留；当不再需要时会删除或去标识化，但法律、安全或争议处理要求继续保留的除外。你可以不提交选填原因、备注、照片或联系方式，也可以随时删除 App 以清除本地偏好。</p>
+            <p>如需查询或删除已提交的反馈，请发送邮件至 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>，并尽量提供攻略名称、提交的大致日期和反馈内容，便于在没有账号的情况下定位记录。经核实后，我们会删除仍可定位的反馈及其照片。走起没有账号系统，因此不涉及账号删除。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>ZouQi stores only a small amount of your preferences in the device's standard <code>UserDefaults</code>: your saved spots / guides and your language choice. This stays on your device and is removed when you delete the app. A location you pick on the map in "Suggest a spot" is used only for that entry and is not transmitted to any server.</p>
+            <p>Optional in-app feedback, website email feedback, and attached photos are retained only as long as needed to process corrections, provide support, maintain guide quality, and prevent duplicate submissions. They are deleted or de-identified when no longer needed, except where law, security, or dispute handling requires continued retention. You may omit the optional reason, note, photo, or contact details, and may delete the app at any time to remove local preferences.</p>
+            <p>To ask about or delete submitted feedback, email <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a> with the guide name, approximate submission date, and feedback details where possible, so we can locate it without an account. After verification, we will delete feedback and its photo that can still be identified. ZouQi has no account system, so there is no account to delete.</p>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Children's Privacy / 儿童隐私</h2>
+        <h2>Children's privacy / 儿童隐私</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>走起不面向 13 岁以下儿童，不会有意收集儿童数据。鉴于本应用不收集任何用户数据，对各年龄段用户均无数据相关风险。</p>
+            <p>走起不是专为儿童设计的服务，也不会有意要求儿童提供个人信息。如果我们发现反馈中包含儿童的个人信息，会在收到通知后删除。监护人可以通过下方联系方式提出请求。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>ZouQi is not directed at children under 13 and does not knowingly collect data from children. Since the app collects no user data at all, this poses no data-related risk to any age group.</p>
+            <p>ZouQi is not a service specifically directed to children and does not knowingly ask children for personal information. If we learn that feedback contains a child's personal information, we will delete it after notice. A parent or guardian may contact us below.</p>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <h2>Changes / 政策变更</h2>
+        <h2>Changes and contact / 政策变更与联系</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>如果本隐私政策有变更，我们会更新本页顶部的「生效日期」。若涉及数据处理方式的实质改变，新版本发布时会在更新说明中明确告知。</p>
+            <p>如果数据处理方式发生变化，我们会更新本页的生效日期，并在适当情况下通过版本说明告知。隐私问题、数据查询或删除请求请发邮件至 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>If this policy changes, we update the "Effective date" at the top of this page. Substantive changes to how data is handled will be highlighted in the corresponding app release notes.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="card section">
-        <h2>Contact / 联系我们</h2>
-        <div class="columns">
-          <div class="lang-block">
-            <div class="lang-tag">简体中文</div>
-            <p>对隐私问题有任何疑问，请发邮件到 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>。</p>
-          </div>
-          <div class="lang-block">
-            <div class="lang-tag">English</div>
-            <p>Privacy questions: <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>.</p>
+            <p>If our data practices change, we update the effective date on this page and, where appropriate, explain material changes in release notes. For privacy questions, data inquiries, or deletion requests, email <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>.</p>
           </div>
         </div>
       </section>
     </section>
 
     <footer class="site-footer">
-      <p>© 2026 Andy Chen · <a href="./index.html">Home</a> · <a href="./support.html">Support</a></p>
+      <p>© 2026 智足者富 · <a href="./index.html">Home</a> · <a href="./terms.html">Terms</a> · <a href="./support.html">Support</a> · <a href="./feedback.html">Feedback</a></p>
     </footer>
   </main>
 </body>
