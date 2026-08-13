@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>即兴宇宙 Improverse · 儿童个人信息保护规则</title>
+  <meta name="description" content="即兴宇宙儿童个人信息保护规则：监护人同意、语音上传与本机识别开关、收集范围、监护人权利与删除方式。">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">即兴宇宙 Improverse</a>
+      <div class="nav-links">
+        <a href="./index.html">Home / 首页</a>
+        <a href="./privacy.html">Privacy / 隐私政策</a>
+        <a class="active" href="./children.html">Children / 儿童规则</a>
+        <a href="./terms.html">Terms / 用户协议</a>
+        <a href="./support.html">Support / 支持</a>
+        <a href="./feedback.html">Feedback / 反馈</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">Children's Privacy / 儿童个人信息保护规则</div>
+      <h1>儿童个人信息保护规则</h1>
+      <p>最近更新 / Last updated: 2026-08-13</p>
+    </section>
+
+    <section class="section-stack">
+      <section class="card section">
+        <h2>适用范围</h2>
+        <p>即兴宇宙面向 3–8 岁儿童，在 App Store 中归入儿童类目，年龄分级 4+。本规则说明我们如何处理儿童个人信息，是<a href="./privacy.html">隐私政策</a>的组成部分。</p>
+      </section>
+
+      <section class="card section">
+        <h2>监护人同意</h2>
+        <p>首次启动时，App 会先用一屏说明「麦克风为什么要一直开着」「孩子的原声会不会离开这台手机」以及怎么关掉，再请监护人确认一次。确认之后不再打扰。所有会跳出 App 的操作（打开外部链接、订阅、删除全部数据）都需要先通过家长验证：四指同时按住屏幕 3 秒，再答对一道两位数以内的乘法题。</p>
+      </section>
+
+      <section class="card section">
+        <h2>我们收集的儿童信息</h2>
+        <ul class="feature-list">
+          <li><strong>孩子说话时的语音。</strong>默认设置下，这段音频会实时上传到阿里云百炼转成文字。只在本机检测到有人开口的那几秒上传，安静时一个字节都不传；音频只用于当场转写，不留存、不用于训练。家长可以在「设置 → 模型服务 → 听孩子说话」里改成「这台手机」，改用本机离线识别，原声一步都不出网。</li>
+          <li><strong>对话文字。</strong>由上述识别产生，仅保存在本机。</li>
+          <li><strong>角色设定句。</strong>孩子说过的原话，逐字保存在本机。</li>
+          <li><strong>本地声学特征。</strong>用于区分「孩子/其他人」，不可还原为声音，不上传。</li>
+          <li><strong>孩子的名字（可选）。</strong>由家长自行填写，仅用于作品署名与家长端文案。不填也不影响使用。</li>
+        </ul>
+        <p>我们<strong>不</strong>保存录音文件：App 从不把音频写进磁盘，服务器上也不留孩子的录音。我们<strong>不</strong>收集：照片、位置、通讯录、设备标识符、健康数据。</p>
+      </section>
+
+      <section class="card section">
+        <h2>为什么需要这些</h2>
+        <p>对话文字用来让角色接住孩子上一句话；角色设定句用来保证角色只由孩子的原话长出来；声学特征用来在有别人说话时不把他们的话当成孩子的指令。三者缺一，产品无法成立。</p>
+      </section>
+
+      <section class="card section">
+        <h2>共享与传输</h2>
+        <p>会离开这台手机的有两样：一是孩子说话时的那几秒语音，用于转成文字；二是当前对话的文字与角色设定，用于生成角色台词并把台词念出来。</p>
+        <p>默认三样都由阿里云百炼处理，请求发往 <code>dashscope.aliyuncs.com</code> 或 <code>token-plan.cn-beijing.maas.aliyuncs.com</code>，数据在境内处理。生成台词一项也可以选 Anthropic Claude（数据在境外处理）或家长自填的 OpenAI 兼容端点。App 内「设置 → 模型服务」会明确显示「听孩子说话」「角色怎么接话」「角色的声音」这三项当前分别落在谁身上，每一项都可以单独改成「这台手机」。不配置密钥时三项全部退回本机运行，不产生任何网络请求。</p>
+        <p>除此之外，儿童信息不向任何第三方共享、转让或披露。我们不做定向广告，不做用户画像，不做跨 App 追踪。</p>
+      </section>
+
+      <section class="card section">
+        <h2>监护人的权利</h2>
+        <ul class="feature-list">
+          <li><strong>查看。</strong>家长模式中可以看到每一天的完整逐字稿，以及每个角色的全部设定句。</li>
+          <li><strong>更正。</strong>角色设定由孩子在对话中自己修改；家长可调整全局偏好（怎么陪、不主动带起哪些话题、单次时长）。</li>
+          <li><strong>删除。</strong>「设置 → 删除全部数据」一次清空，包含声学特征，不留副本。</li>
+          <li><strong>举报。</strong>逐字稿旁提供内容举报入口。</li>
+        </ul>
+      </section>
+
+      <section class="card section">
+        <h2>AI 生成内容</h2>
+        <p>角色的台词由大语言模型即时生成，依据是孩子说过的话。模型可能出错。App 内「设置 → AI 生成内容说明」对此有单独说明。如果哪一句让你觉得不合适，请通过逐字稿旁的举报入口告诉我们。</p>
+      </section>
+
+      <section class="card section">
+        <h2>联系</h2>
+        <p>关于儿童信息的任何问题：<a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>即兴宇宙 Improverse · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+  </footer>
+</body>
+</html>
