@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>即兴宇宙 Improverse · 儿童个人信息保护规则</title>
-  <meta name="description" content="即兴宇宙儿童个人信息保护规则：监护人同意、语音上传与本机识别开关、收集范围、监护人权利与删除方式。">
+  <meta name="description" content="即兴宇宙儿童个人信息保护规则：监护人同意、语音上传口径、收集范围、监护人权利与删除方式。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
     <section class="card page-title">
       <div class="eyebrow">Children's Privacy / 儿童个人信息保护规则</div>
       <h1>儿童个人信息保护规则</h1>
-      <p>最近更新 / Last updated: 2026-08-13</p>
+      <p>最近更新 / Last updated: 2026-08-18</p>
     </section>
 
     <section class="section-stack">
@@ -43,7 +43,7 @@
       <section class="card section">
         <h2>我们收集的儿童信息</h2>
         <ul class="feature-list">
-          <li><strong>孩子说话时的语音。</strong>默认设置下，这段音频会实时上传到阿里云百炼转成文字。只在本机检测到有人开口的那几秒上传，安静时一个字节都不传；音频只用于当场转写，不留存、不用于训练。家长可以在「设置 → 模型服务 → 听孩子说话」里改成「这台手机」，改用本机离线识别，原声一步都不出网。</li>
+          <li><strong>孩子说话时的语音。</strong>这段音频会实时上传到阿里云百炼转成文字。只在本机检测到有人开口的那几秒上传，安静时一个字节都不传；音频只用于当场转写，不留存、不用于训练。不接受这一点，就不要填写 API 密钥：App 不会发出任何网络请求，同时也听不见孩子、不出声（本 App 不使用 iOS 自带的语音识别与合成，原因见隐私政策）。</li>
           <li><strong>对话文字。</strong>由上述识别产生，仅保存在本机。</li>
           <li><strong>角色设定句。</strong>孩子说过的原话，逐字保存在本机。</li>
           <li><strong>本地声学特征。</strong>用于区分「孩子/其他人」，不可还原为声音，不上传。</li>
@@ -60,7 +60,7 @@
       <section class="card section">
         <h2>共享与传输</h2>
         <p>会离开这台手机的有两样：一是孩子说话时的那几秒语音，用于转成文字；二是当前对话的文字与角色设定，用于生成角色台词并把台词念出来。</p>
-        <p>默认三样都由阿里云百炼处理，请求发往 <code>dashscope.aliyuncs.com</code> 或 <code>token-plan.cn-beijing.maas.aliyuncs.com</code>，数据在境内处理。生成台词一项也可以选 Anthropic Claude（数据在境外处理）或家长自填的 OpenAI 兼容端点。App 内「设置 → 模型服务」会明确显示「听孩子说话」「角色怎么接话」「角色的声音」这三项当前分别落在谁身上，每一项都可以单独改成「这台手机」。不配置密钥时三项全部退回本机运行，不产生任何网络请求。</p>
+        <p>三样都由阿里云百炼处理，请求发往 <code>dashscope.aliyuncs.com</code> 或 <code>token-plan.cn-beijing.maas.aliyuncs.com</code>，数据在境内处理。生成台词一项也可以选 Anthropic Claude（数据在境外处理）或家长自填的 OpenAI 兼容端点；<strong>听孩子说话与角色的声音只有阿里云百炼一个选项，没有本机实现</strong>。App 内「设置 → 模型服务」会明确显示这三项当前分别落在谁身上。不配置密钥时不产生任何网络请求，角色退回随包剧本，但听和说不工作。</p>
         <p>除此之外，儿童信息不向任何第三方共享、转让或披露。我们不做定向广告，不做用户画像，不做跨 App 追踪。</p>
       </section>
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>即兴宇宙 Improverse · 隐私政策</title>
-  <meta name="description" content="即兴宇宙隐私政策：孩子说话时原声上传做识别、安静时不传、不留存不训练、可一键切回本机识别、无广告无第三方分析、随时全删。">
+  <meta name="description" content="即兴宇宙隐私政策：孩子说话时原声上传做识别、安静时不传、不留存不训练、不填密钥则不联网也不出声、无广告无第三方分析、随时全删。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
     <section class="card page-title">
       <div class="eyebrow">Privacy Policy / 隐私政策</div>
       <h1>即兴宇宙隐私政策</h1>
-      <p>最近更新 / Last updated: 2026-08-13</p>
+      <p>最近更新 / Last updated: 2026-08-18</p>
     </section>
 
     <section class="section-stack">
@@ -34,7 +34,7 @@
         <h2>简体中文</h2>
 
         <h3>一句话说明</h3>
-        <p>默认设置下，孩子说话的那几秒，原声会上传到阿里云百炼转成文字——这一条我们写在明面上，不绕弯。安静时不传，音频不留存、不用于训练，家长可以一键切回完全本机的识别。文字只存在这台手机上。我们不收集个人信息，不出售数据，不使用广告、分析或跨 App 追踪 SDK，也没有账号系统。</p>
+        <p>孩子说话的那几秒，原声会上传到阿里云百炼转成文字——这一条我们写在明面上，不绕弯。安静时不传，音频不留存、不用于训练。不接受这一点，就不要填写 API 密钥：那样 App 不产生任何网络请求，同时也听不见孩子、不出声。文字只存在这台手机上。我们不收集个人信息，不出售数据，不使用广告、分析或跨 App 追踪 SDK，也没有账号系统。</p>
 
         <h3>声音怎么处理</h3>
         <ul class="feature-list">
@@ -42,7 +42,7 @@
           <li><strong>孩子说话时，原声会离开这台手机。</strong>默认由阿里云百炼的实时语音模型（<code>qwen-audio-3.0-realtime-plus</code>）转成文字，请求发往 <code>dashscope.aliyuncs.com</code> 或 <code>token-plan.cn-beijing.maas.aliyuncs.com</code>，数据在境内处理。</li>
           <li><strong>只在有人说话时上传，安静时一个字节都不传。</strong>App 在本机先做人声检测，判定有人开口才开始上传（并补上开口前 300 毫秒，否则每句话的头会被吃掉），判定说完就停。这不是一句安慰话，是可验证的代码行为。</li>
           <li><strong>上传的音频不留存、不用于训练。</strong>它只用于当场转写这一轮的话。App 本身从不把音频写进磁盘，任何服务器上都不保留孩子的录音文件。</li>
-          <li><strong>可以完全关掉。</strong>在「设置 → 模型服务 → 听孩子说话」里选「这台手机」，识别改用 iOS 的离线语音识别，原声一步都不出网。此时角色可能听得没那么准，但产品照常运转。</li>
+          <li><strong>可以完全关掉，代价是 App 不工作。</strong>不填写 API 密钥，App 一个网络请求都不发，原声一步都不出网——但它同时听不见孩子、也不会说话。<strong>本 App 不使用 iOS 自带的语音识别与语音合成</strong>：实测系统识别听小孩子错字太多，而系统合成只有一把嗓子，所有角色一个声音——这个产品可以全程黑屏，孩子靠声音分辨谁在说话，一把嗓子等于玩不下去。所以我们宁可没有「本机模式」这个选项，也不提供一个名义上能用、实际上毁掉体验的降级。</li>
           <li>麦克风开着时，房间里其他人的说话声也可能落在上传的这几秒里。我们不做说话人身份识别，也不为此单独保存任何东西。</li>
         </ul>
 
@@ -58,18 +58,18 @@
         <p>两件事：<strong>孩子说话时的那几秒原声</strong>（上一节已说明），以及<strong>当前对话的文字</strong>和角色设定——后者用于生成角色的台词和把台词念出来。发送的内容里没有设备标识，也没有家长自己填写的孩子名字之外的任何身份信息。</p>
         <p>App 把能力拆成三项，家长可以分别指定由谁来做：</p>
         <ul class="feature-list">
-          <li><strong>听孩子说话</strong>（语音转文字）——默认阿里云百炼，会上传音频；可改为「这台手机」，改用 iOS 离线识别，不出网。</li>
-          <li><strong>角色怎么接话</strong>（生成台词）——只发送文字。可选阿里云百炼、Anthropic Claude，或家长自填的任意 OpenAI 兼容端点；也可改为「这台手机」，用完全离线的本机剧本。</li>
-          <li><strong>角色的声音</strong>（把台词念出来）——只发送文字。可选阿里云百炼；也可改为「这台手机」，用 iOS 自带的语音合成。</li>
+          <li><strong>听孩子说话</strong>（语音转文字）——只有阿里云百炼一个选项，会上传音频。没有本机识别。</li>
+          <li><strong>角色怎么接话</strong>（生成台词）——只发送文字。可选阿里云百炼、Anthropic Claude，或家长自填的任意 OpenAI 兼容端点；也可改为「这台手机」，用完全离线的随包剧本。</li>
+          <li><strong>角色的声音</strong>（把台词念出来）——只有阿里云百炼一个选项，只发送文字。没有本机合成。</li>
         </ul>
         <p>各服务商的数据流向：</p>
         <ul class="feature-list">
           <li><strong>阿里云百炼</strong>——请求发往 <code>dashscope.aliyuncs.com</code> 或 <code>token-plan.cn-beijing.maas.aliyuncs.com</code>，数据在境内处理。</li>
           <li><strong>Anthropic Claude</strong>——请求发往 <code>api.anthropic.com</code>，数据在境外处理。</li>
           <li><strong>OpenAI 兼容端点</strong>——地址由家长自己填写，数据流向取决于所填的服务商。</li>
-          <li><strong>这台手机</strong>——不出网，也不需要密钥。</li>
+          <li><strong>这台手机</strong>——不出网，也不需要密钥；仅「角色怎么接话」这一项有本机实现（随包剧本）。</li>
         </ul>
-        <p>App 内「设置 → 模型服务」会明确显示这三项当前分别落在谁身上。如果没有配置 API 密钥，三项全部退回本机运行，此时不产生任何网络请求，产品仍然可以完整玩下去。</p>
+        <p>App 内「设置 → 模型服务」会明确显示这三项当前分别落在谁身上。如果没有配置 API 密钥，App 不产生任何网络请求；此时角色会退回随包剧本，但<strong>听和说不工作</strong>——首次启动的说明屏会把这一点讲清楚。</p>
         <p>API 密钥由家长自行填写，存放在这台手机的系统钥匙串里，不进 iCloud、不进备份、不写入日志，卸载 App 时一并清除。</p>
 
         <h3>我们不做的事</h3>
@@ -94,7 +94,7 @@
         <h2>English</h2>
 
         <h3>In one sentence</h3>
-        <p>By default, the few seconds while your child is speaking are uploaded to Alibaba Cloud Model Studio ("Bailian") to be turned into text — we say so plainly rather than burying it. Nothing is sent while the room is quiet, the audio is not retained and not used for training, and a parent can switch recognition back to fully on-device with one setting. Text is kept only on this phone. We collect no personal information, sell no data, embed no advertising, analytics or cross-app tracking SDKs, and have no account system.</p>
+        <p>The few seconds while your child is speaking are uploaded to Alibaba Cloud Model Studio ("Bailian") to be turned into text — we say so plainly rather than burying it. Nothing is sent while the room is quiet, and the audio is not retained and not used for training. If you do not accept this, simply do not enter an API key: the app then makes no network request at all, but it also cannot hear or speak. Text is kept only on this phone. We collect no personal information, sell no data, embed no advertising, analytics or cross-app tracking SDKs, and have no account system.</p>
 
         <h3>How voice is handled</h3>
         <ul class="feature-list">
@@ -102,7 +102,7 @@
           <li><strong>While your child speaks, their voice does leave this phone.</strong> By default it is transcribed by Alibaba Cloud Model Studio's realtime speech model (<code>qwen-audio-3.0-realtime-plus</code>). Requests go to <code>dashscope.aliyuncs.com</code> or <code>token-plan.cn-beijing.maas.aliyuncs.com</code> and are processed within China.</li>
           <li><strong>Audio is uploaded only while someone is speaking; while it is quiet, not one byte is sent.</strong> The app runs voice-activity detection locally and starts uploading only once it hears speech (including the 300 ms before onset, or the start of each sentence would be clipped), then stops when the speaker finishes. This is verifiable behaviour in the app's own code, not a reassurance about the server.</li>
           <li><strong>Uploaded audio is not retained and not used for training.</strong> It is used only to transcribe the turn in progress. The app never writes audio to disk, and no recording of your child is kept on any server.</li>
-          <li><strong>You can turn this off entirely.</strong> In Settings → "模型服务" → "听孩子说话" choose "这台手机" and recognition switches to iOS on-device recognition, so no audio leaves the phone at all. Characters may hear your child slightly less accurately; everything else works as before.</li>
+          <li><strong>You can turn this off entirely, at the cost of the app not working.</strong> Enter no API key and the app makes no network request and no audio ever leaves the phone — but it also cannot hear your child or speak. <strong>This app does not use Apple's built-in speech recognition or speech synthesis.</strong> In our testing on-device recognition mis-heard young children too often, and the system synthesiser gives every character the same single voice — this product can run with the screen fully black, where a child tells characters apart by voice alone, so one voice for everyone makes it unplayable. We would rather have no "on-device mode" than ship a fallback that nominally works and actually ruins the experience.</li>
           <li>While the microphone is on, other people talking in the room may fall inside those same few seconds of upload. We do not perform speaker identification and store nothing separately for this purpose.</li>
         </ul>
 
