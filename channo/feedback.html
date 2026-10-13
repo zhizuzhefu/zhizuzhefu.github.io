@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Channo · Feedback / 反馈</title>
+  <meta name="description" content="向 Channo 团队发送反馈。">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">Channo</a>
+      <div class="nav-links">
+        <a  href="./index.html">Home / 首页</a>
+        <a  href="./privacy.html">Privacy / 隐私政策</a>
+        <a  href="./terms.html">Terms / 用户协议</a>
+        <a  href="./licenses.html">Licenses / 开源许可</a>
+        <a  href="./support.html">Support / 支持</a>
+        <a class="active" href="./feedback.html">Feedback / 反馈</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <div id="feedbackForm">
+      <section class="card page-title">
+        <div class="eyebrow">Feedback / 意见反馈</div>
+        <h1>Channo 意见反馈</h1>
+        <p>告诉我们哪里好用、哪里卡住、还缺什么。</p>
+      </section>
+
+      <section class="card feedback-card">
+        <form class="feedback-form" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="feedbackType">反馈类型 / What's this about?</label>
+            <select class="form-select" id="feedbackType" required>
+              <option value="" disabled selected>请选择类型... / Choose a category...</option>
+              <option value="bug">遇到问题 / Bug</option>
+              <option value="playback">播放 / 引擎 / Playback</option>
+              <option value="source">来源导入 / Sources</option>
+              <option value="carplay">CarPlay</option>
+              <option value="feature">功能建议 / Feature idea</option>
+              <option value="other">其他 / Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="feedbackContent">详细描述 / Tell us more</label>
+            <textarea class="form-textarea" id="feedbackContent" required maxlength="2000" oninput="updateCharCount()"
+              placeholder="复现步骤、期望结果、设备与系统版本会很有帮助。"></textarea>
+            <div class="char-count" id="charCount">0 / 2000</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contactInfo">联系方式 / Reach you? <span class="optional">(选填)</span></label>
+            <input class="form-input" id="contactInfo" type="text" maxlength="200" placeholder="邮箱或其他联系方式">
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">发送反馈 / Send feedback</button>
+          <p class="form-note">提交后会打开邮件客户端，发往 zhizuzhefu@foxmail.com。我们不在网页上保存表单内容。</p>
+        </form>
+      </section>
+    </div>
+
+    <div id="successMessage" class="success-message" style="display:none">
+      <section class="card">
+        <h2>已打开邮件草稿</h2>
+        <p>如果没有自动打开，请直接发信至 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>。</p>
+        <p><a href="./index.html">返回首页</a></p>
+      </section>
+    </div>
+
+    <script>
+      function updateCharCount() {
+        var el = document.getElementById('feedbackContent');
+        document.getElementById('charCount').textContent = el.value.length + ' / 2000';
+      }
+      function handleSubmit(e) {
+        e.preventDefault();
+        var type = document.getElementById('feedbackType').value;
+        var content = document.getElementById('feedbackContent').value.trim();
+        var contact = document.getElementById('contactInfo').value.trim();
+        var subject = encodeURIComponent('[Channo feedback] ' + type);
+        var body = encodeURIComponent(content + (contact ? '\n\nContact: ' + contact : '') + '\n\n— sent from apps.zhizuzhefu.com/channo/feedback.html');
+        window.location.href = 'mailto:zhizuzhefu@foxmail.com?subject=' + subject + '&body=' + body;
+        document.getElementById('feedbackForm').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        return false;
+      }
+    </script>
+
+    <footer class="site-footer">
+      <p>© 2026 智足者富 · Channo · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>
+         · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./licenses.html">Licenses</a></p>
+    </footer>
+  </main>
+</body>
+</html>
