@@ -36,11 +36,11 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>Channo 是播放器，不是内容平台。你导入的 M3U / Xtream / 流地址与节目单保存在本机；Xtream 密码只写入系统钥匙串。没有账号系统，不做广告或跨 App 追踪。包含「使用情况统计」设置的新版使用 Google Analytics for Firebase 分析产品使用与播放质量，<strong>默认开启，可随时关闭</strong>。远程诊断是单独的可选功能，<strong>默认关闭</strong>。两者都不上传明文源地址、账号密码、频道标题或搜索内容。</p>
+            <p>Channo 是播放器，不是内容平台。你导入的 M3U / Xtream / 流地址与节目单保存在本机；独立的 Xtream 账户密码由系统钥匙串管理；含鉴权信息的播放地址也可能作为列表数据保存在本机。没有账号系统，不做广告或跨 App 追踪。包含「使用情况统计」设置的新版使用 Google Analytics for Firebase 分析产品使用与播放质量，<strong>默认开启，可随时关闭</strong>。远程诊断是单独的可选功能，<strong>默认关闭</strong>。两者都不上传明文源地址、账号密码、频道标题或搜索内容。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>Channo is a player, not a content service. Playlists, Xtream credentials, and guide data stay on this device; passwords go only to the system Keychain. No accounts, ads, or cross-app tracking. Builds with the Usage analytics setting use Google Analytics for Firebase to understand feature use and playback quality. Usage analytics is <strong>on by default and can be turned off</strong>. Remote diagnostics remain a separate optional feature, <strong>off by default</strong>. Neither receives raw source URLs, credentials, channel titles or search text from Channo.</p>
+            <p>Channo is a player, not a content service. Playlists, Xtream credentials, and guide data stay on this device; separate Xtream login passwords are managed by the system Keychain; authenticated stream URLs may also be stored as local playlist data. No accounts, ads, or cross-app tracking. Builds with the Usage analytics setting use Google Analytics for Firebase to understand feature use and playback quality. Usage analytics is <strong>on by default and can be turned off</strong>. Remote diagnostics remain a separate optional feature, <strong>off by default</strong>. Neither receives raw source URLs, credentials, channel titles or search text from Channo.</p>
           </div>
         </div>
       </section>
@@ -52,18 +52,18 @@
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
               <li>来源配置、频道列表、收藏、最近播放、播放偏好（Core Data）</li>
-              <li>Xtream 密码：仅系统钥匙串（<code>KeychainStore</code>），不进 Core Data / iCloud</li>
+              <li>独立 Xtream 账户密码由系统钥匙串管理；频道鉴权地址可能包含凭据，作为本地列表数据保存</li>
               <li>语言选择、引擎偏好、分析开关等 UserDefaults</li>
-              <li>可选 iCloud 同步：设置里默认关闭；开启后也不同步密码</li>
+              <li>iCloud 同步由设备设置控制：来源地址与偏好进入你的私有 iCloud。独立钥匙串密码不随此功能导出；来源地址中的令牌或其他鉴权信息仍可能同步</li>
             </ul>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
               <li>Sources, channels, favorites, recents, playback prefs (Core Data)</li>
-              <li>Xtream passwords: Keychain only — never Core Data / iCloud</li>
+              <li>Separate Xtream login passwords use Keychain; authenticated channel URLs may contain credentials and remain in local playlist storage</li>
               <li>Language, engine prefs, analytics toggle in UserDefaults</li>
-              <li>Optional iCloud sync: off by default; passwords never sync</li>
+              <li>iCloud sync follows device settings and copies source URLs and preferences to your private iCloud. Separate Keychain passwords are not exported by this feature; URL tokens or other authentication details may still sync</li>
             </ul>
           </div>
         </div>
