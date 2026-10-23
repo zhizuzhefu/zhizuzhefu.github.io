@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Channo · Privacy Policy / 隐私政策</title>
-  <meta name="description" content="Channo 隐私政策：本机存储、钥匙串密码、可选诊断默认关闭。">
+  <meta name="description" content="Channo 隐私政策：本机存储、Google 使用情况统计可关闭、独立的可选远程诊断。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
     <section class="card page-title">
       <div class="eyebrow">Privacy Policy / 隐私政策</div>
       <h1>Channo Privacy Policy</h1>
-      <p>生效日期 / Effective date: 2026-10-13 · 对应 App 版本 1.0.0</p>
+      <p>更新日期 / Updated: 2026-10-23 · Google Analytics applies to version 1.2.1 and later / Google 统计适用于 1.2.1 及后续版本；此前版本不含该 SDK。</p>
     </section>
 
     <section class="section-stack">
@@ -36,11 +36,11 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>Channo 是播放器，不是内容平台。你导入的 M3U / Xtream / 流地址与节目单保存在本机；Xtream 密码只写入系统钥匙串。没有账号系统，不做广告或跨 App 追踪。可选的远程诊断分析<strong>默认关闭</strong>，打开后也不会上传明文 URL 或账号。</p>
+            <p>Channo 是播放器，不是内容平台。你导入的 M3U / Xtream / 流地址与节目单保存在本机；Xtream 密码只写入系统钥匙串。没有账号系统，不做广告或跨 App 追踪。包含「使用情况统计」设置的新版使用 Google Analytics for Firebase 分析产品使用与播放质量，<strong>默认开启，可随时关闭</strong>。远程诊断是单独的可选功能，<strong>默认关闭</strong>。两者都不上传明文源地址、账号密码、频道标题或搜索内容。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>Channo is a player, not a content service. Playlists, Xtream credentials, and guide data stay on this device; passwords go only to the system Keychain. No accounts, ads, or cross-app tracking. Optional remote diagnostics are <strong>off by default</strong>; when enabled they never upload raw stream URLs or credentials.</p>
+            <p>Channo is a player, not a content service. Playlists, Xtream credentials, and guide data stay on this device; passwords go only to the system Keychain. No accounts, ads, or cross-app tracking. Builds with the Usage analytics setting use Google Analytics for Firebase to understand feature use and playback quality. Usage analytics is <strong>on by default and can be turned off</strong>. Remote diagnostics remain a separate optional feature, <strong>off by default</strong>. Neither receives raw source URLs, credentials, channel titles or search text from Channo.</p>
           </div>
         </div>
       </section>
@@ -92,6 +92,28 @@
       </section>
 
       <section class="card section">
+        <h2>Usage analytics / 使用情况统计</h2>
+        <div class="columns">
+          <div class="lang-block">
+            <div class="lang-tag">简体中文</div>
+            <p>Google Analytics for Firebase 统计应用活跃、会话、页面访问、功能操作、来源导入结果、购买与恢复结果，以及播放是否成功、首帧等待、卡顿、黑屏、实际检测到的封装与音视频编码、使用的引擎。数据用于改进 Channo 的易用性和兼容性，不用于广告。</p>
+            <p>Google 通过应用安装实例标识关联这些事件，并接收应用/系统版本、设备类型、语言等技术信息。安装标识并非实名账号，也不等于跨设备的同一人。Google 可从掩码 IP 地址派生大致地区；我们不请求精确位置。SDK 可能自动记录 StoreKit 商品和购买信息，不接收支付卡信息。</p>
+            <p>我们不向 Google 传入来源或频道名称、URL、主机地址、token、账号密码、搜索内容、任意错误文本或自定义用户账号 ID。不使用广告 ID、IDFV、Google Signals 或跨 App 追踪；广告存储与个性化许可保持拒绝。数据可能在你所在国家或地区以外处理，受 Google 的数据处理条款约束。</p>
+            <p>在 iPhone/iPad 的「设置 → 隐私」或 Apple TV 的 Pro 页关闭「使用情况统计」，可停止后续采集并重置本地统计数据。再次开启不会补报关闭期间的行为。Google Analytics 中的用户与事件数据保留期设为 14 个月，新的活跃可能重置用户数据的保留期；基于汇总数据的标准报表可能保留更久。关闭或卸载不会自动删除 Google 已接收的历史数据；如需了解保留期或请求删除，请通过下方邮箱联系我们。无账号且安装标识已重置时，可能无法定位单个安装的历史记录。</p>
+            <p>Google 的处理方式见 <a href="https://policies.google.com/privacy">Google 隐私政策</a>和 <a href="https://firebase.google.com/support/privacy">Firebase 隐私与安全</a>。远程诊断开关与此统计开关互相独立。</p>
+          </div>
+          <div class="lang-block">
+            <div class="lang-tag">English</div>
+            <p>Google Analytics for Firebase measures activity, sessions, screen visits, feature actions, source import results, purchases/restores and playback outcomes, startup time, stalls, black-screen counts, detected container/audio/video formats and playback engines. This helps improve usability and compatibility, not advertising.</p>
+            <p>Google associates events with an app installation identifier and receives technical information such as app/OS version, device type and language. An installation is not a named account or a cross-device identity. Google may derive an approximate region from masked IP addresses; we do not request precise location. The SDK may automatically measure StoreKit products and purchases; we do not receive payment card details.</p>
+            <p>Channo does not provide source/channel names, URLs, host addresses, tokens, credentials, search text, free-form errors or custom account IDs to Google. No advertising ID, IDFV, Google Signals or cross-app tracking is used; advertising storage and personalization consent stay denied. Data may be processed outside your country under Google's data-processing terms.</p>
+            <p>Turn off Usage analytics under Settings → Privacy on iPhone/iPad, or on the Pro page on Apple TV, to stop subsequent collection and reset local analytics data. Re-enabling does not replay disabled-period activity. User and event data retention in Google Analytics is set to 14 months; new activity may reset user-data retention. Aggregated standard reports may be retained longer. Disabling or uninstalling does not automatically delete history already received by Google. Contact us below for retention details or deletion requests. Without an account, and after an installation identifier is reset, we may be unable to locate an individual installation's historic records.</p>
+            <p>See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Firebase Privacy and Security</a>. Remote diagnostics are controlled independently.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section">
         <h2>Optional diagnostics / 可选诊断</h2>
         <div class="columns">
           <div class="lang-block">
@@ -111,7 +133,7 @@
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
-              <li>无广告 SDK、无 ATT 跨 App 追踪、无第三方行为分析 SDK</li>
+              <li>无广告 SDK、无 ATT 跨 App 追踪；Google 使用情况统计可关闭</li>
               <li>不要求注册登录，不索取通讯录、相册、相机、麦克风、精确位置</li>
               <li>不出售或向广告商共享你的数据</li>
             </ul>
@@ -119,7 +141,7 @@
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
-              <li>No ad SDKs, no ATT cross-app tracking, no third-party behavioral analytics SDKs</li>
+              <li>No ad SDKs or ATT cross-app tracking; Google usage analytics can be disabled</li>
               <li>No sign-in; no contacts, photos, camera, mic, or precise location</li>
               <li>We do not sell or share your data with advertisers</li>
             </ul>
