@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://apps.zhizuzhefu.com/channo/</loc></url>
-  <url><loc>https://apps.zhizuzhefu.com/channo/support.html</loc></url>
-  <url><loc>https://apps.zhizuzhefu.com/channo/privacy.html</loc></url>
-  <url><loc>https://apps.zhizuzhefu.com/channo/feedback.html</loc></url>
-  <url><loc>https://apps.zhizuzhefu.com/channo/licenses.html</loc></url>
-  <url><loc>https://apps.zhizuzhefu.com/channo/terms.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/en/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/support.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/support.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/en/support.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/support.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/m3u.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/m3u.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/m3u.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/m3u.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/en/m3u.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/m3u.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/m3u.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/m3u.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/xtream.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/xtream.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/xtream.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/xtream.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/en/xtream.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/xtream.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/xtream.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/xtream.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/apple-tv.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/apple-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/apple-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/apple-tv.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/en/apple-tv.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/apple-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/apple-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/apple-tv.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/privacy.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/terms.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/licenses.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/channo/feedback.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.3</priority>
+  </url>
 </urlset>

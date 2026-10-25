@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Channo 使用指南｜导入 M3U、Xtream、XMLTV 与播放帮助</title>
-  <meta name="description" content="如何在 Channo 导入 M3U / M3U8 或 Xtream、添加 XMLTV 节目单、排查无法播放、恢复 Pro 购买，以及使用 CarPlay 与 Apple TV。">
+  <title>如何导入 M3U、Xtream 和 XMLTV｜Channo 使用指南</title>
+  <meta name="description" content="在 Channo 中添加 M3U / M3U8、登录 Xtream Codes、填写 XMLTV 节目单，并排查无法播放、下载、Apple TV 与 CarPlay。适用于 iPhone、iPad 和 Apple TV。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/channo/support.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/support.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/support.html">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/support.html">
   <link rel="icon" type="image/png" href="./app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Channo">
   <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="Channo 使用指南｜导入 M3U、Xtream、XMLTV 与播放帮助">
-  <meta property="og:description" content="如何在 Channo 导入 M3U / M3U8 或 Xtream、添加 XMLTV 节目单、排查无法播放、恢复 Pro 购买，以及使用 CarPlay 与 Apple TV。">
+  <meta property="og:title" content="如何导入 M3U、Xtream 和 XMLTV｜Channo 使用指南">
+  <meta property="og:description" content="在 Channo 中添加 M3U / M3U8、登录 Xtream Codes、填写 XMLTV 节目单，并排查无法播放、下载、Apple TV 与 CarPlay。适用于 iPhone、iPad 和 Apple TV。">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/channo/support.html">
   <meta property="og:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Channo 使用指南｜导入 M3U、Xtream、XMLTV 与播放帮助">
-  <meta name="twitter:description" content="如何在 Channo 导入 M3U / M3U8 或 Xtream、添加 XMLTV 节目单、排查无法播放、恢复 Pro 购买，以及使用 CarPlay 与 Apple TV。">
+  <meta name="twitter:title" content="如何导入 M3U、Xtream 和 XMLTV｜Channo 使用指南">
+  <meta name="twitter:description" content="在 Channo 中添加 M3U / M3U8、登录 Xtream Codes、填写 XMLTV 节目单，并排查无法播放、下载、Apple TV 与 CarPlay。适用于 iPhone、iPad 和 Apple TV。">
   <meta name="twitter:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -31,6 +35,7 @@
         <a  href="./licenses.html">Licenses / 开源许可</a>
         <a class="active" href="./support.html">Support / 支持</a>
         <a  href="./feedback.html">Feedback / 反馈</a>
+        <a  href="./en/support.html" hreflang="en" lang="en">English</a>
       </div>
     </nav>
   </header>
@@ -38,81 +43,268 @@
   <main class="page">
 
     <section class="card page-title">
-      <div class="eyebrow">Support / 支持</div>
-      <h1>Channo 支持</h1>
-      <p>常见问题与联系方式。 / FAQ and how to reach us.</p>
+      <div class="eyebrow">Support / 支持 · 1.2.1</div>
+      <h1>如何导入 M3U、Xtream 和 XMLTV</h1>
+      <p>这是 Channo 1.2.1 在 iPhone、iPad 和 Apple TV 上的操作说明。Channo 不提供频道、影片或节目单，请只导入你有权使用的来源。某项能不能用，取决于来源、播放引擎、设备和车辆。英文说明见 <a href="./en/support.html" hreflang="en" lang="en">English setup guide</a>。</p>
+      <p>分步页面：<a href="./m3u.html">添加 M3U / M3U8</a> · <a href="./xtream.html">登录 Xtream Codes</a> · <a href="./apple-tv.html">设置 Apple TV</a></p>
+      <div class="pill-row">
+        <a class="pill" href="#sources">添加来源</a>
+        <a class="pill" href="#library">频道与搜索</a>
+        <a class="pill" href="#guide">节目单与回看</a>
+        <a class="pill" href="#vod">影片与下载</a>
+        <a class="pill" href="#playback">播放</a>
+        <a class="pill" href="#devices">手机、电视与车机</a>
+        <a class="pill" href="#account">同步、家长锁与 Pro</a>
+        <a class="pill" href="#troubleshoot">播不了</a>
+      </div>
     </section>
 
     <section class="section-stack">
-      <section class="card section">
-        <h2>Getting started / 开始使用</h2>
+      <section class="card section" id="sources">
+        <h2>添加来源 / Add a source</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
-              <li>打开「来源」→ 添加 M3U URL / 文件、Xtream 或单条地址</li>
-              <li>若源要求特定 UA / Referer，在来源的请求头里填写</li>
-              <li>节目单：添加你自己的 XMLTV 地址（支持 .gz）</li>
-              <li>http 明文源可以播放；请只导入你有权使用的源</li>
+              <li>打开「来源」或空列表里的添加入口。可选单条视频地址、M3U / M3U8 链接、Xtream 账号，或从文件导入。</li>
+              <li>Xtream 会导入直播、影片和剧集。服务器填 <span lang="en">http://主机:端口</span> 或 https 地址，再填用户名和密码。</li>
+              <li>也可以从「文件」分享或打开 .m3u、.m3u8、.txt，或把 http(s) 链接交给 Channo。链接形式 <span lang="en">channo://add?url=</span> 同样会进入添加流程。</li>
+              <li>单条地址支持 http、https、rtmp、rtmps、rtsp、udp、rtp。明文 http 可以播放。Xtream 服务器只用 http 或 https。</li>
+              <li>大列表可以按分组挑选后再导入。导入时会先抽样检测前面一部分，其余在播放时再检测。</li>
+              <li>服务商要求特定请求头时，在来源详情的「请求头」里每行写一项，格式为 <span lang="en">Name: value</span>，例如 User-Agent、Referer 或 Cookie。</li>
+              <li>添加时可以附上自己的 XMLTV 地址，也支持 .gz。节目单按 tvg-id、tvg-name 或频道名称匹配。</li>
             </ul>
           </div>
           <div class="lang-block" lang="en">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
-              <li>Sources → add M3U URL/file, Xtream, or a single stream</li>
-              <li>Set custom User-Agent / Referer in source headers when required</li>
-              <li>Guide: add your own XMLTV URL (gzip supported)</li>
-              <li>Cleartext HTTP sources can play; only import streams you have rights to</li>
+              <li>Open Sources, or the add button on an empty library. Choose a single video URL, an M3U / M3U8 link, an Xtream account, or a file.</li>
+              <li>Xtream imports live channels, movies and series. Enter the server as http://host:port or an https address, plus the username and password.</li>
+              <li>You can also share or open a .m3u, .m3u8 or .txt file, or hand Channo an http(s) link. A channo://add?url= link opens the same import flow.</li>
+              <li>A single stream may use http, https, rtmp, rtmps, rtsp, udp or rtp. Cleartext HTTP can play. An Xtream server must be http or https.</li>
+              <li>On a large playlist, choose the groups you want before import. Channo spot-checks the first portion; the rest are checked when you play them.</li>
+              <li>If a provider requires headers, open the source and add one per line as Name: value. User-Agent, Referer and Cookie are typical.</li>
+              <li>You can attach your own XMLTV URL while adding a source. Gzip is supported. Programmes match tvg-id, tvg-name or the channel name.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="card section">
-        <h2>Playback / 播放</h2>
+      <section class="card section" id="library">
+        <h2>播放列表、频道与搜索 / Playlists, channels and search</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
-              <li>默认自动：AVPlayer 优先，失败或特定格式切 FFmpeg</li>
-              <li>设置里可强制指定引擎以便排查</li>
-              <li>CarPlay 支持车载音频；停车视频取决于兼容系统、车机能力与车机是否允许，行驶时只播放音频</li>
+              <li>1.2.1 起，免费版最多添加 3 个播放列表。Pro 不限数量。额度变化后，已经添加的列表仍可编辑和刷新，只是不能继续新增，直到数量回到额度以内。</li>
+              <li>来源详情里可以改名称、地址和节目单，设置自动刷新（1、6、12、24 小时或手动，默认 12 小时），以及是否显示不可用频道。点「立即刷新」更新列表；刷新失败时仍显示上次的频道。</li>
+              <li>删除来源会同时移除它的频道和收藏。</li>
+              <li>在频道页点「全部检测」。检测通过短 HTTP 探测完成，RTMP / UDP 不会被探测。之后可用「全部 / 可播放 / 未检测 / 失效」筛选。</li>
+              <li>收藏频道或影片后，在「收藏」里查看。首页和 Apple TV 的「继续观看」用来回到最近播放。</li>
+              <li>搜索覆盖频道、节目单里的节目，以及影片。多个播放列表可以分别查看，也可以看全部来源。</li>
             </ul>
           </div>
           <div class="lang-block" lang="en">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
-              <li>Auto mode: AVPlayer first, FFmpeg on failure / certain formats</li>
-              <li>Force an engine in Settings while debugging</li>
-              <li>CarPlay supports audio. Parked video requires a compatible system and vehicle permission; driving uses audio only</li>
+              <li>From version 1.2.1, the free version can hold 3 playlists. Pro removes that limit. If the allowance changes, playlists already added stay editable and refreshable. You just cannot add another until you are back within the limit.</li>
+              <li>Source details cover the name, address and guide, auto-refresh (1, 6, 12 or 24 hours, or manual; 12 hours is the default), and whether unavailable channels stay visible. Refresh now updates the list. A failed refresh keeps the previous channels.</li>
+              <li>Deleting a source also removes its channels and favorites.</li>
+              <li>On the Channels page, use Check All. The check is a short HTTP probe, so RTMP / UDP entries are not probed. Filter afterwards by All, Playable, Unchecked or Failed.</li>
+              <li>Favorite a channel or movie, then find it under Favorites. Continue Watching on the home screen and on Apple TV returns to recent playback.</li>
+              <li>Search covers channels, guide programmes and movies. View one playlist or all sources.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="card section">
-        <h2>免费与 Pro / Free and Pro</h2>
+      <section class="card section" id="guide">
+        <h2>节目单与回看 / Guide and catch-up</h2>
         <div class="columns">
-          <div class="lang-block" lang="zh-CN"><p>1.2.1 起免费添加 3 个播放列表，使用收藏、搜索、基础播放和「现在 / 接下来」节目单。Pro 一次购买，无订阅；可在购买页或设置中恢复购买。点播离线下载不支持直播录制，节目单需要自备 XMLTV 来源。</p><p>Channo 没有内置频道。<a href="https://apps.apple.com/app/id6822259868">在 App Store 下载 Channo</a>，导入你有权使用的播放列表后开始观看。</p></div>
-          <div class="lang-block" lang="en"><p>Version 1.2.1 includes 3 free playlists, with favorites, search, basic playback and the Now/Next guide. Pro is a one-time purchase, with no subscription. Restore Purchases is available on the paywall and in Settings. Downloads support eligible on-demand content, not live recording. Guide features require your own XMLTV source.</p><p>Channo has no built-in channels. <a href="https://apps.apple.com/app/id6822259868">Download Channo on the App Store</a>, then add sources you have the right to use.</p></div>
+          <div class="lang-block">
+            <div class="lang-tag">简体中文</div>
+            <p>节目单来自你填写的 XMLTV，Channo 不提供节目数据。列表会先用本机缓存显示，再在后台更新；更新失败时保留上一份。</p>
+            <ul class="feature-list">
+              <li>免费版查看「现在 / 接下来」。Pro 可浏览全天节目单。</li>
+              <li>打开一个节目，可以「观看直播」。如果来源声明了回看，并且该节目仍在来源保留的时间范围内，还会出现「从头回看」。</li>
+              <li>回看使用来源自己的地址，例如 M3U 的 catchup 信息，或 Xtream 的电视归档。Channo 不会在本地录制直播。</li>
+              <li>节目单过旧时，在来源详情长按「立即刷新」，选择清除节目单缓存。</li>
+            </ul>
+          </div>
+          <div class="lang-block" lang="en">
+            <div class="lang-tag">English</div>
+            <p>The guide comes from the XMLTV URL you provide. Channo has no guide service. A cached copy appears first and refreshes in the background. If the refresh fails, the previous guide stays.</p>
+            <ul class="feature-list">
+              <li>Now / Next is free. Pro opens the full-day guide.</li>
+              <li>Open a programme to watch it live. If the source declares catch-up and the programme is still inside its archive window, Watch from Start appears too.</li>
+              <li>Catch-up uses the source’s own address, such as M3U catchup tags or an Xtream TV archive. Channo does not record live TV on the device.</li>
+              <li>If the guide looks stale, long-press Refresh now in the source details and clear the guide cache.</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section class="card section">
+
+      <section class="card section" id="vod">
+        <h2>影片、剧集与下载 / Movies, series and downloads</h2>
+        <div class="columns">
+          <div class="lang-block">
+            <div class="lang-tag">简体中文</div>
+            <ul class="feature-list">
+              <li>Xtream 的影片和剧集可以浏览，并从头播放。这两项免费。从上次停止的位置续播需要 Pro。直播进度不会当作续播同步。</li>
+              <li>符合条件的点播条目上有「下载」。可下载的是 http(s) 点播文件（如 mp4、m4v、mov、mkv、webm、avi）以及确认为点播的 HLS。直播、加密流、RTMP、UDP 不能下载。</li>
+              <li>下载默认只在 Wi-Fi 下进行，可在下载页更改。左滑删除。没有网络时，已下载的影片仍可看，直播不行。</li>
+              <li>免费版的下载列表保留 1 项，删掉后才能再下。Pro 不限数量。下载在 iPhone 与 iPad 上，不在 Apple TV 上。</li>
+            </ul>
+          </div>
+          <div class="lang-block" lang="en">
+            <div class="lang-tag">English</div>
+            <ul class="feature-list">
+              <li>Browse Xtream movies and series and play them from the start for free. Resume from where you stopped is part of Pro. Live playback position is not synced as resume progress.</li>
+              <li>Eligible on-demand rows offer Download. That covers http(s) files such as mp4, m4v, mov, mkv, webm and avi, plus HLS that is actually video-on-demand. Live streams, encrypted video, RTMP and UDP cannot be downloaded.</li>
+              <li>Downloads wait for Wi-Fi unless you change that on the Downloads page. Swipe left to delete. Downloaded videos still play offline. Live TV needs a connection.</li>
+              <li>The free download list holds 1 item. Delete it before starting another. Pro removes the limit. Downloads are on iPhone and iPad, not on Apple TV.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="playback">
+        <h2>播放 / Playback</h2>
+        <div class="columns">
+          <div class="lang-block">
+            <div class="lang-tag">简体中文</div>
+            <ul class="feature-list">
+              <li>默认引擎是自动：优先使用系统 AVPlayer，失败或遇到它不擅长的格式时改用 FFmpeg。常见路径包括 HLS、MPEG-TS、MP4 / MOV，以及未加密的 MPEG-DASH 等更多容器。</li>
+              <li>播放中打开「播放设置」，可以把这一频道改成自动、强制 AVPlayer 或强制 FFmpeg。这不是设置页里的全局开关。</li>
+              <li>同一页还可以调节画面比例（适应、填满、16:9、4:3）、快进快退步长、离开 App 时自动画中画，以及 15 / 30 / 60 分钟睡眠定时。播放速度用于点播，直播不可调。</li>
+              <li>可以切换来源提供的音轨和文本字幕。图像字幕（如 PGS、DVB）和复杂 ASS 特效目前不能完整显示。声音混合为立体声，不提供环绕声直通，也不承诺 HDR 或 Dolby Vision 的完整色彩。</li>
+              <li>iPhone 与 iPad 支持画中画。播放器里的 AirPlay 可以把画面送到支持的屏幕；有没有画面取决于当前引擎和接收设备。</li>
+              <li>网络中断后会自动尝试恢复。这不能保证每个来源都不缓冲。</li>
+              <li>全屏上下滑动换台时，会跳过体检判定为失效的频道。若候选都失效，仍会停到下一个。</li>
+              <li>Pro 可在来源详情的「查看日志」里打开播放调试浮层，查看引擎、缓冲和码率。频道体检本身免费。</li>
+            </ul>
+          </div>
+          <div class="lang-block" lang="en">
+            <div class="lang-tag">English</div>
+            <ul class="feature-list">
+              <li>Auto mode tries the system AVPlayer first, then FFmpeg when that fails or the format is a poor fit. Common paths include HLS, MPEG-TS, MP4 / MOV and other containers such as unencrypted MPEG-DASH.</li>
+              <li>During playback, open Playback Settings to keep Auto or force AVPlayer or FFmpeg for that channel. This is not a global switch on the Settings page.</li>
+              <li>The same sheet sets aspect (Fit, Fill, 16:9, 4:3), skip interval, automatic Picture in Picture when you leave the app, and a 15-, 30- or 60-minute sleep timer. Playback speed applies to on-demand video, not live TV.</li>
+              <li>Choose the audio tracks and text subtitles the source provides. Bitmap subtitles such as PGS and DVB, and advanced ASS styling, are not fully shown. Audio is mixed to stereo. Channo does not pass through surround sound, and it does not promise full HDR or Dolby Vision color.</li>
+              <li>Picture in Picture works on iPhone and iPad. AirPlay in the player can send video to a supported screen. Whether video appears depends on the active engine and the receiver.</li>
+              <li>After a network interruption, playback attempts to recover. That does not mean every source will play without buffering.</li>
+              <li>A vertical swipe in fullscreen changes channel and skips entries a health check marked failed. If every candidate failed, it still lands on the next one.</li>
+              <li>Pro can turn on the playback diagnostics overlay from View log in a source’s details. It shows the engine, buffer and bitrate. Channel checks stay free.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="devices">
+        <h2>iPhone、iPad、Apple TV 与 CarPlay / Phones, television and the car</h2>
+        <div class="columns">
+          <div class="lang-block">
+            <div class="lang-tag">简体中文</div>
+            <ul class="feature-list">
+              <li>iPad 用更宽的布局，在概览、频道、影片和来源之间切换。播放、画中画和下载与 iPhone 相同。</li>
+              <li>Apple TV 用遥控器浏览频道、搜索、查看节目单并播放。可以在电视上添加播放列表链接，也可以接收 iCloud 同步来的来源。连续互通键盘便于从 iPhone 输入。免费版同样是 3 个播放列表，以及「现在 / 接下来」；Pro 解锁全天节目单和全部来源同步。</li>
+              <li>Apple TV 上，部分 Xtream 来源会再问一次密码。使用情况与故障报告可在电视的 Pro 页面关闭。</li>
+              <li>CarPlay 可以听频道和影片的声音。车辆和 iOS 允许时，停车可以看视频；行驶中只播放音频。Channo 不会绕过车辆限制。</li>
+              <li>在支持停车视频的车上，免费额度是每天 20 分钟，Pro 不限时长。额度用完后继续播放声音。设置里的「行驶时继续播放声音」保持音频不中断。「车机兼容性」会显示当前车辆是否允许视频，也可改用 AirPlay。</li>
+              <li>界面语言可跟随系统，或在设置里选简体中文、繁體中文、English、Português (Brasil)、Русский、Español、Deutsch、日本語。</li>
+            </ul>
+          </div>
+          <div class="lang-block" lang="en">
+            <div class="lang-tag">English</div>
+            <ul class="feature-list">
+              <li>iPad uses a wider layout and switches among Overview, Channels, Movies and Sources. Playback, Picture in Picture and downloads match iPhone.</li>
+              <li>On Apple TV, use the remote to browse, search, open the guide and play. Add a playlist link on the TV, or receive sources from iCloud sync. The Continuity Keyboard helps you type from iPhone. The free allowance is the same 3 playlists and Now / Next. Pro adds the full-day guide and sync for every source.</li>
+              <li>Some Xtream sources ask for the password once on Apple TV. Turn usage and crash reporting off on the TV Pro page.</li>
+              <li>CarPlay plays channel and movie audio. When the vehicle and iOS allow it, parked mode can show video. Driving stays audio only. Channo does not work around a vehicle restriction.</li>
+              <li>Where parked video is available, the free allowance is 20 minutes per day. Pro removes that limit. After the allowance, audio continues. Keep audio while driving leaves the sound on. Car compatibility shows whether this vehicle allows video, and AirPlay remains an alternative.</li>
+              <li>The interface can follow the system language, or you can choose Simplified Chinese, Traditional Chinese, English, Português (Brasil), Русский, Español, Deutsch or 日本語 in Settings.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="account">
+        <h2>iCloud、家长锁、隐私与 Pro / Sync, parental lock, privacy and Pro</h2>
+        <div class="columns">
+          <div class="lang-block">
+            <div class="lang-tag">简体中文</div>
+            <ul class="feature-list">
+              <li>「设置 → iCloud 同步」默认关闭，需要系统里已登录 iCloud。打开后，来源、收藏和点播进度进入你的私有 iCloud。免费同步第 1 个来源及其收藏和进度；Pro 同步全部来源。直播播放位置不同步。</li>
+              <li>这项同步不会把独立的 Xtream 密码或家长锁 PIN 放进播放列表记录。密码和 PIN 存在系统钥匙串。若 Apple ID 开启了 iCloud 钥匙串，系统可能把它们加密同步到同一账号下的 iPhone、iPad 和 Apple TV。地址里的令牌或其他鉴权信息仍可能随来源一起同步。</li>
+              <li>家长锁在「设置 → 家长锁」。PIN 为 4 到 6 位数字。锁定的分类需要 PIN 才能进入；隐藏的分类不会出现在列表、搜索、收藏和 CarPlay 中。连续输错 5 次后，大约等待 30 秒再试。</li>
+              <li>「设置 → 隐私」里的「使用情况与故障报告」默认开启，可关闭。它控制 Google Analytics 与 Crashlytics，不包含来源地址、账号密码、频道名称或搜索内容。Apple TV 上的开关在 Pro 页面。详见 <a href="./privacy.html">隐私政策</a>。</li>
+              <li>「设置 → 关于」显示版本号和构建号，并可复制。反馈问题时请附上这两项。</li>
+              <li>Pro 是一次购买，没有订阅，支持家人共享。在付费页或「设置 → 恢复购买」恢复。价格以 App Store 显示为准。</li>
+            </ul>
+          </div>
+          <div class="lang-block" lang="en">
+            <div class="lang-tag">English</div>
+            <ul class="feature-list">
+              <li>Settings &gt; iCloud Sync is off until you turn it on, and the device must be signed in to iCloud. It copies sources, favorites and on-demand progress to your private iCloud. Free sync covers the first source with its favorites and progress. Pro syncs every source. Live playback position is not synced.</li>
+              <li>That sync does not place a separate Xtream password or the parental PIN in the playlist record. Both stay in the system Keychain. If iCloud Keychain is on for the Apple ID, the system can encrypt and sync them to iPhone, iPad and Apple TV on the same account. Tokens or other credentials inside a source URL may still sync with the source.</li>
+              <li>Set the parental lock in Settings &gt; Parental lock. The PIN is 4 to 6 digits. Locked categories ask for the PIN. Hidden categories disappear from lists, search, favorites and CarPlay. After 5 wrong attempts, wait about 30 seconds.</li>
+              <li>Usage and crash reporting, under Settings &gt; Privacy, is on by default and can be turned off. It controls Google Analytics and Crashlytics, and it does not include source URLs, credentials, channel names or search text. On Apple TV the switch is on the Pro page. See the <a href="./privacy.html">Privacy Policy</a>.</li>
+              <li>Settings &gt; About shows the version and build number, and can copy them. Include both when you report a problem.</li>
+              <li>Pro is a one-time purchase, with no subscription, and it supports Family Sharing. Restore it on the paywall or in Settings &gt; Restore Purchases. The price is the one shown on the App Store.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="troubleshoot">
+        <h2>播不了时 / When something will not play</h2>
+        <div class="columns">
+          <div class="lang-block">
+            <div class="lang-tag">简体中文</div>
+            <ul class="feature-list">
+              <li>先在频道页做「全部检测」，确认地址还能连接。失效频道可以筛选出来，或在来源详情里隐藏。</li>
+              <li>HTTP 403，或服务商要求特定客户端时，在来源的请求头里补上 User-Agent 或 Referer，然后刷新。</li>
+              <li>地址返回的是网页而不是视频流时，来源可能已失效，或需要网页登录。Channo 不能代替网页里的登录播放器。</li>
+              <li>提示地区限制时，换一条线路或另一个来源。Channo 不提供绕过地区限制的工具。</li>
+              <li>FairPlay 或其他 DRM、以及 Netflix、YouTube 这类不允许第三方播放器的服务，不能播放。说明在「设置 → 为什么有些视频看不了」。</li>
+              <li>某个频道只有自动引擎失败时，打开播放设置，强制另一个引擎再试一次。</li>
+              <li>没有网络时，直播无法播放；已完成的下载仍可从「设置 → 下载」打开。</li>
+              <li>仍然不行时，用 <a href="./feedback.html">反馈页</a> 写下设备、系统版本、「设置 → 关于」里的版本号和构建号，以及失败频道的现象。不要在邮件里附上密码或完整的私有播放地址。</li>
+            </ul>
+          </div>
+          <div class="lang-block" lang="en">
+            <div class="lang-tag">English</div>
+            <ul class="feature-list">
+              <li>Run Check All on the Channels page and see whether the address still connects. Filter out failed channels, or hide unavailable ones in the source details.</li>
+              <li>For HTTP 403, or a provider that expects a specific client, add the User-Agent or Referer in the source headers and refresh.</li>
+              <li>If the address returns a web page rather than a video stream, the source may have expired or may require a web login. Channo cannot replace an in-page player.</li>
+              <li>A geo-block message means this network’s region is refused. Try another link or source. Channo does not include a way around regional limits.</li>
+              <li>FairPlay and other DRM, and services that disallow third-party players, such as Netflix and YouTube, will not play. The explanation is in Settings &gt; Why can’t some videos play?</li>
+              <li>If only Auto fails for one channel, open Playback Settings and force the other engine.</li>
+              <li>Live TV needs a network connection. Finished downloads still open from Settings &gt; Downloads.</li>
+              <li>If it still fails, use the <a href="./feedback.html">feedback form</a> and include the device, OS version, and the version and build from Settings &gt; About, plus what you saw. Do not email a password or a complete private stream URL.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="contact">
         <h2>Contact / 联系我们</h2>
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>邮件 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>，或使用 <a href="./feedback.html">反馈页</a>。</p>
+            <p>邮件 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>，或使用 <a href="./feedback.html">反馈页</a>。开源组件见 <a href="./licenses.html">开源许可</a>。</p>
           </div>
           <div class="lang-block" lang="en">
             <div class="lang-tag">English</div>
-            <p>Email <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a> or use the <a href="./feedback.html">feedback form</a>.</p>
+            <p>Email <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a> or use the <a href="./feedback.html">feedback form</a>. Open-source components are listed under <a href="./licenses.html">Licenses</a>.</p>
           </div>
         </div>
       </section>
     </section>
 
     <footer class="site-footer">
+      <p><a href="./m3u.html">M3U 导入</a> · <a href="./xtream.html">Xtream 登录</a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./support.html">使用指南</a> · <a href="./en/support.html" hreflang="en" lang="en">English</a></p>
       <p>© 2026 智足者富 · Channo · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>
          · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./licenses.html">Licenses</a></p>
     </footer>

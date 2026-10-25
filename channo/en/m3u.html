@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add an M3U Playlist on iPhone | Channo</title>
+  <meta name="description" content="Import your own M3U or M3U8 link or file in Channo on iPhone or iPad, attach an XMLTV guide, and handle 403 or failed channels. Channo does not provide playlists.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/channo/en/m3u.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/m3u.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/m3u.html">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/m3u.html">
+  <link rel="icon" type="image/png" href="../app-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Channo">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Add an M3U Playlist on iPhone | Channo">
+  <meta property="og:description" content="Import your own M3U or M3U8 link or file in Channo on iPhone or iPad and attach an XMLTV guide. Channo does not provide playlists.">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/channo/en/m3u.html">
+  <meta property="og:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Add an M3U Playlist on iPhone | Channo">
+  <meta name="twitter:description" content="Import your own M3U or M3U8 link or file in Channo. Channo does not provide playlists.">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Channo","item":"https://apps.zhizuzhefu.com/channo/en/"},
+      {"@type":"ListItem","position":2,"name":"Add an M3U playlist","item":"https://apps.zhizuzhefu.com/channo/en/m3u.html"}
+    ]},
+    {"@type":"Article","headline":"Add an M3U or M3U8 playlist on iPhone","dateModified":"2026-10-25","inLanguage":"en","mainEntityOfPage":"https://apps.zhizuzhefu.com/channo/en/m3u.html","author":{"@type":"Organization","name":"智足者富"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is the difference between M3U and M3U8?","acceptedAnswer":{"@type":"Answer","text":"An M3U file is a playlist. An M3U8 file is usually an HLS playlist, and it can also be a UTF-8 playlist. Channo imports either one as a link or as a file."}},
+      {"@type":"Question","name":"Can I open a playlist file already on my iPhone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share or open a .m3u, .m3u8 or .txt file from the Files app. Channo copies it into its own storage and then imports it."}},
+      {"@type":"Question","name":"What if an M3U address returns 403?","acceptedAnswer":{"@type":"Answer","text":"In the source details, add the User-Agent or Referer the provider requires, one header per line as Name: value, then refresh now."}},
+      {"@type":"Question","name":"I imported an M3U playlist. Why is there no guide?","acceptedAnswer":{"@type":"Answer","text":"An M3U playlist usually has no programme times. Add your own XMLTV address. .xml and .gz are supported. Channels match tvg-id, tvg-name or the display name."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">Channo</a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a class="active" href="./m3u.html">M3U</a>
+        <a href="./xtream.html">Xtream</a>
+        <a href="./apple-tv.html">Apple TV</a>
+        <a href="./support.html">Guide</a>
+        <a href="../m3u.html" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">iPhone · iPad · M3U / M3U8</div>
+      <h1>Add an M3U or M3U8 playlist on iPhone</h1>
+      <p>Channo plays a playlist you already have. It does not provide, host or download any M3U list. These steps import a link or a file on iPhone or iPad.</p>
+      <p><a class="download-cta" href="https://apps.apple.com/app/id6822259868"><span class="download-cta-label">Download Channo on the App Store</span><span class="download-cta-sub">Free download · playlists not included</span></a></p>
+    </section>
+    <section class="section-stack">
+      <section class="card section">
+        <h2>Import from a link</h2>
+        <ol class="feature-list">
+          <li>After you install Channo, open Sources and choose M3U playlist.</li>
+          <li>Paste the full address. It starts with http or https. Cleartext HTTP can play. Keep the port, path and query.</li>
+          <li>The name can stay empty. If you also have a guide, put the XMLTV address on the same screen. .xml and .gz are supported.</li>
+          <li>On a large list, select the groups you want. Channo spot-checks the first portion. The rest are checked when you play them.</li>
+          <li>After import, open Channels and tap Check All. Filter by Playable or Failed to set aside addresses that do not open.</li>
+        </ol>
+      </section>
+      <section class="card section">
+        <h2>Import from a file</h2>
+        <p>In Files, find a .m3u, .m3u8 or .txt file and share or open it in Channo. The file is copied into the app’s own storage, so a later refresh can still read it. A <span>channo://add?url=</span> link also hands an http or https address to the add-source flow.</p>
+        <p>A single video URL is a separate entry. It can use http, https, rtmp, rtmps, rtsp, udp or rtp. Use the M3U entry for a playlist.</p>
+      </section>
+      <section class="card section">
+        <h2>After import</h2>
+        <ul class="feature-list">
+          <li>From version 1.2.1, the free version holds 3 playlists. Pro removes that limit. Playlists already added stay editable and refreshable if the allowance changes.</li>
+          <li>Source details can change the address and set auto-refresh. The default is every 12 hours. You can choose 1, 6 or 24 hours, or manual. A failed refresh keeps the previous channels.</li>
+          <li>When a provider expects a specific client, add one header per line as Name: value, such as User-Agent or Referer, then tap Refresh now.</li>
+          <li>The guide matches tvg-id, tvg-name or the channel display name. Now and Next are free. Pro opens the full day. When the source declares catch-up, the programme page offers Watch from Start.</li>
+        </ul>
+        <p>If you were given a server, username and password instead of a playlist link, use <a href="./xtream.html">Xtream Codes login</a>. To open the same list on a television, see <a href="./apple-tv.html">Apple TV setup</a>. Playback, downloads and the car are in the <a href="./support.html">setup guide</a>.</p>
+      </section>
+      <section class="card section">
+        <h2>Questions</h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>What is the difference between M3U and M3U8?</h3>
+            <p>An M3U file is a playlist. An M3U8 file is usually an HLS playlist, and it can also be a UTF-8 playlist. Channo imports either one as a link or as a file.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Can I open a playlist file already on my iPhone?</h3>
+            <p>Yes. Share or open a .m3u, .m3u8 or .txt file from the Files app. Channo copies it into its own storage and then imports it.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What if an M3U address returns 403?</h3>
+            <p>In the source details, add the User-Agent or Referer the provider requires, one header per line as Name: value, then refresh now.</p>
+          </article>
+          <article class="faq-item">
+            <h3>I imported an M3U playlist. Why is there no guide?</h3>
+            <p>An M3U playlist usually has no programme times. Add your own XMLTV address. .xml and .gz are supported. Channels match tvg-id, tvg-name or the display name.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+    <footer class="site-footer">
+      <p><a href="./index.html">Channo home</a> · <a href="./xtream.html">Xtream login</a> · <a href="./apple-tv.html">Apple TV</a> · <a href="../m3u.html" hreflang="zh-Hans" lang="zh-Hans">中文</a></p>
+      <p>© 2026 智足者富 · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>

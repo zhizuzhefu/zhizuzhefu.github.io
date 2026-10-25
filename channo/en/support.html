@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Add M3U, Xtream and XMLTV in Channo</title>
+  <meta name="description" content="Add an M3U or M3U8 playlist, sign in to Xtream Codes, and attach an XMLTV guide in Channo on iPhone, iPad and Apple TV.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/channo/en/support.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/support.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/support.html">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/support.html">
+  <link rel="icon" type="image/png" href="../app-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Channo">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="How to Add M3U, Xtream and XMLTV in Channo">
+  <meta property="og:description" content="Add an M3U or M3U8 playlist, sign in to Xtream Codes, and attach an XMLTV guide in Channo on iPhone, iPad and Apple TV.">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/channo/en/support.html">
+  <meta property="og:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Add M3U, Xtream and XMLTV in Channo">
+  <meta name="twitter:description" content="Add an M3U or M3U8 playlist, sign in to Xtream Codes, and attach an XMLTV guide in Channo on iPhone, iPad and Apple TV.">
+  <meta name="twitter:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Channo","item":"https://apps.zhizuzhefu.com/channo/en/"},
+      {"@type":"ListItem","position":2,"name":"Setup guide","item":"https://apps.zhizuzhefu.com/channo/en/support.html"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How do I add an M3U playlist in Channo?","acceptedAnswer":{"@type":"Answer","text":"Open Sources and paste the full http or https playlist address, or open a .m3u, .m3u8 or .txt file. The free version holds 3 playlists. Group selection, headers and XMLTV are in the M3U guide."}},
+      {"@type":"Question","name":"What server address does Xtream Codes use?","acceptedAnswer":{"@type":"Answer","text":"Use an http or https server address, then the username and password. If the provider gave you one long playlist URL, paste that whole URL as M3U. Do not split it to guess a login."}},
+      {"@type":"Question","name":"Where do I put an XMLTV guide?","acceptedAnswer":{"@type":"Answer","text":"Add your own XMLTV URL, including .xml or .gz, when you create the source or later in its details. Channels match tvg-id, tvg-name or the display name. Now and Next are free. The full-day guide is part of Pro."}},
+      {"@type":"Question","name":"Why will a channel not play?","acceptedAnswer":{"@type":"Answer","text":"Run Check All, then add a required User-Agent or Referer if the server returns 403. Channo cannot play DRM, a web-page login player, or a service that blocks third-party players. Switch source if a region is blocked. Channo does not bypass geo-restrictions."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">Channo</a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../licenses.html">Licenses</a>
+        <a class="active" href="./support.html">Support</a>
+        <a href="../feedback.html">Feedback</a>
+        <a href="../support.html" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">Support · 1.2.1</div>
+      <h1>How to add M3U, Xtream and XMLTV</h1>
+      <p>This is the Channo 1.2.1 guide for iPhone, iPad and Apple TV. Channo does not provide channels, movies or a guide. Import only sources you have the right to use. Whether a feature works depends on the source, the playback engine, the device and the vehicle. The Chinese guide is the <a href="../support.html" hreflang="zh-Hans" lang="zh-Hans">中文使用指南</a>.</p>
+      <p>Step-by-step pages: <a href="./m3u.html">Add an M3U / M3U8 playlist</a> · <a href="./xtream.html">Xtream Codes login</a> · <a href="./apple-tv.html">Apple TV setup</a></p>
+      <div class="pill-row">
+        <a class="pill" href="#sources">Add a source</a>
+        <a class="pill" href="#library">Channels and search</a>
+        <a class="pill" href="#guide">Guide and catch-up</a>
+        <a class="pill" href="#vod">Movies and downloads</a>
+        <a class="pill" href="#playback">Playback</a>
+        <a class="pill" href="#devices">Phone, TV and car</a>
+        <a class="pill" href="#account">Sync, lock and Pro</a>
+        <a class="pill" href="#troubleshoot">Will not play</a>
+      </div>
+    </section>
+
+    <section class="section-stack">
+      <section class="card section" id="sources">
+        <h2>Add a source</h2>
+        <ul class="feature-list">
+          <li>Open Sources, or the add button on an empty library. Choose a single video URL, an M3U / M3U8 link, an Xtream account, or a file.</li>
+          <li>Xtream imports live channels, movies and series. Enter the server as http://host:port or an https address, plus the username and password.</li>
+          <li>You can also share or open a .m3u, .m3u8 or .txt file, or hand Channo an http(s) link. A channo://add?url= link opens the same import flow.</li>
+          <li>A single stream may use http, https, rtmp, rtmps, rtsp, udp or rtp. Cleartext HTTP can play. An Xtream server must be http or https.</li>
+          <li>On a large playlist, choose the groups you want before import. Channo spot-checks the first portion. The rest are checked when you play them.</li>
+          <li>If a provider requires headers, open the source and add one per line as Name: value. User-Agent, Referer and Cookie are typical.</li>
+          <li>You can attach your own XMLTV URL while adding a source. Gzip is supported. Programmes match tvg-id, tvg-name or the channel name.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="library">
+        <h2>Playlists, channels and search</h2>
+        <ul class="feature-list">
+          <li>From version 1.2.1, the free version can hold 3 playlists. Pro removes that limit. If the allowance changes, playlists already added stay editable and refreshable. You cannot add another until you are back within the limit.</li>
+          <li>Source details cover the name, address and guide, auto-refresh (1, 6, 12 or 24 hours, or manual; 12 hours is the default), and whether unavailable channels stay visible. Refresh now updates the list. A failed refresh keeps the previous channels.</li>
+          <li>Deleting a source also removes its channels and favorites.</li>
+          <li>On the Channels page, use Check All. The check is a short HTTP probe, so RTMP and UDP entries are not probed. Filter afterwards by All, Playable, Unchecked or Failed.</li>
+          <li>Favorite a channel or movie, then find it under Favorites. Continue Watching on the home screen and on Apple TV returns to recent playback.</li>
+          <li>Search covers channels, guide programmes and movies. View one playlist or all sources.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="guide">
+        <h2>Guide and catch-up</h2>
+        <p>The guide comes from the XMLTV URL you provide. Channo has no guide service. A cached copy appears first and refreshes in the background. If the refresh fails, the previous guide stays.</p>
+        <ul class="feature-list">
+          <li>Now and Next are free. Pro opens the full-day guide.</li>
+          <li>Open a programme to watch it live. If the source declares catch-up and the programme is still inside its archive window, Watch from Start appears too.</li>
+          <li>Catch-up uses the source’s own address, such as M3U catchup tags or an Xtream TV archive. Channo does not record live TV on the device.</li>
+          <li>If the guide looks stale, long-press Refresh now in the source details and clear the guide cache.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="vod">
+        <h2>Movies, series and downloads</h2>
+        <ul class="feature-list">
+          <li>Browse Xtream movies and series and play them from the start for free. Resume from where you stopped is part of Pro. Live playback position is not synced as resume progress.</li>
+          <li>Eligible on-demand rows offer Download. That covers http(s) files such as mp4, m4v, mov, mkv, webm and avi, plus HLS that is actually video-on-demand. Live streams, encrypted video, RTMP and UDP cannot be downloaded.</li>
+          <li>Downloads wait for Wi-Fi unless you change that on the Downloads page. Swipe to delete. Downloaded videos still play offline. Live TV needs a connection.</li>
+          <li>The free download list holds 1 item. Delete it before starting another. Pro removes the limit. Downloads are on iPhone and iPad, not on Apple TV.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="playback">
+        <h2>Playback</h2>
+        <ul class="feature-list">
+          <li>Auto mode tries the system AVPlayer first, then FFmpeg when that fails or the format is a poor fit. Common paths include HLS, MPEG-TS, MP4 / MOV and other containers such as unencrypted MPEG-DASH.</li>
+          <li>During playback, open Playback Settings to keep Auto or force AVPlayer or FFmpeg for that channel. This is not a global switch on the Settings page.</li>
+          <li>The same sheet sets aspect (Fit, Fill, 16:9, 4:3), skip interval, automatic Picture in Picture when you leave the app, and a 15-, 30- or 60-minute sleep timer. Playback speed applies to on-demand video, not live TV.</li>
+          <li>Choose the audio tracks and text subtitles the source provides. Bitmap subtitles such as PGS and DVB, and advanced ASS styling, are not fully shown. Audio is mixed to stereo. Channo does not pass through surround sound, and it does not promise full HDR or Dolby Vision color.</li>
+          <li>Picture in Picture works on iPhone and iPad. AirPlay in the player can send video to a supported screen. Whether video appears depends on the active engine and the receiver.</li>
+          <li>After a network interruption, playback attempts to recover. That does not mean every source will play without buffering.</li>
+          <li>A vertical swipe in fullscreen changes channel and skips entries a health check marked failed. If every candidate failed, it still lands on the next one.</li>
+          <li>Pro can turn on the playback diagnostics overlay from View log in a source’s details. It shows the engine, buffer and bitrate. Channel checks stay free.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="devices">
+        <h2>iPhone, iPad, Apple TV and CarPlay</h2>
+        <ul class="feature-list">
+          <li>iPad uses a wider layout and switches among Overview, Channels, Movies and Sources. Playback, Picture in Picture and downloads match iPhone.</li>
+          <li>On Apple TV, use the remote to browse, search, open the guide and play. Add a playlist link on the TV, or receive sources from iCloud sync. The Continuity Keyboard helps you type from iPhone. The free allowance is the same 3 playlists and Now and Next. Pro adds the full-day guide and sync for every source.</li>
+          <li>Some Xtream sources ask for the password once on Apple TV. Turn usage and crash reporting off on the TV Pro page.</li>
+          <li>CarPlay plays channel and movie audio. When the vehicle and iOS allow it, parked mode can show video. Driving stays audio only. Channo does not work around a vehicle restriction.</li>
+          <li>Where parked video is available, the free allowance is 20 minutes per day. Pro removes that limit. After the allowance, audio continues. Keep audio while driving leaves the sound on. Car compatibility shows whether this vehicle allows video, and AirPlay remains an alternative.</li>
+          <li>The interface can follow the system language, or you can choose Simplified Chinese, Traditional Chinese, English, Português (Brasil), Русский, Español, Deutsch or 日本語 in Settings.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="account">
+        <h2>iCloud, parental lock, privacy and Pro</h2>
+        <ul class="feature-list">
+          <li>Settings, then iCloud Sync, is off until you turn it on, and the device must be signed in to iCloud. It copies sources, favorites and on-demand progress to your private iCloud. Free sync covers the first source with its favorites and progress. Pro syncs every source. Live playback position is not synced.</li>
+          <li>That sync does not place a separate Xtream password or the parental PIN in the playlist record. Both stay in the system Keychain. If iCloud Keychain is on for the Apple ID, the system can encrypt and sync them to iPhone, iPad and Apple TV on the same account. Tokens or other credentials inside a source URL may still sync with the source.</li>
+          <li>Set the parental lock in Settings, then Parental lock. The PIN is 4 to 6 digits. Locked categories ask for the PIN. Hidden categories disappear from lists, search, favorites and CarPlay. After 5 wrong attempts, wait about 30 seconds.</li>
+          <li>Usage and crash reporting, under Settings, then Privacy, is on by default and can be turned off. It controls Google Analytics and Crashlytics, and it does not include source URLs, credentials, channel names or search text. On Apple TV the switch is on the Pro page. See the <a href="../privacy.html">Privacy Policy</a>.</li>
+          <li>Settings, then About, shows the version and build number, and can copy them. Include both when you report a problem.</li>
+          <li>Pro is a one-time purchase, with no subscription, and it supports Family Sharing. Restore it on the paywall or in Settings, then Restore Purchases. The price is the one shown on the App Store.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="troubleshoot">
+        <h2>When something will not play</h2>
+        <ul class="feature-list">
+          <li>Run Check All on the Channels page and see whether the address still connects. Filter out failed channels, or hide unavailable ones in the source details.</li>
+          <li>For HTTP 403, or a provider that expects a specific client, add the User-Agent or Referer in the source headers and refresh.</li>
+          <li>If the address returns a web page rather than a video stream, the source may have expired or may require a web login. Channo cannot replace an in-page player.</li>
+          <li>A geo-block message means this network’s region is refused. Try another link or source. Channo does not include a way around regional limits.</li>
+          <li>FairPlay and other DRM, and services that disallow third-party players, such as Netflix and YouTube, will not play. The explanation is in Settings, then Why can’t some videos play?</li>
+          <li>If only Auto fails for one channel, open Playback Settings and force the other engine.</li>
+          <li>Live TV needs a network connection. Finished downloads still open from Settings, then Downloads.</li>
+          <li>If it still fails, use the <a href="../feedback.html">feedback form</a> and include the device, OS version, and the version and build from Settings, then About, plus what you saw. Do not email a password or a complete private stream URL.</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="faq">
+        <h2>Questions</h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>How do I add an M3U playlist in Channo?</h3>
+            <p>Open Sources and paste the full http or https playlist address, or open a .m3u, .m3u8 or .txt file. The free version holds 3 playlists. Group selection, headers and XMLTV are in the <a href="./m3u.html">M3U guide</a>.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What server address does Xtream Codes use?</h3>
+            <p>Use an http or https server address, then the username and password. If the provider gave you one long playlist URL, paste that whole URL as M3U. Do not split it to guess a login.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Where do I put an XMLTV guide?</h3>
+            <p>Add your own XMLTV URL, including .xml or .gz, when you create the source or later in its details. Channels match tvg-id, tvg-name or the display name. Now and Next are free. The full-day guide is part of Pro.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Why will a channel not play?</h3>
+            <p>Run Check All, then add a required User-Agent or Referer if the server returns 403. Channo cannot play DRM, a web-page login player, or a service that blocks third-party players. Switch source if a region is blocked. Channo does not bypass geo-restrictions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card section" id="contact">
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a> or use the <a href="../feedback.html">feedback form</a>. Open-source components are listed under <a href="../licenses.html">Licenses</a>.</p>
+      </section>
+    </section>
+
+    <footer class="site-footer">
+      <p><a href="./m3u.html">M3U setup</a> · <a href="./xtream.html">Xtream login</a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./index.html">Home</a> · <a href="../support.html" hreflang="zh-Hans" lang="zh-Hans">中文</a></p>
+      <p>© 2026 智足者富 · Channo · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>
+         · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../licenses.html">Licenses</a></p>
+    </footer>
+  </main>
+</body>
+</html>

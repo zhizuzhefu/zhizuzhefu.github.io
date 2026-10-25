@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apps.zhizuzhefu.com/channo/sitemap.xml
