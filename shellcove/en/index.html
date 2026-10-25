@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Control a Mac from iPhone | Shellcove Remote Desktop</title>
+  <meta name="description" content="Shellcove shows your Mac desktop on iPhone or iPad, reads window text, and types into the focused app. Same Wi-Fi is fastest. Built-in Tailcat works without a public IP or a Tailscale account.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/en/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Control a Mac from iPhone | Shellcove Remote Desktop">
+  <meta property="og:description" content="Pair with a QR code. A relay, when used, forwards ciphertext and cannot read the desktop.">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/shellcove/en/">
+  <meta property="og:locale" content="en_US">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"SoftwareApplication","name":"Shellcove","applicationCategory":"UtilitiesApplication","operatingSystem":"iOS 16, iPadOS 16, macOS 13","softwareVersion":"1.5.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A remote desktop and keyboard for your own Mac. No account. LAN is preferred; Tailcat is the built-in path across NAT."},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Do I need a public IP to control my Mac?","acceptedAnswer":{"@type":"Answer","text":"No. Same-network Wi-Fi is fastest. Otherwise Automatic mode uses built-in Tailcat, which tries a direct path and then an encrypted relay. Your own VPN still works. A Tailscale account is not required."}},
+      {"@type":"Question","name":"Can a relay read my screen?","acceptedAnswer":{"@type":"Answer","text":"No. Desktop, window text, clipboard, and keystrokes stay inside the pinned TLS session. A relay forwards ciphertext and may see connection metadata such as timing and size. Shellcove has no account and does not store the picture on the developer’s server."}},
+      {"@type":"Question","name":"How do I pair?","acceptedAnswer":{"@type":"Answer","text":"Open Shellcove on the Mac and scan the QR code with iPhone or iPad. The Mac needs Accessibility and Screen Recording permission. See how to pair."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">Shellcove</a>
+      <div class="nav-links">
+        <a class="active" href="./index.html">Home</a>
+        <a href="./pair.html">Pair</a>
+        <a href="./desktop.html">Desktop</a>
+        <a href="../support.html" lang="zh-CN">Support</a>
+        <a href="../index.html" hreflang="zh-Hans" lang="zh-CN">中文</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">Shellcove 1.5 · your own Mac</div>
+      <h1>See the Mac desktop and type into it</h1>
+      <p>Shellcove streams the desktop as video, reads the focused window as real text, and sends the finished string from the iOS keyboard. It is meant for a terminal, a coding agent, or a long task on a machine you already own.</p>
+      <p><a class="download-cta" href="https://github.com/zhizuzhefu/shellcove-releases/releases/latest/download/Shellcove-Mac.dmg">Download the Mac app</a></p>
+    </section>
+    <section class="section-stack">
+      <section class="card section">
+        <h2>What to read next</h2>
+        <ul class="feature-list">
+          <li><a href="./pair.html">Pairing</a>: QR code, permissions, Wi-Fi, and Tailcat.</li>
+          <li><a href="./desktop.html">Remote desktop</a>: touch, window text, and keyboard.</li>
+          <li>macOS 13 or newer, and iOS 16 or newer. No account and no analytics.</li>
+        </ul>
+      </section>
+      <section class="card section" id="faq">
+        <h2>Questions</h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>Do I need a public IP to control my Mac?</h3>
+            <p>No. Same-network Wi-Fi is fastest. Otherwise Automatic mode uses built-in Tailcat, which tries a direct path and then an encrypted relay. Your own VPN still works. A Tailscale account is not required.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Can a relay read my screen?</h3>
+            <p>No. Desktop, window text, clipboard, and keystrokes stay inside the pinned TLS session. A relay forwards ciphertext and may see connection metadata such as timing and size. Shellcove has no account and does not store the picture on the developer’s server.</p>
+          </article>
+          <article class="faq-item">
+            <h3>How do I pair?</h3>
+            <p>Open Shellcove on the Mac and scan the QR code with iPhone or iPad. The Mac needs Accessibility and Screen Recording permission. See <a href="./pair.html">how to pair</a>.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+    <footer class="card footer">
+      <small>© 2026 Andy Chen · Shellcove</small>
+    </footer>
+  </main>
+</body>
+</html>

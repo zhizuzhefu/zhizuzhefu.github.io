@@ -25,7 +25,7 @@
     <section class="card page-title">
       <div class="eyebrow">Privacy Policy / 隐私政策</div>
       <h1>Shellcove Privacy Policy</h1>
-      <p>生效日期 / Effective date: 2026-06-30</p>
+      <p>生效日期 / Effective date: 2026-06-30。连接与中继说明修订于 2026-10-25。</p>
     </section>
 
     <section class="section-stack">
@@ -34,11 +34,11 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>Shellcove 完全在你自己的设备上运行——iPhone / iPad 和你配对的那台 Mac。数据只在两者之间通过你的本地网络、Tailscale 或其它两端互通的 VPN 传输，全程 TLS 加密。我们没有云端服务器、没有账号系统、不收集统计数据。除非你主动通过邮件联系我们，否则我们看不到任何关于你使用 Shellcove 的信息。</p>
+            <p>Shellcove 在你的 iPhone / iPad 和已配对的 Mac 上运行，没有账号，也不收集统计。同一 Wi-Fi 或你自己的 VPN 上，内容直接在两台设备之间，以 TLS 加密。Mac 没有公网 IP 时，内置 Tailcat 可能经过加密中继。中继不能读取桌面、按键或窗口文本，但可能看到连接是否发生、时间和流量大小。开发者不会把这些内容存到自己的服务器。除非你主动发邮件，我们看不到你的使用内容。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>Shellcove runs entirely on your own devices — your iPhone / iPad and the paired Mac. Data only flows between them over your local network, Tailscale, or another VPN where both ends can reach each other, encrypted with TLS. We have no cloud server, no account system, and collect no analytics. Unless you proactively contact us by email, we have no visibility into your use of Shellcove.</p>
+            <p>Shellcove runs on your iPhone or iPad and the paired Mac. There is no account and no analytics. On the same Wi-Fi or a VPN you run, content moves directly between the two devices over TLS. When the Mac has no public IP, built-in Tailcat may use an encrypted relay. The relay cannot read the desktop, keystrokes, or window text, but it may see that a connection exists, plus timing and size. The developer does not store that content. Unless you email us, we do not see what you do in the app.</p>
           </div>
         </div>
       </section>
@@ -62,12 +62,12 @@
         <div class="columns">
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
-            <p>所有 Shellcove 收发的内容（你按下的键、文本输入、鼠标事件、Mac 屏幕的实时投屏画面、窗口文本、剪贴板）都只在你的 iPhone / iPad 和配对 Mac 之间传输，使用自签 TLS 证书 + 证书钉扎 + 客户端认证保护。这些内容不会经过任何外部服务器或云端服务，也不会写入到任何第三方存储。</p>
+            <p>所有 Shellcove 收发的内容（你按下的键、文本输入、鼠标事件、Mac 屏幕的实时投屏画面、窗口文本、剪贴板）都用自签 TLS 证书、证书钉扎和客户端认证保护。同一 Wi-Fi 或你自己的 VPN 上，这些内容不经过外部服务器。需要穿过 NAT 时，内置 Tailcat 的中继只转发已经加密的流量，不能读取上述内容，也不会把它们存成开发者可查看的文件，但可能看到连接元数据。</p>
             <p>文本输入由系统键盘或你选择的输入法生成。你可以使用 iOS 听写或第三方输入法，但 Shellcove 只接收输入框里的最终文本并发送给配对 Mac；Shellcove App 本身不请求麦克风权限，也不请求 Speech Recognition 权限。</p>
           </div>
           <div class="lang-block">
             <div class="lang-tag">English</div>
-            <p>Everything Shellcove sends or receives — keystrokes, text input, mouse events, the live mirror of the Mac screen, Window Text, and the clipboard — moves only between your iPhone / iPad and the paired Mac, protected by a self-signed TLS certificate, certificate pinning, and client authentication. None of it ever passes through any external server or cloud service, and nothing is written to any third-party storage.</p>
+            <p>Everything Shellcove sends or receives — keystrokes, text input, mouse events, the live mirror of the Mac screen, Window Text, and the clipboard — is protected by a self-signed TLS certificate, certificate pinning, and client authentication. On the same Wi-Fi or your own VPN, it does not pass through an external server. When Tailcat must cross NAT, its relay forwards only the already encrypted traffic. The relay cannot read that content and the developer does not keep a copy, but the relay may see connection metadata.</p>
             <p>Text input is produced by the system keyboard or the input method you choose. You may use iOS Dictation or a third-party keyboard, but Shellcove receives only the final text in its input field and forwards that text to the paired Mac. The Shellcove app itself does not request Microphone or Speech Recognition permission.</p>
           </div>
         </div>

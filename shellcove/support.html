@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shellcove · Support / 支持</title>
-  <meta name="description" content="Shellcove 支持页面：Mac 客户端下载、配对、连接、远程桌面、窗口文本、输入、权限、故障排查">
+  <title>如何配对并用 iPhone 控制 Mac｜Shellcove</title>
+  <meta name="description" content="Shellcove 的配对二维码、同一 Wi-Fi、内置 Tailcat、远程桌面、窗口文本和权限说明。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/support.html">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -110,7 +112,8 @@
           <div class="lang-block">
             <div class="lang-tag">简体中文</div>
             <ul class="feature-list">
-              <li><strong>iPhone 上 badge 一直黄色（Connecting...）</strong>：确认 Mac 上 Shellcove 正在运行；确认两台设备在同一 Wi-Fi / Tailscale / VPN 可达网络；检查 iOS Settings → Shellcove → 本地网络是否开启。</li>
+              <li><strong>iPhone 上 badge 一直黄色（Connecting...）</strong>：确认 Mac 上 Shellcove 正在运行；确认两台设备在同一 Wi-Fi，或自动模式可以走内置 Tailcat；检查 iOS 设置 → Shellcove → 本地网络是否开启。</li>
+              <li><strong>不在同一 Wi-Fi</strong>：自动模式使用内置 Tailcat，不需要公网 IP、端口转发或 Tailscale 账号。只选直连时不会启动 Tailcat。你自己的 VPN 仍然可以当作直连路径。</li>
               <li><strong>Badge 红色 + 错误信息</strong>：上面会显示具体错码。<code>POSIX 61 / 65 / 60</code> 通常是网络不通，<code>TLS</code> 错码是证书指纹对不上，<code>protocolVersionMismatch</code> 代表 Mac 和 iOS 的大版本线不一致。证书不匹配时进 iOS 设置里 Forget Device，再重新扫码配对。</li>
               <li><strong>Mac 端 Connected iPhones 显示鬼影连接</strong>：在那一行点 Disconnect 红色按钮可以强制断开。等 7 秒左右 Mac 也会通过 heartbeat 检测出来。</li>
               <li><strong>iOS app 后台之后断开</strong>：这是 iOS 限制。Shellcove 只在前台维持连接，回到前台会自动重连（1 → 16 秒指数退避）。</li>
@@ -120,7 +123,8 @@
           <div class="lang-block">
             <div class="lang-tag">English</div>
             <ul class="feature-list">
-              <li><strong>Badge stuck on yellow "Connecting..."</strong>: confirm Shellcove is running on the Mac; confirm both devices can reach each other over Wi-Fi, Tailscale, or VPN; check iOS Settings → Shellcove → Local Network is on.</li>
+              <li><strong>Badge stuck on yellow "Connecting..."</strong>: confirm Shellcove is running on the Mac; use the same Wi-Fi or leave Automatic mode so built-in Tailcat can connect; check iOS Settings → Shellcove → Local Network is on.</li>
+              <li><strong>Not on the same Wi-Fi</strong>: Automatic mode uses built-in Tailcat, with no public IP, port forward, or Tailscale account. Direct-only mode does not start Tailcat. A VPN you already run remains a direct path.</li>
               <li><strong>Red badge with an error</strong>: the underlying error code is shown right below. <code>POSIX 61 / 65 / 60</code> typically means network unreachable; a <code>TLS</code> code means the cert fingerprint mismatched; <code>protocolVersionMismatch</code> means the Mac and iOS apps are on different major.minor protocol lines. For a cert mismatch, Forget Device in iOS Settings and re-scan the QR.</li>
               <li><strong>Ghost connection in the Mac's Connected iPhones list</strong>: click the red Disconnect button on that row to force-drop it. The Mac's own heartbeat will also clean it up within ~7 seconds.</li>
               <li><strong>iOS disconnects when backgrounded</strong>: iOS restriction. Shellcove maintains the connection only while foregrounded. Returning to the foreground auto-reconnects (1 → 16 s exponential backoff).</li>

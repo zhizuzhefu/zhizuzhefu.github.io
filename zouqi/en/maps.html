@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Send a ZouQi Route to Amap or Baidu Maps</title>
+  <meta name="description" content="One ZouQi stop opens as walking directions in Apple Maps, Amap, or Baidu Maps. A multi-stop route stays in Amap or Baidu Maps and is not silently shortened into a web link.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/zouqi/en/maps.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/zouqi/maps.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/zouqi/en/maps.html">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/zouqi/maps.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Send a ZouQi Route to Amap or Baidu Maps">
+  <meta property="og:description" content="Apple Maps receives a single stop. Places without coordinates never enter the route.">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/zouqi/en/maps.html">
+  <meta property="og:locale" content="en_US">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Why can’t the full route open in Apple Maps?","acceptedAnswer":{"@type":"Answer","text":"With more than one place, ZouQi sends the complete walking order only to Amap or Baidu Maps, starting at the map app’s current location. Apple Maps receives a single geocoded place, also as walking directions."}},
+      {"@type":"Question","name":"What if Amap or Baidu Maps is not installed?","acceptedAnswer":{"@type":"Answer","text":"A single place can fall back to that provider’s web map. A route with two or more places does not. ZouQi will not drop the intermediate stops to make a shorter web link. Places without coordinates are excluded before navigation starts."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">ZouQi</a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./beijing.html">Beijing</a>
+        <a class="active" href="./maps.html">Maps</a>
+        <a href="../maps.html" hreflang="zh-Hans" lang="zh-CN">中文</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">Walking · in the guide’s order</div>
+      <h1>Hand the stops to a map, without losing the middle</h1>
+      <p>ZouQi does not draw the route itself. Amap receives GCJ-02 coordinates and Baidu Maps receives BD-09. The article’s themes are described on the <a href="./beijing.html">Beijing</a> page.</p>
+    </section>
+    <section class="section-stack">
+      <section class="card section">
+        <h2>One stop or the whole list</h2>
+        <ul class="feature-list">
+          <li>One geocoded place: Apple Maps, Amap, or Baidu Maps, walking.</li>
+          <li>Two or more: Amap or Baidu Maps only. Your current location is the start, the guide’s order is preserved, and the last place is the destination.</li>
+          <li>A missing map app falls back to the web only for a single place.</li>
+        </ul>
+      </section>
+      <section class="card section">
+        <h2>Questions</h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>Why can’t the full route open in Apple Maps?</h3>
+            <p>With more than one place, ZouQi sends the complete walking order only to Amap or Baidu Maps, starting at the map app’s current location. Apple Maps receives a single geocoded place, also as walking directions.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What if Amap or Baidu Maps is not installed?</h3>
+            <p>A single place can fall back to that provider’s web map. A route with two or more places does not. ZouQi will not drop the intermediate stops to make a shorter web link. Places without coordinates are excluded before navigation starts.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+    <footer class="card footer">
+      <p><a href="./index.html">Home</a> · <a href="./beijing.html">Beijing</a></p>
+      <small>© 2026 智足者富 · ZouQi</small>
+    </footer>
+  </main>
+</body>
+</html>

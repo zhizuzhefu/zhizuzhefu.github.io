@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://apps.zhizuzhefu.com/audiotools/sitemap.xml
 Sitemap: https://apps.zhizuzhefu.com/channo/sitemap.xml
+Sitemap: https://apps.zhizuzhefu.com/heartease/sitemap.xml
+Sitemap: https://apps.zhizuzhefu.com/shellcove/sitemap.xml
+Sitemap: https://apps.zhizuzhefu.com/upupfrog/sitemap.xml
+Sitemap: https://apps.zhizuzhefu.com/zouqi/sitemap.xml

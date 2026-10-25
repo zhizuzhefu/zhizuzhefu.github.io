@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iPhone 怎么配对 Mac｜Shellcove</title>
+  <meta name="description" content="在 Mac 上打开 Shellcove，用 iPhone 扫描配对二维码。同一 Wi-Fi 最快。没有公网 IP 时，内置 Tailcat 打洞，不行再走加密中继。不需要 Tailscale 账号。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iPhone 怎么配对 Mac｜Shellcove">
+  <meta property="og:description" content="二维码钉住这台 Mac 的证书。中继只转发密文。">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/shellcove/pair.html">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Shellcove","item":"https://apps.zhizuzhefu.com/shellcove/"},
+      {"@type":"ListItem","position":2,"name":"配对","item":"https://apps.zhizuzhefu.com/shellcove/pair.html"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"必须安装 Tailscale 吗？","acceptedAnswer":{"@type":"Answer","text":"不用。同一 Wi-Fi 最快。不在同一网络时，自动模式会使用内置 Tailcat，不需要公网 IP、端口转发或 Tailscale 账号。只选直连时不会启动 Tailcat。你自己的 VPN 仍然可以当作直连路径。"}},
+      {"@type":"Question","name":"配对之后中继能看到我的桌面吗？","acceptedAnswer":{"@type":"Answer","text":"不能读取桌面、窗口文本、剪贴板或按键。连接使用配对时钉住的 TLS 证书。中继只转发密文，但可能看到连接是否发生、时间和流量大小。"}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">shellcove</a>
+      <div class="nav-links">
+        <a href="./index.html">首页</a>
+        <a class="active" href="./pair.html">配对</a>
+        <a href="./desktop.html">远程桌面</a>
+        <a href="./support.html">支持</a>
+        <a href="./en/pair.html" hreflang="en" lang="en">English</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">Mac + iPhone · 不需要账号</div>
+      <h1>扫一次二维码，把这台 Mac 认下来</h1>
+      <p>Shellcove 没有账号。iPhone 或 iPad 信任的是你扫到的那台 Mac：证书指纹和一把只属于这次安装的密钥都在二维码里。以后每次连接都要能对上。</p>
+    </section>
+    <section class="section-stack">
+      <section class="card section">
+        <h2>配对步骤</h2>
+        <ol class="feature-list">
+          <li>Mac 需要 macOS 13 或更新版本。从 Shellcove 的 Mac 安装包打开 App。</li>
+          <li>按提示打开「辅助功能」和「屏幕录制」。前者用来输入，后者用来投屏。</li>
+          <li>主窗口会出现配对二维码。iPhone 或 iPad 需要 iOS 16 / iPadOS 16 或更新版本，点「扫描二维码」。</li>
+          <li>如果系统询问本地网络权限，允许 Shellcove 访问。</li>
+          <li>同一 Wi-Fi 会最快连上。不在同一网络时，保持自动模式，内置 Tailcat 会尝试打洞，不行再走加密中继。</li>
+        </ol>
+      </section>
+      <section class="card section">
+        <h2>三条路怎么选</h2>
+        <ul class="feature-list">
+          <li>局域网或你自己的 VPN：直连，远程桌面优先走 UDP/DTLS。</li>
+          <li>自动模式：也会启动 Tailcat。这一路使用 TCP，不需要另装 Tailscale。</li>
+          <li>只选直连：不会启动 Tailcat。设置里仍可手动添加一台中继的主机和端口。</li>
+        </ul>
+        <p>连上之后怎么看桌面和打字，见 <a href="./desktop.html">远程桌面</a>。</p>
+      </section>
+      <section class="card section">
+        <h2>常见问题</h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>必须安装 Tailscale 吗？</h3>
+            <p>不用。同一 Wi-Fi 最快。不在同一网络时，自动模式会使用内置 Tailcat，不需要公网 IP、端口转发或 Tailscale 账号。只选直连时不会启动 Tailcat。你自己的 VPN 仍然可以当作直连路径。</p>
+          </article>
+          <article class="faq-item">
+            <h3>配对之后中继能看到我的桌面吗？</h3>
+            <p>不能读取桌面、窗口文本、剪贴板或按键。连接使用配对时钉住的 TLS 证书。中继只转发密文，但可能看到连接是否发生、时间和流量大小。</p>
+          </article>
+        </div>
+      </section>
+    </section>
+    <footer class="card footer">
+      <p><a href="./index.html">首页</a> · <a href="./desktop.html">远程桌面</a> · <a href="./support.html">支持</a></p>
+      <small>© 2026 Andy Chen · Shellcove</small>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://apps.zhizuzhefu.com/shellcove/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/shellcove/en/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/shellcove/pair.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/pair.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/pair.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/shellcove/en/pair.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/pair.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/pair.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/shellcove/desktop.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/desktop.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/desktop.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/desktop.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/shellcove/en/desktop.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/desktop.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/desktop.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/desktop.html"/>
+  </url>
+  <url><loc>https://apps.zhizuzhefu.com/shellcove/support.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+  <url><loc>https://apps.zhizuzhefu.com/shellcove/privacy.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+  <url><loc>https://apps.zhizuzhefu.com/shellcove/terms.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+  <url><loc>https://apps.zhizuzhefu.com/shellcove/feedback.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+</urlset>

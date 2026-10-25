@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://apps.zhizuzhefu.com/upupfrog/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/upupfrog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/upupfrog/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/upupfrog/"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/upupfrog/en/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/upupfrog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/upupfrog/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/upupfrog/"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/upupfrog/salary.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/upupfrog/salary.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/upupfrog/en/salary.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/upupfrog/salary.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/upupfrog/en/salary.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/upupfrog/salary.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/upupfrog/en/salary.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/upupfrog/salary.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/upupfrog/price.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/upupfrog/price.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/upupfrog/en/price.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/upupfrog/price.html"/>
+  </url>
+  <url>
+    <loc>https://apps.zhizuzhefu.com/upupfrog/en/price.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/upupfrog/price.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/upupfrog/en/price.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/upupfrog/price.html"/>
+  </url>
+  <url><loc>https://apps.zhizuzhefu.com/upupfrog/support.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+  <url><loc>https://apps.zhizuzhefu.com/upupfrog/privacy.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+  <url><loc>https://apps.zhizuzhefu.com/upupfrog/feedback.html</loc><lastmod>2026-10-25</lastmod><priority>0.3</priority></url>
+</urlset>

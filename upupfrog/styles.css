@@ -20,6 +20,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-padding-top: 168px;
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -230,6 +231,10 @@ p {
 .faq-list {
   display: grid;
   gap: 16px;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
 }
 
 .faq-item {

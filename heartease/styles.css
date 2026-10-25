@@ -19,6 +19,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  scroll-padding-top: 168px;
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
@@ -204,6 +205,8 @@ p { margin: 0 0 12px; color: var(--muted); }
 .section-stack { display: grid; gap: 20px; }
 
 .faq-list { display: grid; gap: 16px; }
+
+section[id] { scroll-margin-top: 88px; }
 
 .faq-item {
   background: var(--panel);

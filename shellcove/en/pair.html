@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pair an iPhone with a Mac | Shellcove</title>
+  <meta name="description" content="Scan Shellcove’s QR code to pin the Mac certificate. Use Wi-Fi when you can. Built-in Tailcat crosses NAT without a Tailscale account. Direct-only mode never starts it.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pair an iPhone with a Mac | Shellcove">
+  <meta property="og:description" content="Accessibility and Screen Recording on the Mac. Local Network on the iPhone.">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
+  <meta property="og:locale" content="en_US">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Do I have to install Tailscale?","acceptedAnswer":{"@type":"Answer","text":"No. Wi-Fi on the same network is fastest. Automatic mode can use built-in Tailcat without a public IP, port forward, or Tailscale account. Direct-only mode does not start Tailcat. A VPN you already run remains a direct path."}},
+      {"@type":"Question","name":"What does the relay learn?","acceptedAnswer":{"@type":"Answer","text":"It cannot read the desktop, window text, clipboard, or keystrokes. Those stay inside the certificate pinned at pairing. The relay forwards ciphertext and may see that a connection exists, plus timing and size."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./index.html">Shellcove</a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a class="active" href="./pair.html">Pair</a>
+        <a href="./desktop.html">Desktop</a>
+        <a href="../pair.html" hreflang="zh-Hans" lang="zh-CN">中文</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow">No account</div>
+      <h1>Trust one Mac, not a login</h1>
+      <p>The QR code carries the certificate fingerprint and a per-install secret. Later connections have to present that secret before the Mac accepts input.</p>
+    </section>
+    <section class="section-stack">
+      <section class="card section">
+        <h2>Steps</h2>
+        <ol class="feature-list">
+          <li>Install the Mac app on macOS 13 or newer and grant Accessibility plus Screen Recording.</li>
+          <li>On iOS 16 or newer, tap Scan QR. Allow Local Network if iOS asks.</li>
+          <li>Stay on Automatic if the Mac has no public address. Tailcat tries a hole-punch, then an encrypted relay over TCP.</li>
+          <li>Choose Direct if you only want LAN or your own VPN. That choice does not start Tailcat.</li>
+        </ol>
+        <p>After the badge turns connected, use the <a href="./desktop.html">desktop</a>.</p>
+      </section>
+      <section class="card section">
+        <h2>Questions</h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>Do I have to install Tailscale?</h3>
+            <p>No. Wi-Fi on the same network is fastest. Automatic mode can use built-in Tailcat without a public IP, port forward, or Tailscale account. Direct-only mode does not start Tailcat. A VPN you already run remains a direct path.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What does the relay learn?</h3>
+            <p>It cannot read the desktop, window text, clipboard, or keystrokes. Those stay inside the certificate pinned at pairing. The relay forwards ciphertext and may see that a connection exists, plus timing and size.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+    <footer class="card footer">
+      <p><a href="./index.html">Home</a> · <a href="./desktop.html">Desktop</a></p>
+      <small>© 2026 Andy Chen · Shellcove</small>
+    </footer>
+  </main>
+</body>
+</html>
