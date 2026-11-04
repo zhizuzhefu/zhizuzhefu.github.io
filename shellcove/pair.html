@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>iPhone 怎么配对 Mac｜Shellcove</title>
+  <title>iPhone 怎么配对 Mac｜Shellcove · Cloud Agent</title>
   <meta name="description" content="在 Mac 上打开 Shellcove，用 iPhone 扫描配对二维码。同一 Wi-Fi 最快。没有公网 IP 时，内置 Tailcat 打洞，不行再走加密中继。不需要 Tailscale 账号。">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
@@ -12,8 +12,8 @@
   <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="iPhone 怎么配对 Mac｜Shellcove">
-  <meta property="og:description" content="二维码钉住这台 Mac 的证书。中继只转发密文。">
+  <meta property="og:title" content="iPhone 怎么配对 Mac｜Shellcove · Cloud Agent">
+  <meta property="og:description" content="iOS 分别配对自己的 Mac。新手机独立凭据可单独撤销；中继只转发密文。">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/shellcove/pair.html">
   <meta property="og:locale" content="zh_CN">
   <link rel="stylesheet" href="./styles.css">
@@ -38,8 +38,9 @@
         <a href="./">首页</a>
         <a class="active" href="./pair.html">配对</a>
         <a href="./desktop.html">远程桌面</a>
-        <a href="./support.html">支持</a>
+
         <a href="./en/pair.html" hreflang="en" lang="en">English</a>
+        <a href="./privacy.html">隐私政策</a><a href="./terms.html">用户协议</a><a href="./support.html">支持</a><a href="./feedback.html">反馈</a>
       </div>
     </nav>
   </header>
@@ -47,15 +48,15 @@
     <section class="card page-title">
       <div class="eyebrow">Mac + iPhone · 不需要账号</div>
       <h1>扫一次二维码，把这台 Mac 认下来</h1>
-      <p>Shellcove 没有账号。iPhone 或 iPad 信任的是你扫到的那台 Mac：证书指纹和一把只属于这次安装的密钥都在二维码里。以后每次连接都要能对上。</p>
+      <p>Shellcove · Cloud Agent 无需云端账号。iPhone 或 iPad 分别扫描每台 Mac 的配对码，核对证书指纹并取得该手机的连接凭据。Mac 之间不互相配对；每个任务在你选择的一台 Mac 完成。</p>
     </section>
     <section class="section-stack">
       <section class="card section">
         <h2>配对步骤</h2>
         <ol class="feature-list">
           <li>Mac 需要 macOS 13 或更新版本。从 Shellcove 的 Mac 安装包打开 App。</li>
-          <li>按提示打开「辅助功能」和「屏幕录制」。前者用来输入，后者用来投屏。</li>
-          <li>主窗口会出现配对二维码。iPhone 或 iPad 需要 iOS 16 / iPadOS 16 或更新版本，点「扫描二维码」。</li>
+          <li>在 Mac 设置中确认原生 Agent 可用。辅助功能与屏幕录制用于另列的设备工具，原生 Agent 保留自己的授权。</li>
+          <li>新手机接入时，在 Mac 设置里生成配对码，再从 iOS「电脑」页添加并扫描。若提示迁移旧共享配对，原设备需要重新扫码；普通原位升级不主动触发迁移。</li>
           <li>如果系统询问本地网络权限，允许 Shellcove 访问。</li>
           <li>同一 Wi-Fi 会最快连上。不在同一网络时，保持自动模式，内置 Tailcat 会尝试打洞，不行再走加密中继。</li>
         </ol>
@@ -67,7 +68,7 @@
           <li>自动模式：也会启动 Tailcat。这一路使用 TCP，不需要另装 Tailscale。</li>
           <li>只选直连：不会启动 Tailcat。设置里仍可手动添加一台中继的主机和端口。</li>
         </ul>
-        <p>连上之后怎么看桌面和打字，见 <a href="./desktop.html">远程桌面</a>。</p>
+        <p>连上后，在「任务」中选择 Mac 和 Agent；需要设备工具时，见 <a href="./desktop.html">远程桌面</a>。</p>
       </section>
       <section class="card section">
         <h2>常见问题</h2>

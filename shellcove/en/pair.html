@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pair an iPhone with a Mac | Shellcove</title>
+  <title>Pair an iPhone with a Mac | Shellcove · Cloud Agent</title>
   <meta name="description" content="Scan Shellcove’s QR code to pin the Mac certificate. Use Wi-Fi when you can. Built-in Tailcat crosses NAT without a Tailscale account. Direct-only mode never starts it.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
@@ -12,8 +12,8 @@
   <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Pair an iPhone with a Mac | Shellcove">
-  <meta property="og:description" content="Accessibility and Screen Recording on the Mac. Local Network on the iPhone.">
+  <meta property="og:title" content="Pair an iPhone with a Mac | Shellcove · Cloud Agent">
+  <meta property="og:description" content="Pair each Mac directly from iOS. Independent phone credentials can be revoked separately.">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/shellcove/en/pair.html">
   <meta property="og:locale" content="en_US">
   <link rel="stylesheet" href="../styles.css">
@@ -35,25 +35,26 @@
         <a class="active" href="./pair.html">Pair</a>
         <a href="./desktop.html">Desktop</a>
         <a href="../pair.html" hreflang="zh-Hans" lang="zh-CN">中文</a>
+        <a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../support.html">Support</a><a href="../feedback.html">Feedback</a>
       </div>
     </nav>
   </header>
   <main class="page">
     <section class="card page-title">
       <div class="eyebrow">No account</div>
-      <h1>Trust one Mac, not a login</h1>
-      <p>The QR code carries the certificate fingerprint and a per-install secret. Later connections have to present that secret before the Mac accepts input.</p>
+      <h1>Pair your own Macs, one at a time</h1>
+      <p>Shellcove · Cloud Agent needs no cloud account. Scan each Mac’s QR to pin its certificate and receive a phone credential. Macs do not pair with each other. Choose one execution Mac for each task.</p>
     </section>
     <section class="section-stack">
       <section class="card section">
         <h2>Steps</h2>
         <ol class="feature-list">
-          <li>Install the Mac app on macOS 13 or newer and grant Accessibility plus Screen Recording.</li>
-          <li>On iOS 16 or newer, tap Scan QR. Allow Local Network if iOS asks.</li>
+          <li>Install the matching Mac app on macOS 13 or newer. Keep the existing production path and signing identity when upgrading. Native Agents retain their own authorization; Accessibility and Screen Recording serve the separate device tools.</li>
+          <li>For a new phone, generate a pairing code in Mac settings and scan it from Computers on iOS 16 or newer. Allow Local Network if asked. An explicit legacy-pairing migration requires old phones to scan again; a normal in-place upgrade preserves pairings.</li>
           <li>Stay on Automatic if the Mac has no public address. Tailcat tries a hole-punch, then an encrypted relay over TCP.</li>
           <li>Choose Direct if you only want LAN or your own VPN. That choice does not start Tailcat.</li>
         </ol>
-        <p>After the badge turns connected, use the <a href="./desktop.html">desktop</a>.</p>
+        <p>Once connected, choose a Mac and Agent in Tasks. For device tools, see <a href="./desktop.html">Remote Desktop</a>.</p>
       </section>
       <section class="card section">
         <h2>Questions</h2>

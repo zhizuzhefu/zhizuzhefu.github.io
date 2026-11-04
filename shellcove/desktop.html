@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>用 iPhone 看 Mac 桌面并打字｜Shellcove</title>
+  <title>用 iPhone 看 Mac 桌面并打字｜Shellcove · Cloud Agent</title>
   <meta name="description" content="Shellcove 把 Mac 桌面做成视频流：触控光标、捏合放大、滚动和拖拽。窗口文本读取真实字符。键盘发送输入法给出的最终文本。">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/desktop.html">
@@ -12,8 +12,8 @@
   <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/en/desktop.html">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/desktop.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="用 iPhone 看 Mac 桌面并打字｜Shellcove">
-  <meta property="og:description" content="适合看终端和给编程助手发指令。App 退到后台后连接会断开。">
+  <meta property="og:title" content="用 iPhone 看 Mac 桌面并打字｜Shellcove · Cloud Agent">
+  <meta property="og:description" content="设备工具位于「电脑 → 设备详情」。远程桌面需要前台连接；已接收的 Agent 任务继续在 Mac 执行。">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/shellcove/desktop.html">
   <meta property="og:locale" content="zh_CN">
   <link rel="stylesheet" href="./styles.css">
@@ -25,7 +25,7 @@
     ]},
     {"@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"远程桌面是一连串截图吗？","acceptedAnswer":{"@type":"Answer","text":"不是。Mac 用屏幕采集和硬件编码把桌面做成视频，iPhone 再硬件解码。点按、拖动、捏合和双指滚动都作用在这块画面上。"}},
-      {"@type":"Question","name":"手机锁屏之后还能继续控 Mac 吗？","acceptedAnswer":{"@type":"Answer","text":"不能。Shellcove 只在前台保持连接。回到前台后会自动重连。"}}
+      {"@type":"Question","name":"手机锁屏之后还能继续控 Mac 吗？","acceptedAnswer":{"@type":"Answer","text":"远程桌面与实时控制需要手机前台连接，回到前台后会重连。已经由 Mac 接收的 Agent 任务仍会继续，前提是执行 Mac 在线且唤醒。"}}
     ]}
   ]}
   </script>
@@ -38,8 +38,9 @@
         <a href="./">首页</a>
         <a href="./pair.html">配对</a>
         <a class="active" href="./desktop.html">远程桌面</a>
-        <a href="./support.html">支持</a>
+
         <a href="./en/desktop.html" hreflang="en" lang="en">English</a>
+        <a href="./privacy.html">隐私政策</a><a href="./terms.html">用户协议</a><a href="./support.html">支持</a><a href="./feedback.html">反馈</a>
       </div>
     </nav>
   </header>
@@ -47,7 +48,7 @@
     <section class="card page-title">
       <div class="eyebrow">视频流 · 窗口文本 · 键盘</div>
       <h1>在手机上看 Mac，并把字送到焦点窗口</h1>
-      <p>配对完成后，主页有「远程桌面」和「窗口文本」。前者看画面并触控，后者读当前窗口里的真实文字，适合终端输出和编程助手的长回复。还没配对的话，先看 <a href="./pair.html">如何配对</a>。</p>
+      <p>配对完成后，从「电脑 → 设备详情」进入「远程桌面」或「窗口文本」。前者看画面并触控，后者读取焦点窗口的真实文字。Agent 会话在「任务」中使用，设备控制不放在会话操作里。还没配对的话，先看 <a href="./pair.html">如何配对</a>。</p>
     </section>
     <section class="section-stack">
       <section class="card section">
@@ -57,7 +58,7 @@
           <li>键盘面板里可以单击、右键、双击和长按，也可以切到另一块显示器。</li>
           <li>窗口文本走辅助功能，读取字符，不用 OCR，并保留终端换行。</li>
           <li>底部「输入到 Mac」打开系统键盘、听写或你安装的输入法。Shellcove 只接收最终文本，不申请麦克风权限。</li>
-          <li>剪贴板会在已配对设备之间同步。首页也有常用快捷键，完整键盘在远程桌面里打开。</li>
+          <li>剪贴板会在已配对设备之间同步。设备工具中也有常用快捷键，完整键盘在远程桌面里打开。</li>
         </ul>
       </section>
       <section class="card section">
@@ -73,7 +74,7 @@
           </article>
           <article class="faq-item">
             <h3>手机锁屏之后还能继续控 Mac 吗？</h3>
-            <p>不能。Shellcove 只在前台保持连接。回到前台后会自动重连。</p>
+            <p>远程桌面与实时控制需要手机前台连接，回到前台后会重连。已经由 Mac 接收的 Agent 任务仍会继续，前提是执行 Mac 在线且唤醒。</p>
           </article>
         </div>
       </section>
