@@ -213,6 +213,12 @@ a:hover {
   padding: 16px 24px 88px;
 }
 
+/* vertical rhythm: every direct child of .page keeps a 20px gap
+   (adjacent vertical margins collapse to the larger value) */
+.page > * + * {
+  margin-top: 20px;
+}
+
 section[id] {
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
@@ -430,14 +436,6 @@ p {
 
 /* ------------------------------------------------ buttons */
 
-.download-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
-  margin-top: 24px;
-}
-
 .download-cta {
   display: inline-flex;
   align-items: center;
@@ -462,26 +460,6 @@ p {
 
 .download-cta:active {
   transform: translateY(0);
-}
-
-.download-cta-label {
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.download-cta-sub {
-  font-size: 12px;
-  opacity: 0.78;
-  margin-top: 2px;
-}
-
-.download-secondary {
-  font-size: 14px;
-  color: var(--blue);
-}
-
-.download-secondary:hover {
-  color: #024bc4;
 }
 
 /* ------------------------------------------------ language columns */
@@ -537,24 +515,6 @@ code {
   color: var(--ink);
 }
 
-.code-block {
-  margin: 14px 0 6px;
-  padding: 18px 20px;
-  border-radius: var(--radius-md);
-  background: var(--ink);
-  color: #f2f2f2;
-  font-family: var(--mono);
-  font-size: 13px;
-  line-height: 1.7;
-  overflow-x: auto;
-  white-space: pre;
-}
-
-.code-block .prompt {
-  color: #8fbcff;
-  user-select: none;
-}
-
 /* ------------------------------------------------ footer */
 
 .card.footer {
@@ -608,14 +568,6 @@ code {
   line-height: 1.8;
 }
 
-.hero,
-.hero-copy,
-.hero-side {
-  padding: 28px;
-}
-
-/* ------------------------------------------------ feedback form */
-
 .feedback-card {
   padding: clamp(26px, 4vw, 44px);
 }
@@ -644,6 +596,7 @@ code {
 
 .optional,
 .form-hint,
+.form-note,
 .char-count {
   color: var(--muted);
   font-size: 13px;
