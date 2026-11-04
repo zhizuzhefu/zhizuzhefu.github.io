@@ -1,29 +1,31 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-title-zh="Channo：自有源 IPTV / M3U 播放器｜iPhone · iPad · Apple TV" data-title-en="Channo: an M3U and Xtream player | iPhone · iPad · Apple TV" data-desc-zh="导入自己的 M3U、M3U8 或 Xtream，在 iPhone、iPad 和 Apple TV 上看直播、影片和剧集。支持 XMLTV 节目单、画中画、AirPlay 与 CarPlay。无广告，不提供频道。" data-desc-en="Import your own M3U, M3U8 or Xtream source and watch live channels, movies and series on iPhone, iPad and Apple TV. XMLTV guide, Picture in Picture, AirPlay and CarPlay. No ads, no channels included.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>iPhone IPTV 播放器 Channo｜M3U、Xtream 与 Apple TV</title>
-  <meta name="description" content="Channo 是 iPhone、iPad 与 Apple TV 上的 M3U / M3U8 和 Xtream 播放器。导入你自己的播放列表，添加 XMLTV 节目单。无广告、无订阅，免费可添加 3 个列表。不提供频道。">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+  <title>Channo：自有源 IPTV / M3U 播放器｜iPhone · iPad · Apple TV</title>
+  <meta name="description" content="在 iPhone、iPad 与 Apple TV 上播放你自己的 M3U、M3U8 和 Xtream。支持 XMLTV 节目单、画中画、AirPlay 与 CarPlay 音频。无广告、无订阅，不提供频道。">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/channo/">
   <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/">
-  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/">
-  <link rel="icon" type="image/png" href="./app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Channo">
   <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="iPhone IPTV 播放器 Channo｜M3U、Xtream 与 Apple TV">
-  <meta property="og:description" content="在 iPhone、iPad 与 Apple TV 上播放你自己的 M3U、M3U8 和 Xtream。支持 XMLTV 节目单。无广告、无订阅，不提供频道。">
+  <meta property="og:title" content="Channo：自有源 IPTV / M3U 播放器">
+  <meta property="og:description" content="把你的直播源，变成一台随身电视。无广告，不提供频道，请自备来源。">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/channo/">
-  <meta property="og:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
-  <meta property="og:image:alt" content="Channo app icon">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="iPhone IPTV 播放器 Channo｜M3U、Xtream 与 Apple TV">
-  <meta name="twitter:description" content="在 iPhone、iPad 与 Apple TV 上播放你自己的 M3U、M3U8 和 Xtream。支持 XMLTV 节目单。无广告、无订阅，不提供频道。">
-  <meta name="twitter:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
+  <meta name="twitter:title" content="Channo：自有源 IPTV / M3U 播放器">
+  <meta name="twitter:description" content="把你的直播源，变成一台随身电视。无广告，不提供频道，请自备来源。">
   <link rel="stylesheet" href="./styles.css">
   <script type="application/ld+json">
   {
@@ -48,7 +50,7 @@
         "softwareVersion": "1.2.1",
         "inLanguage": ["zh-Hans", "en"],
         "isAccessibleForFree": true,
-        "description": "在 iPhone、iPad 与 Apple TV 上播放你自己的 M3U、M3U8 和 Xtream。支持 XMLTV 节目单、画中画、AirPlay 与 CarPlay 音频。无广告、无订阅，不提供频道。",
+        "description": "在 iPhone、iPad 与 Apple TV 上播放你自己的 M3U、M3U8 和 Xtream。支持 XMLTV 节目单、画中画、AirPlay 与 CarPlay。无广告、无订阅，不提供频道。",
         "featureList": ["自备 M3U / M3U8 播放列表", "Xtream 直播、影片与剧集", "自备 XMLTV 节目单", "画中画与 AirPlay", "CarPlay 音频，以及车辆允许时的停车视频", "无广告、无订阅"],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
         "publisher": {"@id": "https://apps.zhizuzhefu.com/channo/#org"}
@@ -73,80 +75,66 @@
     <nav class="nav">
       <a class="brand" href="./">Channo</a>
       <div class="nav-links">
-        <a class="active" href="./">Home / 首页</a>
-        <a  href="./privacy.html">Privacy / 隐私政策</a>
-        <a  href="./terms.html">Terms / 用户协议</a>
-        <a  href="./licenses.html">Licenses / 开源许可</a>
-        <a  href="./support.html">Support / 支持</a>
-        <a  href="./feedback.html">Feedback / 反馈</a>
-        <a  href="./en/" hreflang="en" lang="en">English</a>
+        <a class="active" href="./"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
+        <a href="./terms.html"><span class="lz">用户协议</span><span class="le">Terms</span></a>
+        <a href="./privacy.html"><span class="lz">隐私</span><span class="le">Privacy</span></a>
+        <a href="./licenses.html"><span class="lz">开源许可</span><span class="le">Licenses</span></a>
       </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
 
   <main class="page">
 
-    <section class="hero">
-      <div class="card hero-copy">
-        <div class="eyebrow">Channo · 自有源 IPTV / M3U 播放器</div>
-        <h1>把你的直播源，<br>变成一台随身电视。</h1>
-        <p>导入自己的 M3U / M3U8 播放列表或 Xtream 账号，直播、影片和剧集放在一起。收藏频道、查节目单，在 iPhone 上随手看，在 iPad 和 Apple TV 上用大屏看。无广告，无订阅，不需要注册 Channo 账号。</p>
-        <a class="download-cta" href="https://apps.apple.com/app/id6822259868" aria-label="在 App Store 免费下载 Channo">
-          <span class="download-cta-label">在 App Store 下载</span>
-          <span class="download-cta-sub">免费下载 · Pro 一次购买</span>
-        </a>
-        <div class="pill-row">
-          <span class="pill">M3U / M3U8 / Xtream</span>
-          <span class="pill">直播 · 影片 · 剧集</span>
-          <span class="pill">收藏、搜索与节目单</span>
-          <span class="pill">画中画与 AirPlay</span>
-          <span class="pill">CarPlay 车载音频</span>
-          <span class="pill">iPhone · iPad · Apple TV</span>
-          <span class="pill">需自备播放来源</span>
-        </div>
+    <section class="card page-title">
+      <div class="eyebrow"><span class="lz">Channo · 自有源 IPTV / M3U 播放器</span><span class="le">Channo · M3U and Xtream player</span></div>
+      <h1><span class="lz">把你的直播源，变成一台随身电视。</span><span class="le">Your playlists. Your pocket TV.</span></h1>
+      <p class="hero-lead"><span class="lz">导入自己的 M3U / M3U8 播放列表或 Xtream 账号，直播、影片和剧集放在一起。收藏频道、查节目单，在 iPhone 上随手看，在 iPad 和 Apple TV 上用大屏看。无广告，无订阅，不需要注册 Channo 账号。</span><span class="le">Import a playlist or Xtream account you already have. Watch live channels, movies and series, save favorites, and attach your own XMLTV guide. No ads, no subscription, and no Channo account.</span></p>
+      <div class="hero-actions">
+        <a class="download-cta" href="https://apps.apple.com/app/id6822259868" aria-label="在 App Store 免费下载 Channo"><span class="lz">在 App Store 下载</span><span class="le">Download on the App Store</span></a>
+        <span class="hero-note"><span class="lz">免费下载 · Pro 一次购买</span><span class="le">Free download · Pro is one purchase</span></span>
       </div>
-      <div class="card hero-side">
-        <div class="lang-tag">English</div>
-        <h2>Your playlists.<br>Your pocket TV.</h2>
-        <p>Bring your M3U / M3U8 playlist or Xtream account. Watch live channels, movies and series, save favorites and check what’s on. Version 1.2.1 includes 3 free playlists. No ads. No subscriptions. No Channo account required.</p>
-        <p><a href="./en/" hreflang="en" lang="en">Read the English page</a></p>
-        <div class="contact-box">
-          <strong>Contact / 联系</strong>
-          <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
-          <p style="margin-top:10px"><a href="./support.html">Support</a> · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./licenses.html">Open-source</a></p>
-        </div>
+      <div class="pill-row">
+        <span class="pill">M3U / M3U8 / Xtream</span>
+        <span class="pill"><span class="lz">直播 · 影片 · 剧集</span><span class="le">Live, movies and series</span></span>
+        <span class="pill"><span class="lz">收藏、搜索与节目单</span><span class="le">Favorites, search and guide</span></span>
+        <span class="pill"><span class="lz">画中画与 AirPlay</span><span class="le">Picture in Picture and AirPlay</span></span>
+        <span class="pill"><span class="lz">CarPlay 车载音频</span><span class="le">CarPlay audio</span></span>
+        <span class="pill">iPhone · iPad · Apple TV</span>
+        <span class="pill"><span class="lz">需自备播放来源</span><span class="le">Bring your own source</span></span>
       </div>
     </section>
 
-    <section class="section-grid" aria-label="分步说明">
+    <section class="section-grid" aria-label="分步说明 / Setup guides">
       <article class="card section">
-        <h2>在 iPhone 上添加 M3U</h2>
-        <p>粘贴 M3U / M3U8 链接，或从文件导入 .m3u、.m3u8、.txt。也可以一并填上 XMLTV 节目单。</p>
-        <p><a href="./m3u.html">查看 M3U 导入步骤</a></p>
+        <h2><span class="lz">在 iPhone 上添加 M3U</span><span class="le">Add an M3U playlist</span></h2>
+        <p><span class="lz">粘贴 M3U / M3U8 链接，或从文件导入 .m3u、.m3u8、.txt。也可以一并填上 XMLTV 节目单。</span><span class="le">Paste an M3U or M3U8 link, or import a .m3u, .m3u8 or .txt file. You can attach an XMLTV guide on the same screen.</span></p>
+        <p><a href="./m3u.html"><span class="lz">查看 M3U 导入步骤</span><span class="le">M3U setup steps</span></a></p>
       </article>
       <article class="card section">
-        <h2>登录 Xtream Codes</h2>
-        <p>用服务器地址、用户名和密码载入直播、影片和剧集。适合不想管理一条很长播放列表链接的时候。</p>
-        <p><a href="./xtream.html">查看 Xtream 登录步骤</a></p>
+        <h2><span class="lz">登录 Xtream Codes</span><span class="le">Sign in with Xtream Codes</span></h2>
+        <p><span class="lz">用服务器地址、用户名和密码载入直播、影片和剧集。适合不想管理一条很长播放列表链接的时候。</span><span class="le">Use a server address, username and password to load live channels, movies and series from an account you already have.</span></p>
+        <p><a href="./xtream.html"><span class="lz">查看 Xtream 登录步骤</span><span class="le">Xtream login steps</span></a></p>
       </article>
       <article class="card section">
-        <h2>在 Apple TV 上观看</h2>
-        <p>在电视上安装 Channo，直接添加链接，或从 iPhone 通过 iCloud 同步播放列表。</p>
-        <p><a href="./apple-tv.html">查看 Apple TV 设置</a></p>
+        <h2><span class="lz">在 Apple TV 上观看</span><span class="le">Watch on Apple TV</span></h2>
+        <p><span class="lz">在电视上安装 Channo，直接添加链接，或从 iPhone 通过 iCloud 同步播放列表。</span><span class="le">Install Channo on the TV and add the link there, or turn on iCloud sync from iPhone.</span></p>
+        <p><a href="./apple-tv.html"><span class="lz">查看 Apple TV 设置</span><span class="le">Apple TV setup</span></a></p>
       </article>
       <article class="card section">
-        <h2>导入后的完整说明</h2>
-        <p>收藏、搜索、频道体检、画中画、下载、CarPlay，以及地址打不开时怎么查。</p>
-        <p><a href="./support.html">打开使用指南</a></p>
+        <h2><span class="lz">导入后的完整说明</span><span class="le">After the playlist is in</span></h2>
+        <p><span class="lz">收藏、搜索、频道体检、画中画、下载、CarPlay，以及地址打不开时怎么查。</span><span class="le">Favorites, search, channel checks, Picture in Picture, downloads, CarPlay, and what to try when an address will not open.</span></p>
+        <p><a href="./support.html"><span class="lz">打开使用指南</span><span class="le">Open the setup guide</span></a></p>
       </article>
     </section>
 
     <section class="section-stack">
       <section class="card section">
-        <h2>常看的频道，不必每次重找</h2>
+        <h2><span class="lz">常看的频道，不必每次重找</span><span class="le">Keep the channels you actually watch</span></h2>
         <div class="columns">
-          <div class="lang-block">
-            <div class="lang-tag">简体中文</div>
+          <div class="lang-block lz">
             <ul class="feature-list">
               <li>导入自己的 M3U / M3U8 链接或文件、Xtream 账号（直播、影片、剧集）或单条视频地址</li>
               <li>收藏频道，搜索频道、节目和影片，从继续观看里找回刚才的内容</li>
@@ -157,15 +145,14 @@
               <li>家长锁可以锁定或隐藏分类。1.2.1 起免费添加 3 个播放列表</li>
             </ul>
           </div>
-          <div class="lang-block" lang="en">
-            <div class="lang-tag">English</div>
+          <div class="lang-block le">
             <ul class="feature-list">
               <li>Import an M3U / M3U8 link or file, an Xtream account for live, movies and series, or a single stream URL</li>
-              <li>Save favorites, search channels, programmes and movies, and resume from Continue Watching</li>
-              <li>Check channel availability, use dual playback engines, and recover automatically after a network drop</li>
-              <li>Choose the audio tracks and text subtitles your source provides, then use Picture in Picture or AirPlay</li>
-              <li>Add your own XMLTV guide. When the source offers catch-up, restart a programme from the beginning</li>
-              <li>Watch on iPhone or iPad, or browse with the Apple TV remote. Synced playlists can arrive on Apple TV</li>
+              <li>Save favorites, search channels, programmes and movies, and return from Continue Watching</li>
+              <li>Check which channels answer, use two playback engines, and retry after a network drop</li>
+              <li>Choose the audio tracks and text subtitles the source provides, then use Picture in Picture or AirPlay</li>
+              <li>Add your own XMLTV guide. When the source declares catch-up, start a programme from the beginning</li>
+              <li>Watch on iPhone or iPad, or browse with the Apple TV remote</li>
               <li>Lock or hide categories with a parental PIN. Version 1.2.1 includes 3 free playlists</li>
             </ul>
           </div>
@@ -173,73 +160,71 @@
       </section>
 
       <section class="card section">
-        <h2>免费开始，按需升级 / Start free. Upgrade once.</h2>
+        <h2><span class="lz">免费开始，按需升级</span><span class="le">Start free. Upgrade once.</span></h2>
         <div class="columns">
-          <div class="lang-block" lang="zh-CN">
+          <div class="lang-block lz">
             <p>1.2.1 起免费添加 3 个播放列表，使用收藏、搜索、频道体检、基础播放、画中画和「现在 / 接下来」节目单。影片与剧集可以浏览，并从头播放。免费可同步 1 个来源及其收藏和点播进度，下载列表可保留 1 项。步骤见 <a href="./support.html">支持</a>。</p>
             <p>Channo Pro 一次购买，无订阅。它解锁无限播放列表、全天节目单、全部来源的 iCloud 同步、不限量点播下载、点播续播，以及播放诊断浮层。支持家人共享与恢复购买。已添加的列表在额度变化后仍可编辑和刷新。</p>
             <p>CarPlay 支持车载音频。停车视频需要兼容系统与车机允许，行驶时只播放音频。免费停车视频额度为每天 20 分钟，Pro 不限时长，均以车机允许视频为前提。</p>
             <p>Channo 不提供频道、影视内容或节目单服务，请自备有权使用的来源。播放、字幕、画中画、AirPlay 与回看取决于来源、引擎和设备。离线下载不适用于直播或受保护内容。</p>
           </div>
-          <div class="lang-block" lang="en">
-            <p>Version 1.2.1 includes 3 free playlists, with favorites, search, availability checks, basic playback, Picture in Picture and the Now/Next guide. Browse movies and series and play them from the start. Free sync covers 1 source with its favorites and on-demand progress, and the download list can hold 1 item. Steps are on <a href="./en/support.html" hreflang="en" lang="en">the English setup guide</a>.</p>
+          <div class="lang-block le">
+            <p>Version 1.2.1 includes 3 free playlists, with favorites, search, availability checks, basic playback, Picture in Picture and the Now and Next guide. Browse movies and series and play them from the start. Free sync covers 1 source with its favorites and on-demand progress, and the download list can hold 1 item. Steps are in the <a href="./support.html">setup guide</a>.</p>
             <p>One Channo Pro purchase, with no subscription, unlocks unlimited playlists, the full-day guide, iCloud sync for every source, unlimited on-demand downloads, on-demand resume and the playback diagnostics overlay. Family Sharing and Restore Purchases are supported. Playlists you already added stay editable and refreshable if the allowance changes.</p>
-            <p>Listen through CarPlay. Parked video requires a compatible system and vehicle that permits video; driving uses audio only. Where supported, free parked video is limited to 20 minutes per day. Pro removes that time limit, subject to the same vehicle restrictions.</p>
-            <p>Channo provides no channels, movies, shows or guide service. Bring sources you have the right to use. Playback, subtitles, Picture in Picture, AirPlay and catch-up depend on your source, engine and device. Downloads do not record live channels or save protected content.</p>
+            <p>Listen through CarPlay. Parked video requires a compatible system and a vehicle that permits video. Driving uses audio only. Where supported, free parked video is limited to 20 minutes per day. Pro removes that time limit, subject to the same vehicle restrictions.</p>
+            <p>Channo provides no channels, movies, shows or guide service. Bring sources you have the right to use. Playback, subtitles, Picture in Picture, AirPlay and catch-up depend on the source, engine and device. Downloads do not record live TV or save protected video.</p>
           </div>
         </div>
       </section>
 
       <section class="card section">
-        <div class="eyebrow">Privacy in one line / 隐私一句话</div>
+        <div class="eyebrow"><span class="lz">隐私一句话</span><span class="le">Privacy in one line</span></div>
         <div class="columns">
-          <div class="lang-block">
-            <div class="lang-tag">简体中文</div>
+          <div class="lang-block lz">
             <p>播放列表默认在本机。打开 iCloud 同步后，来源与偏好进入你的私有 iCloud；独立的 Xtream 密码由系统钥匙串管理，不由这项同步导出。新版使用 Google Analytics 和 Crashlytics；「使用情况与故障报告」默认开启、可在「设置 → 隐私」关闭。详见 <a href="./privacy.html">隐私政策</a>。</p>
           </div>
-          <div class="lang-block" lang="en">
-            <div class="lang-tag">English</div>
+          <div class="lang-block le">
             <p>Playlists stay on this device unless you turn on iCloud sync. Separate Xtream passwords use the system Keychain and are not exported by that sync. In version 1.2.1 and later, Google Analytics and Crashlytics measure usage and faults. Usage &amp; fault reporting is on by default and can be turned off in Settings &gt; Privacy. See the <a href="./privacy.html">Privacy Policy</a>.</p>
           </div>
         </div>
       </section>
 
       <section class="card section" id="faq">
-        <h2>常见问题</h2>
+        <h2><span class="lz">常见问题</span><span class="le">Questions</span></h2>
         <div class="faq-list">
           <article class="faq-item">
-            <h3>Channo 提供频道或直播源吗？</h3>
-            <p>不提供。Channo 是 iPhone、iPad 和 Apple TV 上的播放器，只播放你导入的 M3U、M3U8 或 Xtream。它不内置直播源，也不出售频道订阅。</p>
+            <h3><span class="lz">Channo 提供频道或直播源吗？</span><span class="le">Does Channo include channels or a live-stream list?</span></h3>
+            <p><span class="lz">不提供。Channo 是 iPhone、iPad 和 Apple TV 上的播放器，只播放你导入的 M3U、M3U8 或 Xtream。它不内置直播源，也不出售频道订阅。</span><span class="le">No. Channo is a player for iPhone, iPad and Apple TV. It plays only the M3U, M3U8 or Xtream sources you import. It does not bundle live streams, and it does not sell channel subscriptions.</span></p>
           </article>
           <article class="faq-item">
-            <h3>怎么在 iPhone 上添加 M3U 或 M3U8？</h3>
-            <p>在 App Store 下载 Channo，打开来源，选择 M3U 列表，粘贴播放列表地址，或从文件打开 .m3u、.m3u8、.txt。免费版可以添加 3 个播放列表。步骤见 <a href="./m3u.html">M3U 导入说明</a>。</p>
+            <h3><span class="lz">怎么在 iPhone 上添加 M3U 或 M3U8？</span><span class="le">How do I add an M3U or M3U8 playlist on iPhone?</span></h3>
+            <p><span class="lz">在 App Store 下载 Channo，打开来源，选择 M3U 列表，粘贴播放列表地址，或从文件打开 .m3u、.m3u8、.txt。免费版可以添加 3 个播放列表。步骤见 <a href="./m3u.html">M3U 导入说明</a>。</span><span class="le">Download Channo from the App Store, open Sources, choose an M3U playlist, paste the playlist address, or open a .m3u, .m3u8 or .txt file. The free version can hold 3 playlists. See the <a href="./m3u.html">M3U setup guide</a>.</span></p>
           </article>
           <article class="faq-item">
-            <h3>Xtream Codes 要填哪些信息？</h3>
-            <p>填写服务器地址、用户名和密码。服务器使用 http 或 https。登录后可以查看该账号中的直播、影片和剧集。步骤见 <a href="./xtream.html">Xtream 登录说明</a>。</p>
+            <h3><span class="lz">Xtream Codes 要填哪些信息？</span><span class="le">What do I enter for an Xtream Codes login?</span></h3>
+            <p><span class="lz">填写服务器地址、用户名和密码。服务器使用 http 或 https。登录后可以查看该账号中的直播、影片和剧集。步骤见 <a href="./xtream.html">Xtream 登录说明</a>。</span><span class="le">Enter the server address, username and password. The server uses http or https. After login you can browse that account's live channels, movies and series. See the <a href="./xtream.html">Xtream login guide</a>.</span></p>
           </article>
           <article class="faq-item">
-            <h3>Apple TV 能使用同一个播放列表吗？</h3>
-            <p>可以。在 Apple TV 上安装 Channo 后直接添加链接，或开启 iCloud 同步，让 iPhone 上的来源出现在电视上。步骤见 <a href="./apple-tv.html">Apple TV 设置</a>。</p>
+            <h3><span class="lz">Apple TV 能使用同一个播放列表吗？</span><span class="le">Can Apple TV use the same playlist?</span></h3>
+            <p><span class="lz">可以。在 Apple TV 上安装 Channo 后直接添加链接，或开启 iCloud 同步，让 iPhone 上的来源出现在电视上。步骤见 <a href="./apple-tv.html">Apple TV 设置</a>。</span><span class="le">Yes. Install Channo on Apple TV and add the link there, or turn on iCloud sync so a source from iPhone appears on the TV. See the <a href="./apple-tv.html">Apple TV setup</a>.</span></p>
           </article>
           <article class="faq-item">
-            <h3>XMLTV 节目单怎么添加？</h3>
-            <p>添加来源时填写你自己的 XMLTV 地址，或稍后在来源详情中填写。支持 .xml 和 .gz。免费版查看现在和接下来，Pro 可查看全天节目单。</p>
+            <h3><span class="lz">XMLTV 节目单怎么添加？</span><span class="le">How do I add an XMLTV guide?</span></h3>
+            <p><span class="lz">添加来源时填写你自己的 XMLTV 地址，或稍后在来源详情中填写。支持 .xml 和 .gz。免费版查看现在和接下来，Pro 可查看全天节目单。</span><span class="le">Enter your own XMLTV address when you add a source, or later in the source details. .xml and .gz are supported. Now and Next are free. Pro opens the full-day guide.</span></p>
           </article>
           <article class="faq-item">
-            <h3>Channo 有广告或月费吗？</h3>
-            <p>没有广告，也没有订阅。App 可以免费下载。Pro 是一次购买，用于解锁无限播放列表、全天节目单、全部来源的 iCloud 同步、不限量点播下载和续播。</p>
+            <h3><span class="lz">Channo 有广告或月费吗？</span><span class="le">Does Channo show ads or charge a monthly fee?</span></h3>
+            <p><span class="lz">没有广告，也没有订阅。App 可以免费下载。Pro 是一次购买，用于解锁无限播放列表、全天节目单、全部来源的 iCloud 同步、不限量点播下载和续播。</span><span class="le">There are no ads and no subscription. The app is free to download. Pro is a one-time purchase that unlocks unlimited playlists, the full-day guide, iCloud sync for every source, unlimited on-demand downloads and resume.</span></p>
           </article>
         </div>
       </section>
     </section>
 
-    <footer class="site-footer">
-      <p><a href="./m3u.html">M3U 导入</a> · <a href="./xtream.html">Xtream 登录</a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./support.html">使用指南</a> · <a href="./en/" hreflang="en" lang="en">English</a></p>
-      <p>© 2026 智足者富 · Channo · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>
-         · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./licenses.html">Licenses</a></p>
+    <footer class="card footer">
+      <p><a href="./m3u.html"><span class="lz">M3U 导入</span><span class="le">M3U setup</span></a> · <a href="./xtream.html"><span class="lz">Xtream 登录</span><span class="le">Xtream login</span></a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./support.html"><span class="lz">使用指南</span><span class="le">Setup guide</span></a> · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+      <small>© 2026 智足者富 · Channo</small>
     </footer>
   </main>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>

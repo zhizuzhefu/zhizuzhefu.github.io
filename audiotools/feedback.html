@@ -1,9 +1,15 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-title-zh="音频随转 - Feedback / 意见反馈" data-title-en="AudioTools Feedback" data-desc-zh="音频随转意见反馈 - 您的每一条建议都是我们前进的动力。" data-desc-en="AudioTools feedback — your voice helps us build a better app.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
   <title>音频随转 - Feedback / 意见反馈</title>
   <meta name="description" content="音频随转意见反馈 - 您的每一条建议都是我们前进的动力。AudioTools Feedback - Your voice helps us build a better app.">
   <link rel="stylesheet" href="./styles.css">
@@ -11,46 +17,46 @@
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="./">音频随转</a>
+      <a class="brand" href="./"><span class="lz">音频随转</span><span class="le">AudioTools</span></a>
       <div class="nav-links">
-        <a href="./">Home / 首页</a>
-        <a href="./privacy.html">Privacy / 隐私政策</a>
-        <a href="./support.html">Support / 支持</a>
-        <a class="active" href="./feedback.html">Feedback / 反馈</a>
+        <a href="./"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="./video-to-mp3.html"><span class="lz">视频转 MP3</span><span class="le">Video to MP3</span></a>
+        <a href="./ringtone.html"><span class="lz">铃声</span><span class="le">Ringtone</span></a>
+        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a class="active" href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
       </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
 
   <main class="page">
-
-    <!-- Form -->
     <div id="feedbackForm">
       <section class="card page-title">
-        <div class="eyebrow">Feedback / 意见反馈</div>
-        <h1>意见反馈</h1>
-        <p>您的每一条建议都是我们前进的动力 / Your voice helps us build a better app</p>
+        <div class="eyebrow"><span class="lz">意见反馈</span><span class="le">Feedback</span></div>
+        <h1><span class="lz">意见反馈</span><span class="le">Feedback</span></h1>
+        <p><span class="lz">您的每一条建议都是我们前进的动力</span><span class="le">Your voice helps us build a better app</span></p>
       </section>
 
-      <div class="card" style="padding: 28px;">
+      <section class="card feedback-card">
         <form class="feedback-form" onsubmit="return handleSubmit(event)">
-
           <div class="form-group">
-            <label class="form-label" for="feedbackType">反馈类型 / What's this about?</label>
+            <label class="form-label" for="feedbackType"><span class="lz">反馈类型</span><span class="le">What's this about?</span></label>
             <select class="form-select" id="feedbackType" required>
-              <option value="" disabled selected>请选择类型... / Choose a category...</option>
-              <option value="bug">遇到问题 / I found a bug</option>
-              <option value="feature">功能建议 / I have a feature idea</option>
-              <option value="ux">体验优化 / Usability improvement</option>
-              <option value="other">其他 / Something else</option>
+              <option value="" disabled selected data-zh="请选择类型..." data-en="Choose a category...">请选择类型... / Choose a category...</option>
+              <option value="bug" data-zh="遇到问题" data-en="I found a bug">遇到问题 / I found a bug</option>
+              <option value="feature" data-zh="功能建议" data-en="I have a feature idea">功能建议 / I have a feature idea</option>
+              <option value="ux" data-zh="体验优化" data-en="Usability improvement">体验优化 / Usability improvement</option>
+              <option value="other" data-zh="其他" data-en="Something else">其他 / Something else</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="feedbackContent">详细描述 / Tell us more</label>
+            <label class="form-label" for="feedbackContent"><span class="lz">详细描述</span><span class="le">Tell us more</span></label>
             <textarea
               class="form-textarea"
               id="feedbackContent"
-              placeholder="请尽量详细地描述您遇到的问题或想法，这能帮助我们更好地理解和改进。&#10;The more detail you share, the better we can help — feel free to describe what happened, what you expected, or what you'd like to see."
+              data-zh="请尽量详细地描述您遇到的问题或想法，这能帮助我们更好地理解和改进。"
+              data-en="The more detail you share, the better we can help — describe what happened, what you expected, or what you'd like to see."
               required
               maxlength="2000"
               oninput="updateCharCount()"
@@ -59,67 +65,69 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="contactInfo">联系方式 / How can we reach you? <span class="optional">(选填 / optional)</span></label>
+            <label class="form-label" for="contactInfo"><span class="lz">联系方式</span><span class="le">How can we reach you?</span> <span class="optional">(<span class="lz">选填</span><span class="le">optional</span>)</span></label>
             <input
               class="form-input"
               id="contactInfo"
               type="text"
-              placeholder="您的邮箱、微信号 / Your email or WeChat ID..."
-              maxlength="100"
-            >
-            <p class="form-hint">留下联系方式，方便我们跟进处理结果或了解更多细节。We may follow up if we need more details.</p>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="deviceInfo">您的设备 / Your device <span class="optional">(选填 / optional)</span></label>
-            <input
-              class="form-input"
-              id="deviceInfo"
-              type="text"
-              placeholder="例如 iPhone 16 / iPad Air / iOS 18..."
+              data-zh="您的邮箱、微信号"
+              data-en="Your email or WeChat ID..."
               maxlength="100"
             >
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="appVersion">App 版本 / App version <span class="optional">(选填 / optional)</span></label>
-            <input
-              class="form-input"
-              id="appVersion"
-              type="text"
-              placeholder="例如 2.4.0"
-              maxlength="20"
-            >
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="deviceInfo"><span class="lz">您的设备</span><span class="le">Your device</span> <span class="optional">(<span class="lz">选填</span><span class="le">optional</span>)</span></label>
+              <input
+                class="form-input"
+                id="deviceInfo"
+                type="text"
+                data-zh="例如 iPhone 16 / iPad Air / iOS 18..."
+                data-en="e.g. iPhone 16 / iPad Air / iOS 18..."
+                maxlength="100"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="appVersion"><span class="lz">App 版本</span><span class="le">App version</span> <span class="optional">(<span class="lz">选填</span><span class="le">optional</span>)</span></label>
+              <input
+                class="form-input"
+                id="appVersion"
+                type="text"
+                data-zh="例如 2.4.0"
+                data-en="e.g. 2.4.0"
+                maxlength="20"
+              >
+            </div>
           </div>
 
-          <button class="submit-btn" type="submit" id="submitBtn">提交反馈 / Send Feedback</button>
+          <button class="submit-btn" type="submit" id="submitBtn" data-zh="提交反馈" data-en="Send Feedback">提交反馈 / Send Feedback</button>
         </form>
-      </div>
+      </section>
     </div>
 
-    <!-- Success -->
     <div id="feedbackSuccess" class="feedback-result">
-      <div class="card" style="padding: 48px 28px;">
+      <section class="card result-card">
         <div class="result-icon">&#10003;</div>
-        <div class="result-title">感谢您的宝贵反馈！</div>
-        <p class="result-desc">Thank you so much! Your feedback means a lot to us and will help make 音频随转 / AudioTools even better.</p>
-        <button class="reset-btn" onclick="resetForm()">继续反馈 / Share More Feedback</button>
-      </div>
+        <div class="result-title"><span class="lz">感谢您的宝贵反馈！</span><span class="le">Thank you so much!</span></div>
+        <button class="reset-btn" onclick="resetForm()"><span class="lz">继续反馈</span><span class="le">Share More Feedback</span></button>
+      </section>
     </div>
 
-    <!-- Error -->
     <div id="feedbackError" class="feedback-result">
-      <div class="card" style="padding: 48px 28px;">
+      <section class="card result-card">
         <div class="result-icon">!</div>
-        <div class="result-title">提交遇到了问题</div>
-        <p class="result-desc" id="errorMsg">别担心，请稍后再试一次。您也可以直接发邮件给我们：zhizuzhefu@foxmail.com</p>
-        <button class="reset-btn" onclick="resetForm()">再试一次 / Try Again</button>
-      </div>
+        <div class="result-title"><span class="lz">提交遇到了问题</span><span class="le">Something went wrong</span></div>
+        <p class="result-desc"><span class="lz">别担心，请稍后再试一次。您也可以直接发邮件给我们：</span><span class="le">Don't worry, please try again later. You can also email us directly:</span> <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+        <button class="reset-btn" onclick="resetForm()"><span class="lz">再试一次</span><span class="le">Try Again</span></button>
+      </section>
     </div>
 
-    <footer class="card footer" style="margin-top: 40px;">
-      <p>更愿意写邮件？随时联系我们 / Prefer email? Reach us anytime</p>
+    <footer class="card footer">
+      <p><span class="lz">更愿意写邮件？随时联系我们</span><span class="le">Prefer email? Reach us anytime</span></p>
       <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+      <small>&copy; 2026 智足者富 · 音频随转 / AudioTools</small>
     </footer>
   </main>
 
@@ -135,6 +143,14 @@
       }
     })();
 
+    function pageLang() {
+      return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'zh';
+    }
+
+    function t(zh, en) {
+      return pageLang() === 'en' ? en : zh;
+    }
+
     function updateCharCount() {
       var textarea = document.getElementById('feedbackContent');
       var counter = document.getElementById('charCount');
@@ -148,7 +164,7 @@
 
       var btn = document.getElementById('submitBtn');
       btn.disabled = true;
-      btn.textContent = '正在提交... / Sending...';
+      btn.textContent = t('正在提交...', 'Sending...');
 
       var data = {
         type: document.getElementById('feedbackType').value,
@@ -160,28 +176,7 @@
         userAgent: navigator.userAgent
       };
 
-      // ---------------------------------------------------------------
-      // TODO: Replace with your actual backend endpoint.
-      //
-      // Option A — Your own API:
-      //   fetch('https://your-api.com/feedback', {
-      //     method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify(data)
-      //   })
-      //
-      // Option B — Email service (e.g. Formspree):
-      //   fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      //     method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify(data)
-      //   })
-      //
-      // Option C — mailto fallback (current implementation):
-      // ---------------------------------------------------------------
-
-      // Current: mailto fallback — opens user's email client with prefilled content
-      var subject = encodeURIComponent('[音频随转 / AudioTools] ' + data.type + ' - User Feedback');
+      var subject = encodeURIComponent('[AudioTools] ' + data.type + ' - User Feedback');
       var body = encodeURIComponent(
         '--- Feedback / 反馈详情 ---\n\n' +
         'Category / 类型: ' + data.type + '\n\n' +
@@ -189,13 +184,12 @@
         '--- User Info / 用户信息 ---\n\n' +
         'Contact / 联系方式: ' + (data.contact || 'Not provided / 未填写') + '\n' +
         'Device / 设备: ' + (data.device || 'Not provided / 未填写') + '\n' +
-        'App Version / 版本: ' + (data.appVersion || 'Not provided / 未填写') + '\n' +
+        'App Version / App 版本: ' + (data.appVersion || 'Not provided / 未填写') + '\n' +
         'Submitted / 提交时间: ' + data.timestamp
       );
 
       window.location.href = 'mailto:zhizuzhefu@foxmail.com?subject=' + subject + '&body=' + body;
 
-      // Show success after a short delay (mailto doesn't return status)
       setTimeout(function() {
         showResult('feedbackSuccess');
       }, 500);
@@ -218,12 +212,15 @@
       document.getElementById('feedbackType').selectedIndex = 0;
       document.getElementById('feedbackContent').value = '';
       document.getElementById('contactInfo').value = '';
+      document.getElementById('deviceInfo').value = '';
+      document.getElementById('appVersion').value = '';
       document.getElementById('charCount').textContent = '0 / 2000';
 
       var btn = document.getElementById('submitBtn');
       btn.disabled = false;
-      btn.textContent = '提交反馈 / Send Feedback';
+      btn.textContent = t('提交反馈', 'Send Feedback');
     }
   </script>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>

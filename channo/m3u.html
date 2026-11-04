@@ -1,117 +1,109 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-title-zh="在 iPhone 上添加 M3U / M3U8 播放列表｜Channo" data-title-en="Add an M3U or M3U8 Playlist on iPhone | Channo" data-desc-zh="Channo 播放你已经拥有的播放列表：粘贴链接或从文件导入，支持 XMLTV 节目单、自动刷新与请求头。它不提供任何 M3U 列表。" data-desc-en="Channo plays a playlist you already have: paste a link or import a file, attach an XMLTV guide, auto-refresh and custom headers. It does not provide any M3U list.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
   <title>在 iPhone 上添加 M3U / M3U8 播放列表｜Channo</title>
-  <meta name="description" content="用 Channo 在 iPhone 或 iPad 上导入你自己的 M3U / M3U8 链接或文件，添加 XMLTV 节目单，并处理 403 与失效频道。不提供播放列表下载。">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="description" content="Channo 播放你已经拥有的播放列表：粘贴链接或从文件导入，支持 XMLTV 节目单、自动刷新与请求头。它不提供任何 M3U 列表。">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/channo/m3u.html">
   <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/m3u.html">
-  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/m3u.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/m3u.html?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/m3u.html">
-  <link rel="icon" type="image/png" href="./app-icon.png">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Channo">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="在 iPhone 上添加 M3U / M3U8 播放列表｜Channo">
-  <meta property="og:description" content="用 Channo 在 iPhone 或 iPad 上导入你自己的 M3U / M3U8 链接或文件，添加 XMLTV 节目单。不提供播放列表下载。">
-  <meta property="og:url" content="https://apps.zhizuzhefu.com/channo/m3u.html">
-  <meta property="og:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="在 iPhone 上添加 M3U / M3U8 播放列表｜Channo">
-  <meta name="twitter:description" content="用 Channo 在 iPhone 或 iPad 上导入你自己的 M3U / M3U8 链接或文件。不提供播放列表下载。">
   <link rel="stylesheet" href="./styles.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Channo","item":"https://apps.zhizuzhefu.com/channo/"},
-      {"@type":"ListItem","position":2,"name":"添加 M3U","item":"https://apps.zhizuzhefu.com/channo/m3u.html"}
-    ]},
-    {"@type":"Article","headline":"在 iPhone 上添加 M3U / M3U8 播放列表","dateModified":"2026-10-25","inLanguage":"zh-Hans","mainEntityOfPage":"https://apps.zhizuzhefu.com/channo/m3u.html","author":{"@type":"Organization","name":"智足者富"}},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"M3U 和 M3U8 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"M3U 是播放列表。M3U8 通常是 HLS 播放列表，也可以是一条 UTF-8 编码的播放列表。Channo 两种都能作为链接或文件导入。"}},
-      {"@type":"Question","name":"可以直接打开手机里的播放列表文件吗？","acceptedAnswer":{"@type":"Answer","text":"可以。从文件 App 分享或打开 .m3u、.m3u8 或 .txt，Channo 会把它复制到自己的存储里再导入。"}},
-      {"@type":"Question","name":"M3U 地址返回 403 怎么办？","acceptedAnswer":{"@type":"Answer","text":"在来源详情的请求头里按 Name: value 补上对方要求的 User-Agent 或 Referer，然后立即刷新。"}},
-      {"@type":"Question","name":"导入了 M3U，为什么没有节目单？","acceptedAnswer":{"@type":"Answer","text":"M3U 本身通常不含节目时间。需要另填你自己的 XMLTV 地址，支持 .xml 和 .gz。频道按 tvg-id、tvg-name 或名称匹配。"}}
-    ]}
-  ]}
-  </script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
       <a class="brand" href="./">Channo</a>
       <div class="nav-links">
-        <a href="./">首页</a>
-        <a class="active" href="./m3u.html">M3U</a>
-        <a href="./xtream.html">Xtream</a>
-        <a href="./apple-tv.html">Apple TV</a>
-        <a href="./support.html">使用指南</a>
-        <a href="./en/m3u.html" hreflang="en" lang="en">English</a>
+        <a href="./"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
+        <a href="./terms.html"><span class="lz">用户协议</span><span class="le">Terms</span></a>
+        <a href="./privacy.html"><span class="lz">隐私</span><span class="le">Privacy</span></a>
+        <a href="./licenses.html"><span class="lz">开源许可</span><span class="le">Licenses</span></a>
       </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
   <main class="page">
     <section class="card page-title">
       <div class="eyebrow">iPhone · iPad · M3U / M3U8</div>
-      <h1>在 iPhone 上添加 M3U / M3U8 播放列表</h1>
-      <p>Channo 播放你已经拥有的播放列表。它不提供、不收录、也不代下任何 M3U 列表。下面是在 iPhone 或 iPad 上从链接或文件导入的步骤。</p>
-      <p><a class="download-cta" href="https://apps.apple.com/app/id6822259868"><span class="download-cta-label">在 App Store 下载 Channo</span><span class="download-cta-sub">免费下载 · 不包含播放列表</span></a></p>
+      <h1><span class="lz">在 iPhone 上添加 M3U / M3U8 播放列表</span><span class="le">Add an M3U or M3U8 playlist on iPhone</span></h1>
+      <p><span class="lz">Channo 播放你已经拥有的播放列表。它不提供、不收录、也不代下任何 M3U 列表。下面是在 iPhone 或 iPad 上从链接或文件导入的步骤。</span><span class="le">Channo plays a playlist you already have. It does not provide, host or download any M3U list. These steps import a link or a file on iPhone or iPad.</span></p>
+      <div class="hero-actions"><a class="download-cta" href="https://apps.apple.com/app/id6822259868"><span class="lz">在 App Store 下载 Channo</span><span class="le">Download Channo on the App Store</span></a><span class="hero-note"><span class="lz">免费下载 · 不包含播放列表</span><span class="le">Free download · playlists not included</span></span></div>
     </section>
     <section class="section-stack">
       <section class="card section">
-        <h2>用链接导入</h2>
-        <ol class="feature-list">
-          <li>安装 Channo 后，打开来源，选择「M3U 列表」。</li>
-          <li>粘贴完整地址。地址以 http 或 https 开头，明文 http 可以播放。不要漏掉端口、路径或参数。</li>
-          <li>名称可以留空。如果对方另外给了节目单，把 XMLTV 地址填在同一页，支持 .xml 和 .gz。</li>
-          <li>列表很大时，先按分组勾选要导入的频道。Channo 会抽样检测前面一部分，其余在播放时再检测。</li>
-          <li>导入完成后，到频道页点「全部检测」，用「可播放 / 失效」筛掉打不开的条目。</li>
-        </ol>
+        <h2><span class="lz">用链接导入</span><span class="le">Import from a link</span></h2>
+        <div class="lz">
+          <ol class="feature-list">
+            <li>安装 Channo 后，打开来源，选择「M3U 列表」。</li>
+            <li>粘贴完整地址。地址以 http 或 https 开头，明文 http 可以播放。不要漏掉端口、路径或参数。</li>
+            <li>名称可以留空。如果对方另外给了节目单，把 XMLTV 地址填在同一页，支持 .xml 和 .gz。</li>
+            <li>列表很大时，先按分组勾选要导入的频道。Channo 会抽样检测前面一部分，其余在播放时再检测。</li>
+            <li>导入完成后，到频道页点「全部检测」，用「可播放 / 失效」筛掉打不开的条目。</li>
+          </ol>
+        </div>
+        <div class="le">
+          <ol class="feature-list">
+            <li>After you install Channo, open Sources and choose M3U playlist.</li>
+            <li>Paste the full address. It starts with http or https. Cleartext HTTP can play. Keep the port, path and query.</li>
+            <li>The name can stay empty. If you also have a guide, put the XMLTV address on the same screen. .xml and .gz are supported.</li>
+            <li>On a large list, select the groups you want. Channo spot-checks the first portion. The rest are checked when you play them.</li>
+            <li>After import, open Channels and tap Check All. Filter by Playable or Failed to set aside addresses that do not open.</li>
+          </ol>
+        </div>
       </section>
       <section class="card section">
-        <h2>用文件导入</h2>
-        <p>在「文件」里找到 .m3u、.m3u8 或 .txt，分享或打开到 Channo。文件会复制到 App 自己的存储中，之后刷新仍能读到。也可以用 <span lang="en">channo://add?url=</span> 把一条 http(s) 链接交回来源添加流程。</p>
-        <p>单条视频地址是另一种入口，支持 http、https、rtmp、rtmps、rtsp、udp 和 rtp。播放列表本身请用 M3U 入口。</p>
+        <h2><span class="lz">用文件导入</span><span class="le">Import from a file</span></h2>
+        <p><span class="lz">在「文件」里找到 .m3u、.m3u8 或 .txt，分享或打开到 Channo。文件会复制到 App 自己的存储中，之后刷新仍能读到。也可以用 <span lang="en">channo://add?url=</span> 把一条 http(s) 链接交回来源添加流程。</span><span class="le">In Files, find a .m3u, .m3u8 or .txt file and share or open it in Channo. The file is copied into the app's own storage, so a later refresh can still read it. A channo://add?url= link also hands an http or https address to the add-source flow.</span></p>
+        <p><span class="lz">单条视频地址是另一种入口，支持 http、https、rtmp、rtmps、rtsp、udp 和 rtp。播放列表本身请用 M3U 入口。</span><span class="le">A single video URL is a separate entry. It can use http, https, rtmp, rtmps, rtsp, udp or rtp. Use the M3U entry for a playlist.</span></p>
       </section>
       <section class="card section">
-        <h2>导入之后</h2>
+        <h2><span class="lz">导入之后</span><span class="le">After import</span></h2>
         <ul class="feature-list">
-          <li>1.2.1 起，免费版最多 3 个播放列表。Pro 不限数量。已经添加的列表在额度变化后仍可编辑和刷新。</li>
-          <li>来源详情里可以改地址、设置自动刷新。默认每 12 小时，也可改为 1、6、24 小时或手动。刷新失败时仍显示上次的频道。</li>
-          <li>对方要求特定客户端时，在请求头里每行写一项，格式为 Name: value，例如 User-Agent 或 Referer，然后点立即刷新。</li>
-          <li>节目单按 tvg-id、tvg-name 或频道显示名匹配。免费查看现在和接下来，Pro 可看全天。来源声明了回看时，节目页会出现「从头回看」。</li>
+          <li><span class="lz">1.2.1 起，免费版最多 3 个播放列表。Pro 不限数量。已经添加的列表在额度变化后仍可编辑和刷新。</span><span class="le">From version 1.2.1, the free version holds 3 playlists. Pro removes that limit. Playlists already added stay editable and refreshable if the allowance changes.</span></li>
+          <li><span class="lz">来源详情里可以改地址、设置自动刷新。默认每 12 小时，也可改为 1、6、24 小时或手动。刷新失败时仍显示上次的频道。</span><span class="le">Source details can change the address and set auto-refresh. The default is every 12 hours. You can choose 1, 6 or 24 hours, or manual. A failed refresh keeps the previous channels.</span></li>
+          <li><span class="lz">对方要求特定客户端时，在请求头里每行写一项，格式为 Name: value，例如 User-Agent 或 Referer，然后点立即刷新。</span><span class="le">When a provider expects a specific client, add one header per line as Name: value, such as User-Agent or Referer, then tap Refresh now.</span></li>
+          <li><span class="lz">节目单按 tvg-id、tvg-name 或频道显示名匹配。免费查看现在和接下来，Pro 可看全天。来源声明了回看时，节目页会出现「从头回看」。</span><span class="le">The guide matches tvg-id, tvg-name or the channel display name. Now and Next are free. Pro opens the full day. When the source declares catch-up, the programme page offers Watch from Start.</span></li>
         </ul>
-        <p>如果对方给的是服务器、用户名和密码，而不是一条播放列表链接，改用 <a href="./xtream.html">Xtream Codes 登录</a>。要在电视上打开同一个列表，看 <a href="./apple-tv.html">Apple TV 设置</a>。其余播放、下载和车机问题在 <a href="./support.html">使用指南</a>。</p>
+        <p><span class="lz">如果对方给的是服务器、用户名和密码，而不是一条播放列表链接，改用 <a href="./xtream.html">Xtream Codes 登录</a>。要在电视上打开同一个列表，看 <a href="./apple-tv.html">Apple TV 设置</a>。其余播放、下载和车机问题在 <a href="./support.html">使用指南</a>。</span><span class="le">If you were given a server, username and password instead of a playlist link, use <a href="./xtream.html">Xtream Codes login</a>. To open the same list on a television, see <a href="./apple-tv.html">Apple TV setup</a>. Playback, downloads and the car are in the <a href="./support.html">setup guide</a>.</span></p>
       </section>
       <section class="card section">
-        <h2>常见问题</h2>
+        <h2><span class="lz">常见问题</span><span class="le">Questions</span></h2>
         <div class="faq-list">
           <article class="faq-item">
-            <h3>M3U 和 M3U8 有什么区别？</h3>
-            <p>M3U 是播放列表。M3U8 通常是 HLS 播放列表，也可以是一条 UTF-8 编码的播放列表。Channo 两种都能作为链接或文件导入。</p>
+            <h3><span class="lz">M3U 和 M3U8 有什么区别？</span><span class="le">What is the difference between M3U and M3U8?</span></h3>
+            <p><span class="lz">M3U 是播放列表。M3U8 通常是 HLS 播放列表，也可以是一条 UTF-8 编码的播放列表。Channo 两种都能作为链接或文件导入。</span><span class="le">An M3U file is a playlist. An M3U8 file is usually an HLS playlist, and it can also be a UTF-8 playlist. Channo imports either one as a link or as a file.</span></p>
           </article>
           <article class="faq-item">
-            <h3>可以直接打开手机里的播放列表文件吗？</h3>
-            <p>可以。从文件 App 分享或打开 .m3u、.m3u8 或 .txt，Channo 会把它复制到自己的存储里再导入。</p>
+            <h3><span class="lz">可以直接打开手机里的播放列表文件吗？</span><span class="le">Can I open a playlist file already on my iPhone?</span></h3>
+            <p><span class="lz">可以。从文件 App 分享或打开 .m3u、.m3u8 或 .txt，Channo 会把它复制到自己的存储里再导入。</span><span class="le">Yes. Share or open a .m3u, .m3u8 or .txt file from the Files app. Channo copies it into its own storage and then imports it.</span></p>
           </article>
           <article class="faq-item">
-            <h3>M3U 地址返回 403 怎么办？</h3>
-            <p>在来源详情的请求头里按 Name: value 补上对方要求的 User-Agent 或 Referer，然后立即刷新。</p>
+            <h3><span class="lz">M3U 地址返回 403 怎么办？</span><span class="le">The M3U address returns 403. What now?</span></h3>
+            <p><span class="lz">在来源详情的请求头里按 Name: value 补上对方要求的 User-Agent 或 Referer，然后立即刷新。</span><span class="le">Add the User-Agent or Referer the provider requires, one per line as Name: value in the source details, then tap Refresh now.</span></p>
           </article>
           <article class="faq-item">
-            <h3>导入了 M3U，为什么没有节目单？</h3>
-            <p>M3U 本身通常不含节目时间。需要另填你自己的 XMLTV 地址，支持 .xml 和 .gz。频道按 tvg-id、tvg-name 或名称匹配。</p>
+            <h3><span class="lz">导入了 M3U，为什么没有节目单？</span><span class="le">I imported an M3U. Why is there no guide?</span></h3>
+            <p><span class="lz">M3U 本身通常不含节目时间。需要另填你自己的 XMLTV 地址，支持 .xml 和 .gz。频道按 tvg-id、tvg-name 或名称匹配。</span><span class="le">An M3U file usually carries no schedule. Enter your own XMLTV address (.xml or .gz). Channels match by tvg-id, tvg-name or display name.</span></p>
           </article>
         </div>
       </section>
     </section>
-    <footer class="site-footer">
-      <p><a href="./">Channo 首页</a> · <a href="./xtream.html">Xtream 登录</a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./en/m3u.html" hreflang="en" lang="en">English</a></p>
-      <p>© 2026 智足者富 · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+    <footer class="card footer">
+      <p><a href="./"><span class="lz">首页</span><span class="le">Home</span></a> · <a href="./xtream.html"><span class="lz">Xtream 登录</span><span class="le">Xtream login</span></a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./support.html"><span class="lz">使用指南</span><span class="le">Setup guide</span></a></p>
+      <small>© 2026 智足者富 · Channo</small>
     </footer>
   </main>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>

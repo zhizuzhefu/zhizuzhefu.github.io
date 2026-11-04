@@ -1,82 +1,72 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-title-zh="读完攻略，再把地点交给地图｜走起 ZouQi" data-title-en="Hand the stops to a map | ZouQi" data-desc-zh="走起不画导航线：把有坐标的地点按顺序交给 Apple 地图、高德或百度。单点步行，多点整条路线。" data-desc-en="ZouQi draws no route lines: it hands geocoded stops in order to Apple Maps, Amap or Baidu. One stop walks; the whole list becomes a route.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>把北京路线交给高德或百度｜走起</title>
-  <meta name="description" content="走起把单个地点按步行交给 Apple 地图、高德或百度。两个以上地点的整条路线只交给高德或百度，起点是当前位置。没有坐标的地点不会被悄悄丢掉后继续导航。">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+  <title>读完攻略，再把地点交给地图｜走起 ZouQi</title>
+  <meta name="description" content="走起不画导航线：把有坐标的地点按顺序交给 Apple 地图、高德或百度。单点步行，多点整条路线。">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/zouqi/maps.html">
   <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/zouqi/maps.html">
-  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/zouqi/en/maps.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/zouqi/maps.html?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/zouqi/maps.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="把北京路线交给高德或百度｜走起">
-  <meta property="og:description" content="多点路线不会退化成只剩终点的网页。Apple 地图只接收一个地点。">
-  <meta property="og:url" content="https://apps.zhizuzhefu.com/zouqi/maps.html">
-  <meta property="og:locale" content="zh_CN">
   <link rel="stylesheet" href="./styles.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"走起","item":"https://apps.zhizuzhefu.com/zouqi/"},
-      {"@type":"ListItem","position":2,"name":"交给地图","item":"https://apps.zhizuzhefu.com/zouqi/maps.html"}
-    ]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"为什么整条路线不能交给 Apple 地图？","acceptedAnswer":{"@type":"Answer","text":"多个地点时，走起只把完整顺序交给高德或百度，起点用地图里的当前位置，方式是步行。Apple 地图只接收一个有坐标的地点，同样按步行打开。"}},
-      {"@type":"Question","name":"没装高德或百度会怎样？","acceptedAnswer":{"@type":"Answer","text":"只有一个地点时，可以退回对应的网页地图。两个以上地点时不会改成网页，以免途经点被悄悄丢掉。没有坐标的地点一开始就不会进入导航。"}}
-    ]}
-  ]}
-  </script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="./">走起 ZouQi</a>
+      <a class="brand" href="./"><span class="lz">走起</span><span class="le">ZouQi</span></a>
       <div class="nav-links">
-        <a href="./">首页</a>
-        <a href="./beijing.html">北京</a>
-        <a class="active" href="./maps.html">地图</a>
-        <a href="./support.html">支持</a>
-        <a href="./en/maps.html" hreflang="en" lang="en">English</a>
+        <a href="./"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="./beijing.html"><span class="lz">北京攻略</span><span class="le">Beijing guides</span></a>
+        <a class="active" href="./maps.html"><span class="lz">交给地图</span><span class="le">Maps</span></a>
+        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
       </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
   <main class="page">
     <section class="card page-title">
-      <div class="eyebrow">步行 · 按攻略顺序</div>
-      <h1>读完攻略，再把地点交给地图</h1>
-      <p>走起自己不画导航线。它把已经有坐标的地点，按文章里的顺序交给地图 App。高德使用国测局坐标，百度使用百度坐标。主题见 <a href="./beijing.html">北京周末去哪</a>。</p>
+      <div class="eyebrow"><span class="lz">步行 · 按攻略顺序</span><span class="le">Walking · in guide order</span></div>
+      <h1><span class="lz">读完攻略，再把地点交给地图</span><span class="le">One stop or the whole list</span></h1>
+      <p><span class="lz">走起自己不画导航线。它把已经有坐标的地点，按文章里的顺序交给地图 App。高德使用国测局坐标，百度使用百度坐标。主题见 <a href="./beijing.html">北京周末去哪</a>。</span><span class="le">ZouQi draws no route lines of its own. It hands geocoded places, in article order, to a map app. Amap uses GCJ-02 coordinates and Baidu uses BD-09. Topics are in the <a href="./beijing.html">Beijing guide</a>.</span></p>
     </section>
     <section class="section-stack">
       <section class="card section">
-        <h2>一个地点，或一整条</h2>
+        <h2><span class="lz">一个地点，或一整条</span><span class="le">One place, or the whole route</span></h2>
         <ul class="feature-list">
-          <li>一个地点：Apple 地图、高德或百度，都按步行打开。</li>
-          <li>两个或更多地点：只出现高德和百度。当前位置是起点，其余地点按顺序作为途经点，最后一个是终点。</li>
-          <li>没有坐标的地点会被留下，不参与这次导航。</li>
-          <li>高德和百度需要另外安装。只有单点失败时才会打开网页；多点路线失败就停住，不降级成只剩终点。</li>
+          <li><span class="lz">一个地点：Apple 地图、高德或百度，都按步行打开。</span><span class="le">One place: Apple Maps, Amap, or Baidu Maps, all opened as walking directions.</span></li>
+          <li><span class="lz">两个或更多地点：只出现高德和百度。当前位置是起点，其余地点按顺序作为途经点，最后一个是终点。</span><span class="le">Two or more places: only Amap and Baidu Maps appear. The current position is the start, the rest become ordered stops, the last one the destination.</span></li>
+          <li><span class="lz">没有坐标的地点会被留下，不参与这次导航。</span><span class="le">Places without coordinates are left out of that navigation.</span></li>
+          <li><span class="lz">高德和百度需要另外安装。只有单点失败时才会打开网页；多点路线失败就停住，不降级成只剩终点。</span><span class="le">Amap and Baidu Maps install separately. Only a single stop falls back to the web; a failed multi-stop route stops instead of quietly dropping stops.</span></li>
         </ul>
       </section>
       <section class="card section">
-        <h2>常见问题</h2>
+        <h2><span class="lz">常见问题</span><span class="le">Questions</span></h2>
         <div class="faq-list">
           <article class="faq-item">
-            <h3>为什么整条路线不能交给 Apple 地图？</h3>
-            <p>多个地点时，走起只把完整顺序交给高德或百度，起点用地图里的当前位置，方式是步行。Apple 地图只接收一个有坐标的地点，同样按步行打开。</p>
+            <h3><span class="lz">为什么整条路线不能交给 Apple 地图？</span><span class="le">Why can't the whole route go to Apple Maps?</span></h3>
+            <p><span class="lz">多个地点时，走起只把完整顺序交给高德或百度，起点用地图里的当前位置，方式是步行。Apple 地图只接收一个有坐标的地点，同样按步行打开。</span><span class="le">For several places, ZouQi hands the full order to Amap or Baidu Maps with the current position as the start, walking. Apple Maps receives a single geocoded place, also on foot.</span></p>
           </article>
           <article class="faq-item">
-            <h3>没装高德或百度会怎样？</h3>
-            <p>只有一个地点时，可以退回对应的网页地图。两个以上地点时不会改成网页，以免途经点被悄悄丢掉。没有坐标的地点一开始就不会进入导航。</p>
+            <h3><span class="lz">没装高德或百度会怎样？</span><span class="le">What if Amap or Baidu Maps isn't installed?</span></h3>
+            <p><span class="lz">只有一个地点时，可以退回对应的网页地图。两个以上地点时不会改成网页，以免途经点被悄悄丢掉。没有坐标的地点一开始就不会进入导航。</span><span class="le">With one place, the app can fall back to that map's website. With two or more, it does not downgrade to the web, so stops are never silently dropped. Places without coordinates never enter navigation.</span></p>
           </article>
         </div>
       </section>
     </section>
     <footer class="card footer">
-      <p><a href="./">首页</a> · <a href="./beijing.html">北京攻略</a></p>
+      <p><a href="./"><span class="lz">首页</span><span class="le">Home</span></a> · <a href="./beijing.html"><span class="lz">北京攻略</span><span class="le">Beijing guides</span></a> · <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a></p>
       <small>© 2026 智足者富 · 走起 ZouQi</small>
     </footer>
   </main>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>

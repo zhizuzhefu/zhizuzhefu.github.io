@@ -1,110 +1,103 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-title-zh="在 iPhone 和 Apple TV 上登录 Xtream Codes｜Channo" data-title-en="Sign in to Xtream Codes on iPhone and Apple TV | Channo" data-desc-zh="当内容提供方给你服务器地址、用户名和密码时，用 Xtream 登录。密码存系统钥匙串。Channo 不提供 Xtream 账号或频道。" data-desc-en="Use Xtream when your provider gave you a server address, username and password. Passwords stay in the system Keychain. Channo provides no account or channels.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Xtream Codes 怎么登录 iPhone 和 Apple TV｜Channo</title>
-  <meta name="description" content="在 Channo 中用服务器地址、用户名和密码登录 Xtream Codes，查看直播、影片和剧集。密码存在系统钥匙串。不提供账号，也不提供频道。">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+  <title>在 iPhone 和 Apple TV 上登录 Xtream Codes｜Channo</title>
+  <meta name="description" content="当内容提供方给你服务器地址、用户名和密码时，用 Xtream 登录。密码存系统钥匙串。Channo 不提供 Xtream 账号或频道。">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/channo/xtream.html">
   <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/channo/xtream.html">
-  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/en/xtream.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/channo/xtream.html?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/channo/xtream.html">
-  <link rel="icon" type="image/png" href="./app-icon.png">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Channo">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="Xtream Codes 怎么登录 iPhone 和 Apple TV｜Channo">
-  <meta property="og:description" content="用你自己的服务器地址、用户名和密码，在 Channo 里打开 Xtream 的直播、影片和剧集。">
-  <meta property="og:url" content="https://apps.zhizuzhefu.com/channo/xtream.html">
-  <meta property="og:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Xtream Codes 怎么登录 iPhone 和 Apple TV｜Channo">
-  <meta name="twitter:description" content="用你自己的服务器地址、用户名和密码，在 Channo 里打开 Xtream 的直播、影片和剧集。">
   <link rel="stylesheet" href="./styles.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Channo","item":"https://apps.zhizuzhefu.com/channo/"},
-      {"@type":"ListItem","position":2,"name":"Xtream 登录","item":"https://apps.zhizuzhefu.com/channo/xtream.html"}
-    ]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"只有一条很长的播放列表链接，能当 Xtream 登录吗？","acceptedAnswer":{"@type":"Answer","text":"不要拆开链接去猜账号。对方如果给的是一条 http(s) 播放列表，用 M3U 方式整段粘贴。对方如果给的是服务器、用户名和密码，再用 Xtream 登录。"}},
-      {"@type":"Question","name":"Xtream 密码会上传到 Channo 的服务器吗？","acceptedAnswer":{"@type":"Answer","text":"不会。Channo 没有账号系统。密码存在系统钥匙串，不会放进 iCloud 播放列表同步记录。若 Apple ID 开启了 iCloud 钥匙串，系统可能把它加密同步到你的其他设备。"}},
-      {"@type":"Question","name":"登录后能看到影片和剧集吗？","acceptedAnswer":{"@type":"Answer","text":"可以浏览该 Xtream 账号里的直播、影片和剧集，并从头播放。从上次位置续播需要 Pro。"}},
-      {"@type":"Question","name":"Xtream 登录失败怎么查？","acceptedAnswer":{"@type":"Answer","text":"确认服务器是 http 或 https，并且包含主机名。用户名和密码不要多出空格。服务器拒绝访问时，先向内容提供方核对账号是否仍然有效。"}}
-    ]}
-  ]}
-  </script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
       <a class="brand" href="./">Channo</a>
       <div class="nav-links">
-        <a href="./">首页</a>
-        <a href="./m3u.html">M3U</a>
-        <a class="active" href="./xtream.html">Xtream</a>
-        <a href="./apple-tv.html">Apple TV</a>
-        <a href="./support.html">使用指南</a>
-        <a href="./en/xtream.html" hreflang="en" lang="en">English</a>
+        <a href="./"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
+        <a href="./terms.html"><span class="lz">用户协议</span><span class="le">Terms</span></a>
+        <a href="./privacy.html"><span class="lz">隐私</span><span class="le">Privacy</span></a>
+        <a href="./licenses.html"><span class="lz">开源许可</span><span class="le">Licenses</span></a>
       </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
   <main class="page">
     <section class="card page-title">
       <div class="eyebrow">Xtream Codes · iPhone · Apple TV</div>
-      <h1>在 iPhone 和 Apple TV 上登录 Xtream Codes</h1>
-      <p>当内容提供方给你的是服务器地址、用户名和密码，而不是一条播放列表链接时，用 Xtream 登录。Channo 不提供 Xtream 账号，也不提供频道。</p>
+      <h1><span class="lz">在 iPhone 和 Apple TV 上登录 Xtream Codes</span><span class="le">Sign in to Xtream Codes on iPhone and Apple TV</span></h1>
+      <p><span class="lz">当内容提供方给你的是服务器地址、用户名和密码，而不是一条播放列表链接时，用 Xtream 登录。Channo 不提供 Xtream 账号，也不提供频道。</span><span class="le">Use Xtream when your provider gave you a server address, username and password, not a single playlist link. Channo does not provide an Xtream account, and it does not include channels.</span></p>
     </section>
     <section class="section-stack">
       <section class="card section">
-        <h2>在 iPhone 或 iPad 上登录</h2>
-        <ol class="feature-list">
-          <li>打开来源，选择 Xtream。</li>
-          <li>服务器填 http 或 https 地址，例如 <span lang="en">http://主机:端口</span>。没有写协议时，Channo 会按 http 理解。其他协议不能作为 Xtream 服务器。</li>
-          <li>填写用户名和密码。名称只是给你自己看的标签，可以留空。</li>
-          <li>保存后，这个来源会计入播放列表额度。免费版最多 3 个，Pro 不限数量。</li>
-          <li>直播出现在频道里。影片和剧集可以在影片页浏览，并从头播放。从上次停下的位置继续，需要 Pro。</li>
-        </ol>
+        <h2><span class="lz">在 iPhone 或 iPad 上登录</span><span class="le">Sign in on iPhone or iPad</span></h2>
+        <div class="lz">
+          <ol class="feature-list">
+            <li>打开来源，选择 Xtream。</li>
+            <li>服务器填 http 或 https 地址，例如 <span lang="en">http://主机:端口</span>。没有写协议时，Channo 会按 http 理解。其他协议不能作为 Xtream 服务器。</li>
+            <li>填写用户名和密码。名称只是给你自己看的标签，可以留空。</li>
+            <li>保存后，这个来源会计入播放列表额度。免费版最多 3 个，Pro 不限数量。</li>
+            <li>直播出现在频道里。影片和剧集可以在影片页浏览，并从头播放。从上次停下的位置继续，需要 Pro。</li>
+          </ol>
+        </div>
+        <div class="le">
+          <ol class="feature-list">
+            <li>Open Sources and choose Xtream.</li>
+            <li>Enter an http or https server, for example http://host:port. If you omit the scheme, Channo treats it as http. Other schemes cannot be the Xtream server.</li>
+            <li>Enter the username and password. The name is only a label for you and can stay empty.</li>
+            <li>After you save, this source counts toward the playlist allowance. The free version holds 3. Pro removes the limit.</li>
+            <li>Live channels appear in Channels. Movies and series can be browsed and played from the start. Resume from where you stopped is part of Pro.</li>
+          </ol>
+        </div>
       </section>
       <section class="card section">
-        <h2>密码存在哪里</h2>
-        <p>独立的 Xtream 密码保存在系统钥匙串，不会放进 Channo 的 iCloud 播放列表记录。打开 iCloud 同步后，来源名称、地址和点播进度可以进入你的私有 iCloud；地址里的令牌仍可能一起同步。</p>
-        <p>如果这台 Apple ID 开启了 iCloud 钥匙串，系统可能把钥匙串项加密同步到同一账号下的 iPhone、iPad 和 Apple TV。Apple TV 上还没有密码时，会再询问一次。</p>
+        <h2><span class="lz">密码存在哪里</span><span class="le">Where the password is stored</span></h2>
+        <p><span class="lz">独立的 Xtream 密码保存在系统钥匙串，不会放进 Channo 的 iCloud 播放列表记录。打开 iCloud 同步后，来源名称、地址和点播进度可以进入你的私有 iCloud；地址里的令牌仍可能一起同步。</span><span class="le">A separate Xtream password stays in the system Keychain. It is not placed in Channo's iCloud playlist record. With iCloud sync on, the source name, address and on-demand progress can go to your private iCloud. A token inside the address can still sync with that address.</span></p>
+        <p><span class="lz">如果这台 Apple ID 开启了 iCloud 钥匙串，系统可能把钥匙串项加密同步到同一账号下的 iPhone、iPad 和 Apple TV。Apple TV 上还没有密码时，会再询问一次。</span><span class="le">If iCloud Keychain is on for this Apple ID, the system may encrypt and sync the Keychain item to iPhone, iPad and Apple TV on the same account. If Apple TV does not have the password yet, it asks once.</span></p>
       </section>
       <section class="card section">
-        <h2>和 M3U 怎么选</h2>
-        <p>对方给了服务器、用户名和密码，用本页的 Xtream 登录，直播、影片和剧集会分开出现。对方只给了一条很长的播放列表网址，不要自行拆出账号，整段粘贴到 <a href="./m3u.html">M3U 导入</a>。</p>
-        <p>节目单如果没有随账号出现，在来源详情里另填 XMLTV 地址。要在客厅播放，继续看 <a href="./apple-tv.html">Apple TV 设置</a>。</p>
+        <h2><span class="lz">和 M3U 怎么选</span><span class="le">Xtream or M3U</span></h2>
+        <p><span class="lz">对方给了服务器、用户名和密码，用本页的 Xtream 登录，直播、影片和剧集会分开出现。对方只给了一条很长的播放列表网址，不要自行拆出账号，整段粘贴到 <a href="./m3u.html">M3U 导入</a>。</span><span class="le">A server, username and password belong on this page. Live channels, movies and series then appear separately. A single long playlist URL should be pasted whole on the <a href="./m3u.html">M3U setup</a> page. Do not pull a login out of that URL yourself.</span></p>
+        <p><span class="lz">节目单如果没有随账号出现，在来源详情里另填 XMLTV 地址。要在客厅播放，继续看 <a href="./apple-tv.html">Apple TV 设置</a>。</span><span class="le">If a guide does not arrive with the account, add an XMLTV address in the source details. To watch in the living room, continue with <a href="./apple-tv.html">Apple TV setup</a>.</span></p>
       </section>
       <section class="card section">
-        <h2>常见问题</h2>
+        <h2><span class="lz">常见问题</span><span class="le">Questions</span></h2>
         <div class="faq-list">
           <article class="faq-item">
-            <h3>只有一条很长的播放列表链接，能当 Xtream 登录吗？</h3>
-            <p>不要拆开链接去猜账号。对方如果给的是一条 http(s) 播放列表，用 M3U 方式整段粘贴。对方如果给的是服务器、用户名和密码，再用 Xtream 登录。</p>
+            <h3><span class="lz">只有一条很长的播放列表链接，能当 Xtream 登录吗？</span><span class="le">I only have one long playlist link. Can that be an Xtream login?</span></h3>
+            <p><span class="lz">不要拆开链接去猜账号。对方如果给的是一条 http(s) 播放列表，用 M3U 方式整段粘贴。对方如果给的是服务器、用户名和密码，再用 Xtream 登录。</span><span class="le">Do not split the link to guess a username and password. If you were given one http or https playlist URL, paste the whole URL as M3U. Use Xtream only when you were given a server, username and password.</span></p>
           </article>
           <article class="faq-item">
-            <h3>Xtream 密码会上传到 Channo 的服务器吗？</h3>
-            <p>不会。Channo 没有账号系统。密码存在系统钥匙串，不会放进 iCloud 播放列表同步记录。若 Apple ID 开启了 iCloud 钥匙串，系统可能把它加密同步到你的其他设备。</p>
+            <h3><span class="lz">Xtream 密码会上传到 Channo 的服务器吗？</span><span class="le">Does Channo upload my Xtream password to its own server?</span></h3>
+            <p><span class="lz">不会。Channo 没有账号系统。密码存在系统钥匙串，不会放进 iCloud 播放列表同步记录。若 Apple ID 开启了 iCloud 钥匙串，系统可能把它加密同步到你的其他设备。</span><span class="le">No. Channo has no account system. The password stays in the system Keychain and is not placed in the iCloud playlist record. If iCloud Keychain is on for the Apple ID, the system may encrypt and sync that item to your other devices.</span></p>
           </article>
           <article class="faq-item">
-            <h3>登录后能看到影片和剧集吗？</h3>
-            <p>可以浏览该 Xtream 账号里的直播、影片和剧集，并从头播放。从上次位置续播需要 Pro。</p>
+            <h3><span class="lz">登录后能看到影片和剧集吗？</span><span class="le">Will I see movies and series after login?</span></h3>
+            <p><span class="lz">可以浏览该 Xtream 账号里的直播、影片和剧集，并从头播放。从上次位置续播需要 Pro。</span><span class="le">You can browse the live channels, movies and series in that Xtream account and play them from the start. Resume from the last position is part of Pro.</span></p>
           </article>
           <article class="faq-item">
-            <h3>Xtream 登录失败怎么查？</h3>
-            <p>确认服务器是 http 或 https，并且包含主机名。用户名和密码不要多出空格。服务器拒绝访问时，先向内容提供方核对账号是否仍然有效。</p>
+            <h3><span class="lz">Xtream 登录失败怎么查？</span><span class="le">What should I check when Xtream login fails?</span></h3>
+            <p><span class="lz">确认服务器是 http 或 https，并且包含主机名。用户名和密码不要多出空格。服务器拒绝访问时，先向内容提供方核对账号是否仍然有效。</span><span class="le">Confirm the server is http or https and includes a host name. Remove extra spaces from the username and password. If the server refuses the login, ask the provider whether the account is still valid.</span></p>
           </article>
         </div>
       </section>
     </section>
-    <footer class="site-footer">
-      <p><a href="./">Channo 首页</a> · <a href="./m3u.html">M3U 导入</a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./en/xtream.html" hreflang="en" lang="en">English</a></p>
-      <p>© 2026 智足者富 · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+    <footer class="card footer">
+      <p><a href="./"><span class="lz">首页</span><span class="le">Home</span></a> · <a href="./m3u.html"><span class="lz">M3U 导入</span><span class="le">M3U setup</span></a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./support.html"><span class="lz">使用指南</span><span class="le">Setup guide</span></a></p>
+      <small>© 2026 智足者富 · Channo</small>
     </footer>
   </main>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>

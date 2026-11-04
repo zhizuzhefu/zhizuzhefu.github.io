@@ -346,6 +346,28 @@ p {
   color: rgba(255, 255, 255, 0.92);
 }
 
+/* lang-blocks inside the signature dark surfaces adapt (translucent, light text) */
+.section-grid .card.section:first-child .lang-block,
+.section-grid + .card.section .lang-block {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.section-grid .card.section:first-child .lang-block :where(p, li, strong),
+.section-grid + .card.section .lang-block :where(p, li, strong) {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.section-grid .card.section:first-child .lang-block li::marker,
+.section-grid + .card.section .lang-block li::marker {
+  color: #8fbcff;
+}
+
+.section-grid .card.section:first-child .lang-block a,
+.section-grid + .card.section .lang-block a {
+  color: #8fbcff;
+}
+
 /* black statement box right after the bento grid */
 .section-grid + .card.section {
   background: var(--ink);
@@ -573,6 +595,17 @@ code {
 .meta-note {
   font-size: 13px;
   color: var(--muted);
+}
+
+.quote-box {
+  margin: 10px 0;
+  padding: 18px 22px;
+  border-left: 3px solid var(--blue);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: #fff;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.8;
 }
 
 .hero,
@@ -867,6 +900,11 @@ code {
 
   .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .section-grid,

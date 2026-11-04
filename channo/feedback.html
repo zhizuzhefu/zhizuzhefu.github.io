@@ -1,24 +1,17 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-title-zh="Channo 意见反馈" data-title-en="Channo Feedback" data-desc-zh="Channo 意见反馈：告诉我们哪里好用、哪里卡住、还缺什么。" data-desc-en="Channo feedback — tell us what is working, broken, or missing.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Channo 联系与反馈｜IPTV 播放问题与功能建议</title>
-  <meta name="description" content="向 Channo 反馈导入、播放、节目单、下载、Apple TV、CarPlay 或购买问题。查看联系方式，帮助我们改善你的 IPTV / M3U 播放体验。">
-  <link rel="canonical" href="https://apps.zhizuzhefu.com/channo/feedback.html">
-  <link rel="icon" type="image/png" href="./app-icon.png">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Channo">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="Channo 联系与反馈｜IPTV 播放问题与功能建议">
-  <meta property="og:description" content="向 Channo 反馈导入、播放、节目单、下载、Apple TV、CarPlay 或购买问题。查看联系方式，帮助我们改善你的 IPTV / M3U 播放体验。">
-  <meta property="og:url" content="https://apps.zhizuzhefu.com/channo/feedback.html">
-  <meta property="og:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Channo 联系与反馈｜IPTV 播放问题与功能建议">
-  <meta name="twitter:description" content="向 Channo 反馈导入、播放、节目单、下载、Apple TV、CarPlay 或购买问题。查看联系方式，帮助我们改善你的 IPTV / M3U 播放体验。">
-  <meta name="twitter:image" content="https://apps.zhizuzhefu.com/channo/app-icon.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+  <title>Channo 意见反馈</title>
+  <meta name="description" content="Channo 意见反馈：告诉我们哪里好用、哪里卡住、还缺什么。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -26,91 +19,172 @@
     <nav class="nav">
       <a class="brand" href="./">Channo</a>
       <div class="nav-links">
-        <a  href="./">Home / 首页</a>
-        <a  href="./privacy.html">Privacy / 隐私政策</a>
-        <a  href="./terms.html">Terms / 用户协议</a>
-        <a  href="./licenses.html">Licenses / 开源许可</a>
-        <a  href="./support.html">Support / 支持</a>
-        <a class="active" href="./feedback.html">Feedback / 反馈</a>
+        <a href="./"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a class="active" href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
+        <a href="./terms.html"><span class="lz">用户协议</span><span class="le">Terms</span></a>
+        <a href="./privacy.html"><span class="lz">隐私</span><span class="le">Privacy</span></a>
+        <a href="./licenses.html"><span class="lz">开源许可</span><span class="le">Licenses</span></a>
       </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
 
   <main class="page">
-
     <div id="feedbackForm">
       <section class="card page-title">
-        <div class="eyebrow">Feedback / 意见反馈</div>
-        <h1>Channo 意见反馈</h1>
-        <p>告诉我们哪里好用、哪里卡住、还缺什么。常见步骤见 <a href="./support.html">支持</a>。反馈时带上「设置 → 关于」里的版本号和构建号。</p>
+        <div class="eyebrow"><span class="lz">意见反馈</span><span class="le">Feedback</span></div>
+        <h1><span class="lz">Channo 意见反馈</span><span class="le">Channo Feedback</span></h1>
+        <p><span class="lz">告诉我们哪里好用、哪里卡住、还缺什么。常见步骤见 <a href="./support.html">支持</a>。反馈时带上「设置 → 关于」里的版本号和构建号。</span><span class="le">Tell us what is working, broken, or missing. Common steps are in the <a href="./support.html">setup guide</a>. Include the version and build numbers from Settings → About.</span></p>
       </section>
 
       <section class="card feedback-card">
         <form class="feedback-form" onsubmit="return handleSubmit(event)">
           <div class="form-group">
-            <label class="form-label" for="feedbackType">反馈类型 / What's this about?</label>
+            <label class="form-label" for="feedbackType"><span class="lz">反馈类型</span><span class="le">What's this about?</span></label>
             <select class="form-select" id="feedbackType" required>
-              <option value="" disabled selected>请选择类型... / Choose a category...</option>
-              <option value="bug">遇到问题 / Bug</option>
-              <option value="playback">播放 / 引擎 / Playback</option>
-              <option value="source">来源导入 / Sources</option>
-              <option value="guide">节目单 / 回看 / Guide</option>
-              <option value="downloads">下载 / 续播 / Downloads</option>
+              <option value="" disabled selected data-zh="请选择类型..." data-en="Choose a category...">请选择类型... / Choose a category...</option>
+              <option value="bug" data-zh="遇到问题" data-en="Bug">遇到问题 / Bug</option>
+              <option value="playback" data-zh="播放 / 引擎" data-en="Playback">播放 / 引擎 / Playback</option>
+              <option value="source" data-zh="来源导入" data-en="Sources">来源导入 / Sources</option>
+              <option value="guide" data-zh="节目单 / 回看" data-en="Guide">节目单 / 回看 / Guide</option>
+              <option value="downloads" data-zh="下载 / 续播" data-en="Downloads">下载 / 续播 / Downloads</option>
               <option value="appletv">Apple TV</option>
               <option value="carplay">CarPlay</option>
-              <option value="purchase">购买 / 恢复 / Purchase</option>
-              <option value="feature">功能建议 / Feature idea</option>
-              <option value="other">其他 / Something else</option>
+              <option value="purchase" data-zh="购买 / 恢复" data-en="Purchase">购买 / 恢复 / Purchase</option>
+              <option value="feature" data-zh="功能建议" data-en="Feature idea">功能建议 / Feature idea</option>
+              <option value="other" data-zh="其他" data-en="Something else">其他 / Something else</option>
             </select>
           </div>
+
           <div class="form-group">
-            <label class="form-label" for="feedbackContent">详细描述 / Tell us more</label>
-            <textarea class="form-textarea" id="feedbackContent" required maxlength="2000" oninput="updateCharCount()"
-              placeholder="复现步骤、期望结果、设备与系统版本会很有帮助。"></textarea>
+            <label class="form-label" for="feedbackContent"><span class="lz">详细描述</span><span class="le">Tell us more</span></label>
+            <textarea
+              class="form-textarea"
+              id="feedbackContent"
+              data-zh="复现步骤、期望结果、设备与系统版本会很有帮助。"
+              data-en="Reproduction steps, what you expected, and your device and OS version all help."
+              required
+              maxlength="2000"
+              oninput="updateCharCount()"
+            ></textarea>
             <div class="char-count" id="charCount">0 / 2000</div>
           </div>
+
           <div class="form-group">
-            <label class="form-label" for="contactInfo">联系方式 / Reach you? <span class="optional">(选填)</span></label>
-            <input class="form-input" id="contactInfo" type="text" maxlength="200" placeholder="邮箱或其他联系方式">
+            <label class="form-label" for="contactInfo"><span class="lz">联系方式</span><span class="le">Reach you?</span> <span class="optional">(<span class="lz">选填</span><span class="le">optional</span>)</span></label>
+            <input
+              class="form-input"
+              id="contactInfo"
+              type="text"
+              data-zh="邮箱或其他联系方式"
+              data-en="Email or another contact"
+              maxlength="100"
+            >
           </div>
-          <button type="submit" class="submit-btn" id="submitBtn">发送反馈 / Send feedback</button>
-          <p class="form-note">提交后会打开邮件客户端，发往 zhizuzhefu@foxmail.com。我们不在网页上保存表单内容。</p>
+
+          <button class="submit-btn" type="submit" id="submitBtn" data-zh="提交反馈" data-en="Send Feedback">提交反馈 / Send Feedback</button>
         </form>
       </section>
     </div>
 
-    <div id="successMessage" class="success-message" style="display:none">
-      <section class="card">
-        <h2>已打开邮件草稿</h2>
-        <p>如果没有自动打开，请直接发信至 <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>。</p>
-        <p><a href="./">返回首页</a></p>
+    <div id="feedbackSuccess" class="feedback-result">
+      <section class="card result-card">
+        <div class="result-icon">&#10003;</div>
+        <div class="result-title"><span class="lz">感谢您的宝贵反馈！</span><span class="le">Thank you so much!</span></div>
+        <button class="reset-btn" onclick="resetForm()"><span class="lz">继续反馈</span><span class="le">Share More Feedback</span></button>
       </section>
     </div>
 
-    <script>
-      function updateCharCount() {
-        var el = document.getElementById('feedbackContent');
-        document.getElementById('charCount').textContent = el.value.length + ' / 2000';
-      }
-      function handleSubmit(e) {
-        e.preventDefault();
-        var type = document.getElementById('feedbackType').value;
-        var content = document.getElementById('feedbackContent').value.trim();
-        var contact = document.getElementById('contactInfo').value.trim();
-        var subject = encodeURIComponent('[Channo feedback] ' + type);
-        var body = encodeURIComponent(content + (contact ? '\n\nContact: ' + contact : '') + '\n\n— sent from apps.zhizuzhefu.com/channo/feedback.html');
-        window.location.href = 'mailto:zhizuzhefu@foxmail.com?subject=' + subject + '&body=' + body;
-        document.getElementById('feedbackForm').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-        return false;
-      }
-    </script>
+    <div id="feedbackError" class="feedback-result">
+      <section class="card result-card">
+        <div class="result-icon">!</div>
+        <div class="result-title"><span class="lz">提交遇到了问题</span><span class="le">Something went wrong</span></div>
+        <p class="result-desc"><span class="lz">别担心，请稍后再试一次。您也可以直接发邮件给我们：</span><span class="le">Don't worry, please try again later. You can also email us directly:</span> <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+        <button class="reset-btn" onclick="resetForm()"><span class="lz">再试一次</span><span class="le">Try Again</span></button>
+      </section>
+    </div>
 
-    <footer class="site-footer">
-      <p><a href="./m3u.html">M3U 导入</a> · <a href="./xtream.html">Xtream 登录</a> · <a href="./apple-tv.html">Apple TV</a> · <a href="./support.html">使用指南</a> · <a href="./en/" hreflang="en" lang="en">English</a></p>
-      <p>© 2026 智足者富 · Channo · <a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a>
-         · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./licenses.html">Licenses</a></p>
+    <footer class="card footer">
+      <p><span class="lz">更愿意写邮件？随时联系我们</span><span class="le">Prefer email? Reach us anytime</span></p>
+      <p><a href="mailto:zhizuzhefu@foxmail.com">zhizuzhefu@foxmail.com</a></p>
+      <small>© 2026 智足者富 · Channo</small>
     </footer>
   </main>
+
+  <script>
+    function pageLang() {
+      return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'zh';
+    }
+
+    function t(zh, en) {
+      return pageLang() === 'en' ? en : zh;
+    }
+
+    function updateCharCount() {
+      var textarea = document.getElementById('feedbackContent');
+      var counter = document.getElementById('charCount');
+      var len = textarea.value.length;
+      counter.textContent = len + ' / 2000';
+      counter.className = len > 1800 ? 'char-count warn' : 'char-count';
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = t('正在提交...', 'Sending...');
+
+      var data = {
+        type: document.getElementById('feedbackType').value,
+        content: document.getElementById('feedbackContent').value.trim(),
+        contact: document.getElementById('contactInfo').value.trim(),
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+      };
+
+      var subject = encodeURIComponent('[Channo] ' + data.type + ' - User Feedback');
+      var body = encodeURIComponent(
+        '--- Feedback / 反馈详情 ---\n\n' +
+        'Category / 类型: ' + data.type + '\n\n' +
+        'Description / 描述:\n' + data.content + '\n\n' +
+        '--- User Info / 用户信息 ---\n\n' +
+        'Contact / 联系方式: ' + (data.contact || 'Not provided / 未填写') + '\n' +
+        'Submitted / 提交时间: ' + data.timestamp
+      );
+
+      window.location.href = 'mailto:zhizuzhefu@foxmail.com?subject=' + subject + '&body=' + body;
+
+      setTimeout(function() {
+        showResult('feedbackSuccess');
+      }, 500);
+
+      return false;
+    }
+
+    function showResult(id) {
+      document.getElementById('feedbackForm').style.display = 'none';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+      document.getElementById(id).className = 'feedback-result visible';
+    }
+
+    function resetForm() {
+      document.getElementById('feedbackForm').style.display = 'block';
+      document.getElementById('feedbackSuccess').className = 'feedback-result';
+      document.getElementById('feedbackError').className = 'feedback-result';
+
+      document.getElementById('feedbackType').selectedIndex = 0;
+      document.getElementById('feedbackContent').value = '';
+      document.getElementById('contactInfo').value = '';
+      document.getElementById('charCount').textContent = '0 / 2000';
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.textContent = t('提交反馈', 'Send Feedback');
+    }
+  </script>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>

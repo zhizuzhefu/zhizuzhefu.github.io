@@ -1,91 +1,91 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-title-zh="把一句宽心话留在桌面上｜宽心 HeartEase 小组件" data-title-en="Leave one line where you can see it | HeartEase widget" data-desc-zh="宽心桌面小组件：今日宽心与宽宽陪伴两种样式，需要 iOS 17。文案和设置都在这台手机上，不上传。" data-desc-en="HeartEase Home Screen widgets: Today's Quote and Companion. Requires iOS 17. The words stay on this iPhone.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>把一句鼓励放到 iPhone 桌面｜宽心小组件</title>
-  <meta name="description" content="宽心有「今日宽心」和「宽宽陪伴」两个桌面小组件。它显示 App 最近同步的那一句；没有同步记录时，用当天确定的通用文案。">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+  <title>把一句宽心话留在桌面上｜宽心 HeartEase 小组件</title>
+  <meta name="description" content="宽心桌面小组件：今日宽心与宽宽陪伴两种样式，需要 iOS 17。文案和设置都在这台手机上，不上传。">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/heartease/widget.html">
   <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/heartease/widget.html">
-  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/heartease/en/widget.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/heartease/widget.html?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/heartease/widget.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="把一句鼓励放到 iPhone 桌面｜宽心小组件">
-  <meta property="og:description" content="今日宽心有小、中两种尺寸。宽宽陪伴是小尺寸。文案留在这台 iPhone 上。">
-  <meta property="og:url" content="https://apps.zhizuzhefu.com/heartease/widget.html">
-  <meta property="og:locale" content="zh_CN">
   <link rel="stylesheet" href="./styles.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"宽心","item":"https://apps.zhizuzhefu.com/heartease/"},
-      {"@type":"ListItem","position":2,"name":"桌面小组件","item":"https://apps.zhizuzhefu.com/heartease/widget.html"}
-    ]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"小组件为什么不是每天自动换一句？","acceptedAnswer":{"@type":"Answer","text":"它显示 App 最近同步的那一句。你在 App 里换一句，小组件会更新。只有还没有同步记录时，才使用按日期确定的通用文案，同一天不变。"}},
-      {"@type":"Question","name":"宽心小组件有哪些尺寸？","acceptedAnswer":{"@type":"Answer","text":"「今日宽心」有小尺寸和中尺寸。「宽宽陪伴」是小尺寸。"}}
-    ]}
-  ]}
-  </script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="./">宽心 HeartEase</a>
+      <a class="brand" href="./"><span class="lz">宽心</span><span class="le">HeartEase</span></a>
       <div class="nav-links">
-        <a href="./">首页</a>
-        <a href="./moods.html">心情</a>
-        <a class="active" href="./widget.html">小组件</a>
-        <a href="./support.html">支持</a>
-        <a href="./en/widget.html" hreflang="en" lang="en">English</a>
+        <a href="./"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="./moods.html"><span class="lz">六种心情</span><span class="le">Moods</span></a>
+        <a class="active" href="./widget.html"><span class="lz">小组件</span><span class="le">Widget</span></a>
+        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
       </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
   <main class="page">
     <section class="card page-title">
-      <div class="eyebrow">iPhone 主屏幕 · iOS 17</div>
-      <h1>把一句宽心话留在桌面上</h1>
-      <p>小组件让你不用打开 App，也能看见最近那一句。需要 iOS 17 或更新版本。文案和设置都在这台手机上，不上传。</p>
+      <div class="eyebrow"><span class="lz">iPhone 主屏幕 · iOS 17</span><span class="le">Home Screen · iOS 17</span></div>
+      <h1><span class="lz">把一句宽心话留在桌面上</span><span class="le">Leave one line where you can see it</span></h1>
+      <p><span class="lz">小组件让你不用打开 App，也能看见最近那一句。需要 iOS 17 或更新版本。文案和设置都在这台手机上，不上传。</span><span class="le">The widget keeps the latest line visible without opening the app. It needs iOS 17 or later. The words stay on this iPhone.</span></p>
     </section>
     <section class="section-stack">
       <section class="card section">
-        <h2>添加步骤</h2>
-        <ol class="feature-list">
-          <li>先打开一次宽心，让它把当前这句话同步给小组件。</li>
-          <li>回到主屏幕，长按空白处，直到图标开始抖动。</li>
-          <li>点左上角的加号，搜索「宽心」。</li>
-          <li>选择「今日宽心」或「宽宽陪伴」，再点添加小组件。</li>
-        </ol>
+        <h2><span class="lz">添加步骤</span><span class="le">Add it</span></h2>
+        <div class="lz">
+          <ol class="feature-list">
+            <li>先打开一次宽心，让它把当前这句话同步给小组件。</li>
+            <li>回到主屏幕，长按空白处，直到图标开始抖动。</li>
+            <li>点左上角的加号，搜索「宽心」。</li>
+            <li>选择「今日宽心」或「宽宽陪伴」，再点添加小组件。</li>
+          </ol>
+        </div>
+        <div class="le">
+          <ol class="feature-list">
+            <li>Open HeartEase and let the current line sync.</li>
+            <li>Touch and hold an empty part of the Home Screen until the icons jiggle.</li>
+            <li>Tap the plus button and search for HeartEase.</li>
+            <li>Choose Today's Quote or Companion, then add the widget.</li>
+          </ol>
+        </div>
       </section>
       <section class="card section">
-        <h2>两种小组件</h2>
+        <h2><span class="lz">两种小组件</span><span class="le">Two widgets</span></h2>
         <ul class="feature-list">
-          <li>今日宽心：显示一句文案，有小尺寸和中尺寸。</li>
-          <li>宽宽陪伴：小尺寸，是那只陪伴猫和一句提醒。</li>
+          <li><span class="lz">今日宽心：显示一句文案，有小尺寸和中尺寸。</span><span class="le">Today's Quote: one line, in small and medium.</span></li>
+          <li><span class="lz">宽宽陪伴：小尺寸，是那只陪伴猫和一句提醒。</span><span class="le">Companion: small only — the cat and a short reminder.</span></li>
         </ul>
-        <p>你在 App 里换心情或换一句，小组件会跟着更新。如果这台手机还没有任何同步记录，它才使用按日期算好的「通用」文案，同一天保持这一句。</p>
-        <p>心情分类的说明在 <a href="./moods.html">六种心情</a>。</p>
+        <p><span class="lz">你在 App 里换心情或换一句，小组件会跟着更新。如果这台手机还没有任何同步记录，它才使用按日期算好的「通用」文案，同一天保持这一句。</span><span class="le">The widget follows the app: switch moods or draw a new line and it updates. Only when nothing has been synced does it use the day's fixed Everyday quote, keeping that line for the whole day.</span></p>
+        <p><span class="lz">心情分类的说明在 <a href="./moods.html">六种心情</a>。</span><span class="le">Mood choices are described in <a href="./moods.html">moods</a>.</span></p>
       </section>
       <section class="card section">
-        <h2>常见问题</h2>
+        <h2><span class="lz">常见问题</span><span class="le">Questions</span></h2>
         <div class="faq-list">
           <article class="faq-item">
-            <h3>小组件为什么不是每天自动换一句？</h3>
-            <p>它显示 App 最近同步的那一句。你在 App 里换一句，小组件会更新。只有还没有同步记录时，才使用按日期确定的通用文案，同一天不变。</p>
+            <h3><span class="lz">小组件为什么不是每天自动换一句？</span><span class="le">Does the widget change by itself every day?</span></h3>
+            <p><span class="lz">它显示 App 最近同步的那一句。你在 App 里换一句，小组件会更新。只有还没有同步记录时，才使用按日期确定的通用文案，同一天不变。</span><span class="le">It shows the line the app last synced. Changing the line in HeartEase updates the widget. Only when nothing has been synced does it use the day's fixed Everyday quote.</span></p>
           </article>
           <article class="faq-item">
-            <h3>宽心小组件有哪些尺寸？</h3>
-            <p>「今日宽心」有小尺寸和中尺寸。「宽宽陪伴」是小尺寸。</p>
+            <h3><span class="lz">宽心小组件有哪些尺寸？</span><span class="le">Which widget sizes are available?</span></h3>
+            <p><span class="lz">「今日宽心」有小尺寸和中尺寸。「宽宽陪伴」是小尺寸。</span><span class="le">Today's Quote comes in small and medium. Companion is small.</span></p>
           </article>
         </div>
       </section>
     </section>
     <footer class="card footer">
-      <p><a href="./">首页</a> · <a href="./moods.html">六种心情</a> · <a href="./support.html">支持</a></p>
+      <p><a href="./"><span class="lz">首页</span><span class="le">Home</span></a> · <a href="./moods.html"><span class="lz">六种心情</span><span class="le">Moods</span></a> · <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a></p>
       <small>© 2026 智足者富 · 宽心 HeartEase</small>
     </footer>
   </main>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>
