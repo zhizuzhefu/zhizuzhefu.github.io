@@ -32,6 +32,7 @@
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ------------------------------------------------ bilingual rendering */
@@ -741,8 +742,8 @@ code {
 
 .to-top {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: calc(20px + env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   z-index: 30;
   width: 44px;
   height: 44px;
@@ -864,6 +865,64 @@ code {
   .columns,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------ iOS landscape phones */
+
+/* short landscape viewports (iPhone rotated): collapse the sticky header
+   into a single row — brand + scrollable links + switch — ~60px tall */
+@media (max-height: 480px) and (orientation: landscape) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px 12px;
+  }
+
+  .brand {
+    min-height: 40px;
+    font-size: 16px;
+  }
+
+  .lang-switch {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  .lang-switch button {
+    height: 38px;
+    min-width: 40px;
+  }
+
+  .nav-links {
+    order: 1;
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .nav-links a {
+    min-height: 40px;
+    padding: 6px 10px;
+  }
+
+  .page {
+    padding: 12px 20px 64px;
+  }
+}
+
+/* touch devices: suppress hover lifts that would stick after a tap */
+@media (hover: none) {
+  .download-cta:hover,
+  .submit-btn:hover,
+  .reset-btn:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
