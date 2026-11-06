@@ -55,6 +55,22 @@
       var meta = doc.querySelector('meta[name="description"]');
       if (meta) meta.setAttribute('content', desc);
     }
+    // Keep the visible language and share metadata in step. The canonical URL
+    // stays unchanged: both languages are part of this one static page.
+    var shareFields = [
+      ['meta[property="og:title"]', title],
+      ['meta[name="twitter:title"]', title],
+      ['meta[property="og:description"]', desc],
+      ['meta[name="twitter:description"]', desc],
+      ['meta[property="og:locale"]', lang === 'zh' ? 'zh_CN' : 'en_US'],
+      ['meta[property="og:locale:alternate"]', lang === 'zh' ? 'en_US' : 'zh_CN']
+    ];
+    for (var field = 0; field < shareFields.length; field++) {
+      var shareMeta = doc.querySelector(shareFields[field][0]);
+      if (shareMeta && shareFields[field][1]) {
+        shareMeta.setAttribute('content', shareFields[field][1]);
+      }
+    }
 
     try { window.localStorage.setItem(STORE_KEY, lang); } catch (e) {}
 

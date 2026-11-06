@@ -1,65 +1,63 @@
 <!doctype html>
-<html lang="zh-CN" data-lang="zh" data-title-zh="iPhone 怎么配对 Mac｜Shellcove · Cloud Agent" data-title-en="Pair an iPhone with a Mac | Shellcove · Cloud Agent" data-desc-zh="在 Mac 上打开 Shellcove，用 iPhone 扫描配对二维码。同一 Wi-Fi 最快。没有公网 IP 时，内置 Tailcat 打洞，不行再走加密中继。不需要 Tailscale 账号。" data-desc-en="Scan Shellcove's QR code to pin the Mac certificate. Use Wi-Fi when you can. Built-in Tailcat crosses NAT without a Tailscale account. Direct-only mode never starts it.">
+<html lang="zh-CN" data-lang="zh" data-title-zh="iPhone / iPad 连接 Mac Agent：扫码配对指南｜Shellcove" data-title-en="Pair iPhone &amp; iPad with Your Mac | Shellcove" data-desc-zh="用 iPhone 或 iPad 扫描 Shellcove Mac 配对码，连接自己的原生 Agent。了解本地网络权限、同一 Wi-Fi、自动连接与单设备撤销，遇到断线时按步骤排查。" data-desc-en="Pair iPhone or iPad with your Mac by QR code. Learn about Local Network access, Wi-Fi, Automatic mode, individual phone revocation and connection troubleshooting.">
 <head>
   <meta charset="utf-8">
-  <script src="/assets/clean-url.js"></script>
-  <script src="./i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="./apple-touch-icon.png">
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
-  <title>iPhone 怎么配对 Mac｜Shellcove · Cloud Agent</title>
-  <meta name="description" content="在 Mac 上打开 Shellcove，用 iPhone 扫描配对二维码。同一 Wi-Fi 最快。没有公网 IP 时，内置 Tailcat 打洞，不行再走加密中继。不需要 Tailscale 账号。">
+  <meta name="theme-color" content="#ffffff">
+  <title>iPhone / iPad 连接 Mac Agent：扫码配对指南｜Shellcove</title>
+  <meta name="description" content="用 iPhone 或 iPad 扫描 Shellcove Mac 配对码，连接自己的原生 Agent。了解本地网络权限、同一 Wi-Fi、自动连接与单设备撤销，遇到断线时按步骤排查。">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
-  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
-  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/shellcove/pair.html?lang=en">
-  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/shellcove/pair.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="iPhone 怎么配对 Mac｜Shellcove · Cloud Agent">
-  <meta property="og:description" content="iOS 分别配对自己的 Mac。新手机独立凭据可单独撤销；中继只转发密文。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Shellcove · Cloud Agent">
+  <meta property="og:title" content="iPhone / iPad 连接 Mac Agent：扫码配对指南｜Shellcove">
+  <meta property="og:description" content="用 iPhone 或 iPad 扫描 Shellcove Mac 配对码，连接自己的原生 Agent。了解本地网络权限、同一 Wi-Fi、自动连接与单设备撤销，遇到断线时按步骤排查。">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/shellcove/pair.html">
   <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://apps.zhizuzhefu.com/shellcove/images/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Shellcove · Cloud Agent — iPhone / iPad → Mac Agent → files">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="iPhone / iPad 连接 Mac Agent：扫码配对指南｜Shellcove">
+  <meta name="twitter:description" content="用 iPhone 或 iPad 扫描 Shellcove Mac 配对码，连接自己的原生 Agent。了解本地网络权限、同一 Wi-Fi、自动连接与单设备撤销，遇到断线时按步骤排查。">
+  <meta name="twitter:image" content="https://apps.zhizuzhefu.com/shellcove/images/social-card.png">
+  <meta name="twitter:image:alt" content="Shellcove · Cloud Agent — iPhone / iPad → Mac Agent → files">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://apps.zhizuzhefu.com/shellcove/pair.html#page","url":"https://apps.zhizuzhefu.com/shellcove/pair.html","name":"iPhone / iPad 连接 Mac Agent：扫码配对指南｜Shellcove","description":"用 iPhone 或 iPad 扫描 Shellcove Mac 配对码，连接自己的原生 Agent。了解本地网络权限、同一 Wi-Fi、自动连接与单设备撤销，遇到断线时按步骤排查。","inLanguage":["zh-CN","en"],"about":{"@id":"https://apps.zhizuzhefu.com/shellcove/#app"},"breadcrumb":{"@id":"https://apps.zhizuzhefu.com/shellcove/pair.html#breadcrumbs"}},{"@type":"BreadcrumbList","@id":"https://apps.zhizuzhefu.com/shellcove/pair.html#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Shellcove","item":"https://apps.zhizuzhefu.com/shellcove/"},{"@type":"ListItem","position":2,"name":"配对指南","item":"https://apps.zhizuzhefu.com/shellcove/pair.html"}]}]}</script>
+  <script src="/assets/clean-url.js"></script>
+  <script src="./i18n.js"></script>
   <link rel="stylesheet" href="./styles.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Shellcove","item":"https://apps.zhizuzhefu.com/shellcove/"},
-      {"@type":"ListItem","position":2,"name":"配对","item":"https://apps.zhizuzhefu.com/shellcove/pair.html"}
-    ]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"必须安装 Tailscale 吗？","acceptedAnswer":{"@type":"Answer","text":"不用。同一 Wi-Fi 最快。不在同一网络时，自动模式会使用内置 Tailcat，不需要公网 IP、端口转发或 Tailscale 账号。只选直连时不会启动 Tailcat。你自己的 VPN 仍然可以当作直连路径。"}},
-      {"@type":"Question","name":"配对之后中继能看到我的桌面吗？","acceptedAnswer":{"@type":"Answer","text":"不能读取桌面、窗口文本、剪贴板或按键。连接使用配对时钉住的 TLS 证书。中继只转发密文，但可能看到连接是否发生、时间和流量大小。"}}
-    ]}
-  ]}
-  </script>
 </head>
 <body>
+
   <header class="site-header">
     <nav class="nav">
       <a class="brand" href="./">Shellcove</a>
       <div class="nav-links">
-        <a href="./"><span class="lz">首页</span><span class="le">Home</span></a>
-        <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a>
-        <a href="./feedback.html"><span class="lz">反馈</span><span class="le">Feedback</span></a>
-        <a href="./terms.html"><span class="lz">用户协议</span><span class="le">Terms</span></a>
-        <a href="./privacy.html"><span class="lz">隐私</span><span class="le">Privacy</span></a>
+        <a href="./"><span class="lz" lang="zh-CN">首页</span><span class="le" lang="en">Home</span></a>
+        <a href="./support.html"><span class="lz" lang="zh-CN">支持</span><span class="le" lang="en">Support</span></a>
+        <a href="./feedback.html"><span class="lz" lang="zh-CN">反馈</span><span class="le" lang="en">Feedback</span></a>
+        <a href="./terms.html"><span class="lz" lang="zh-CN">用户协议</span><span class="le" lang="en">Terms</span></a>
+        <a href="./privacy.html"><span class="lz" lang="zh-CN">隐私</span><span class="le" lang="en">Privacy</span></a>
       </div>
       <div class="lang-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="zh" aria-pressed="true">中</button><button type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </header>
   <main class="page">
     <section class="card page-title">
-      <div class="eyebrow"><span class="lz">Mac + iPhone · 不需要账号</span><span class="le">Mac + iPhone · No account</span></div>
-      <h1><span class="lz">扫一次二维码，把这台 Mac 认下来</span><span class="le">Pair your own Macs, one at a time</span></h1>
-      <p><span class="lz">Shellcove · Cloud Agent 无需云端账号。iPhone 或 iPad 分别扫描每台 Mac 的配对码，核对证书指纹并取得该手机的连接凭据。Mac 之间不互相配对；每个任务在你选择的一台 Mac 完成。</span><span class="le">Shellcove · Cloud Agent needs no cloud account. Scan each Mac's QR to pin its certificate and receive a phone credential. Macs do not pair with each other. Choose one execution Mac for each task.</span></p>
+      <div class="eyebrow"><span class="lz" lang="zh-CN">Mac + iPhone · 不需要账号</span><span class="le" lang="en">Mac + iPhone · No account</span></div>
+      <h1><span class="lz" lang="zh-CN">扫码配对，连接自己的 Mac</span><span class="le" lang="en">Pair your phone with your own Mac</span></h1>
+      <p><span class="lz" lang="zh-CN">Shellcove · Cloud Agent 无需云端账号。iPhone 或 iPad 分别扫描每台 Mac 的配对码，核对证书指纹并取得该手机的连接凭据。Mac 之间不互相配对；每个任务在你选择的一台 Mac 完成。</span><span class="le" lang="en">Shellcove · Cloud Agent needs no cloud account. Scan each Mac's QR to pin its certificate and receive a phone credential. Macs do not pair with each other. Choose one execution Mac for each task.</span></p>
     </section>
-    <section class="section-stack">
+    <section class="section-stack"><section class="card section"><h2><span class="lz" lang="zh-CN">配对前，先确认两端版本</span><span class="le" lang="en">Before pairing, match the versions</span></h2><p><span class="lz" lang="zh-CN">iPhone / iPad 与 Mac 需要配套版本，并已在 Mac 上配置可用的原生 Agent。<a href="./support.html#download">查看下载与版本选择</a>。</span><span class="le" lang="en">Use matching phone and Mac versions, with a configured native Agent on the Mac. <a href="./support.html#download">Check downloads and versions</a>.</span></p></section>
       <section class="card section">
-        <h2><span class="lz">配对步骤</span><span class="le">Steps</span></h2>
-        <div class="lz">
+        <h2><span class="lz" lang="zh-CN">配对步骤</span><span class="le" lang="en">Steps</span></h2>
+        <div class="lz" lang="zh-CN">
           <ol class="feature-list">
             <li>Mac 需要 macOS 13 或更新版本。从 Shellcove 的 Mac 安装包打开 App。</li>
             <li>在 Mac 设置中确认原生 Agent 可用。辅助功能与屏幕录制用于另列的设备工具，原生 Agent 保留自己的授权。</li>
@@ -68,7 +66,7 @@
             <li>同一 Wi-Fi 会最快连上。不在同一网络时，保持自动模式，内置 Tailcat 会尝试打洞，不行再走加密中继。</li>
           </ol>
         </div>
-        <div class="le">
+        <div class="le" lang="en">
           <ol class="feature-list">
             <li>Install the matching Mac app on macOS 13 or newer. Keep the existing production path and signing identity when upgrading. Native Agents retain their own authorization; Accessibility and Screen Recording serve the separate device tools.</li>
             <li>For a new phone, generate a pairing code in Mac settings and scan it from Computers on iOS 16 or newer. Allow Local Network if asked. An explicit legacy-pairing migration requires old phones to scan again; a normal in-place upgrade preserves pairings.</li>
@@ -78,33 +76,34 @@
         </div>
       </section>
       <section class="card section">
-        <h2><span class="lz">三条路怎么选</span><span class="le">Choosing a path</span></h2>
+        <h2><span class="lz" lang="zh-CN">三条路怎么选</span><span class="le" lang="en">Choosing a path</span></h2>
         <ul class="feature-list">
-          <li><span class="lz">局域网或你自己的 VPN：直连，远程桌面优先走 UDP/DTLS。</span><span class="le">LAN or your own VPN: direct. Remote Desktop prefers UDP/DTLS.</span></li>
-          <li><span class="lz">自动模式：也会启动 Tailcat。这一路使用 TCP，不需要另装 Tailscale。</span><span class="le">Automatic: also starts Tailcat. This path uses TCP; no separate Tailscale install.</span></li>
-          <li><span class="lz">只选直连：不会启动 Tailcat。设置里仍可手动添加一台中继的主机和端口。</span><span class="le">Direct-only: never starts Tailcat. A manual relay host and port can still be added in settings.</span></li>
+          <li><span class="lz" lang="zh-CN">局域网或你自己的 VPN：直连，远程桌面优先走 UDP/DTLS。</span><span class="le" lang="en">LAN or your own VPN: direct. Remote Desktop prefers UDP/DTLS.</span></li>
+          <li><span class="lz" lang="zh-CN">自动模式：也会启动 Tailcat。这一路使用 TCP，不需要另装 Tailscale。</span><span class="le" lang="en">Automatic: also starts Tailcat. This path uses TCP; no separate Tailscale install.</span></li>
+          <li><span class="lz" lang="zh-CN">只选直连：不会启动 Tailcat。设置里仍可手动添加一台中继的主机和端口。</span><span class="le" lang="en">Direct-only: never starts Tailcat. A manual relay host and port can still be added in settings.</span></li>
         </ul>
-        <p><span class="lz">连上后，在「任务」中选择 Mac 和 Agent；需要设备工具时，见 <a href="./desktop.html">远程桌面</a>。</span><span class="le">Once connected, choose a Mac and Agent in Tasks. For device tools, see <a href="./desktop.html">Remote Desktop</a>.</span></p>
+        <p><span class="lz" lang="zh-CN">连上后，在「任务」中选择 Mac 和 Agent；需要设备工具时，见 <a href="./desktop.html">远程桌面</a>。</span><span class="le" lang="en">Once connected, choose a Mac and Agent in Tasks. For device tools, see <a href="./desktop.html">Remote Desktop</a>.</span></p>
       </section>
       <section class="card section">
-        <h2><span class="lz">常见问题</span><span class="le">Questions</span></h2>
+        <h2><span class="lz" lang="zh-CN">常见问题</span><span class="le" lang="en">Questions</span></h2>
         <div class="faq-list">
           <article class="faq-item">
-            <h3><span class="lz">必须安装 Tailscale 吗？</span><span class="le">Do I have to install Tailscale?</span></h3>
-            <p><span class="lz">不用。同一 Wi-Fi 最快。不在同一网络时，自动模式会使用内置 Tailcat，不需要公网 IP、端口转发或 Tailscale 账号。只选直连时不会启动 Tailcat。你自己的 VPN 仍然可以当作直连路径。</span><span class="le">No. Wi-Fi on the same network is fastest. Automatic mode can use built-in Tailcat without a public IP, port forward, or Tailscale account. Direct-only mode does not start Tailcat. A VPN you already run remains a direct path.</span></p>
+            <h3><span class="lz" lang="zh-CN">必须安装 Tailscale 吗？</span><span class="le" lang="en">Do I have to install Tailscale?</span></h3>
+            <p><span class="lz" lang="zh-CN">不用。同一 Wi-Fi 最快。不在同一网络时，自动模式会使用内置 Tailcat，不需要公网 IP、端口转发或 Tailscale 账号。只选直连时不会启动 Tailcat。你自己的 VPN 仍然可以当作直连路径。</span><span class="le" lang="en">No. Wi-Fi on the same network is fastest. Automatic mode can use built-in Tailcat without a public IP, port forward, or Tailscale account. Direct-only mode does not start Tailcat. A VPN you already run remains a direct path.</span></p>
           </article>
           <article class="faq-item">
-            <h3><span class="lz">配对之后中继能看到我的桌面吗？</span><span class="le">What does the relay learn?</span></h3>
-            <p><span class="lz">不能读取桌面、窗口文本、剪贴板或按键。连接使用配对时钉住的 TLS 证书。中继只转发密文，但可能看到连接是否发生、时间和流量大小。</span><span class="le">It cannot read the desktop, window text, clipboard, or keystrokes. Those stay inside the certificate pinned at pairing. The relay forwards ciphertext and may see that a connection exists, plus timing and size.</span></p>
+            <h3><span class="lz" lang="zh-CN">配对之后中继能看到我的桌面吗？</span><span class="le" lang="en">What does the relay learn?</span></h3>
+            <p><span class="lz" lang="zh-CN">不能读取桌面、窗口文本、剪贴板或按键。连接使用配对时钉住的 TLS 证书。中继只转发密文，但可能看到连接是否发生、时间和流量大小。</span><span class="le" lang="en">It cannot read the desktop, window text, clipboard, or keystrokes. Those stay inside the certificate pinned at pairing. The relay forwards ciphertext and may see that a connection exists, plus timing and size.</span></p>
           </article>
         </div>
       </section>
     </section>
-    <footer class="card footer">
-      <p><a href="./"><span class="lz">首页</span><span class="le">Home</span></a> · <a href="./desktop.html"><span class="lz">远程桌面</span><span class="le">Desktop</span></a> · <a href="./support.html"><span class="lz">支持</span><span class="le">Support</span></a></p>
+<section class="card section" id="connection-help"><h2><span class="lz" lang="zh-CN">连接不上时，按这个顺序检查</span><span class="le" lang="en">If you cannot connect, check these first</span></h2><ol class="feature-list"><li><span class="lz" lang="zh-CN">确认 Mac 在线、唤醒，并且 Shellcove 正在运行。</span><span class="le" lang="en">Check that the Mac is online, awake and running Shellcove.</span></li><li><span class="lz" lang="zh-CN">在 iOS 设置中允许 Shellcove 访问本地网络；扫描二维码时允许相机访问。</span><span class="le" lang="en">Allow Shellcove Local Network access in iOS settings, and Camera access when scanning the QR.</span></li><li><span class="lz" lang="zh-CN">先在同一 Wi-Fi 下确认配对与连接。只用局域网或自己的 VPN 时选择直连，其他情况可尝试自动模式；实际可用性取决于现场网络。</span><span class="le" lang="en">First verify pairing on the same Wi-Fi. Use Direct for a LAN or your own VPN, or try Automatic otherwise. Availability depends on the actual network.</span></li><li><span class="lz" lang="zh-CN">若 Mac 已撤销这部手机，使用新配对码重新添加。普通升级无需重新配对；不要为排查连接问题重置系统权限。</span><span class="le" lang="en">If the Mac revoked this phone, pair again with a new code. Normal upgrades do not require pairing again; do not reset system permissions as a connection fix.</span></li></ol></section>    <footer class="card footer">
+      <p><a href="./"><span class="lz" lang="zh-CN">首页</span><span class="le" lang="en">Home</span></a> · <a href="./desktop.html"><span class="lz" lang="zh-CN">远程桌面</span><span class="le" lang="en">Desktop</span></a> · <a href="./support.html"><span class="lz" lang="zh-CN">支持</span><span class="le" lang="en">Support</span></a></p>
       <small>© 2026 智足者富 · Shellcove</small>
     </footer>
   </main>
 <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
+
 </body>
 </html>
