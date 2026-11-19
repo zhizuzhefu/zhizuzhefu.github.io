@@ -2,7 +2,7 @@
    requestbaby — Frameblox-style design system
    White canvas, oversized Satoshi headlines with tight tracking, #F7F7F7
    bento cards (30px radius), pill buttons, #0366FF accent, black footer.
-   Satoshi is linked directly in each page <head> (preconnect + stylesheet).
+   System font stack only: no third-party font request, so nothing blocks first paint.
    ========================================================================== */
 
 :root {
@@ -25,7 +25,7 @@
   --radius-sm: 10px;
   --max-width: 1200px;
   --header-h: 76px;
-  --font-display: "Satoshi", -apple-system, BlinkMacSystemFont, "PingFang SC",
+  --font-display: -apple-system, BlinkMacSystemFont, "PingFang SC",
     "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -195,6 +195,30 @@ a:hover {
   line-height: 1;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.lang-switch a:hover {
+  background: var(--card);
+  text-decoration: none;
+}
+
+.lang-switch a.on {
+  background: var(--ink);
+  color: #fff;
 }
 
 .lang-switch button:hover {
@@ -1243,4 +1267,12 @@ pre.code code {
   .cover-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.simple-list li strong {
+  color: var(--ink);
+}
+
+.card.section .download-cta {
+  margin-top: 8px;
 }
