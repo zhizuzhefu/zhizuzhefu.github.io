@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>requestbaby Quick Start: Send API Requests Like in Postman</title>
+  <meta name="description" content="Used Postman? Get started with requestbaby in minutes: fill in requests with forms, save environment variables, pass tokens, run in bulk and read results. Includes a Postman concept map and what is not there yet.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/requestbaby/en/basics.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://apps.zhizuzhefu.com/requestbaby/basics.html">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/requestbaby/en/basics.html">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/requestbaby/basics.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="requestbaby">
+  <meta property="og:title" content="requestbaby Quick Start: Send API Requests Like in Postman">
+  <meta property="og:description" content="Used Postman? Get started with requestbaby in minutes: fill in requests with forms, save environment variables, pass tokens, run in bulk and read results. Includes a Postman concept map and what is not there yet.">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/requestbaby/en/basics.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:image" content="https://apps.zhizuzhefu.com/requestbaby/images/social-card.png?v=76b443a33421">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="requestbaby quick start">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="requestbaby Quick Start: Send API Requests Like in Postman">
+  <meta name="twitter:description" content="Used Postman? Get started with requestbaby in minutes: fill in requests with forms, save environment variables, pass tokens, run in bulk and read results. Includes a Postman concept map and what is not there yet.">
+  <meta name="twitter:image" content="https://apps.zhizuzhefu.com/requestbaby/images/social-card.png?v=76b443a33421">
+  <meta name="twitter:image:alt" content="requestbaby quick start">
+  <link rel="icon" href="/requestbaby/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/requestbaby/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/requestbaby/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/requestbaby/apple-touch-icon.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://apps.zhizuzhefu.com/requestbaby/#site","url":"https://apps.zhizuzhefu.com/requestbaby/","name":"requestbaby","inLanguage":["zh-CN","en"],"publisher":{"@id":"https://apps.zhizuzhefu.com/requestbaby/#org"}},{"@type":"Organization","@id":"https://apps.zhizuzhefu.com/requestbaby/#org","name":"zhizuzhefu","url":"https://github.com/zhizuzhefu","logo":"https://apps.zhizuzhefu.com/requestbaby/apple-touch-icon.png","sameAs":["https://github.com/zhizuzhefu"]},{"@type":"WebPage","@id":"https://apps.zhizuzhefu.com/requestbaby/en/basics.html#page","url":"https://apps.zhizuzhefu.com/requestbaby/en/basics.html","name":"requestbaby Quick Start: Send API Requests Like in Postman","description":"Used Postman? Get started with requestbaby in minutes: fill in requests with forms, save environment variables, pass tokens, run in bulk and read results. Includes a Postman concept map and what is not there yet.","inLanguage":"en","isPartOf":{"@id":"https://apps.zhizuzhefu.com/requestbaby/#site"},"dateModified":"2026-11-19","about":{"@id":"https://apps.zhizuzhefu.com/requestbaby/#app"}},{"@type":"HowTo","@id":"https://apps.zhizuzhefu.com/requestbaby/en/basics.html#howto","name":"Five steps to your first request","inLanguage":"en","step":[{"@type":"HowToStep","name":"Download and open the desktop app and create a project"},{"@type":"HowToStep","name":"Create an HTTP / HTTPS case with a name and URL"},{"@type":"HowToStep","name":"Fill in method, URL, query parameters, headers and body"},{"@type":"HowToStep","name":"Click Send and read the response"},{"@type":"HowToStep","name":"Create assertions or variables, then run all"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"requestbaby","item":"https://apps.zhizuzhefu.com/requestbaby/en/"},{"@type":"ListItem","position":2,"name":"Quick start","item":"https://apps.zhizuzhefu.com/requestbaby/en/basics.html"}]}]}</script>
+  <link rel="stylesheet" href="/requestbaby/styles.css?v=378c61aaa5c0">
+  <script src="/requestbaby/site.js?v=3dee3fb710c9" defer></script>
+</head>
+<body>
+<header class="site-header"><nav class="nav" aria-label="Main"><a class="brand" href="./">requestbaby</a><div class="nav-links"><a href="./">Home</a><a class="active" href="./basics.html">Quick start</a><a href="./accept-ai-code.html">Guide</a><a href="./download.html">Download</a><a href="./support.html">Support</a><a href="./privacy.html">Privacy</a><a href="https://github.com/zhizuzhefu/requestbaby" rel="noopener">GitHub</a></div><div class="lang-switch" role="group" aria-label="Language / 语言"><a href="https://apps.zhizuzhefu.com/requestbaby/basics.html" hreflang="zh-CN" lang="zh-CN">中</a><a class="on" aria-current="true" href="https://apps.zhizuzhefu.com/requestbaby/en/basics.html" hreflang="en" lang="en">EN</a></div></nav></header><main class="page"><section class="card page-title"><div class="eyebrow">requestbaby&nbsp;·&nbsp;Quick start</div>
+<h1>Quick start: send your first request</h1>
+<p>If you have used Postman you will feel at home within minutes. The desktop app uses forms, so you do not need to learn JSON first. Everything is saved as plain files you can keep in git and run in bulk from the command line.</p>
+<div class="hero-actions"><a class="download-cta" href="./download.html">Download requestbaby</a><a href="#postman">Coming from Postman</a></div></section>
+
+<section class="card section" id="first-request"><h2>Five steps to your first request</h2>
+<ol class="simple-list">
+<li><a href="./download.html">Download and open the desktop app</a>, choose “New project” and give it a name.</li>
+<li>Click “New” in the sidebar → case, pick <strong>HTTP / HTTPS</strong> and fill in a name and URL. You can also paste a command copied with “Copy as cURL” from the browser.</li>
+<li>On the Request tab fill in the method, URL, query parameters, headers and body. Every row has a switch, so you can turn one off temporarily instead of deleting it.</li>
+<li>Click “Send” at the top right and read the status, time, body (formatted or raw), headers and the equivalent cURL command in the response area.</li>
+<li>On the response’s Fields tab hover a field and click “Assert value” or “Assert type” to create an assertion, or “Capture…” to store it as a variable for later requests. Then click “Run all” to run every case at once.</li>
+</ol>
+<p>Prefer the command line? <code>requestbaby init myapi</code> creates a project, <code>requestbaby send &lt;case file&gt;</code> sends one case and <code>requestbaby run</code> runs them all.</p></section>
+
+<section class="card section" id="everyday"><h2>What you use day to day</h2>
+<div class="use-cases">
+<article><h3>Build requests</h3><p>Any HTTP method, with URL, query parameters and headers edited row by row. Bodies can be JSON, x-www-form-urlencoded, form-data (including file upload) or raw text, in the same order as Postman.</p></article>
+<article><h3>Environments and variables</h3><p>dev / test / prod each have their own addresses and accounts, referenced as <code>{{baseUrl}}</code> in requests. Passwords and tokens can be marked secret: they stay on your machine and show as **** in logs and reports.</p></article>
+<article><h3>Pass values between requests</h3><p>Store the token from a login as a variable and use it in later requests. Cookies are saved and sent automatically. Put a shared header such as Authorization on the collection once and every case under it inherits it.</p></article>
+<article><h3>Bulk runs and results</h3><p>“Run all” runs everything and shows pass or fail per case. A failure says what was asserted, what was expected and what came back. Chain cases into flows, repeat them over CSV / JSON data, and keep a run history.</p></article>
+<article><h3>Advanced settings</h3><p>Each request can set its own timeout, retries, redirect following and certificate checking. The whole project can go through a socks5 / http proxy, or switch it off in one click.</p></article>
+<article><h3>Import what you have</h3><p>Import existing endpoints from cURL, Postman collections and OpenAPI / Swagger instead of retyping them. Beyond HTTP you can also test gRPC and WebSocket.</p></article>
+</div></section>
+
+<section class="card section" id="postman"><h2>Coming from Postman: concept map</h2>
+<div class="table-wrap"><table class="map"><thead><tr><th>Postman</th><th>requestbaby</th></tr></thead><tbody><tr><td>Collection / Folder</td><td>Collections: folders under <code>collections/</code>, one JSON file per case</td></tr><tr><td>Request</td><td>Case</td></tr><tr><td>Environment / Globals</td><td>Environments (dev / test / prod) and variables, written as <code>{{variable}}</code> too</td></tr><tr><td>Assertions in Tests</td><td>The Assertions tab: status, headers and any response field</td></tr><tr><td>Pre-request / Tests scripts</td><td>The Scripts (advanced) tab: JS scripts, with a different API from <code>pm.*</code></td></tr><tr><td>Collection Runner / Newman</td><td>Run all, or <code>requestbaby run</code> / <code>verify</code> on the command line</td></tr><tr><td>Import</td><td>Import cURL, Postman and OpenAPI / Swagger (scripts in Postman collections are not migrated)</td></tr><tr><td>Code snippet</td><td>The cURL tab in the response area (cURL only for now)</td></tr><tr><td>Workspace sync and sharing</td><td>Cases are plain files: share and review them with git</td></tr></tbody></table></div></section>
+
+<section class="card section" id="not-yet"><h2>What is not there yet</h2>
+<p>requestbaby covers the core of everyday API work and acceptance checks, but not all of Postman. These are not available at the moment, so you can choose accordingly:</p>
+<ul class="simple-list"><li>Built-in OAuth 2.0, Digest and AWS signature helpers. Put Bearer tokens and API keys in headers, build Basic credentials with the script base64 helper, and use scripts for complex signatures.</li><li>Automatic migration of Postman scripts (<code>pm.*</code>). Import tells you which cases need to be rewritten by hand.</li><li>A dedicated GraphQL editor and Socket.IO (GraphQL can be sent with a JSON body).</li><li>Mock servers, scheduled monitors, published docs and cloud team workspaces.</li><li>Export to Postman format, and code snippets in other languages.</li><li>A Windows build.</li></ul></section>
+
+<section class="card section"><h2>Next steps</h2><p>To use it as an acceptance check for AI-delivered work, read <a href="./accept-ai-code.html">how to accept AI-written code</a>; for help see the <a href="./support.html">support page</a>.</p><a class="download-cta" href="./download.html">Download requestbaby</a></section>
+<footer class="card footer"><p>© 2026 requestbaby · zhizuzhefu · MIT</p><p><a href="./basics.html">Quick start</a> · <a href="./accept-ai-code.html">Guide</a> · <a href="./download.html">Download</a> · <a href="./support.html">Support</a> · <a href="./privacy.html">Privacy</a> · <a href="https://github.com/zhizuzhefu/requestbaby" rel="noopener">GitHub</a> · <a href="https://github.com/zhizuzhefu/requestbaby/blob/main/CHANGELOG.md" rel="noopener">Changelog</a></p></footer></main><button class="to-top" type="button" aria-label="Back to top">↑</button>
+</body>
+</html>
