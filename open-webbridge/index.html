@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open WebBridge | Free AI Browser Automation for Chrome</title>
+  <meta name="description" content="Free, open-source Chrome extension for AI browser automation. Let your AI agent use your signed-in Chrome with a local app for macOS, Linux, and Windows.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://apps.zhizuzhefu.com/open-webbridge/">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/open-webbridge/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/open-webbridge/zh-cn/">
+  <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/open-webbridge/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Open WebBridge | Free AI Browser Automation for Chrome">
+  <meta property="og:description" content="Connect your AI agent to the Chrome profile you already use. The open-source extension and local companion run on macOS, Linux, and Windows.">
+  <meta property="og:url" content="https://apps.zhizuzhefu.com/open-webbridge/">
+  <meta property="og:image" content="https://apps.zhizuzhefu.com/open-webbridge/icon.png">
+  <meta property="og:image:alt" content="Open WebBridge icon">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="/assets/clean-url.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://apps.zhizuzhefu.com/open-webbridge/#software",
+    "name": "Open WebBridge",
+    "description": "A free, open-source Chrome extension and local companion program for AI browser automation using your existing Chrome profile.",
+    "url": "https://apps.zhizuzhefu.com/open-webbridge/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS, Linux, Windows",
+    "softwareRequirements": "Desktop Google Chrome and the Open WebBridge companion program",
+    "image": "https://apps.zhizuzhefu.com/open-webbridge/icon.png",
+    "installUrl": "https://chromewebstore.google.com/detail/open-webbridge/hioldppfhhbhgnnopkemdndhbmpfdgdj",
+    "downloadUrl": "https://github.com/zhizuzhefu/open-webbridge/releases/latest",
+    "sameAs": ["https://github.com/zhizuzhefu/open-webbridge"],
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer", "price": 0, "priceCurrency": "USD"}
+  }
+  </script>
+</head>
+<body>
+  <header class="shell site-header">
+    <a class="brand" href="./"><img src="./icon.png" width="32" height="32" alt="">Open WebBridge</a>
+    <nav aria-label="Main navigation">
+      <a href="#install">Install</a>
+      <a href="https://github.com/zhizuzhefu/open-webbridge">GitHub</a>
+      <a href="./zh-cn/" lang="zh-CN">简体中文</a>
+    </nav>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <h1 id="title">AI browser automation in your own Chrome</h1>
+        <p class="lead">Open WebBridge is a free, open-source Chrome extension. It gives your AI agent a way to read pages, click, fill forms, and export screenshots in the browser profile you already use.</p>
+        <div class="actions">
+          <a class="button primary" href="https://chromewebstore.google.com/detail/open-webbridge/hioldppfhhbhgnnopkemdndhbmpfdgdj">Install Chrome extension</a>
+          <a class="button" href="#install">Set up the companion app</a>
+        </div>
+        <p class="platforms">Desktop Chrome · macOS, Linux, and Windows · No Open WebBridge account</p>
+      </div>
+      <div class="console">
+        <h2>Try a browser command</h2>
+        <pre><code>open-webbridge call navigate --session demo --args '{"url":"https://example.org","newTab":true}'
+open-webbridge call snapshot --session demo</code></pre>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="workflows">
+      <h2 id="workflows">What can an AI agent do in Chrome?</h2>
+      <div class="grid">
+        <article><h3>Use a signed-in session</h3><p>Read a dashboard or export a report in the Chrome profile where you already signed in.</p></article>
+        <article><h3>Read and interact with a page</h3><p>Inspect an accessibility snapshot, click controls, fill fields, or save a screenshot or PDF.</p></article>
+        <article><h3>Annotate a live page</h3><p>Attach a comment to an element so an agent can find the exact control you want it to review.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="install" aria-labelledby="install-title">
+      <h2 id="install-title">Install Open WebBridge</h2>
+      <p>The extension and the companion program run together on the computer that runs Chrome.</p>
+      <ol class="steps">
+        <li>
+          <h3>Add the Chrome extension</h3>
+          <p>Open the <a href="https://chromewebstore.google.com/detail/open-webbridge/hioldppfhhbhgnnopkemdndhbmpfdgdj">official Chrome Web Store listing</a> in desktop Chrome and select <strong>Add to Chrome</strong>.</p>
+        </li>
+        <li>
+          <h3>Install the companion program</h3>
+          <p>On macOS or Linux, run the project installer in your terminal.</p>
+          <pre><code>curl -fsSL https://raw.githubusercontent.com/zhizuzhefu/open-webbridge/main/scripts/install.sh | bash</code></pre>
+          <p>On Windows, download the right executable and follow the <a href="https://github.com/zhizuzhefu/open-webbridge#51-install-the-background-service">PowerShell setup steps</a>.</p>
+          <ul class="windows-links">
+            <li><a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest/download/open-webbridge-windows-amd64.exe">Windows x64</a></li>
+            <li><a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest/download/open-webbridge-windows-arm64.exe">Windows ARM64</a></li>
+            <li><a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest">All downloads</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>Connect Chrome</h3>
+          <p>Run <code>open-webbridge url</code>. Paste the URL into the extension popup and select <strong>Connect</strong>.</p>
+        </li>
+        <li>
+          <h3>Verify and try your first command</h3>
+          <p>Run <code>open-webbridge status</code>. When <code>extension_connected</code> is <code>true</code>, try the browser commands above or add the <a href="https://github.com/zhizuzhefu/open-webbridge/tree/main/open-webbridge-skill">optional agent skill</a>.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <h2 id="faq-title">Common questions</h2>
+      <div class="faq">
+        <article><h3>Is Open WebBridge free?</h3><p>Yes. The extension and companion program are free and open source under the <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/LICENSE">AGPL-3.0 license</a>. Your AI provider may charge separately.</p></article>
+        <article><h3>Which AI agents can use it?</h3><p>An agent that can run shell commands on your computer can call the <code>open-webbridge</code> CLI. For example, a local coding agent can run these commands after you connect Chrome.</p></article>
+        <article><h3>How is browser data handled?</h3><p>The extension connects to the companion program on your computer over loopback and has no telemetry. Your chosen AI agent controls how it processes results. The companion program checks GitHub for software updates.</p></article>
+        <article><h3>Why does Chrome ask for debugger access?</h3><p>Open WebBridge uses the Chrome DevTools Protocol to read the page structure and carry out requested browser actions. See the <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/PRIVACY.md">permission and privacy details</a>.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="shell site-footer">
+    <span>Open WebBridge</span>
+    <nav aria-label="Project links">
+      <a href="https://github.com/zhizuzhefu/open-webbridge">Source code</a>
+      <a href="https://github.com/zhizuzhefu/open-webbridge/issues">Support</a>
+      <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/PRIVACY.md">Privacy</a>
+    </nav>
+  </footer>
+</body>
+</html>
