@@ -1,33 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN" data-lang="zh" data-title-zh="Open WebBridge｜免费开源的 Chrome AI 浏览器自动化扩展" data-title-en="Open WebBridge | Free AI Browser Automation for Chrome" data-desc-zh="免费开源的 Chrome AI 自动化扩展。让 AI 助手使用你已登录的 Chrome 读取网页、点击、填表和截图，支持 macOS、Linux 和 Windows。" data-desc-en="Free, open-source Chrome extension for AI browser automation. Let your AI agent use your signed-in Chrome with a local app for macOS, Linux, and Windows.">
 <head>
   <meta charset="utf-8">
+  <script src="/assets/clean-url.js"></script>
+  <script src="/channo/i18n.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Open WebBridge | Free AI Browser Automation for Chrome</title>
-  <meta name="description" content="Free, open-source Chrome extension for AI browser automation. Let your AI agent use your signed-in Chrome with a local app for macOS, Linux, and Windows.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="./icon.png" type="image/png">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
+  <title>Open WebBridge｜免费开源的 Chrome AI 浏览器自动化扩展</title>
+  <meta name="description" content="免费开源的 Chrome AI 自动化扩展。让 AI 助手使用你已登录的 Chrome 读取网页、点击、填表和截图，支持 macOS、Linux 和 Windows。">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/open-webbridge/">
-  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/open-webbridge/">
-  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/open-webbridge/zh-cn/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/open-webbridge/">
+  <link rel="alternate" hreflang="en" href="https://apps.zhizuzhefu.com/open-webbridge/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://apps.zhizuzhefu.com/open-webbridge/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Open WebBridge | Free AI Browser Automation for Chrome">
-  <meta property="og:description" content="Connect your AI agent to the Chrome profile you already use. The open-source extension and local companion run on macOS, Linux, and Windows.">
+  <meta property="og:site_name" content="Open WebBridge">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="Open WebBridge｜免费开源的 Chrome AI 浏览器自动化扩展">
+  <meta property="og:description" content="让 AI 助手使用你已登录的 Chrome。扩展和配套程序免费开源，支持 macOS、Linux 和 Windows。">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/open-webbridge/">
   <meta property="og:image" content="https://apps.zhizuzhefu.com/open-webbridge/icon.png">
-  <meta property="og:image:alt" content="Open WebBridge icon">
+  <meta property="og:image:alt" content="Open WebBridge 图标">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" href="./icon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="/assets/clean-url.js" defer></script>
+  <link rel="stylesheet" href="/channo/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": "https://apps.zhizuzhefu.com/open-webbridge/#software",
     "name": "Open WebBridge",
-    "description": "A free, open-source Chrome extension and local companion program for AI browser automation using your existing Chrome profile.",
+    "description": "免费开源的 Chrome 扩展及本地配套程序，让 AI 助手使用你现有的 Chrome 浏览器执行网页操作。",
     "url": "https://apps.zhizuzhefu.com/open-webbridge/",
+    "inLanguage": ["zh-Hans", "en"],
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "macOS, Linux, Windows",
     "softwareRequirements": "Desktop Google Chrome and the Open WebBridge companion program",
@@ -41,88 +48,104 @@
   </script>
 </head>
 <body>
-  <header class="shell site-header">
-    <a class="brand" href="./"><img src="./icon.png" width="32" height="32" alt="">Open WebBridge</a>
-    <nav aria-label="Main navigation">
-      <a href="#install">Install</a>
-      <a href="https://github.com/zhizuzhefu/open-webbridge">GitHub</a>
-      <a href="./zh-cn/" lang="zh-CN">简体中文</a>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="./">Open WebBridge</a>
+      <div class="nav-links">
+        <a class="active" href="./" aria-current="page"><span class="lz">首页</span><span class="le">Home</span></a>
+        <a href="#install"><span class="lz">安装</span><span class="le">Install</span></a>
+        <a href="https://github.com/zhizuzhefu/open-webbridge/issues"><span class="lz">支持</span><span class="le">Support</span></a>
+        <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/PRIVACY.md"><span class="lz">隐私</span><span class="le">Privacy</span></a>
+        <a href="https://github.com/zhizuzhefu/open-webbridge">GitHub</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language / 语言">
+        <button class="on" type="button" data-set-lang="zh" aria-pressed="true" aria-label="简体中文">中</button>
+        <button type="button" data-set-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
     </nav>
   </header>
-  <main class="shell">
-    <section class="hero" aria-labelledby="title">
-      <div>
-        <h1 id="title">AI browser automation in your own Chrome</h1>
-        <p class="lead">Open WebBridge is a free, open-source Chrome extension. It gives your AI agent a way to read pages, click, fill forms, and export screenshots in the browser profile you already use.</p>
-        <div class="actions">
-          <a class="button primary" href="https://chromewebstore.google.com/detail/open-webbridge/hioldppfhhbhgnnopkemdndhbmpfdgdj">Install Chrome extension</a>
-          <a class="button" href="#install">Set up the companion app</a>
+
+  <main class="page">
+    <section class="card page-title">
+      <div class="eyebrow"><span class="lz">Open WebBridge · Chrome AI 自动化</span><span class="le">Open WebBridge · Chrome AI automation</span></div>
+      <h1><span class="lz">让 AI 助手操作你正在用的 Chrome。</span><span class="le">AI browser automation in your own Chrome.</span></h1>
+      <p class="hero-lead"><span class="lz">让 AI 助手使用你已登录的 Chrome 读取网页、点击、填表、截图和导出 PDF。扩展连接同一台电脑上的配套程序，无需注册 Open WebBridge 账号。</span><span class="le">Let your AI agent read pages, click, fill forms, and export screenshots or PDFs using your signed-in Chrome profile. The extension connects to a companion program on the same computer. No Open WebBridge account is needed.</span></p>
+      <div class="hero-actions">
+        <a class="download-cta" href="https://chromewebstore.google.com/detail/open-webbridge/hioldppfhhbhgnnopkemdndhbmpfdgdj"><span class="lz">从 Chrome 应用商店安装</span><span class="le">Install from the Chrome Web Store</span></a>
+        <span class="hero-note"><span class="lz">免费开源 · 需安装本机配套程序</span><span class="le">Free and open source · Local companion required</span></span>
+      </div>
+      <div class="pill-row">
+        <span class="pill"><span class="lz">桌面版 Chrome</span><span class="le">Desktop Chrome</span></span>
+        <span class="pill">macOS · Linux · Windows</span>
+        <span class="pill"><span class="lz">沿用登录会话</span><span class="le">Existing browser sessions</span></span>
+        <span class="pill"><span class="lz">网页标注</span><span class="le">Page annotations</span></span>
+      </div>
+    </section>
+
+    <section class="section-grid" id="install" aria-label="安装步骤 / Setup steps">
+      <article class="card section">
+        <h2><span class="lz">添加 Chrome 扩展</span><span class="le">Add the Chrome extension</span></h2>
+        <p><span class="lz">用桌面版 Chrome 打开上方的官方商店链接，点击「添加至 Chrome」。</span><span class="le">Open the official listing above in desktop Chrome and select Add to Chrome.</span></p>
+      </article>
+      <article class="card section">
+        <h2><span class="lz">安装配套程序</span><span class="le">Install the companion program</span></h2>
+        <p><span class="lz">在 Chrome 所在的电脑上安装。macOS 和 Linux 使用安装脚本，Windows 下载对应架构的可执行文件。</span><span class="le">Install on the computer running Chrome. macOS and Linux have an installer. Windows has x64 and ARM64 executables.</span></p>
+        <p><a href="#downloads"><span class="lz">查看下载和安装命令</span><span class="le">See downloads and setup commands</span></a></p>
+      </article>
+      <article class="card section">
+        <h2><span class="lz">连接 Chrome</span><span class="le">Connect Chrome</span></h2>
+        <p><span class="lz">运行 </span><span class="le">Run </span><code>open-webbridge url</code><span class="lz">，把输出的地址粘贴到扩展弹窗，再点击 Connect。</span><span class="le">, paste the address into the extension popup, and select Connect.</span></p>
+      </article>
+      <article class="card section">
+        <h2><span class="lz">确认连接并试运行</span><span class="le">Verify the connection</span></h2>
+        <p><span class="lz">运行 </span><span class="le">Run </span><code>open-webbridge status</code><span class="lz">，确认 </span><span class="le"> and check that </span><code>extension_connected</code><span class="lz"> 为 </span><span class="le"> is </span><code>true</code><span class="lz">。</span><span class="le">.</span></p>
+        <p><a href="#example"><span class="lz">试跑第一条浏览器命令</span><span class="le">Try your first browser command</span></a></p>
+      </article>
+    </section>
+
+    <section class="section-stack">
+      <section class="card section" id="downloads">
+        <h2><span class="lz">下载配套程序</span><span class="le">Download the companion program</span></h2>
+        <h3>macOS / Linux</h3>
+        <p><span class="lz">在终端运行安装脚本。</span><span class="le">Run the installer in your terminal.</span></p>
+        <p><code>curl -fsSL https://<wbr>raw.githubusercontent.com/<wbr>zhizuzhefu/<wbr>open-webbridge/<wbr>main/<wbr>scripts/install.sh | bash</code></p>
+        <h3>Windows</h3>
+        <p><span class="lz">下载与你的电脑匹配的版本，再按 </span><span class="le">Download the executable for your computer and follow the </span><a href="https://github.com/zhizuzhefu/open-webbridge#51-install-the-background-service"><span class="lz">PowerShell 安装步骤</span><span class="le">PowerShell setup steps</span></a><span class="lz">运行。</span><span class="le">.</span></p>
+        <p><a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest/download/open-webbridge-windows-amd64.exe">Windows x64</a> · <a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest/download/open-webbridge-windows-arm64.exe">Windows ARM64</a> · <a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest"><span class="lz">全部下载</span><span class="le">All downloads</span></a></p>
+      </section>
+
+      <section class="card section" id="example">
+        <h2><span class="lz">在 Chrome 打开并读取网页</span><span class="le">Open and read a page in Chrome</span></h2>
+        <p><span class="lz">下面两条命令打开一个示例网页，并读取它的无障碍结构。能运行命令的 AI 助手也可以调用这些操作。</span><span class="le">These commands open an example page and read its accessibility tree. An AI agent that can run shell commands can use the same actions.</span></p>
+        <p><code>open-webbridge call navigate --session demo --args '{"url":"<wbr>https://example.org",<wbr>"newTab":true}'</code></p>
+        <p><code>open-webbridge call snapshot --session demo</code></p>
+        <p><a href="https://github.com/zhizuzhefu/open-webbridge/tree/main/open-webbridge-skill"><span class="lz">可选的 Agent Skill</span><span class="le">Optional agent skill</span></a></p>
+      </section>
+
+      <section class="card section">
+        <h2><span class="lz">常见问题</span><span class="le">Common questions</span></h2>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3><span class="lz">Open WebBridge 免费吗？</span><span class="le">Is Open WebBridge free?</span></h3>
+            <p><span class="lz">扩展和配套程序均免费开源，使用 AGPL-3.0 许可。AI 服务的费用由你选择的提供方决定。</span><span class="le">The extension and companion program are free and open source under the AGPL-3.0 license. Your AI provider may charge separately.</span></p>
+          </article>
+          <article class="faq-item">
+            <h3><span class="lz">它能操作哪些网页？</span><span class="le">What can it do on a page?</span></h3>
+            <p><span class="lz">它可以读取你在 Chrome 中已打开或登录的网页、填写表单、导出报表，也能把评论附到具体网页元素上，交给助手检查。</span><span class="le">Use it to read pages you can access in Chrome, fill forms, and export reports. You can also attach comments to page elements for your agent to review.</span></p>
+          </article>
+          <article class="faq-item">
+            <h3><span class="lz">为什么要用 Chrome 调试权限？</span><span class="le">Why does Chrome ask for debugger access?</span></h3>
+            <p><span class="lz">扩展借助 Chrome DevTools Protocol 读取页面结构并执行你请求的操作。扩展通过本机回环地址连接配套程序，无遥测。工具结果由你选用的 AI 助手处理。</span><span class="le">The extension uses the Chrome DevTools Protocol to read page structure and carry out requested actions. It connects to the companion program over loopback and has no telemetry. Your chosen AI agent controls how it processes tool results.</span></p>
+          </article>
         </div>
-        <p class="platforms">Desktop Chrome · macOS, Linux, and Windows · No Open WebBridge account</p>
-      </div>
-      <div class="console">
-        <h2>Try a browser command</h2>
-        <pre><code>open-webbridge call navigate --session demo --args '{"url":"https://example.org","newTab":true}'
-open-webbridge call snapshot --session demo</code></pre>
-      </div>
+      </section>
     </section>
 
-    <section class="section" aria-labelledby="workflows">
-      <h2 id="workflows">What can an AI agent do in Chrome?</h2>
-      <div class="grid">
-        <article><h3>Use a signed-in session</h3><p>Read a dashboard or export a report in the Chrome profile where you already signed in.</p></article>
-        <article><h3>Read and interact with a page</h3><p>Inspect an accessibility snapshot, click controls, fill fields, or save a screenshot or PDF.</p></article>
-        <article><h3>Annotate a live page</h3><p>Attach a comment to an element so an agent can find the exact control you want it to review.</p></article>
-      </div>
-    </section>
-
-    <section class="section" id="install" aria-labelledby="install-title">
-      <h2 id="install-title">Install Open WebBridge</h2>
-      <p>The extension and the companion program run together on the computer that runs Chrome.</p>
-      <ol class="steps">
-        <li>
-          <h3>Add the Chrome extension</h3>
-          <p>Open the <a href="https://chromewebstore.google.com/detail/open-webbridge/hioldppfhhbhgnnopkemdndhbmpfdgdj">official Chrome Web Store listing</a> in desktop Chrome and select <strong>Add to Chrome</strong>.</p>
-        </li>
-        <li>
-          <h3>Install the companion program</h3>
-          <p>On macOS or Linux, run the project installer in your terminal.</p>
-          <pre><code>curl -fsSL https://raw.githubusercontent.com/zhizuzhefu/open-webbridge/main/scripts/install.sh | bash</code></pre>
-          <p>On Windows, download the right executable and follow the <a href="https://github.com/zhizuzhefu/open-webbridge#51-install-the-background-service">PowerShell setup steps</a>.</p>
-          <ul class="windows-links">
-            <li><a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest/download/open-webbridge-windows-amd64.exe">Windows x64</a></li>
-            <li><a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest/download/open-webbridge-windows-arm64.exe">Windows ARM64</a></li>
-            <li><a href="https://github.com/zhizuzhefu/open-webbridge/releases/latest">All downloads</a></li>
-          </ul>
-        </li>
-        <li>
-          <h3>Connect Chrome</h3>
-          <p>Run <code>open-webbridge url</code>. Paste the URL into the extension popup and select <strong>Connect</strong>.</p>
-        </li>
-        <li>
-          <h3>Verify and try your first command</h3>
-          <p>Run <code>open-webbridge status</code>. When <code>extension_connected</code> is <code>true</code>, try the browser commands above or add the <a href="https://github.com/zhizuzhefu/open-webbridge/tree/main/open-webbridge-skill">optional agent skill</a>.</p>
-        </li>
-      </ol>
-    </section>
-
-    <section class="section" aria-labelledby="faq-title">
-      <h2 id="faq-title">Common questions</h2>
-      <div class="faq">
-        <article><h3>Is Open WebBridge free?</h3><p>Yes. The extension and companion program are free and open source under the <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/LICENSE">AGPL-3.0 license</a>. Your AI provider may charge separately.</p></article>
-        <article><h3>Which AI agents can use it?</h3><p>An agent that can run shell commands on your computer can call the <code>open-webbridge</code> CLI. For example, a local coding agent can run these commands after you connect Chrome.</p></article>
-        <article><h3>How is browser data handled?</h3><p>The extension connects to the companion program on your computer over loopback and has no telemetry. Your chosen AI agent controls how it processes results. The companion program checks GitHub for software updates.</p></article>
-        <article><h3>Why does Chrome ask for debugger access?</h3><p>Open WebBridge uses the Chrome DevTools Protocol to read the page structure and carry out requested browser actions. See the <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/PRIVACY.md">permission and privacy details</a>.</p></article>
-      </div>
-    </section>
+    <footer class="card footer">
+      <p><a href="https://github.com/zhizuzhefu/open-webbridge"><span class="lz">源代码</span><span class="le">Source code</span></a> · <a href="https://github.com/zhizuzhefu/open-webbridge/issues"><span class="lz">使用支持</span><span class="le">Support</span></a> · <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/PRIVACY.md"><span class="lz">隐私政策</span><span class="le">Privacy policy</span></a></p>
+      <small>Open WebBridge · AGPL-3.0</small>
+    </footer>
   </main>
-  <footer class="shell site-footer">
-    <span>Open WebBridge</span>
-    <nav aria-label="Project links">
-      <a href="https://github.com/zhizuzhefu/open-webbridge">Source code</a>
-      <a href="https://github.com/zhizuzhefu/open-webbridge/issues">Support</a>
-      <a href="https://github.com/zhizuzhefu/open-webbridge/blob/main/PRIVACY.md">Privacy</a>
-    </nav>
-  </footer>
+  <button class="to-top" type="button" aria-label="回到顶部 / Back to top">↑</button>
 </body>
 </html>
