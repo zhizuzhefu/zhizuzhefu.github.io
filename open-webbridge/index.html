@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-lang="zh" data-title-zh="Open WebBridge｜免费开源的 Chrome AI 浏览器自动化扩展" data-title-en="Open WebBridge | Free AI Browser Automation for Chrome" data-desc-zh="免费开源的 Chrome AI 自动化扩展。让 AI 助手使用你已登录的 Chrome 读取网页、点击、填表和截图，支持 macOS、Linux 和 Windows。" data-desc-en="Free, open-source Chrome extension for AI browser automation. Let your AI agent use your signed-in Chrome with a local app for macOS, Linux, and Windows.">
+<html lang="zh-CN" data-lang="zh" data-title-zh="Open WebBridge｜让 AI Agent 控制已登录的 Chrome 浏览器" data-title-en="Open WebBridge | AI Agent Browser Control for Chrome" data-desc-zh="免费开源的 Chrome 扩展，让 AI Agent 控制你已登录的浏览器，执行点击、填表和截图。配套程序支持 Windows、macOS 和 Linux。" data-desc-en="Free, open-source Chrome extension for AI agents to control your signed-in browser tabs. Works with a local companion on Windows, macOS, and Linux.">
 <head>
   <meta charset="utf-8">
   <script src="/assets/clean-url.js"></script>
@@ -9,8 +9,8 @@
   <link rel="icon" href="./icon.png?v=50d9941b" type="image/png">
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
-  <title>Open WebBridge｜免费开源的 Chrome AI 浏览器自动化扩展</title>
-  <meta name="description" content="免费开源的 Chrome AI 自动化扩展。让 AI 助手使用你已登录的 Chrome 读取网页、点击、填表和截图，支持 macOS、Linux 和 Windows。">
+  <title>Open WebBridge｜让 AI Agent 控制已登录的 Chrome 浏览器</title>
+  <meta name="description" content="免费开源的 Chrome 扩展，让 AI Agent 控制你已登录的浏览器，执行点击、填表和截图。配套程序支持 Windows、macOS 和 Linux。">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://apps.zhizuzhefu.com/open-webbridge/">
   <link rel="alternate" hreflang="zh-Hans" href="https://apps.zhizuzhefu.com/open-webbridge/">
@@ -19,8 +19,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Open WebBridge">
   <meta property="og:locale" content="zh_CN">
-  <meta property="og:title" content="Open WebBridge｜免费开源的 Chrome AI 浏览器自动化扩展">
-  <meta property="og:description" content="让 AI 助手使用你已登录的 Chrome。扩展和配套程序免费开源，支持 macOS、Linux 和 Windows。">
+  <meta property="og:title" content="Open WebBridge｜让 AI Agent 控制已登录的 Chrome 浏览器">
+  <meta property="og:description" content="让 AI Agent 使用你已登录的 Chrome。扩展和配套程序免费开源，支持 Windows、macOS 和 Linux。">
   <meta property="og:url" content="https://apps.zhizuzhefu.com/open-webbridge/">
   <meta property="og:image" content="https://apps.zhizuzhefu.com/open-webbridge/icon.png?v=50d9941b">
   <meta property="og:image:alt" content="Open WebBridge 图标">
@@ -32,7 +32,7 @@
     "@type": "SoftwareApplication",
     "@id": "https://apps.zhizuzhefu.com/open-webbridge/#software",
     "name": "Open WebBridge",
-    "description": "免费开源的 Chrome 扩展及本地配套程序，让 AI 助手使用你现有的 Chrome 浏览器执行网页操作。",
+    "description": "免费开源的 Chrome 扩展及本地配套程序，让 AI Agent 控制你已登录的 Chrome 浏览器，读取网页、点击、填表和截图。",
     "url": "https://apps.zhizuzhefu.com/open-webbridge/",
     "inLanguage": ["zh-Hans", "en"],
     "applicationCategory": "DeveloperApplication",
@@ -67,7 +67,7 @@
 
   <main class="page">
     <section class="card page-title">
-      <div class="eyebrow"><span class="lz">Open WebBridge · Chrome AI 自动化</span><span class="le">Open WebBridge · Chrome AI automation</span></div>
+      <div class="eyebrow"><span class="lz">Open WebBridge · AI Agent 控制浏览器</span><span class="le">Open WebBridge · Browser control for AI agents</span></div>
       <h1><span class="lz">让 AI 助手操作你正在用的 Chrome。</span><span class="le">AI browser automation in your own Chrome.</span></h1>
       <p class="hero-lead"><span class="lz">让 AI 助手使用你已登录的 Chrome 读取网页、点击、填表、截图和导出 PDF。扩展连接同一台电脑上的配套程序，无需注册 Open WebBridge 账号。</span><span class="le">Let your AI agent read pages, click, fill forms, and export screenshots or PDFs using your signed-in Chrome profile. The extension connects to a companion program on the same computer. No Open WebBridge account is needed.</span></p>
       <div class="hero-actions">
@@ -115,8 +115,8 @@
       </section>
 
       <section class="card section" id="example">
-        <h2><span class="lz">在 Chrome 打开并读取网页</span><span class="le">Open and read a page in Chrome</span></h2>
-        <p><span class="lz">下面两条命令打开一个示例网页，并读取它的无障碍结构。能运行命令的 AI 助手也可以调用这些操作。</span><span class="le">These commands open an example page and read its accessibility tree. An AI agent that can run shell commands can use the same actions.</span></p>
+        <h2><span class="lz">让 AI Agent 控制本机 Chrome</span><span class="le">Give a local AI agent control of Chrome</span></h2>
+        <p><span class="lz">连接扩展后，Codex CLI、Claude Code 等能运行本地命令的 AI 助手可以使用 Open WebBridge。先在终端试跑下面两条命令，确认能打开网页并读取页面结构，再让助手调用。</span><span class="le">Once the extension is connected, agents that can run local commands, such as Codex CLI and Claude Code, can use Open WebBridge. Try these two commands in a terminal to verify you can open a page and read its structure, then have the agent call them.</span></p>
         <p><code>open-webbridge call navigate --session demo --args '{"url":"<wbr>https://example.org",<wbr>"newTab":true}'</code></p>
         <p><code>open-webbridge call snapshot --session demo</code></p>
         <p><a href="https://github.com/zhizuzhefu/open-webbridge/tree/main/open-webbridge-skill"><span class="lz">可选的 Agent Skill</span><span class="le">Optional agent skill</span></a></p>
@@ -130,8 +130,8 @@
             <p><span class="lz">扩展和配套程序均免费开源，使用 AGPL-3.0 许可。AI 服务的费用由你选择的提供方决定。</span><span class="le">The extension and companion program are free and open source under the AGPL-3.0 license. Your AI provider may charge separately.</span></p>
           </article>
           <article class="faq-item">
-            <h3><span class="lz">它能操作哪些网页？</span><span class="le">What can it do on a page?</span></h3>
-            <p><span class="lz">它可以读取你在 Chrome 中已打开或登录的网页、填写表单、导出报表，也能把评论附到具体网页元素上，交给助手检查。</span><span class="le">Use it to read pages you can access in Chrome, fill forms, and export reports. You can also attach comments to page elements for your agent to review.</span></p>
+            <h3><span class="lz">AI Agent 可以使用我已有的登录状态吗？</span><span class="le">Can an AI agent use my existing Chrome login?</span></h3>
+            <p><span class="lz">可以。扩展在你安装它的 Chrome 配置中执行操作，沿用该配置已有的登录会话。你可以让助手读取已经登录的看板、填写表单或导出报表。</span><span class="le">Yes. The extension runs actions in the Chrome profile where you install it and uses that profile's existing login sessions. An agent can read a dashboard you're signed in to, fill forms, or export reports.</span></p>
           </article>
           <article class="faq-item">
             <h3><span class="lz">为什么要用 Chrome 调试权限？</span><span class="le">Why does Chrome ask for debugger access?</span></h3>
