@@ -1,4 +1,4 @@
-/* requestbaby — single-path i18n (zh / en), same mechanism as Channo.
+/* codebaby — single-path i18n (zh / en), same mechanism as Channo.
    Loaded synchronously in <head>, before first paint:
    1. pick language: ?lang= > localStorage > navigator default
    2. set <html data-lang> so CSS shows only the matching .lz / .le spans

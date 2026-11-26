@@ -1,5 +1,5 @@
 /* ==========================================================================
-   requestbaby — Frameblox-style design system
+   codebaby — Frameblox-style design system
    White canvas, oversized Satoshi headlines with tight tracking, #F7F7F7
    bento cards (30px radius), pill buttons, #0366FF accent, black footer.
    System font stack only: no third-party font request, so nothing blocks first paint.
@@ -1173,7 +1173,7 @@ code {
   }
 }
 
-/* ------------------------------------------------ requestbaby additions */
+/* ------------------------------------------------ codebaby additions */
 
 .home-page .hero-layout.wide {
   grid-template-columns: 1fr;
